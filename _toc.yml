@@ -2,10 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 # add the top header 
-- header: Ejemplos java
-
-# add the 'about.md' section at the top 
-- file: intro
+format: jb-book
+root: intro
+chapters:
 - file: content/CH01_intro
   sections:
   - file: "content/notebooks/funciones.ipynb"
