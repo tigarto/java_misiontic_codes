@@ -18,4 +18,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_repository_button: true
+
+launch_buttons:
+  binderhub_url: ""
   colab_url: https://colab.research.google.com
