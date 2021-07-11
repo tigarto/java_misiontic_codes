@@ -8,7 +8,4 @@ chapters:
 - file: content/CH01_intro
   sections:
   - file: "content/notebooks/esqueleto.ipynb"
-  #- file: "content/notebooks/funciones.ipynb"
-  #- file: "content/notebooks/arreglos.ipynb"
-  #- file: "content/notebooks/vector.ipynb"
 - file: content/CH02_intro
