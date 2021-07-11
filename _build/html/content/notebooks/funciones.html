@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones en java &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/funciones.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/tigarto/java_misiontic_codes/master?urlpath=tree/content/notebooks/funciones.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formato-general-de-un-metodo">
+   Formato general de un metodo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#invocacion-de-un-metodo">
+   Invocación de un método
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-3">
+     Ejemplo 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funciones-que-no-retornan">
+   Funciones que no retornan
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-4">
+     Ejemplo 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-5">
+     Ejemplo 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-6">
+     Ejemplo 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pendiente">
+   Pendiente
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in /usr/local/lib/python3.5/dist-packages (0.3.0)
+Requirement already satisfied: notebook&gt;=3.0 in /usr/local/lib/python3.5/dist-packages (from tutormagic) (5.5.0)
+Requirement already satisfied: nbformat in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Collecting pyzmq&gt;=17 (from notebook&gt;=3.0-&gt;tutormagic)
+  Using cached https://files.pythonhosted.org/packages/66/cf/979427611e7e1ad7cfb762139fc69a4db9b176aee55bf1379d57260fcf05/pyzmq-18.1.0-cp35-cp35m-manylinux1_x86_64.whl
+Requirement already satisfied: terminado&gt;=0.8.1 in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.8.1)
+Requirement already satisfied: ipython-genutils in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: ipykernel in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.8.2)
+Requirement already satisfied: jupyter-client&gt;=5.2.0 in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.2.3)
+Requirement already satisfied: Send2Trash in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: traitlets&gt;=4.2.1 in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.3.2)
+Requirement already satisfied: tornado&gt;=4 in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.0.2)
+Requirement already satisfied: nbconvert in /usr/local/lib/python3.5/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.3.1)
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from notebook&gt;=3.0-&gt;tutormagic) (2.8)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /usr/lib/python3/dist-packages (from nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.5.1)
+Requirement already satisfied: ptyprocess; os_name != &quot;nt&quot; in /usr/lib/python3/dist-packages (from terminado&gt;=0.8.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5)
+Requirement already satisfied: ipython&gt;=4.0.0 in /usr/local/lib/python3.5/dist-packages (from ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (6.4.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.5/dist-packages (from jupyter-client&gt;=5.2.0-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.8.0)
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.10.0)
+Requirement already satisfied: decorator in /usr/lib/python3/dist-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.0.6)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.5/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.4.2)
+Requirement already satisfied: pygments in /usr/lib/python3/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.1)
+Requirement already satisfied: testpath in /usr/local/lib/python3.5/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.3.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.5/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.2.3)
+Requirement already satisfied: bleach in /usr/local/lib/python3.5/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.1.3)
+Requirement already satisfied: mistune&gt;=0.7.4 in /usr/local/lib/python3.5/dist-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.3)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.5/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.7.4)
+Requirement already satisfied: setuptools&gt;=18.5 in /usr/lib/python3/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (20.7.0)
+Requirement already satisfied: backcall in /usr/local/lib/python3.5/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.0)
+Requirement already satisfied: pexpect; sys_platform != &quot;win32&quot; in /usr/lib/python3/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.0.1)
+Requirement already satisfied: prompt-toolkit&lt;2.0.0,&gt;=1.0.15 in /usr/local/lib/python3.5/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.0.15)
+Requirement already satisfied: jedi&gt;=0.10 in /usr/local/lib/python3.5/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.12.0)
+Requirement already satisfied: simplegeneric&gt;0.8 in /usr/local/lib/python3.5/dist-packages (from ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.1)
+Collecting html5lib!=1.0b1,!=1.0b2,!=1.0b3,!=1.0b4,!=1.0b5,!=1.0b6,!=1.0b7,!=1.0b8,&gt;=0.99999999pre (from bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic)
+  Using cached https://files.pythonhosted.org/packages/a5/62/bbd2be0e7943ec8504b517e62bab011b4946e1258842bc159e5dfde15b96/html5lib-1.0.1-py2.py3-none-any.whl
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.5/dist-packages (from prompt-toolkit&lt;2.0.0,&gt;=1.0.15-&gt;ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.7)
+Requirement already satisfied: parso&gt;=0.2.0 in /usr/local/lib/python3.5/dist-packages (from jedi&gt;=0.10-&gt;ipython&gt;=4.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.2.1)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.5/dist-packages (from html5lib!=1.0b1,!=1.0b2,!=1.0b3,!=1.0b4,!=1.0b5,!=1.0b6,!=1.0b7,!=1.0b8,&gt;=0.99999999pre-&gt;bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.1)
+Installing collected packages: pyzmq, html5lib
+  Found existing installation: pyzmq 15.2.0
+<span class=" -Color -Color-Red">Cannot uninstall &#39;pyzmq&#39;. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.</span>
+<span class=" -Color -Color-Yellow">You are using pip version 19.0.3, however version 19.3.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="funciones-en-java">
+<h1>Funciones en java<a class="headerlink" href="#funciones-en-java" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="formato-general-de-un-metodo">
+<h2>Formato general de un metodo<a class="headerlink" href="#formato-general-de-un-metodo" title="Permalink to this headline">¶</a></h2>
+<p>La forma general de un metodo en java se muestra a continuación</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span> <span class="nf">method_name</span><span class="p">(</span> <span class="n">parameter_list</span> <span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="n">declarations</span> <span class="n">and</span> <span class="n">statements</span><span class="p">...</span> 
+<span class="p">}</span> 
+</pre></div>
+</div>
+<div class="section" id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">¶</a></h3>
+<p>Codificar un metodo en java que permita calcular el cuadrado de un numero entero. Siga el formato general para ello:</p>
+<p><strong>Solución</strong>:
+A continuación se muestra la función en java:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">square</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span> <span class="p">{</span> 
+   <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">;</span> 
+<span class="p">}</span> 
+</pre></div>
+</div>
+<p><strong>Donde:</strong></p>
+<ul class="simple">
+<li><p><strong>Nombre del método</strong>: square</p></li>
+<li><p><strong>Tipo de dato retornado</strong>: int</p></li>
+<li><p><strong>Lista de parametros</strong>: int i</p></li>
+<li><p><strong>Expresión retornada</strong>: i*i</p></li>
+<li><p><strong>Sentencia de retorno</strong>: return i*i</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="invocacion-de-un-metodo">
+<h2>Invocación de un método<a class="headerlink" href="#invocacion-de-un-metodo" title="Permalink to this headline">¶</a></h2>
+<p>A continuación se muestra la forma de invocar un método:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">return_datatype</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">method_name</span><span class="p">(</span> <span class="n">parameter_list</span> <span class="p">);</span> 
+</pre></div>
+</div>
+<div class="section" id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">¶</a></h3>
+<p>Invoque la función <code class="docutils literal notranslate"><span class="pre">square</span></code> definida en el <strong>ejemplo 1</strong> para calcular el valor del cuadrado de 10. Asigne este resultado a una variable entera llamada <code class="docutils literal notranslate"><span class="pre">result</span></code></p>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">square</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span> <span class="c1">// result is 5 * 100 = 500 </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplo-3">
+<h3>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">¶</a></h3>
+<p>Hacer un programa que calcule todos los cuadrados de los numeros entre 1 y 10 empleando la funcion <code class="docutils literal notranslate"><span class="pre">square</span></code></p>
+<p><strong>Solucion</strong>: A continuación se muestra el programa completo y listo para ejecutarse, observe bien la parte asociada a la definición de la función y a la invocación de esta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Math { 
+    
+    /* Definicion de la funcion square */
+    public static int square( int i ) { 
+        return i*i; 
+    } 
+    
+    public static void main( String[] args ) { 
+        for( int i=1; i&lt;=10; i++ ) { 
+            System.out.println( &quot;i=&quot; + i + &quot;, i*i=&quot; + square( i ) /*invocacion de la funcion*/ ); 
+        } 
+    } 
+} 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Math%20%7B%20%0A%20%20%20%20/%2ADefinicion%20de%20la%20funcion%2A/%0A%20%20%20%20public%20static%20int%20square%28%20int%20i%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20return%20i%2Ai%3B%20%0A%20%20%20%20%7D%20%0A%20%20%20%20public%20static%20void%20main%28%20String%5B%5D%20args%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20for%28%20int%20i%3D1%3B%20i%3C%3D10%3B%20i%2B%2B%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.println%28%20%22i%3D%22%20%2B%20i%20%2B%20%22%2C%20i%2Ai%3D%22%20%2B%20square%28%20i%20%29%20/%2Ainvocacion%20de%20la%20funcion%2A/%20%29%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%7D%20%0A%7D%20&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="funciones-que-no-retornan">
+<h2>Funciones que no retornan<a class="headerlink" href="#funciones-que-no-retornan" title="Permalink to this headline">¶</a></h2>
+<p>No toda función retorna valores una vez que es invocada. Para indicar esto en la definición de la función se coloca la palabra clave <code class="docutils literal notranslate"><span class="pre">void</span></code> tal y como se muestra en el siguiente elemplo.</p>
+<div class="section" id="ejemplo-4">
+<h3>Ejemplo 4<a class="headerlink" href="#ejemplo-4" title="Permalink to this headline">¶</a></h3>
+<p>Realizar una función que imprima en pantalla el numero que se le pasa como argumento.</p>
+<p><strong>Solución</strong>: Notese el empleo de <code class="docutils literal notranslate"><span class="pre">void</span></code> en la parte del retorno de la función:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printNumber</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span> <span class="p">{</span> 
+   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="s">&quot;El numero es &quot;</span> <span class="o">+</span> <span class="n">n</span> <span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Como el metodo anterior no retorna ningun valor en la invocación no es necesario usar una variable a la cual se lleve un valor retornado, pues en el caso, no lo hay. El siguiente ejemplo clarifica esto.</p>
+</div>
+<div class="section" id="ejemplo-5">
+<h3>Ejemplo 5<a class="headerlink" href="#ejemplo-5" title="Permalink to this headline">¶</a></h3>
+<p>Invocar la función print number de modo para visualizar el valor de 10 el cual previamente es asignado a una variable entera llamada n.</p>
+<p><strong>Solución</strong>: Notese que en la invocacación el resultado de la información no se lleva a nada.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> 
+<span class="n">printNumber</span><span class="p">(</span> <span class="n">n</span> <span class="p">);</span> <span class="c1">// Note the result in not assigned to anything </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplo-6">
+<h3>Ejemplo 6<a class="headerlink" href="#ejemplo-6" title="Permalink to this headline">¶</a></h3>
+<p>Codificar los siguiente métodos para los cuales se muestra la respectiva cabecera:</p>
+<ol>
+<li><p><strong>square</strong>: Función que calcula el cuadrado de un número.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">square</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>cube</strong>: Función que calcula el cubo de un número.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">cube</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>toThePower</strong>: Función que calcula la potencia cualquiera de un número.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">toThePowe</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">power</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>factorial</strong>: Calcula el factorial de un numero.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span> 
+</pre></div>
+</div>
+</li>
+<li><p><strong>showNumber</strong>: Funcón que imprime el resultado de una operación.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showNumber</span><span class="p">(</span> <span class="n">String</span> <span class="n">operation</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Una vez haya codificado los metodos anteriores haga las siguientes pruebas imprimiendo (para lo cual deberá hacer uso de la función <code class="docutils literal notranslate"><span class="pre">showNumber</span></code>) en el metodo principal lo siguiente:</p>
+<ol class="simple">
+<li><p>El cuadrado del numero 5</p></li>
+<li><p>El cubo del numero 5</p></li>
+<li><p>El numero 5 elevado a la potencia 4.</p></li>
+<li><p>El factorial de 5.</p></li>
+</ol>
+<p><strong>Solución</strong>: A continuación se muestra la solución del programa anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Math2 { 
+    
+    public static int square( int n ) { 
+        return n*n; 
+    } 
+    public static int cube( int n ) { 
+        return n*n*n; 
+    } 
+ 
+    public static int toThePower( int n, int power ) { 
+        int result=n; 
+        for( int i=0; i&lt;power; i++ ) { 
+            result *= n; 
+        } 
+        return result; 
+    } 
+
+    public static int factorial( int n ) { 
+        int result = n; 
+        for( int i=n-1; i&gt;0; i-- ) { 
+            result *= i; 
+        } 
+        return result; 
+    } 
+     
+    public static void showNumber( String operation, int n ) { 
+        System.out.println( &quot;The result of the &quot; + operation + &quot; is &quot; + n );  
+    } 
+    
+    public static void main( String[] args ) { 
+        int a = 5;
+        showNumber( &quot;Square&quot;, square( a ) ); 
+        showNumber( &quot;Cube&quot;, cube( a ) ); 
+        showNumber( &quot;To The Power&quot;, toThePower( a, 4 ) ); 
+        showNumber( &quot;Factorial&quot;, factorial( a ) ); 
+    } 
+} 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Math2%20%7B%20%0A%20%20%20%20%0A%20%20%20%20public%20static%20int%20square%28%20int%20n%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20return%20n%2An%3B%20%0A%20%20%20%20%7D%20%0A%20%20%20%20public%20static%20int%20cube%28%20int%20n%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20return%20n%2An%2An%3B%20%0A%20%20%20%20%7D%20%0A%20%0A%20%20%20%20public%20static%20int%20toThePower%28%20int%20n%2C%20int%20power%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20int%20result%3Dn%3B%20%0A%20%20%20%20%20%20%20%20for%28%20int%20i%3D0%3B%20i%3Cpower%3B%20i%2B%2B%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20result%20%2A%3D%20n%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%20%20return%20result%3B%20%0A%20%20%20%20%7D%20%0A%0A%20%20%20%20public%20static%20int%20factorial%28%20int%20n%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20int%20result%20%3D%20n%3B%20%0A%20%20%20%20%20%20%20%20for%28%20int%20i%3Dn-1%3B%20i%3E0%3B%20i--%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20result%20%2A%3D%20i%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%20%20return%20result%3B%20%0A%20%20%20%20%7D%20%0A%20%20%20%20%20%0A%20%20%20%20public%20static%20void%20showNumber%28%20String%20operation%2C%20int%20n%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20System.out.println%28%20%22The%20result%20of%20the%20%22%20%2B%20operation%20%2B%20%22%20is%20%22%20%2B%20n%20%29%3B%20%20%0A%20%20%20%20%7D%20%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20main%28%20String%5B%5D%20args%20%29%20%7B%20%0A%20%20%20%20%20%20%20%20int%20a%20%3D%205%3B%0A%20%20%20%20%20%20%20%20showNumber%28%20%22Square%22%2C%20square%28%20a%20%29%20%29%3B%20%0A%20%20%20%20%20%20%20%20showNumber%28%20%22Cube%22%2C%20cube%28%20a%20%29%20%29%3B%20%0A%20%20%20%20%20%20%20%20showNumber%28%20%22To%20The%20Power%22%2C%20toThePower%28%20a%2C%204%20%29%20%29%3B%20%0A%20%20%20%20%20%20%20%20showNumber%28%20%22Factorial%22%2C%20factorial%28%20a%20%29%20%29%3B%20%0A%20%20%20%20%7D%20%0A%7D%20&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="pendiente">
+<h2>Pendiente<a class="headerlink" href="#pendiente" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Scope.</p></li>
+<li><p>Overloading.</p></li>
+<li><p>Recursion.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arreglos &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/arreglos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/tigarto/java_misiontic_codes/master?urlpath=tree/content/notebooks/arreglos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion">
+   Definición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaracion-y-creacion-de-un-arreglo">
+   Declaración  y creación de un arreglo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#declaracion">
+     Declaración
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creacion">
+     Creación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-resumen">
+     En resumen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-a-un-arreglo">
+   Acceso a un arreglo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesamiento-del-contenido-de-un-arreglo">
+   Procesamiento del contenido de un arreglo###
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inicializacion-de-un-arreglo">
+   Inicialización de un arreglo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-3">
+     Ejemplo 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tamano-de-los-arreglos-atributo-length">
+   Tamaño de los arreglos, atributo length
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verificacion-del-indice-de-un-arreglo">
+   Verificación del índice de un arreglo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-10-1">
+   Ejercicio 10.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copia-de-arreglos">
+   Copia de arreglos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metodo-arraycopy">
+   Metodo arraycopy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-10-2">
+   Ejercicio 10.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bucle-for-each-para-recorrido-de-arreglos-y-colecciones">
+   Bucle for each para recorrido de arreglos y colecciones
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tutormagic
+  Using cached https://files.pythonhosted.org/packages/26/4c/170e56dce3ecbf0608f37b3b99100bd2666cac181da14bc685516e958435/tutormagic-0.3.0-py2.py3-none-any.whl
+Requirement already satisfied: notebook&gt;=3.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from tutormagic) (6.0.1)
+Requirement already satisfied: terminado&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.8.3)
+Requirement already satisfied: jinja2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (2.10.3)
+Requirement already satisfied: ipython-genutils in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: ipykernel in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: Send2Trash in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: pyzmq&gt;=17 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (18.1.1)
+Requirement already satisfied: tornado&gt;=5.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (6.0.3)
+Requirement already satisfied: nbformat in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Requirement already satisfied: jupyter-client&gt;=5.3.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.3.3)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.6.1)
+Requirement already satisfied: prometheus-client in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: nbconvert in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.6.1)
+Requirement already satisfied: traitlets&gt;=4.2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.3.3)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jinja2-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.1.1)
+Requirement already satisfied: ipython&gt;=5.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (7.11.1)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.2.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jupyter-client&gt;=5.3.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.8.1)
+Requirement already satisfied: testpath in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.4.4)
+Requirement already satisfied: pygments in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.5.2)
+Requirement already satisfied: bleach in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.1.0)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.3)
+Requirement already satisfied: defusedxml in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.4.2)
+Requirement already satisfied: six in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.12.0)
+Requirement already satisfied: decorator in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.4.1)
+Requirement already satisfied: pexpect; sys_platform != &quot;win32&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.7.0)
+Requirement already satisfied: setuptools&gt;=18.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (45.2.0)
+Requirement already satisfied: pickleshare in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: jedi&gt;=0.10 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.2)
+Requirement already satisfied: backcall in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.0.2)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.6)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (19.3.0)
+Requirement already satisfied: importlib-metadata; python_version &lt; &quot;3.8&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.3.0)
+Requirement already satisfied: webencodings in /home/tigarto/miniconda3/lib/python3.7/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.1)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from pexpect; sys_platform != &quot;win32&quot;-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: parso&gt;=0.5.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.2)
+Requirement already satisfied: wcwidth in /home/tigarto/miniconda3/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.8)
+Requirement already satisfied: zipp&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: more-itertools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from zipp&gt;=0.5-&gt;importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (8.0.2)
+Installing collected packages: tutormagic
+Successfully installed tutormagic-0.3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="arreglos">
+<h1>Arreglos<a class="headerlink" href="#arreglos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definicion">
+<h2>Definición<a class="headerlink" href="#definicion" title="Permalink to this headline">¶</a></h2>
+<p>Un arreglo es una secuencia de datos del mismo tipo llamados elementos los cuales pueden ser accedidos medinte un subindice.</p>
+</div>
+<div class="section" id="declaracion-y-creacion-de-un-arreglo">
+<h2>Declaración  y creación de un arreglo<a class="headerlink" href="#declaracion-y-creacion-de-un-arreglo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="declaracion">
+<h3>Declaración<a class="headerlink" href="#declaracion" title="Permalink to this headline">¶</a></h3>
+<p>Un array se declara de modo similar a otros tipos de datos; sin embargo, se debe indicar al compilador que es un arreglo y esto se hace con corchetes. La declaración se puede hacer de dos formas:</p>
+<ol class="simple">
+<li><p><strong>Colocando los corchetes al principio</strong>:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tipo</span> <span class="o">[]</span> <span class="n">identificador</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><strong>Colocando los corchetes al final</strong>:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tipo</span> <span class="n">identificador</span><span class="o">[]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Ejemplos</strong>: A continuación se muestran varios ejempls de declración:</p>
+<ol class="simple">
+<li><p>Declaración tipica:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>O tambien la forma equivalente:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">numbers</span><span class="o">[]</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Declaración de varios arreglos en una misma linea:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">codes</span><span class="p">,</span> <span class="n">scores</span><span class="p">;</span> <span class="c1">// numbers, codes, scores son arreglos tipo int</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Notación que combina arreglos y datos simples:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">numbers</span><span class="o">[]</span><span class="p">,</span> <span class="n">codes</span><span class="o">[]</span><span class="p">,</span> <span class="n">scores</span><span class="p">;</span> <span class="c1">// Solo numbers y codes son arrays tipo int, </span>
+                                <span class="c1">// scores es una variable sencilla tipo int.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creacion">
+<h3>Creación<a class="headerlink" href="#creacion" title="Permalink to this headline">¶</a></h3>
+<p>Java considera que un arreglo es una referencia a un objeto por lo tanto para que realmente cree un arreglo, es necesario usar el operador <code class="docutils literal notranslate"><span class="pre">new</span></code> junto altipo de los elementos del arreglo y su número.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">tipo</span> <span class="n">nombreArreglo</span> <span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">tipo</span><span class="o">[</span><span class="n">numeroDeElementos</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="en-resumen">
+<h3>En resumen<a class="headerlink" href="#en-resumen" title="Permalink to this headline">¶</a></h3>
+<p>Tal y como se mostró anteriormente, la definición y creación de un arreglo involucra dos pasos tal y como se muestra en el siguiente fragmento de codigo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="p">;</span>              <span class="c1">// 1. Declarar una referencia al array que mantendra los enteros.</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">6</span><span class="o">]</span><span class="p">;</span>       <span class="c1">// 2. Crear un nuevo array que mantenga 6 enteros</span>
+</pre></div>
+</div>
+<p>El proceso anterior (declarar la referencia a un arreglo y crearlo) puede ser realizado en una sola instrucción tal y como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">6</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Declaración y creacion de un array que mantiene 6 enteros</span>
+</pre></div>
+</div>
+<p><strong>Ejemplo</strong>: A continuación se muestran varias formas de inicializar un arreglo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExample1 {
+    public static void main(String[] args) {
+        // Forma 1
+        int a[] = new int [10];
+        // Forma 2
+        final int N = 20;
+        float [] vector;
+        vector = new float[N];
+
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ArraysExample1%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20//%20Forma%201%0A%20%20%20%20%20%20%20%20int%20a%5B%5D%20%3D%20new%20int%20%5B10%5D%3B%0A%20%20%20%20%20%20%20%20//%20Forma%202%0A%20%20%20%20%20%20%20%20final%20int%20N%20%3D%2020%3B%0A%20%20%20%20%20%20%20%20float%20%5B%5D%20vector%3B%0A%20%20%20%20%20%20%20%20vector%20%3D%20new%20float%5BN%5D%3B%0A%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Consideraciones sobre el tamaño</strong>:</p>
+<ul class="simple">
+<li><p>Debe ser un numero entero positivo.</p></li>
+<li><p>Puede ser un valor literal, una constante o una variable.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="kt">int</span> <span class="n">ARRAY_SIZE</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">ARRAY_SIZE</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Una vez que el  array es creado el tamaño de este es fijo y no puede ser cambiado</p></li>
+</ul>
+<p>El siguiente fragmento de código aterriza este concepto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExample2 {
+    public static void main(String[] args) {
+        // Tamaño del array constante 
+        final int ARRAY_SIZE = 6;
+        int[] numbers = new int[ARRAY_SIZE];
+        
+        // Tamaño del array a partir de una variable
+        int tam = 10;
+        float [] vector = new float[tam];
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ArraysExample2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20//%20Tama%C3%B1o%20del%20array%20constante%20%0A%20%20%20%20%20%20%20%20final%20int%20ARRAY_SIZE%20%3D%206%3B%0A%20%20%20%20%20%20%20%20int%5B%5D%20numbers%20%3D%20new%20int%5BARRAY_SIZE%5D%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20//%20Tama%C3%B1o%20del%20array%20a%20partir%20de%20una%20variable%0A%20%20%20%20%20%20%20%20int%20tam%20%3D%2020%3B%0A%20%20%20%20%20%20%20%20float%20%5B%5D%20vector%20%3D%20new%20float%5Btam%5D%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="acceso-a-un-arreglo">
+<h2>Acceso a un arreglo<a class="headerlink" href="#acceso-a-un-arreglo" title="Permalink to this headline">¶</a></h2>
+<p>Son empleados para acceder a un arreglo especificando la posición a la cual se desea acceder. Un array es accedido por medio:</p>
+<ol class="simple">
+<li><p>La referencia el nombre.</p></li>
+<li><p>El subindice que especifica a cual elemento en en array se va a acceder.</p></li>
+</ol>
+<p><strong>Ejemplo</strong>: Crear un arreglo de 10 enteros y asignar a los elementos con subindice 0, 3, 6 los valores de -3, 10, 25 respectivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExamples4 {
+    public static void main(String[] args) {
+        final int TAM = 10;
+        int [] mes = new numbers[TAM];
+        numbers[0] = -3;  // Acceso al elemento con subindice 0 para asignarle el valor de 3
+        numbers[3] = 10;  // Acceso al elemento con subindice 0 para asignarle el valor de 3
+        numbers[6] = 26;  // Acceso al elemento con subindice 0 para asignarle el valor de 3
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejemplo</strong>: Simule y comprenda el siguiente fragmento de código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExamples3 {
+    public static void main(String[] args) {
+        float s;
+        int [] mes = new int[6];
+        float salarios[];
+        salarios = new float[13];
+        mes[4] = 2;
+        s = salarios[mes[4]*3];
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ArraysExamples2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20float%20s%3B%0A%20%20%20%20%20%20%20%20int%20%5B%5D%20mes%20%3D%20new%20int%5B6%5D%3B%0A%20%20%20%20%20%20%20%20float%20salarios%5B%5D%3B%0A%20%20%20%20%20%20%20%20salarios%20%3D%20new%20float%5B13%5D%3B%0A%20%20%20%20%20%20%20%20mes%5B4%5D%20%3D%202%3B%0A%20%20%20%20%20%20%20%20s%20%3D%20salarios%5Bmes%5B4%5D%2A3%5D%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="procesamiento-del-contenido-de-un-arreglo">
+<h2>Procesamiento del contenido de un arreglo###<a class="headerlink" href="#procesamiento-del-contenido-de-un-arreglo" title="Permalink to this headline">¶</a></h2>
+<p>El procesamiento de los elementos de un array (lectura o escritura) se hace de a uno a la vez. Asi por ejemplo, si se tiene un arreglo de 5 elementos, será necesario ingresar 5 los elementos al array uno por uno. Esto mismo aplica para mostrar el contenido de un array. A continuación se muestran 3 escenarios basicos en donde se hace esto:</p>
+<p><strong>Escenario 1</strong>: Cuando se entran elementos a una array:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// code</span>
+</pre></div>
+</div>
+<p><strong>Escenario 2</strong>: Cuando se muestran elementos de un array:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// code</span>
+</pre></div>
+</div>
+<p><strong>Escenario 3</strong>: Cuando se procesan los elementos de un array:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">grossPay</span> <span class="o">=</span> <span class="n">hours</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">*</span> <span class="n">payRate</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">score</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">};</span>
+<span class="o">++</span><span class="n">score</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span> <span class="c1">// Pre-increment operation</span>
+<span class="n">score</span><span class="o">[</span><span class="mi">4</span><span class="o">]++</span><span class="p">;</span> <span class="c1">// Post-increment operation</span>
+</pre></div>
+</div>
+<p><strong>Ejemplo 1</strong>: Este programa muestra y despliega los valores almacenados en los elementos de un arreglo
+(** Programa tomado del libro de Gaddis (Starting Out Java early objects))</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>   <span class="c1">// Needed for Scanner class</span>
+
+<span class="cm">/**</span>
+<span class="cm">   This program shows an array being processed with loops.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayDemo2</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kd">final</span> <span class="kt">int</span> <span class="n">EMPLOYEES</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>           <span class="c1">// Number of employees</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">hours</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">EMPLOYEES</span><span class="o">]</span><span class="p">;</span>  <span class="c1">// Array of hours</span>
+      
+      <span class="c1">// Create a Scanner object for keyboard input.</span>
+      <span class="n">Scanner</span> <span class="n">keyboard</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter the hours worked by &quot;</span> <span class="o">+</span>
+                         <span class="n">EMPLOYEES</span> <span class="o">+</span> <span class="s">&quot; employees.&quot;</span><span class="p">);</span>
+
+      <span class="c1">// Get the hours for each employee.</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">EMPLOYEES</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Employee &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span><span class="p">);</span>
+         <span class="n">hours</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+      <span class="p">}</span>
+
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The hours you entered are:&quot;</span><span class="p">);</span>
+
+      <span class="c1">// Display the values entered.</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">EMPLOYEES</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">hours</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>     
+</pre></div>
+</div>
+</div>
+<div class="section" id="inicializacion-de-un-arreglo">
+<h2>Inicialización de un arreglo<a class="headerlink" href="#inicializacion-de-un-arreglo" title="Permalink to this headline">¶</a></h2>
+<p>Java permite inicializar los elementos de un arreglo cuando este es creado. Para esto lo que se hace es crear el arreglo y pasarle un serie de valores separados por coma y entre llaves conocida como <strong>lista de inicialización</strong>. A continuación se muestran algunos ejemplos:</p>
+<div class="section" id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">numeros</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span><span class="n">nms</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;u&#39;</span><span class="p">,</span><span class="sc">&#39;i&#39;</span><span class="p">,</span><span class="sc">&#39;s&#39;</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">days</span> <span class="o">=</span> <span class="p">{</span><span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">};</span>
+
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">ENE</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">FEB</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span> <span class="n">MAR</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">ABR</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">MAY</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span>
+          <span class="n">JUN</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">JUL</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">AGO</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">SEP</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">OCT</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span>
+          <span class="n">NOV</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">DIC</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">meses</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ENE</span><span class="p">,</span> <span class="n">FEB</span><span class="p">,</span> <span class="n">MAR</span><span class="p">,</span> <span class="n">ABR</span><span class="p">,</span> <span class="n">MAY</span><span class="p">,</span> <span class="n">JUN</span><span class="p">,</span> <span class="n">JUL</span><span class="p">,</span> <span class="n">AGO</span><span class="p">,</span> <span class="n">SEP</span><span class="p">,</span> <span class="n">OCT</span><span class="p">,</span> <span class="n">NOV</span><span class="p">,</span> <span class="n">DIC</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplo-3">
+<h3>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">¶</a></h3>
+<p>A veces para facilitar la claridad es bueno inicializar un array empleando multiples lineas:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="o">[]</span> <span class="n">coins</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.05</span><span class="p">,</span>
+                   <span class="mf">0.1</span><span class="p">,</span>
+                   <span class="mf">0.25</span><span class="p">,</span>
+                   <span class="mf">0.5</span><span class="p">,</span>
+                   <span class="mf">1.0</span> <span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tamano-de-los-arreglos-atributo-length">
+<h2>Tamaño de los arreglos, atributo length<a class="headerlink" href="#tamano-de-los-arreglos-atributo-length" title="Permalink to this headline">¶</a></h2>
+<p>Java considera cada arreglo como un <strong>objeto</strong> que, además de tener capacidad para almacenar elementos, dispone del atributo <strong>length</strong> el cual contiene el numero de elementos que tiene el array. Por ejemplo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="o">[]</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="mi">15</span><span class="o">]</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>    <span class="c1">// Muestra en pantalla 15 (numero de elementos del array v)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExample2 {
+    public static void main(String[] args) {
+        ArraysExample2 example = new ArraysExample2();  // Por que se uso ???
+        double [] v = new double[4];
+        double rSum = 0;
+        for (int i = 0; i &lt; v.length; i++) {
+            v[i] = i;
+            System.out.print(v[i] + &quot; &quot;);
+        }
+        System.out.println();
+        rSum = example.suma(v);  // Por que se uso ???
+        System.out.println(&quot;Resultado suma: &quot; + rSum);
+    }
+    
+    double suma (double[] w) {
+      double s = 0.0;
+      for (int i = 0; i &lt; w.length; i++)
+        s += w[i];
+      return s;
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ArraysExample2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20ArraysExample2%20example%20%3D%20new%20ArraysExample2%28%29%3B%20%20//%20Por%20que%20se%20uso%20%3F%3F%3F%0A%20%20%20%20%20%20%20%20double%20%5B%5D%20v%20%3D%20new%20double%5B4%5D%3B%0A%20%20%20%20%20%20%20%20double%20rSum%20%3D%200%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20v.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20v%5Bi%5D%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.print%28v%5Bi%5D%20%2B%20%22%20%22%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20rSum%20%3D%20example.suma%28v%29%3B%20%20//%20Por%20que%20se%20uso%20%3F%3F%3F%0A%20%20%20%20%20%20%20%20System.out.println%28%22Resultado%20suma%3A%20%22%20%2B%20rSum%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20double%20suma%20%28double%5B%5D%20w%29%20%7B%0A%20%20%20%20%20%20double%20s%20%3D%200.0%3B%0A%20%20%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20w.length%3B%20i%2B%2B%29%0A%20%20%20%20%20%20%20%20s%20%2B%3D%20w%5Bi%5D%3B%0A%20%20%20%20%20%20return%20s%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="verificacion-del-indice-de-un-arreglo">
+<h2>Verificación del índice de un arreglo<a class="headerlink" href="#verificacion-del-indice-de-un-arreglo" title="Permalink to this headline">¶</a></h2>
+<p>En el siguiente fragmento de código se muestra proteger un vector de un error por indice fuera de rango</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">datos</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">[]</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Entrada de datos, cuantos elementos: ? &quot;</span><span class="p">);</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-10-1">
+<h2>Ejercicio 10.1<a class="headerlink" href="#ejercicio-10-1" title="Permalink to this headline">¶</a></h2>
+<p>El programa escrito a continuación lee NUM enteros en un arreglo,
+multiplica los elementos del arreglo y visualiza el producto.</p>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Inicial</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">NUM</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="o">[]</span><span class="n">nums</span><span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">NUM</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Por favor, introduzca &quot;</span> <span class="o">+</span> <span class="n">NUM</span> <span class="o">+</span> <span class="s">&quot; datos&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="p">}</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\nLista de números: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+            <span class="n">total</span> <span class="o">*=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nEl producto de los números es &quot;</span> <span class="o">+</span> <span class="n">total</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="copia-de-arreglos">
+<h2>Copia de arreglos<a class="headerlink" href="#copia-de-arreglos" title="Permalink to this headline">¶</a></h2>
+<p>Observe el siguiente fragmendo de codigo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class CopyExample2 {
+    public static void main(String[] args) {
+        double [] r, w;
+        r = new double[11];
+        w = new double[15];
+        for (int j = 0; j &lt; r.length; j++) {
+            r[j] = (double) 2*j-1;
+        }
+        // asignación del arreglo r a w
+        w = r;
+        r[3] = 4;
+        w[4] = -6;
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20CopyExample2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20double%20%5B%5D%20r%2C%20w%3B%0A%20%20%20%20%20%20%20%20r%20%3D%20new%20double%5B11%5D%3B%0A%20%20%20%20%20%20%20%20w%20%3D%20new%20double%5B15%5D%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%200%3B%20j%20%3C%20r.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20r%5Bj%5D%20%3D%20%28double%29%202%2Aj-1%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20//%20asignaci%C3%B3n%20del%20arreglo%20r%20a%20w%0A%20%20%20%20%20%20%20%20w%20%3D%20r%3B%0A%20%20%20%20%20%20%20%20r%5B3%5D%20%3D%204%3B%0A%20%20%20%20%20%20%20%20w%5B4%5D%20%3D%20-6%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p>Ahora, observe el siguiente codigo. ¿En que se diferencia respecto al anterior?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class CopyExample1 {
+    public static void main(String[] args) {
+        double [] r, w;
+        r = new double[11];
+        w = new double[11];
+        for (int j = 0; j &lt; r.length; j++) {
+            r[j] = (double) 2*j-1;
+        }
+        // asignación del arreglo r a w
+        for (int j = 0; j &lt; r.length; j++) {
+            w[j] = r[j];
+        }
+        r[3] = 4;
+        w[4] = -6;
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20CopyExample1%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20double%20%5B%5D%20r%2C%20w%3B%0A%20%20%20%20%20%20%20%20r%20%3D%20new%20double%5B11%5D%3B%0A%20%20%20%20%20%20%20%20w%20%3D%20new%20double%5B11%5D%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%200%3B%20j%20%3C%20r.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20r%5Bj%5D%20%3D%20%28double%29%202%2Aj-1%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20//%20asignaci%C3%B3n%20del%20arreglo%20r%20a%20w%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%200%3B%20j%20%3C%20r.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20w%5Bj%5D%20%3D%20r%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20r%5B3%5D%20%3D%204%3B%0A%20%20%20%20%20%20%20%20w%5B4%5D%20%3D%20-6%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="metodo-arraycopy">
+<h2>Metodo arraycopy<a class="headerlink" href="#metodo-arraycopy" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sintaxis</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span> <span class="p">(</span><span class="n">arreglo</span> <span class="n">Origen</span><span class="p">,</span> <span class="n">inicioOrigen</span><span class="p">,</span> <span class="n">arreglo</span> <span class="n">Destino</span><span class="p">,</span> <span class="n">inicioDestino</span><span class="p">,</span> <span class="n">numElementos</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Donde</strong>:</p>
+<ul class="simple">
+<li><p><strong>arreglo Origen</strong>: nombre del arreglo que se va a copiar.</p></li>
+<li><p><strong>inicioOrigen</strong>: posición del arreglo origen donde se inicia la copia.</p></li>
+<li><p><strong>arreglo Destino</strong>: nombre del arreglo en el que se hace la copia.</p></li>
+<li><p><strong>inicioDestino</strong>: es la posición del arreglo destino donde empieza la copia.</p></li>
+<li><p><strong>numElementos</strong>: número de elementos del arreglo origen que se van a copiar.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class CopyExample3 {
+    public static void main(String[] args) {
+        double [] r, w;
+        r = new double[11];
+        w = new double[11];
+        for (int j = 0; j &lt; r.length; j++) {
+            r[j] = (double) 2*j-1;
+        }
+        // asignación del arreglo r a w
+        System.arraycopy (r, 0, w, 0, r.length);
+        r[3] = 4;
+        w[4] = -6;
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20CopyExample3%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20double%20%5B%5D%20r%2C%20w%3B%0A%20%20%20%20%20%20%20%20r%20%3D%20new%20double%5B11%5D%3B%0A%20%20%20%20%20%20%20%20w%20%3D%20new%20double%5B11%5D%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%200%3B%20j%20%3C%20r.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20r%5Bj%5D%20%3D%20%28double%29%202%2Aj-1%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20//%20asignaci%C3%B3n%20del%20arreglo%20r%20a%20w%0A%20%20%20%20%20%20%20%20System.arraycopy%20%28r%2C%200%2C%20w%2C%200%2C%20r.length%29%3B%0A%20%20%20%20%20%20%20%20r%5B3%5D%20%3D%204%3B%0A%20%20%20%20%20%20%20%20w%5B4%5D%20%3D%20-6%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="ejercicio-10-2">
+<h2>Ejercicio 10.2<a class="headerlink" href="#ejercicio-10-2" title="Permalink to this headline">¶</a></h2>
+<p>Definir dos arreglos de tipo double, v y w con 15 y 20 elementos respectivamente;
+en el primero se guardan los valores de la función e^(2*x - 1); el segundo inicializa cada elemento al ordinal del elemento; después se copian los 10 últimos
+elementos de v a partir del elemento 11 de w; por ultimo, se escriben los
+elementos de ambos arreglos.</p>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CopiArreglo</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="o">[]</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">N</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="o">[]</span> <span class="n">w</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span> <span class="o">[</span><span class="n">M</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">x</span><span class="o">+=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">M</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">w</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Se imprimen los elementos del vector v</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n Valores del vector v&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">v</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Es realizada la copia de v a w</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">10</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+        <span class="c1">// Se imprimen los elementos del vector w</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n Valores del vector w&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">M</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">w</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bucle-for-each-para-recorrido-de-arreglos-y-colecciones">
+<h2>Bucle for each para recorrido de arreglos y colecciones<a class="headerlink" href="#bucle-for-each-para-recorrido-de-arreglos-y-colecciones" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Bucle {
+    public static void main(String[] args) {
+        int sumA = 0, sumB = 0;
+        int [] a = {1,2,3};
+        int [] b = {4,5,6};
+        
+        // Forma tradicional
+        for (int i = 0; i &lt; a.length; i++) {
+            System.out.print(a[i] + &quot; &quot;);
+            sumA += a[i];
+        }
+        System.out.print(&quot;\nsumA = &quot; + sumA + &quot;\n\n&quot;);
+        // Forma for each
+        for (int num:b) {
+            System.out.print(num + &quot; &quot;);
+            sumB += num;
+        }
+        System.out.print(&quot;\nsumB = &quot; + sumB + &quot;\n&quot;);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Bucle%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20sumA%20%3D%200%2C%20sumB%20%3D%200%3B%0A%20%20%20%20%20%20%20%20int%20%5B%5D%20a%20%3D%20%7B1%2C2%2C3%7D%3B%0A%20%20%20%20%20%20%20%20int%20%5B%5D%20b%20%3D%20%7B4%2C5%2C6%7D%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20//%20Forma%20tradicional%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20a.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.print%28a%5Bi%5D%20%2B%20%22%20%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20sumA%20%2B%3D%20a%5Bi%5D%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20System.out.print%28%22%5CnsumA%20%3D%20%22%20%2B%20sumA%20%2B%20%22%5Cn%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20//%20Forma%20for%20each%0A%20%20%20%20%20%20%20%20for%20%28int%20num%3Ab%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.print%28num%20%2B%20%22%20%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20sumB%20%2B%3D%20num%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20System.out.print%28%22%5CnsumB%20%3D%20%22%20%2B%20sumB%20%2B%20%22%5Cn%22%29%3B%0A%20%20%20%20%7D%0A%7D&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
