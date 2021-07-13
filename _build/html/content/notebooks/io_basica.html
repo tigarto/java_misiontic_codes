@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrada y salida en java &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Capitulo 2 - Introduccion a la POO en Java" href="../CH02_intro.html" />
+    <link rel="prev" title="Estructura de un programa en Java" href="esqueleto.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Entrada y salida en java
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/io_basica.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/io_basica.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#salida-en-java">
+   Salida en java
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recordando-la-salida-en-python">
+     1. Recordando la salida en Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#salida-en-pantalla-en-java">
+     2. Salida en pantalla en Java
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caracteres-especiales">
+       Caracteres especiales
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formateando-la-salida">
+       Formateando la salida
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entrada-en-java">
+   Entrada en Java
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in c:\users\usuario\anaconda3\lib\site-packages (0.3.1)
+Requirement already satisfied: jupyter&gt;=1.0 in c:\users\usuario\anaconda3\lib\site-packages (from tutormagic) (1.0.0)
+Requirement already satisfied: notebook in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.3.0)
+Requirement already satisfied: ipykernel in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (5.5.5)
+Requirement already satisfied: nbconvert in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.1.0)
+Requirement already satisfied: qtconsole in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (5.1.0)
+Requirement already satisfied: ipywidgets in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (7.6.3)
+Requirement already satisfied: jupyter-console in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.4.0)
+Requirement already satisfied: tornado&gt;=4.2 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (6.1)
+Requirement already satisfied: jupyter-client in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (6.1.12)
+Requirement already satisfied: ipython&gt;=5.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (7.22.0)
+Requirement already satisfied: traitlets&gt;=4.1.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.0.5)
+Requirement already satisfied: decorator in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.0.9)
+Requirement already satisfied: backcall in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: setuptools&gt;=18.5 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (52.0.0.post20210125)
+Requirement already satisfied: pickleshare in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.0.17)
+Requirement already satisfied: pygments in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.9.0)
+Requirement already satisfied: jedi&gt;=0.16 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.17.2)
+Requirement already satisfied: colorama in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.4.4)
+Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in c:\users\usuario\anaconda3\lib\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.0)
+Requirement already satisfied: wcwidth in c:\users\usuario\anaconda3\lib\site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.5)
+Requirement already satisfied: ipython-genutils in c:\users\usuario\anaconda3\lib\site-packages (from traitlets&gt;=4.1.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: nbformat&gt;=4.2.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.5.1)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.0.0)
+Requirement already satisfied: jupyter-core in c:\users\usuario\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (4.7.1)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in c:\users\usuario\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.2.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (21.2.0)
+Requirement already satisfied: six&gt;=1.11.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.16.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.17.3)
+Requirement already satisfied: terminado&gt;=0.8.3 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.9.4)
+Requirement already satisfied: jinja2 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.0.1)
+Requirement already satisfied: pyzmq&gt;=17 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (20.0.0)
+Requirement already satisfied: prometheus-client in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.11.0)
+Requirement already satisfied: Send2Trash&gt;=1.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: argon2-cffi in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (20.1.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\usuario\anaconda3\lib\site-packages (from jupyter-client-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.8.1)
+Requirement already satisfied: pywin32&gt;=1.0 in c:\users\usuario\anaconda3\lib\site-packages (from jupyter-core-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (227)
+Requirement already satisfied: pywinpty&gt;=0.5 in c:\users\usuario\anaconda3\lib\site-packages (from terminado&gt;=0.8.3-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.7)
+Requirement already satisfied: cffi&gt;=1.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from argon2-cffi-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.14.6)
+Requirement already satisfied: pycparser in c:\users\usuario\anaconda3\lib\site-packages (from cffi&gt;=1.0.0-&gt;argon2-cffi-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.20)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\usuario\anaconda3\lib\site-packages (from jinja2-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.0.1)
+Requirement already satisfied: nbclient&lt;0.6.0,&gt;=0.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.3)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.8.4)
+Requirement already satisfied: bleach in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.3.0)
+Requirement already satisfied: defusedxml in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.3)
+Requirement already satisfied: testpath in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.0)
+Requirement already satisfied: jupyterlab-pygments in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.1.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.4.3)
+Requirement already satisfied: async-generator in c:\users\usuario\anaconda3\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.10)
+Requirement already satisfied: nest-asyncio in c:\users\usuario\anaconda3\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.5.1)
+Requirement already satisfied: webencodings in c:\users\usuario\anaconda3\lib\site-packages (from bleach-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.1)
+Requirement already satisfied: packaging in c:\users\usuario\anaconda3\lib\site-packages (from bleach-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (21.0)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in c:\users\usuario\anaconda3\lib\site-packages (from packaging-&gt;bleach-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.4.7)
+Requirement already satisfied: qtpy in c:\users\usuario\anaconda3\lib\site-packages (from qtconsole-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.9.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="entrada-y-salida-en-java">
+<h1>Entrada y salida en java<a class="headerlink" href="#entrada-y-salida-en-java" title="Permalink to this headline">¶</a></h1>
+<p>Las operaciones de entrada y salida son importantes por que permiten la interacción entre el programa y el usuario. Para este caso, la salida la asociaremos a la pantalla y la entrada la asociaremos al teclado.</p>
+<div class="section" id="salida-en-java">
+<h2>Salida en java<a class="headerlink" href="#salida-en-java" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="recordando-la-salida-en-python">
+<h3>1. Recordando la salida en Python<a class="headerlink" href="#recordando-la-salida-en-python" title="Permalink to this headline">¶</a></h3>
+<p>En python la instrucción para mostrar datos en pantalla es la función <code class="docutils literal notranslate"><span class="pre">print</span></code>, esta, desde el punto de vista mas basico, tiene la siguiente sintaxis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista de mensajes y variables separados por coma&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="salida-en-pantalla-en-java">
+<h3>2. Salida en pantalla en Java<a class="headerlink" href="#salida-en-pantalla-en-java" title="Permalink to this headline">¶</a></h3>
+<p>El dispositivo de salida estándar suele ser un monitor. En Java la salida en el dispositivo de salida estándar se efectúa empleando el objeto de salida estándar <code class="docutils literal notranslate"><span class="pre">System.out</span></code>. El objeto <code class="docutils literal notranslate"><span class="pre">System.out</span></code> tiene acceso a dos métodos, <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code>, para dar salida a una cadena en el dispositivo de salida estándar.</p>
+<p>La forma general empleada para mostrar algo en consola se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">FormatString</span><span class="p">,</span> <span class="n">ArgList</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><strong>FormatString</strong>: String que contiene texto y/o espeficidadores de formato especiales.</p></li>
+<li><p><strong>ArgList</strong>: Es una lista de argumentos adicionales que seran formateados de acuerdo a los especificadores de formato listadoa en el argumento pasado como <code class="docutils literal notranslate"><span class="pre">FormatString</span></code>.</p></li>
+</ul>
+<p>Es importante aclarar sintaxis anterior tambien aplica al método <code class="docutils literal notranslate"><span class="pre">println</span></code>. La diferencia entre los metodos <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code> radica en que el último método agrega un enter al final de la cadena desplegada en la pantalla.</p>
+<p>Para comprender como es la salida en pantalla en java, realicemos una comparación con el caso de python mediante una serie de ejemplos.</p>
+<p><strong>Ejemplo 1</strong>: Dado el siguiente código python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adios mundo cruel&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adios mundo cruel
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Como es su implementacion en java?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO1 {
+    public static void main(String[] args) {
+        System.out.println(&quot;Adios mundo cruel&quot;);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO1%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Adios%20mundo%20cruel%22%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 2</strong>: Dado el siguiente código python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">29</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola que tal?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 + 7&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 + 7 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span><span class="p">))</span>   <span class="c1"># print(&quot;4 + 7 =&quot;,(4 + 7)) </span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola </span><span class="se">\n</span><span class="s2">que tal?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.25
+Hola que tal?
+12
+4 + 7
+11
+A
+4 + 7 = 11
+17
+Hola 
+que tal?
+</pre></div>
+</div>
+</div>
+</div>
+<p>La implementación en java es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO2 {
+    public static void main(String[] args) {
+        System.out.println(&quot;Adios mundo cruel&quot;);
+        System.out.println(29/4);
+        System.out.println(&quot;Hola que tal?&quot;);
+        System.out.println(12);
+        System.out.println(&quot;4 + 7&quot;);
+        System.out.println(4 + 7);
+        System.out.println(&#39;A&#39;);
+        System.out.println(&quot;4 + 7 = &quot; + (4 + 7));
+        System.out.println(2 + 3*5);
+        System.out.println(&quot;Hola \nque tal?&quot;);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Adios%20mundo%20cruel%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%2829/4%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20que%20tal%3F%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%2812%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%224%20%2B%207%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%284%20%2B%207%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%27A%27%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%224%20%2B%207%20%3D%20%22%20%2B%20%284%20%2B%207%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%282%20%2B%203%2A5%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20%5Cnque%20tal%3F%22%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 3</strong>: Dado el siguiente código python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola que tal. &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi nombre es Bon, James Bon.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola que tal. Mi nombre es Bon, James Bon.
+</pre></div>
+</div>
+</div>
+</div>
+<p>La implementación en código java se muestra a continuación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO3 {
+    public static void main(String[] args) {
+        System.out.print(&quot;Hola que tal. &quot;);                     // Metodo print (no hay cambio de linea)
+        System.out.println(&quot;Mi nombre es Bon, James Bon.&quot;);     // Metodo println  
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO3%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.print%28%22Hola%20que%20tal.%20%22%29%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Metodo%20print%20%28no%20hay%20cambio%20de%20linea%29%0A%20%20%20%20%20%20%20%20System.out.println%28%22Mi%20nombre%20es%20Bon%2C%20James%20Bon.%22%29%3B%20%20%20%20%20//%20Metodo%20println%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<div class="section" id="caracteres-especiales">
+<h4>Caracteres especiales<a class="headerlink" href="#caracteres-especiales" title="Permalink to this headline">¶</a></h4>
+<p>La siguiente tabla muestra algunas secuencias de escape las cuales permiten controlar la salida mostrada en pantalla.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Simbolo</p></th>
+<th class="text-align:left head"><p>Secuencia de escape</p></th>
+<th class="text-align:left head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
+<td class="text-align:left"><p>Nueva línea</p></td>
+<td class="text-align:left"><p>El cursor se mueve al inicio de la siguiente línea</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
+<td class="text-align:left"><p>Tabulador</p></td>
+<td class="text-align:left"><p>El cursor se mueve a la siguiente parada del tabulador</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\b</span></code></p></td>
+<td class="text-align:left"><p>Espacio de retroceso</p></td>
+<td class="text-align:left"><p>El cursor se mueve un espacio a la izquierda</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\r</span></code></p></td>
+<td class="text-align:left"><p>Retorno</p></td>
+<td class="text-align:left"><p>El cursor se mueve al inicio de la línea actual (no a la siguiente línea)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\\</span></code></p></td>
+<td class="text-align:left"><p>Diagonales invertidas</p></td>
+<td class="text-align:left"><p>Se imprime una diagonal inversa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\'</span></code></p></td>
+<td class="text-align:left"><p>Comilla simple</p></td>
+<td class="text-align:left"><p>Se imprime una comilla simple</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code></p></td>
+<td class="text-align:left"><p>Comilla doble</p></td>
+<td class="text-align:left"><p>Se imprimen comillas dobles</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo 4</strong>: Analice y comprenda la salida arrojada por el siguiente programa en java:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO4 {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello &quot; + &quot;World&quot;);
+        System.out.println(&quot;The value is: &quot; + 5);
+        System.out.println(&quot;The value is: &quot; + value);
+        System.out.println();
+        System.out.print(&quot;These are our top sellers:\n&quot;);
+        System.out.print(&quot;\tComputer games\n\tCoffee\n &quot;);
+        System.out.println(&quot;\tAspirin&quot;);
+        System.out.println();
+        System.out.println(&quot;We can join a string to &quot; +
+                           &quot;a number like this: &quot; + 5);
+        System.out.println();
+        System.out.println(&quot;The following will be printed &quot; +
+                           &quot;in a tabbed format: &quot; +
+                           &quot;\n\tFirst = &quot; + 5 * 6 + &quot;, &quot; +
+                           &quot;\n\tSecond = &quot; + (6 + 4) + &quot;,&quot; +
+                           &quot;\n\tThird = &quot; + 16.7 + &quot;.&quot;); 
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO4%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hello%20%22%20%2B%20%22World%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20value%20is%3A%20%22%20%2B%205%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20value%20is%3A%20%22%20%2B%20value%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.print%28%22These%20are%20our%20top%20sellers%3A%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.print%28%22%5CtComputer%20games%5Cn%5CtCoffee%5Cn%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22%5CtAspirin%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22We%20can%20join%20a%20string%20to%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22a%20number%20like%20this%3A%20%22%20%2B%205%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20following%20will%20be%20printed%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22in%20a%20tabbed%20format%3A%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtFirst%20%3D%20%22%20%2B%205%20%2A%206%20%2B%20%22%2C%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtSecond%20%3D%20%22%20%2B%20%286%20%2B%204%29%20%2B%20%22%2C%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtThird%20%3D%20%22%20%2B%2016.7%20%2B%20%22.%22%29%3B%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="formateando-la-salida">
+<h4>Formateando la salida<a class="headerlink" href="#formateando-la-salida" title="Permalink to this headline">¶</a></h4>
+<p>Recordemos la sintaxis de uso asociada a las funciones <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">FormatString</span><span class="p">,</span> <span class="n">ArgList</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Mediante el formateo de una salida, se puede obtener un mayor control sobre lo que se quiere mostrar a la salida. Antes de entrar en detalle a hablar del tema, observe las siguiente figuras:</p>
+<p><img alt="print1" src="../../_images/print1.jpg" /></p>
+<p><img alt="print2" src="../../_images/print2.jpg" /></p>
+<p><img alt="print3" src="../../_images/print3.jpg" /></p>
+<p><img alt="print4" src="../../_images/print4.jpg" /></p>
+<p>Si observa con detenimiento, hay una porción de la cadena que contiene el signo de <strong>%</strong> seguido de unos caracteres (Cerrado en circulo en las figuras anteriores), a esta se le conoce como <strong>especificador de formato y control</strong>. Un especificador de formato para uso general, carácter y tipos numéricos tiene la siguiente sintaxis:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">%[</span><span class="n">argument_index$</span><span class="o">][</span><span class="n">flags</span><span class="o">][</span><span class="n">width</span><span class="o">][</span><span class="p">.</span><span class="na">precision</span><span class="o">]</span><span class="n">conversion</span>
+</pre></div>
+</div>
+<p>Sobre la sintaxis anterior tenemos:</p>
+<ul class="simple">
+<li><p>Las expresiones entre corchetes son opcionales. Es decir, pueden o no aparecer en un especificador de formato.</p></li>
+<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">argument_index</span></code></strong> es un número entero (decimal), que indica la posición del argumento en la lista de argumentos.</p></li>
+<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">flags</span></code></strong> es un conjunto de caracteres que modifica el formato de salida. El conjunto de banderas válidas depende de la conversión.</p></li>
+<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">width</span></code></strong> es un número entero (decimal), que indica el número mínimo de caracteres que se escriben en la salida.</p></li>
+<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">precision</span></code></strong> es un número entero (decimal) que normalmente se usa para restringir el número de caracteres. El comportamiento específico depende de la conversión.</p></li>
+<li><p>La <strong><code class="docutils literal notranslate"><span class="pre">conversion</span></code></strong> requerida es de un carácter que indica cómo se debe formatear el argumento. El conjunto de conversiones válidas para un argumento dado depende del tipo de datos del argumento. La siguiente tabla muestra algunos de los caracteres empleados para conversión:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Caracter de conversion</p></th>
+<th class="text-align:left head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td class="text-align:left"><p>Cadena de caracteres</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">c</span></code></p></td>
+<td class="text-align:left"><p>Carácter sencillo</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></td>
+<td class="text-align:left"><p>Entero en formato de decimal</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
+<td class="text-align:left"><p>Punto flotante en formato en notación científica</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+<td class="text-align:left"><p>Punto flotante en formato en decimal</p></td>
+</tr>
+</tbody>
+</table>
+<p>Los siguientes ejemplos permiten entender el siguificado del formateo anteriormente expuesto:</p>
+<p><strong>Ejemplo 5</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO5 {
+    public static void main(String[] args) {
+        double horas = 34.45;
+        double tarifa = 15.00;
+        double tolerancia = 0.01000;
+        System.out.println(&quot;Notacion decimal fija:&quot;);
+        System.out.printf(&quot;horas = %.2f, tarifa = %.2f, pago = %.2f,&quot; + 
+                          &quot; tolerancia = %.2f\n\n&quot;, horas, tarifa, horas * tarifa, tolerancia);
+        System.out.println(&quot;Notacion cientifica:&quot;);
+        System.out.printf(&quot;horas = %e, tarifa = %e, pago = %e, \n&quot; + 
+                           &quot;tolerancia = %e\n&quot;,horas, tarifa, horas * tarifa, tolerancia);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO5%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20double%20horas%20%3D%2034.45%3B%0A%20%20%20%20%20%20%20%20double%20tarifa%20%3D%2015.00%3B%0A%20%20%20%20%20%20%20%20double%20tolerancia%20%3D%200.01000%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Notacion%20decimal%20fija%3A%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22horas%20%3D%20%25.2f%2C%20tarifa%20%3D%20%25.2f%2C%20pago%20%3D%20%25.2f%2C%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%20tolerancia%20%3D%20%25.2f%5Cn%5Cn%22%2C%20horas%2C%20tarifa%2C%20horas%20%2A%20tarifa%2C%20tolerancia%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Notacion%20cientifica%3A%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22horas%20%3D%20%25e%2C%20tarifa%20%3D%20%25e%2C%20pago%20%3D%20%25e%2C%20%5Cn%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22tolerancia%20%3D%20%25e%5Cn%22%2Choras%2C%20tarifa%2C%20horas%20%2A%20tarifa%2C%20tolerancia%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 6</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO6 {
+    public static void main(String[] args) {
+        final double PI = 3.14159265;
+        double radio = 12.67; 
+        double altura = 12.00;
+        
+        System.out.println(&quot;Dos cifras decimales: &quot;);
+        System.out.printf(&quot;radio = %.2f, &quot;
+                          + &quot;altura = %.2f, volumen = %.2f, &quot;
+                          + &quot;PI = %.2f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
+        
+        System.out.println(&quot;Tres cifras decimales: &quot;);
+        System.out.printf(&quot;radio = %.3f, &quot;
+                          + &quot;altura = %.3f, volumen = %.3f, &quot;
+                          + &quot;PI = %.3f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
+        
+        System.out.println(&quot;Cuatro cifras decimales: &quot;);
+        System.out.printf(&quot;radio = %.4f, &quot;
+                          + &quot;altura = %.4f, volumen = %.4f, &quot;
+                          + &quot;PI = %.4f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
+        
+        System.out.println(&quot;Diferentes cifras decimales: &quot;);
+        System.out.printf(&quot;radio = %.1f, &quot;
+                          + &quot;altura = %.2f, volumen = %.5f, &quot;
+                          + &quot;PI = %.4f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO6%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20final%20double%20PI%20%3D%203.14159265%3B%0A%20%20%20%20%20%20%20%20double%20radio%20%3D%2012.67%3B%20%0A%20%20%20%20%20%20%20%20double%20altura%20%3D%2012.00%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Dos%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.2f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.2f%2C%20volumen%20%3D%20%25.2f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.2f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Tres%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.3f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.3f%2C%20volumen%20%3D%20%25.3f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.3f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Cuatro%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.4f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.4f%2C%20volumen%20%3D%20%25.4f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.4f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Diferentes%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.1f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.2f%2C%20volumen%20%3D%20%25.5f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.4f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 7</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO7 {
+    public static void main(String[] args) {
+        int num = 96;
+        double tasa = 15.50;
+        System.out.println(&quot;123456789012345&quot;);
+        System.out.printf(&quot;%5d \n&quot;, num); 
+        System.out.printf(&quot;%5.2f \n&quot;, tasa); 
+        System.out.printf(&quot;%5d%6.2f \n&quot;, num, tasa);
+        System.out.printf(&quot;%5d%6.2f \n&quot;, num, tasa);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO7%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%2096%3B%0A%20%20%20%20%20%20%20%20double%20tasa%20%3D%2015.50%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22123456789012345%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%20%5Cn%22%2C%20num%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255.2f%20%5Cn%22%2C%20tasa%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%256.2f%20%5Cn%22%2C%20num%2C%20tasa%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%256.2f%20%5Cn%22%2C%20num%2C%20tasa%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 8</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO8 {
+    public static void main(String[] args) {
+        int num = 763; 
+        double x = 658.75; 
+        String str = &quot; Programa Java.&quot;;
+        System.out.println(&quot;1234567890123456789&quot; + 
+                           &quot;01234567890&quot;); 
+        System.out.printf(&quot;%5d%7.2f%15s\n&quot;, num, x, str); 
+        System.out.printf(&quot;%15s%6d%9.2f\n&quot;, str, num, x); 
+        System.out.printf(&quot;%8.2f%7d%15s\n&quot;, x, num, str); 
+        System.out.printf(&quot;num = %5d\n&quot;, num); 
+        System.out.printf(&quot;x = %10.2f\n&quot;, x); 
+        System.out.printf(&quot;str = %15s\n&quot;, str); 
+        System.out.printf(&quot;%10s%7d\n&quot;, &quot;Programa No.&quot;, 4);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO8%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%20763%3B%20%0A%20%20%20%20%20%20%20%20double%20x%20%3D%20658.75%3B%20%0A%20%20%20%20%20%20%20%20String%20str%20%3D%20%22%20Programa%20Java.%22%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%221234567890123456789%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2201234567890%22%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%257.2f%2515s%5Cn%22%2C%20num%2C%20x%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%2515s%256d%259.2f%5Cn%22%2C%20str%2C%20num%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%258.2f%257d%2515s%5Cn%22%2C%20x%2C%20num%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22num%20%3D%20%255d%5Cn%22%2C%20num%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22x%20%3D%20%2510.2f%5Cn%22%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22str%20%3D%20%2515s%5Cn%22%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%2510s%257d%5Cn%22%2C%20%22Programa%20No.%22%2C%204%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 9</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ExampleIO8 {
+    public static void main(String[] args) {
+        int num = 763; 
+        double x = 658.75; 
+        String str = &quot;Programa Java.&quot;; 
+        System.out.println(&quot;1234567890123456789&quot; + &quot;01234567890&quot;); 
+        System.out.printf(&quot;%-5d%7.2f%-15s *** \n&quot;, num, x, str); 
+        System.out.printf(&quot;%-15s%-6d%-9.2f *** \n&quot;, str, num, x); 
+        System.out.printf(&quot;%-8.2f%-7d%-15s *** \n&quot;, x, num, str); 
+        System.out.printf(&quot;num = %-5d ***\n&quot;,num); 
+        System.out.printf(&quot;x = %-10.2f ***\n&quot;, x); 
+        System.out.printf(&quot;str = %-15s ***\n&quot;, str); 
+        System.out.printf(&quot;%-10s%-7d ***\n&quot;, &quot;Programa No.&quot;, 4);
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO8%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%20763%3B%20%0A%20%20%20%20%20%20%20%20double%20x%20%3D%20658.75%3B%20%0A%20%20%20%20%20%20%20%20String%20str%20%3D%20%22Programa%20Java.%22%3B%20%0A%20%20%20%20%20%20%20%20System.out.println%28%221234567890123456789%22%20%2B%20%2201234567890%22%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-5d%257.2f%25-15s%20%2A%2A%2A%20%5Cn%22%2C%20num%2C%20x%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-15s%25-6d%25-9.2f%20%2A%2A%2A%20%5Cn%22%2C%20str%2C%20num%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-8.2f%25-7d%25-15s%20%2A%2A%2A%20%5Cn%22%2C%20x%2C%20num%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22num%20%3D%20%25-5d%20%2A%2A%2A%5Cn%22%2Cnum%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22x%20%3D%20%25-10.2f%20%2A%2A%2A%5Cn%22%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22str%20%3D%20%25-15s%20%2A%2A%2A%5Cn%22%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-10s%25-7d%20%2A%2A%2A%5Cn%22%2C%20%22Programa%20No.%22%2C%204%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entrada-en-java">
+<h2>Entrada en Java<a class="headerlink" href="#entrada-en-java" title="Permalink to this headline">¶</a></h2>
+<p>Pedimos disculpas. Sección en construcción…</p>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.oracle.com/ols/course-list/40805">https://learn.oracle.com/ols/course-list/40805</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/">https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/">https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/">https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/</a></p></li>
+<li><p><a class="reference external" href="https://codelabs.developers.google.com/">https://codelabs.developers.google.com/</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/classroom/quickstart/java">https://developers.google.com/classroom/quickstart/java</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/edu/python/introduction">https://developers.google.com/edu/python/introduction</a></p></li>
+<li><p><a class="reference external" href="http://docs.oracle.com/javase/tutorial/">http://docs.oracle.com/javase/tutorial/</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html">https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html</a></p></li>
+<li><p><a class="reference external" href="https://education.oracle.com/es/learning-explorer">https://education.oracle.com/es/learning-explorer</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="esqueleto.html" title="previous page">Estructura de un programa en Java</a>
+    <a class='right-next' id="next-link" href="../CH02_intro.html" title="next page">Capitulo 2 - Introduccion a la POO en Java</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Capitulo 2 - Introduccion a la POO en Java" href="../CH02_intro.html" />
+    <link rel="next" title="Entrada y salida en java" href="io_basica.html" />
     <link rel="prev" title="Capitulo 1 - Introduccion a Java" href="../CH01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -72,6 +72,8 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
@@ -103,6 +105,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
     </a>
    </li>
   </ul>
@@ -258,6 +265,23 @@
     <a class="reference internal nav-link" href="#operadores">
      4. Operadores
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operaciones-abreviadas">
+       Operaciones abreviadas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operadores-de-incremento-y-decremento">
+       Operadores de incremento y decremento
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prioridad-y-asociatividad">
+       Prioridad y asociatividad
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#expresiones-sentencias-y-bloques">
@@ -274,16 +298,45 @@
      7. Constantes
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-en-java">
+     8. String en java
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#declararacion-de-strings">
+       Declararación de Strings
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operador-en-los-strings">
+       Operador + en los Strings
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sobre-los-identificadores">
    Sobre los identificadores
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convenciones-en-java">
+     Convenciones en java
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#actividad-de-refuerzo">
    Actividad de refuerzo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
   </a>
  </li>
 </ul>
@@ -307,42 +360,40 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in c:\users\usuario\anaconda3\lib\site-packages (0.3.1)
 Requirement already satisfied: jupyter&gt;=1.0 in c:\users\usuario\anaconda3\lib\site-packages (from tutormagic) (1.0.0)
+Requirement already satisfied: qtconsole in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (5.1.0)
 Requirement already satisfied: jupyter-console in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.4.0)
 Requirement already satisfied: notebook in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.3.0)
-Requirement already satisfied: ipywidgets in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (7.6.3)
 Requirement already satisfied: ipykernel in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (5.5.5)
-Requirement already satisfied: qtconsole in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (5.1.0)
 Requirement already satisfied: nbconvert in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (6.1.0)
+Requirement already satisfied: ipywidgets in c:\users\usuario\anaconda3\lib\site-packages (from jupyter&gt;=1.0-&gt;tutormagic) (7.6.3)
 Requirement already satisfied: traitlets&gt;=4.1.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.0.5)
+Requirement already satisfied: ipython&gt;=5.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (7.22.0)
 Requirement already satisfied: tornado&gt;=4.2 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (6.1)
 Requirement already satisfied: jupyter-client in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (6.1.12)
-The tutormagic extension is already loaded. To reload it, use:
-  %reload_ext tutormagic
-Requirement already satisfied: ipython&gt;=5.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (7.22.0)
-Requirement already satisfied: pickleshare in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.0.17)
 Requirement already satisfied: pygments in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.9.0)
+Requirement already satisfied: pickleshare in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.5)
 Requirement already satisfied: setuptools&gt;=18.5 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (52.0.0.post20210125)
 Requirement already satisfied: decorator in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.0.9)
 Requirement already satisfied: jedi&gt;=0.16 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.17.2)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.0.17)
 Requirement already satisfied: colorama in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.4.4)
 Requirement already satisfied: backcall in c:\users\usuario\anaconda3\lib\site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.0)
 Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in c:\users\usuario\anaconda3\lib\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.0)
 Requirement already satisfied: wcwidth in c:\users\usuario\anaconda3\lib\site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.5)
 Requirement already satisfied: ipython-genutils in c:\users\usuario\anaconda3\lib\site-packages (from traitlets&gt;=4.1.0-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.2.0)
-Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.0.0)
-Requirement already satisfied: widgetsnbextension~=3.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.5.1)
 Requirement already satisfied: nbformat&gt;=4.2.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.5.1)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in c:\users\usuario\anaconda3\lib\site-packages (from ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.0.0)
 Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in c:\users\usuario\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.2.0)
 Requirement already satisfied: jupyter-core in c:\users\usuario\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (4.7.1)
 Requirement already satisfied: six&gt;=1.11.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.16.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.17.3)
 Requirement already satisfied: attrs&gt;=17.4.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (21.2.0)
-Requirement already satisfied: argon2-cffi in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (20.1.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in c:\users\usuario\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.17.3)
+Requirement already satisfied: prometheus-client in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.11.0)
 Requirement already satisfied: pyzmq&gt;=17 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (20.0.0)
 Requirement already satisfied: Send2Trash&gt;=1.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.5.0)
-Requirement already satisfied: prometheus-client in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.11.0)
 Requirement already satisfied: terminado&gt;=0.8.3 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.9.4)
+Requirement already satisfied: argon2-cffi in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (20.1.0)
 Requirement already satisfied: jinja2 in c:\users\usuario\anaconda3\lib\site-packages (from notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.0.1)
 Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\usuario\anaconda3\lib\site-packages (from jupyter-client-&gt;ipykernel-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.8.1)
 Requirement already satisfied: pywin32&gt;=1.0 in c:\users\usuario\anaconda3\lib\site-packages (from jupyter-core-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;jupyter&gt;=1.0-&gt;tutormagic) (227)
@@ -351,13 +402,13 @@ Requirement already satisfied: cffi&gt;=1.0.0 in c:\users\usuario\anaconda3\lib\
 Requirement already satisfied: pycparser in c:\users\usuario\anaconda3\lib\site-packages (from cffi&gt;=1.0.0-&gt;argon2-cffi-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.20)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\usuario\anaconda3\lib\site-packages (from jinja2-&gt;notebook-&gt;jupyter&gt;=1.0-&gt;tutormagic) (2.0.1)
 Requirement already satisfied: entrypoints&gt;=0.2.2 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.3)
-Requirement already satisfied: nbclient&lt;0.6.0,&gt;=0.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.3)
 Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.8.4)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.4.3)
-Requirement already satisfied: bleach in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.3.0)
-Requirement already satisfied: defusedxml in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.1)
-Requirement already satisfied: testpath in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.0)
 Requirement already satisfied: jupyterlab-pygments in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.1.2)
+Requirement already satisfied: bleach in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (3.3.0)
+Requirement already satisfied: testpath in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.0)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.4.3)
+Requirement already satisfied: defusedxml in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: nbclient&lt;0.6.0,&gt;=0.5.0 in c:\users\usuario\anaconda3\lib\site-packages (from nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.3)
 Requirement already satisfied: async-generator in c:\users\usuario\anaconda3\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.10)
 Requirement already satisfied: nest-asyncio in c:\users\usuario\anaconda3\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (1.5.1)
 Requirement already satisfied: webencodings in c:\users\usuario\anaconda3\lib\site-packages (from bleach-&gt;nbconvert-&gt;jupyter&gt;=1.0-&gt;tutormagic) (0.5.1)
@@ -384,21 +435,13 @@ Requirement already satisfied: qtpy in c:\users\usuario\anaconda3\lib\site-packa
 <p>Supongase que se desea realizar un programa en python que imprima en pantalla la frase <code class="docutils literal notranslate"><span class="pre">Hola</span> <span class="pre">mundo!!!</span></code>. A continuación se muestra el codigo que realiza esto:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -k
 print(&quot;Hola mundo&quot;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="350"
-    src="http://pythontutor.com/iframe-embed.html#code=print%28%22Hola%20mundo%22%29%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=3&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=print%28%22Hola%20mundo%22%29%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=3&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -406,7 +449,7 @@ print(&quot;Hola mundo&quot;)
 <p>En Java, las cosas cambian un poco. A continuación se muestra la forma como se haria el mismo programa anterior empleando lenguaje java</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
 
 public class HolaMundo {
     public static void main(String[] args) {
@@ -417,15 +460,7 @@ public class HolaMundo {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="350"
-    src="http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20HolaMundo%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20mundo%21%21%21%22%29%3B%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20HolaMundo%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20mundo%21%21%21%22%29%3B%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
 <p><strong>Observaciones importantes</strong>:</p>
 <ol class="simple">
@@ -754,13 +789,214 @@ public class Example4 {
 <div class="cell_output docutils container">
 <div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Example4%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22-----------%20Operador%20or%20%28%7C%29%20-----------%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28false%20%2B%20%22%20%7C%20%22%20%2B%20false%20%2B%20%22%20%3D%20%22%20%2B%20%28false%20%7C%20false%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28false%20%2B%20%22%20%7C%20%22%20%2B%20true%20%2B%20%22%20%3D%20%22%20%2B%20%28false%20%7C%20true%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28true%20%2B%20%22%20%7C%20%22%20%2B%20false%20%2B%20%22%20%3D%20%22%20%2B%20%28true%20%7C%20false%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28true%20%2B%20%22%20%7C%20%22%20%2B%20true%20%2B%20%22%20%3D%20%22%20%2B%20%28true%20%7C%20true%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22-----------%20Operador%20and%20%28%26%29%20-----------%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28false%20%2B%20%22%20%26%20%22%20%2B%20false%20%2B%20%22%20%3D%20%22%20%2B%20%28false%20%26%20false%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28false%20%2B%20%22%20%26%20%22%20%2B%20true%20%2B%20%22%20%3D%20%22%20%2B%20%28false%20%26%20true%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28true%20%2B%20%22%20%26%20%22%20%2B%20false%20%2B%20%22%20%3D%20%22%20%2B%20%28true%20%26%20false%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28true%20%2B%20%22%20%26%20%22%20%2B%20true%20%2B%20%22%20%3D%20%22%20%2B%20%28true%20%26%20true%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22-----------%20Operador%20not%20%28%21%29%20-----------%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22%21%22%20%2B%20false%20%2B%20%22%20%3D%20%22%20%2B%20%21%28false%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22%21%22%20%2B%20true%20%2B%20%22%20%3D%20%22%20%2B%20%21%28true%29%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
-<p><strong>OJO — FALTA</strong>: Colocar sobre los operadores:</p>
-<ul class="simple">
-<li><p>Abreviados.</p></li>
-<li><p>Operadores de post y preincremento.</p></li>
-<li><p>Prioridad y asociatividad.</p></li>
-<li><p>Datos tipo String</p></li>
-</ul>
+<div class="section" id="operaciones-abreviadas">
+<h4>Operaciones abreviadas<a class="headerlink" href="#operaciones-abreviadas" title="Permalink to this headline">¶</a></h4>
+<p>La siguiente tabla muestra los operadores escritos en forma abreviada:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Operador</p></th>
+<th class="text-align:left head"><p>Ejemplo</p></th>
+<th class="text-align:left head"><p>Equivalente</p></th>
+<th class="text-align:left head"><p>Valor de la variable despues de la operación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">5;</span></code></p></td>
+<td class="text-align:left"><p>Valor anterior de <code class="docutils literal notranslate"><span class="pre">x</span></code> mas <code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">-=</span> <span class="pre">2;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">-</span> <span class="pre">2;</span></code></p></td>
+<td class="text-align:left"><p>Valor anterior de <code class="docutils literal notranslate"><span class="pre">y</span></code> menos <code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">*=</span> <span class="pre">2;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z</span> <span class="pre">*</span> <span class="pre">10;</span></code></p></td>
+<td class="text-align:left"><p>Valor anterior de <code class="docutils literal notranslate"><span class="pre">z</span></code> multiplicado por <code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">/=</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/=</span> <span class="pre">b;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">/</span> <span class="pre">b;</span></code></p></td>
+<td class="text-align:left"><p>Valor anterior de <code class="docutils literal notranslate"><span class="pre">a</span></code> divido por <code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">%=</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">%=</span> <span class="pre">3;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">%</span> <span class="pre">3;</span></code></p></td>
+<td class="text-align:left"><p>Residuo de la division entre elvalor anterior de <code class="docutils literal notranslate"><span class="pre">c</span></code> y <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="operadores-de-incremento-y-decremento">
+<h4>Operadores de incremento y decremento<a class="headerlink" href="#operadores-de-incremento-y-decremento" title="Permalink to this headline">¶</a></h4>
+<p>Estos operadores permiten de manera abreviada incrementar o disminuir el valor de una variable en <code class="docutils literal notranslate"><span class="pre">1</span></code>. La siguiente tabla permite comprender su funcionamiento:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Nombre</p></th>
+<th class="text-align:left head"><p>Operador</p></th>
+<th class="text-align:left head"><p>Significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Pre-incremento</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">++variable</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">=</span> <span class="pre">variable</span> <span class="pre">+</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Post-incremento</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable++</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">=</span> <span class="pre">variable</span> <span class="pre">+</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Pre-decremento</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--variable</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">=</span> <span class="pre">variable</span> <span class="pre">-</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Post-incremento</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable--</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">=</span> <span class="pre">variable</span> <span class="pre">-</span> <span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class IncDec {
+    public static void main(String[] args) {
+        int i = 0, j = 0;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 0, j = 0
+        i++;
+        j--;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j); // i = 1, j = -1
+        ++i;
+        --j;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j); // i = 2, j = -2
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20IncDec%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20i%20%3D%200%2C%20j%20%3D%200%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%200%2C%20j%20%3D%200%0A%20%20%20%20%20%20%20%20i%2B%2B%3B%0A%20%20%20%20%20%20%20%20j--%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22j%20%3D%20%22%20%2B%20j%29%3B%20//%20i%20%3D%201%2C%20j%20%3D%20-1%0A%20%20%20%20%20%20%20%20%2B%2Bi%3B%0A%20%20%20%20%20%20%20%20--j%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22j%20%3D%20%22%20%2B%20j%29%3B%20//%20i%20%3D%202%2C%20j%20%3D%20-2%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p>Como se puede ver en el ejemplo anterior, tanto un incremento como un decremento de una variable implica la modificación de esta en 1. El efecto real de cuando una operacion es pre o post se ve cuando hay una asignación en la variable tal y como se muestra en la siguiente tabla:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Operación</p></th>
+<th class="text-align:left head"><p>Significado</p></th>
+<th class="text-align:left head"><p>Observaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">++i</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> <br> <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i</span></code></p></td>
+<td class="text-align:left"><p>Incremento primero, asignación despues</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i++</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i</span></code> <br> <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>Asignación primero, incremento despues</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">--i</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">1</span></code> <br> <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i</span></code></p></td>
+<td class="text-align:left"><p>Decremento primero, asignación despues</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i--</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">i</span></code> <br> <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>Asignación primero, decremento despues</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class IncDec2 {
+    public static void main(String[] args) {
+        int i = 0, j = 0;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 0, j = 0
+        System.out.println(&quot;j = ++i &quot;);
+        j = ++i;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 1, j = 1
+        System.out.println(&quot;j = i++ &quot;);
+        j = i++;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 2, j = 1
+        System.out.println(&quot;j = --i &quot;);
+        j = --i;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 1, j = 1
+        System.out.println(&quot;j = i-- &quot;);
+        j = i--;
+        System.out.println(&quot;i = &quot; + i + &quot;, j = &quot; + j);  // i = 0, j = 1
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20IncDec2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20i%20%3D%200%2C%20j%20%3D%200%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22%2C%20j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%200%2C%20j%20%3D%200%0A%20%20%20%20%20%20%20%20System.out.println%28%22j%20%3D%20%2B%2Bi%20%22%29%3B%0A%20%20%20%20%20%20%20%20j%20%3D%20%2B%2Bi%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22%2C%20j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%201%2C%20j%20%3D%201%0A%20%20%20%20%20%20%20%20System.out.println%28%22j%20%3D%20i%2B%2B%20%22%29%3B%0A%20%20%20%20%20%20%20%20j%20%3D%20i%2B%2B%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22%2C%20j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%202%2C%20j%20%3D%201%0A%20%20%20%20%20%20%20%20System.out.println%28%22j%20%3D%20--i%20%22%29%3B%0A%20%20%20%20%20%20%20%20j%20%3D%20--i%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22%2C%20j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%201%2C%20j%20%3D%201%0A%20%20%20%20%20%20%20%20System.out.println%28%22j%20%3D%20i--%20%22%29%3B%0A%20%20%20%20%20%20%20%20j%20%3D%20i--%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22i%20%3D%20%22%20%2B%20i%20%2B%20%22%2C%20j%20%3D%20%22%20%2B%20j%29%3B%20%20//%20i%20%3D%200%2C%20j%20%3D%201%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Pregunta</strong>: Suponga que se tienen las siguientes instrucciones:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="o">++</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>¿Cuales son los valores finales de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p>
+</div>
+<div class="section" id="prioridad-y-asociatividad">
+<h4>Prioridad y asociatividad<a class="headerlink" href="#prioridad-y-asociatividad" title="Permalink to this headline">¶</a></h4>
+<p>En la siguiente tabla, podemos observar una lista de los operadores básicos en el lenguaje Java y su precedencia. En la tabla los operadores están por orden de precedencia de arriba abajo y de izquierda a derecha, de mayor a menor precedencia.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Operadores</p></th>
+<th class="text-align:left head"><p>Precedencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Postfix</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">expr++</span></code> <code class="docutils literal notranslate"><span class="pre">expr--</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Unitario</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">++expr</span></code> <code class="docutils literal notranslate"><span class="pre">--expr</span></code> <code class="docutils literal notranslate"><span class="pre">+expr</span></code> <code class="docutils literal notranslate"><span class="pre">-expr</span></code>  <code class="docutils literal notranslate"><span class="pre">~</span></code>  <code class="docutils literal notranslate"><span class="pre">!</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Multiplicativo</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*</span></code> <code class="docutils literal notranslate"><span class="pre">/</span></code> <code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Aditivo</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Shift</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Relacional (lógico)</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> <code class="docutils literal notranslate"><span class="pre">instanceof</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Igualdad (lógico)</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">==</span></code> <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Bitwise AND</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Bitwise exclusive OR</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Bitwise OR</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">|</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>AND lógico</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>OR lógico</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">||</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Ternario</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">?</span> <span class="pre">:</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Asignación</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">+=</span></code> <code class="docutils literal notranslate"><span class="pre">-=</span></code> <code class="docutils literal notranslate"><span class="pre">*=</span></code> <code class="docutils literal notranslate"><span class="pre">/=</span></code> <code class="docutils literal notranslate"><span class="pre">%=</span></code> <code class="docutils literal notranslate"><span class="pre">&amp;=</span></code> <code class="docutils literal notranslate"><span class="pre">^=</span></code> <code class="docutils literal notranslate"><span class="pre">|=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;=</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="expresiones-sentencias-y-bloques">
 <h3>5. Expresiones, Sentencias y Bloques<a class="headerlink" href="#expresiones-sentencias-y-bloques" title="Permalink to this headline">¶</a></h3>
@@ -948,6 +1184,100 @@ public class Example8 {
 </div>
 <p>Por convención las constantes se declaran con mayusculas.</p>
 </div>
+<div class="section" id="string-en-java">
+<h3>8. String en java<a class="headerlink" href="#string-en-java" title="Permalink to this headline">¶</a></h3>
+<p>Una <strong>cadena de caracteres</strong> es una secuencia de caracteres de cualquier tipo. En el caso de Java, las cadenas de caracteres se definen empleando la clase <strong>String</strong>.</p>
+<p>Internamente, una variable del tipo <strong>String</strong>  contiene un arreglo (o array) de caracteres, es decir, de variables tipo <strong>char</strong>. Supongamos que ejecutamos la siguiente instruccion:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">cadena</span><span class="p">;</span>
+<span class="n">cadena</span> <span class="o">=</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Entonces el arreglo de caracteres equivalente será:</p>
+<p><img alt="string" src="../../_images/string.jpg" /></p>
+<p>En Java, el tipo <strong>String</strong>  no es un tipo de datos primitivo, sino una clase y por lo tanto tendrá atributos y métodos. Para conocer en detalle sobre esta clase, puede consultar el siguiente link <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">Class String</a> en el <a class="reference external" href="https://docs.oracle.com/javase/8/docs/">API de Java</a>.</p>
+<p>Por ahora, sin entrar a profundizar en un String como clase, nos vamos a limitar a ver algunos aspectos de utilidad para lo que necesitamos.</p>
+<div class="section" id="declararacion-de-strings">
+<h4>Declararación de Strings<a class="headerlink" href="#declararacion-de-strings" title="Permalink to this headline">¶</a></h4>
+<p>Para declarar un string se emplea la siguiente sintaxis:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">stringName</span> <span class="o">&lt;=</span> <span class="n">initValue</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Como se puede observar anteriormente, la inicialización de un String es opcional. Veamos algunos ejemplos</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Declaración sin inicializar */</span>
+<span class="n">String</span> <span class="n">inquilino1</span><span class="p">;</span>             <span class="c1">// Declaracion</span>
+<span class="n">inquilino1</span> <span class="o">=</span> <span class="s">&quot;Ramon Valdez&quot;</span><span class="p">;</span>   <span class="c1">// Asignacion</span>
+
+<span class="cm">/* Declaración inicializando */</span>
+<span class="n">String</span> <span class="n">inquilino2</span> <span class="o">=</span> <span class="s">&quot;Ramon Valdez&quot;</span><span class="p">;</span> <span class="c1">// Declaracion e inicializacion</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operador-en-los-strings">
+<h4>Operador + en los Strings<a class="headerlink" href="#operador-en-los-strings" title="Permalink to this headline">¶</a></h4>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">+</span></code> se emplea para concatenar strings (de manera similar a python). A continuación se muestran algunos ejemplos de uso:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">&quot;Hello &quot;</span> <span class="o">+</span> <span class="s">&quot;World&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s">&quot;The value is: &quot;</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s">&quot;The value is: &quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">;</span>
+<span class="n">str4</span> <span class="o">=</span> <span class="s">&quot;The value is: &quot;</span> <span class="o">+</span> <span class="sc">&#39;\n&#39;</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A diferencia de python, en Java, la concatenación de Strings permite manejar varios tipos de datos. Por ejemplo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;a + b = &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; + &quot;</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Veamos algunos ejemplos.</p>
+<p><strong>Ejemplo 9</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Example9 {
+    public static void main(String[] args) {
+        String nombre, nombreCompleto;
+        String apellido = &quot;Pérez&quot;;
+        nombre = &quot;Pepito&quot;;
+        nombreCompleto = nombre + &quot; &quot; + apellido;
+        System.out.println(nombreCompleto); // Imprime Pepito Pérez   
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Example9%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20String%20nombre%2C%20nombreCompleto%3B%0A%20%20%20%20%20%20%20%20String%20apellido%20%3D%20%22P%C3%A9rez%22%3B%0A%20%20%20%20%20%20%20%20nombre%20%3D%20%22Pepito%22%3B%0A%20%20%20%20%20%20%20%20nombreCompleto%20%3D%20nombre%20%2B%20%22%20%22%20%2B%20apellido%3B%0A%20%20%20%20%20%20%20%20System.out.println%28nombreCompleto%29%3B%20//%20Imprime%20Pepito%20P%C3%A9rez%20%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Ejemplo 10</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Example10 {
+    public static void main(String[] args) {    
+        int manzanas = 20;
+        String mensaje = &quot;Hoy vendimos &quot; + manzanas + &quot; manzanas.&quot;;
+        System.out.println(mensaje);
+        System.out.println(&quot;Este es un ensayo &quot; +
+                   &quot;que usa + para escribir un mensaje largo &quot; +
+                   &quot;en varias lineas.&quot;);
+
+        System.out.println(&quot;The following will be printed &quot; +
+                   &quot;in a tabbed format: &quot; +
+                   &quot;\n\tFirst = &quot; + 5 * 6 + &quot;, &quot; +
+                   &quot;\n\tSecond = &quot; + (6 + 4) + &quot;,&quot; +
+                   &quot;\n\tThird = &quot; + 16.7 + &quot;.&quot;); 
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Example10%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%0A%20%20%20%20%20%20%20%20int%20manzanas%20%3D%2020%3B%0A%20%20%20%20%20%20%20%20String%20mensaje%20%3D%20%22Hoy%20vendimos%20%22%20%2B%20manzanas%20%2B%20%22%20manzanas.%22%3B%0A%20%20%20%20%20%20%20%20System.out.println%28mensaje%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Este%20es%20un%20ensayo%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22que%20usa%20%2B%20para%20escribir%20un%20mensaje%20largo%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22en%20varias%20lineas.%22%29%3B%0A%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20following%20will%20be%20printed%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22in%20a%20tabbed%20format%3A%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtFirst%20%3D%20%22%20%2B%205%20%2A%206%20%2B%20%22%2C%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtSecond%20%3D%20%22%20%2B%20%286%20%2B%204%29%20%2B%20%22%2C%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtThird%20%3D%20%22%20%2B%2016.7%20%2B%20%22.%22%29%3B%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="sobre-los-identificadores">
 <h2>Sobre los identificadores<a class="headerlink" href="#sobre-los-identificadores" title="Permalink to this headline">¶</a></h2>
@@ -958,13 +1288,31 @@ public class Example8 {
 <li><p>Se recomiendan palabras auto-descriptivas que no sean una palabra reservada del lenguaje (que se pueden conocer en la referencia de Java).</p></li>
 <li><p>Para el nombrado de variables, se recomienda la notación camel-case, es decir: Si el nombre consta de una sola palabra, dicha palabra se escribe toda en minúsculas, si son dos o más palabras, se escribe la primera palabra toda en minúsculas, y las palabras subsecuentes, en minúscula, pero con la primera letra en mayúscula, así:  frecuencia, telefono, direccionResidencia, cambioTraseroActual.</p></li>
 </ul>
+<div class="section" id="convenciones-en-java">
+<h3>Convenciones en java<a class="headerlink" href="#convenciones-en-java" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Los nombres de las variables deben comenzar con una letra minúscula y luego cambiar al título en mayúsculas. Ejemplo:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">caTaxRate</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Los nombres de las clases deben estar en mayúsculas y minúsculas. Sin embargo, a diferencia de las variables primitivas empezaran en mayuscula:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BigLittle</span> <span class="p">{</span>
+   <span class="c1">// Codigo de la clase...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Finalmente, una regla general para nombrar variables y clases es que, con algunas excepciones, es que sus nombres tienden a ser sustantivos o frases nominales. Para mas información sobre las concenciones de nombrado puede consultar el link <a class="reference external" href="http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html">Naming Conventions</a>.</p>
+</div>
 </div>
 <div class="section" id="actividad-de-refuerzo">
 <h2>Actividad de refuerzo<a class="headerlink" href="#actividad-de-refuerzo" title="Permalink to this headline">¶</a></h2>
 <p>Analizar los codigos propuestos a continuación (tomados del siguiente <a class="reference external" href="http://pythontutor.com/java.html#mode=edit">link</a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
 public class Variables {
    public static void main(String[] args) {
       String me = &quot;me&quot;;
@@ -984,19 +1332,11 @@ public class Variables {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="350"
-    src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20tmp%20%3D%20me%3B%0A%20%20%20%20%20%20me%20%3D%20you%3B%0A%20%20%20%20%20%20you%20%3D%20tmp%3B%0A%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20tmp%20%3D%20me%3B%0A%20%20%20%20%20%20me%20%3D%20you%3B%0A%20%20%20%20%20%20you%20%3D%20tmp%3B%0A%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
 
 public class Strings {
    public static void main(String[] args) { 
@@ -1016,16 +1356,23 @@ public class Strings {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="350"
-    src="http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Strings%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%0A%20%20%20%20%20%20String%20a%20%3D%20%22Hello%2C%20world%21%22%3B%0A%20%20%20%20%20%20String%20b%20%3D%20%22Hello%2C%20world%21%21%22.substring%280%2C%2013%29%3B%0A%20%20%20%20%20%20String%20c%20%3D%20%22Hello%2C%20%22%3B%0A%20%20%20%20%20%20c%20%2B%3D%20%22world%21%22%3B%0A%20%20%20%20%20%20String%20d%20%3D%20%22Hello%2C%20w%22%2B%22orld%21%22%3B%20//%20constant%20expr%2C%20interned%0A%20%20%20%20%20%20String%20e%20%3D%20a.substring%280%2C%2013%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20b%29%20%2B%20%22%20%22%20%2B%20a.equals%28b%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20c%29%20%2B%20%22%20%22%20%2B%20a.equals%28c%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20d%29%20%2B%20%22%20%22%20%2B%20a.equals%28d%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20e%29%20%2B%20%22%20%22%20%2B%20a.equals%28e%29%29%3B%0A%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20Strings%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%0A%20%20%20%20%20%20String%20a%20%3D%20%22Hello%2C%20world%21%22%3B%0A%20%20%20%20%20%20String%20b%20%3D%20%22Hello%2C%20world%21%21%22.substring%280%2C%2013%29%3B%0A%20%20%20%20%20%20String%20c%20%3D%20%22Hello%2C%20%22%3B%0A%20%20%20%20%20%20c%20%2B%3D%20%22world%21%22%3B%0A%20%20%20%20%20%20String%20d%20%3D%20%22Hello%2C%20w%22%2B%22orld%21%22%3B%20//%20constant%20expr%2C%20interned%0A%20%20%20%20%20%20String%20e%20%3D%20a.substring%280%2C%2013%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20b%29%20%2B%20%22%20%22%20%2B%20a.equals%28b%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20c%29%20%2B%20%22%20%22%20%2B%20a.equals%28c%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20d%29%20%2B%20%22%20%22%20%2B%20a.equals%28d%29%29%3B%0A%20%20%20%20%20%20System.out.println%28%28a%20%3D%3D%20e%29%20%2B%20%22%20%22%20%2B%20a.equals%28e%29%29%3B%0A%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.oracle.com/ols/course-list/40805">https://learn.oracle.com/ols/course-list/40805</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/">https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/">https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/</a></p></li>
+<li><p><a class="reference external" href="https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/">https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/</a></p></li>
+<li><p><a class="reference external" href="https://codelabs.developers.google.com/">https://codelabs.developers.google.com/</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/classroom/quickstart/java">https://developers.google.com/classroom/quickstart/java</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/edu/python/introduction">https://developers.google.com/edu/python/introduction</a></p></li>
+<li><p><a class="reference external" href="http://docs.oracle.com/javase/tutorial/">http://docs.oracle.com/javase/tutorial/</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html">https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html</a></p></li>
+<li><p><a class="reference external" href="https://education.oracle.com/es/learning-explorer">https://education.oracle.com/es/learning-explorer</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -1055,7 +1402,7 @@ public class Strings {
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../CH01_intro.html" title="previous page">Capitulo 1 - Introduccion a Java</a>
-    <a class='right-next' id="next-link" href="../CH02_intro.html" title="next page">Capitulo 2 - Introduccion a la POO en Java</a>
+    <a class='right-next' id="next-link" href="io_basica.html" title="next page">Entrada y salida en java</a>
 
         </div>
         

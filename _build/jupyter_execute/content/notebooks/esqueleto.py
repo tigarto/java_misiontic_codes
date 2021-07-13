@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[1]:
 
 
 get_ipython().system('pip3 install tutormagic')
 get_ipython().run_line_magic('load_ext', 'tutormagic')
 
 
-# In[14]:
+# In[3]:
 
 
 import warnings
@@ -23,20 +23,20 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 # 
 # Supongase que se desea realizar un programa en python que imprima en pantalla la frase ```Hola mundo!!!```. A continuación se muestra el codigo que realiza esto:
 
-# In[15]:
+# In[4]:
 
 
-get_ipython().run_cell_magic('tutor', '', 'print("Hola mundo")')
+get_ipython().run_cell_magic('tutor', '-k', 'print("Hola mundo")')
 
 
 # ## Estructura de un programa en Java
 # 
 # En Java, las cosas cambian un poco. A continuación se muestra la forma como se haria el mismo programa anterior empleando lenguaje java
 
-# In[17]:
+# In[15]:
 
 
-get_ipython().run_cell_magic('tutor', '-l java', '\npublic class HolaMundo {\n    public static void main(String[] args) {\n        System.out.println("Hola mundo!!!");        \n    }\n}')
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class HolaMundo {\n    public static void main(String[] args) {\n        System.out.println("Hola mundo!!!");        \n    }\n}')
 
 
 # **Observaciones importantes**:
@@ -218,11 +218,79 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example3 {\n
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example4 {\n    public static void main(String[] args) {\n        System.out.println("----------- Operador or (|) -----------");\n        System.out.println(false + " | " + false + " = " + (false | false));\n        System.out.println(false + " | " + true + " = " + (false | true));\n        System.out.println(true + " | " + false + " = " + (true | false));\n        System.out.println(true + " | " + true + " = " + (true | true));\n        System.out.println("----------- Operador and (&) -----------");\n        System.out.println(false + " & " + false + " = " + (false & false));\n        System.out.println(false + " & " + true + " = " + (false & true));\n        System.out.println(true + " & " + false + " = " + (true & false));\n        System.out.println(true + " & " + true + " = " + (true & true));\n        System.out.println("----------- Operador not (!) -----------");\n        System.out.println("!" + false + " = " + !(false));\n        System.out.println("!" + true + " = " + !(true));\n    }\n}')
 
 
-# **OJO --- FALTA**: Colocar sobre los operadores:
-# * Abreviados.
-# * Operadores de post y preincremento.
-# * Prioridad y asociatividad. 
-# * Datos tipo String
+# #### Operaciones abreviadas
+# 
+# La siguiente tabla muestra los operadores escritos en forma abreviada:
+# 
+# |Operador |Ejemplo | Equivalente | Valor de la variable despues de la operación |
+# |:---|:---|:---|:---|
+# |```+=```|```x += 5;```|```x = x + 5;```|Valor anterior de ```x``` mas ```5```|
+# |```-=```|```y -= 2;```|```y = y - 2;```|Valor anterior de ```y``` menos ```2```|
+# |```*=```|```z *= 2;```|```z = z * 10;```|Valor anterior de ```z``` multiplicado por ```10```|
+# |```/=```|```a /= b;```|```a = a / b;```|Valor anterior de ```a``` divido por ```b```|
+# |```%=```|```c %= 3;```|```c = c % 3;```|Residuo de la division entre elvalor anterior de ```c``` y ```3```|
+# 
+# #### Operadores de incremento y decremento
+# 
+# Estos operadores permiten de manera abreviada incrementar o disminuir el valor de una variable en ```1```. La siguiente tabla permite comprender su funcionamiento:
+# 
+# |Nombre|Operador|Significado|
+# |:---|:---|:---|
+# |Pre-incremento|```++variable```|```variable = variable + 1```|
+# |Post-incremento|```variable++```|```variable = variable + 1```|
+# |Pre-decremento|```--variable```|```variable = variable - 1```|
+# |Post-incremento|```variable--```|```variable = variable - 1```|
+
+# In[7]:
+
+
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class IncDec {\n    public static void main(String[] args) {\n        int i = 0, j = 0;\n        System.out.println("i = " + i + ", j = " + j);  // i = 0, j = 0\n        i++;\n        j--;\n        System.out.println("i = " + i + ", j = " + j); // i = 1, j = -1\n        ++i;\n        --j;\n        System.out.println("i = " + i + ", j = " + j); // i = 2, j = -2\n    }\n}')
+
+
+# Como se puede ver en el ejemplo anterior, tanto un incremento como un decremento de una variable implica la modificación de esta en 1. El efecto real de cuando una operacion es pre o post se ve cuando hay una asignación en la variable tal y como se muestra en la siguiente tabla:
+# 
+# |Operación|Significado|Observaciones|
+# |:---|:---|:---|
+# |```j = ++i```|```i = i + 1``` <br> ```j = i```|Incremento primero, asignación despues|
+# |```j = i++```|```j = i``` <br> ```i = i + 1```|Asignación primero, incremento despues|
+# |```j = --i```|```i = i - 1``` <br> ```j = i```|Decremento primero, asignación despues|
+# |```j = i--```|```j = i``` <br> ```i = i - 1```|Asignación primero, decremento despues|
+
+# In[10]:
+
+
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class IncDec2 {\n    public static void main(String[] args) {\n        int i = 0, j = 0;\n        System.out.println("i = " + i + ", j = " + j);  // i = 0, j = 0\n        System.out.println("j = ++i ");\n        j = ++i;\n        System.out.println("i = " + i + ", j = " + j);  // i = 1, j = 1\n        System.out.println("j = i++ ");\n        j = i++;\n        System.out.println("i = " + i + ", j = " + j);  // i = 2, j = 1\n        System.out.println("j = --i ");\n        j = --i;\n        System.out.println("i = " + i + ", j = " + j);  // i = 1, j = 1\n        System.out.println("j = i-- ");\n        j = i--;\n        System.out.println("i = " + i + ", j = " + j);  // i = 0, j = 1\n    }\n}')
+
+
+# **Pregunta**: Suponga que se tienen las siguientes instrucciones:
+# 
+# ```java
+# a = 5;
+# b = 2 + (++a);
+# ```
+# 
+# ¿Cuales son los valores finales de ```a``` y ```b```?
+
+# #### Prioridad y asociatividad
+# 
+# En la siguiente tabla, podemos observar una lista de los operadores básicos en el lenguaje Java y su precedencia. En la tabla los operadores están por orden de precedencia de arriba abajo y de izquierda a derecha, de mayor a menor precedencia.
+# 
+# |Operadores	|Precedencia|
+# |:---|:---|
+# |Postfix|```expr++``` ```expr--```|
+# |Unitario|```++expr``` ```--expr``` ```+expr``` ```-expr```  ```~```  ```!```|
+# |Multiplicativo|```*``` ```/``` ```%```|
+# |Aditivo|```+``` ```-```|
+# |Shift|```>>``` ```<<``` ```>>>```|
+# |Relacional (lógico)|```<``` ```>``` ```<=``` ```>=``` ```instanceof```|
+# |Igualdad (lógico)|```==``` ```!=```|
+# |Bitwise AND|```&```|
+# |Bitwise exclusive OR|```^```|
+# |Bitwise OR|```|```|
+# |AND lógico|```&&```|
+# |OR lógico|```||```|
+# |Ternario|```? :```|
+# |Asignación|```=``` ```+=``` ```-=``` ```*=``` ```/=``` ```%=``` ```&=``` ```^=``` ```|=``` ```<<=``` ```>>=``` ```>>>=```|
 
 # ### 5. Expresiones, Sentencias y Bloques
 # 
@@ -342,6 +410,82 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example8 {\n
 # 
 # Por convención las constantes se declaran con mayusculas.
 
+# ### 8. String en java
+# 
+# Una **cadena de caracteres** es una secuencia de caracteres de cualquier tipo. En el caso de Java, las cadenas de caracteres se definen empleando la clase **String**.
+# 
+# Internamente, una variable del tipo **String**  contiene un arreglo (o array) de caracteres, es decir, de variables tipo **char**. Supongamos que ejecutamos la siguiente instruccion:
+# 
+# ```java
+# String cadena;
+# cadena ="Hola mundo";
+# ```
+# 
+# Entonces el arreglo de caracteres equivalente será:
+# 
+# ![string](esqueleto/string.jpg)
+# 
+# En Java, el tipo **String**  no es un tipo de datos primitivo, sino una clase y por lo tanto tendrá atributos y métodos. Para conocer en detalle sobre esta clase, puede consultar el siguiente link [Class String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) en el [API de Java](https://docs.oracle.com/javase/8/docs/).
+# 
+# Por ahora, sin entrar a profundizar en un String como clase, nos vamos a limitar a ver algunos aspectos de utilidad para lo que necesitamos. 
+# 
+# #### Declararación de Strings
+# 
+# Para declarar un string se emplea la siguiente sintaxis:
+# 
+# ```java
+# String stringName <= initValue>;
+# ```
+# 
+# Como se puede observar anteriormente, la inicialización de un String es opcional. Veamos algunos ejemplos
+# 
+# ```java
+# /* Declaración sin inicializar */
+# String inquilino1;             // Declaracion
+# inquilino1 = "Ramon Valdez";   // Asignacion
+# 
+# /* Declaración inicializando */
+# String inquilino2 = "Ramon Valdez"; // Declaracion e inicializacion
+# ```
+# 
+# #### Operador + en los Strings
+# 
+# El operador ```+``` se emplea para concatenar strings (de manera similar a python). A continuación se muestran algunos ejemplos de uso:
+# 
+# ```java
+# int value = 10;
+# String str1 = "Hello " + "World";
+# String str2, str3, str4;
+# str2 = "The value is: " + 5;
+# str3 = "The value is: " + value;
+# str4 = "The value is: " + '\n' + 5);
+# ```
+# 
+# A diferencia de python, en Java, la concatenación de Strings permite manejar varios tipos de datos. Por ejemplo:
+# 
+# ```java
+# int a = 3, b = 4, c;
+# String str = "a + b = " + a + " + " + b + " = " + (a + b));
+# ```
+# 
+# Veamos algunos ejemplos.
+
+# **Ejemplo 9**
+
+# In[5]:
+
+
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example9 {\n    public static void main(String[] args) {\n        String nombre, nombreCompleto;\n        String apellido = "Pérez";\n        nombre = "Pepito";\n        nombreCompleto = nombre + " " + apellido;\n        System.out.println(nombreCompleto); // Imprime Pepito Pérez   \n    }\n}')
+
+
+# **Ejemplo 10**
+
+# In[9]:
+
+
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example10 {\n    public static void main(String[] args) {    \n        int manzanas = 20;\n        String mensaje = "Hoy vendimos " + manzanas + " manzanas.";\n        System.out.println(mensaje);\n        System.out.println("Este es un ensayo " +\n                   "que usa + para escribir un mensaje largo " +\n                   "en varias lineas.");\n\n        System.out.println("The following will be printed " +\n                   "in a tabbed format: " +\n                   "\\n\\tFirst = " + 5 * 6 + ", " +\n                   "\\n\\tSecond = " + (6 + 4) + "," +\n                   "\\n\\tThird = " + 16.7 + "."); \n    }\n}')
+
+
 # ## Sobre los identificadores
 # 
 # A la hora de nombrar las variables en Java (esto incluye nombres de variables, arreglos y objetos) se debe tener en cuenta lo siguiente:
@@ -349,22 +493,53 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Example8 {\n
 # * El nombre de una variable puede ser un identificador alfanumérico que empiece por una letra, el signo ```$```  o guion bajo (```_```). No se permiten espacios en blanco.
 # * Se recomiendan palabras auto-descriptivas que no sean una palabra reservada del lenguaje (que se pueden conocer en la referencia de Java).
 # * Para el nombrado de variables, se recomienda la notación camel-case, es decir: Si el nombre consta de una sola palabra, dicha palabra se escribe toda en minúsculas, si son dos o más palabras, se escribe la primera palabra toda en minúsculas, y las palabras subsecuentes, en minúscula, pero con la primera letra en mayúscula, así:  frecuencia, telefono, direccionResidencia, cambioTraseroActual.
+# 
+# ### Convenciones en java
+# 
+# * Los nombres de las variables deben comenzar con una letra minúscula y luego cambiar al título en mayúsculas. Ejemplo:
+# 
+# ```java
+# int caTaxRate;
+# ```
+# 
+# * Los nombres de las clases deben estar en mayúsculas y minúsculas. Sin embargo, a diferencia de las variables primitivas empezaran en mayuscula:
+# 
+# ```java
+# public class BigLittle {
+#    // Codigo de la clase...
+# }
+# ```
+# 
+# Finalmente, una regla general para nombrar variables y clases es que, con algunas excepciones, es que sus nombres tienden a ser sustantivos o frases nominales. Para mas información sobre las concenciones de nombrado puede consultar el link [Naming Conventions](http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html).
 
 # ## Actividad de refuerzo
 # 
 # Analizar los codigos propuestos a continuación (tomados del siguiente [link](http://pythontutor.com/java.html#mode=edit)):
 
-# In[36]:
+# In[12]:
 
 
-get_ipython().run_cell_magic('tutor', '-l java', 'public class Variables {\n   public static void main(String[] args) {\n      String me = "me";\n      String you = "you";\n      String tmp = me;\n      me = you;\n      you = tmp;\n\n      int x = 5;\n      int y = 10;\n      int t = x;\n      x = y;\n      y = t;\n   }\n}')
+get_ipython().run_cell_magic('tutor', '-l java -k', 'public class Variables {\n   public static void main(String[] args) {\n      String me = "me";\n      String you = "you";\n      String tmp = me;\n      me = you;\n      you = tmp;\n\n      int x = 5;\n      int y = 10;\n      int t = x;\n      x = y;\n      y = t;\n   }\n}')
 
 
-# In[38]:
+# In[11]:
 
 
-get_ipython().run_cell_magic('tutor', '-l java', '\npublic class Strings {\n   public static void main(String[] args) { \n      String a = "Hello, world!";\n      String b = "Hello, world!!".substring(0, 13);\n      String c = "Hello, ";\n      c += "world!";\n      String d = "Hello, w"+"orld!"; // constant expr, interned\n      String e = a.substring(0, 13);\n      System.out.println((a == b) + " " + a.equals(b));\n      System.out.println((a == c) + " " + a.equals(c));\n      System.out.println((a == d) + " " + a.equals(d));\n      System.out.println((a == e) + " " + a.equals(e));\n   }\n}')
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Strings {\n   public static void main(String[] args) { \n      String a = "Hello, world!";\n      String b = "Hello, world!!".substring(0, 13);\n      String c = "Hello, ";\n      c += "world!";\n      String d = "Hello, w"+"orld!"; // constant expr, interned\n      String e = a.substring(0, 13);\n      System.out.println((a == b) + " " + a.equals(b));\n      System.out.println((a == c) + " " + a.equals(c));\n      System.out.println((a == d) + " " + a.equals(d));\n      System.out.println((a == e) + " " + a.equals(e));\n   }\n}')
 
+
+# ## Referencias 
+# 
+# * https://learn.oracle.com/ols/course-list/40805
+# * https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/
+# * https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/
+# * https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/
+# * https://codelabs.developers.google.com/
+# * https://developers.google.com/classroom/quickstart/java
+# * https://developers.google.com/edu/python/introduction
+# * http://docs.oracle.com/javase/tutorial/
+# * https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html
+# * https://education.oracle.com/es/learning-explorer
 
 # In[ ]:
 

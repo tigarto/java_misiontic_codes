@@ -8,4 +8,5 @@ chapters:
 - file: content/CH01_intro
   sections:
   - file: "content/notebooks/esqueleto.ipynb"
+  - file: "content/notebooks/io_basica.ipynb"
 - file: content/CH02_intro

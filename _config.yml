@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Ejemplos Java
-logo: images/logo.png
+logo: content/images/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -22,3 +22,6 @@ html:
 launch_buttons:
   binderhub_url: ""
   colab_url: https://colab.research.google.com
+
+repository:
+  url: https://github.com/tigarto/java_misiontic_codes
