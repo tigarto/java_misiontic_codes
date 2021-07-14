@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 get_ipython().system('pip3 install tutormagic')
 get_ipython().run_line_magic('load_ext', 'tutormagic')
 
 
-# In[5]:
+# In[3]:
 
 
 import warnings
@@ -212,20 +212,238 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ExampleIO8 {
 
 # ## Entrada en Java
 # 
-# Pedimos disculpas. Sección en construcción...
+# Para leer datos desde el teclado se usa la clase **```Scanner```**. Esta clase se encuentre definida en **```java.util```**, es necesario importarla agregando la siguiente sentencia en el código fuente:
+# 
+# ```java
+# import java.util.Scanner;
+# ```
+# 
+# La clase ```Scanner``` trabaja con ```System.in```. 
+# 
+# ### Uso de la clase Scanner
+# 
+# A continuación se detallan los pasos necesarios para entrar datos por teclado mediante la clase ```Scanner```:
+# 1. Instanciar un objeto de la clase ```Scanner```:
+# 
+# ```java
+# Scanner keyboard = new Scanner (System.in);
+# ```
+# 
+# 2. Hacer uso de los diferentes métodos de la ```Scanner``` a traves del objeto creado para tal fin. Por ejemplo, si lo que se deseara es entrar los datos asociados a un nombre el código seria el siguiente:
+# 
+# ```java
+# System.out.print("¿Cual es su nombre?");
+# String nombre;
+# nombre = keyboard.nextLine();
+# ```
+# 
+# La clase ```Scanner``` usa métodos diferentes para ingresar los datos según el tipo al que pertenecen. La siguiente tabla muestra como llevar a cabo esto:
+# 
+# |Método | Ejemplo y descripción |
+# |:---|:---|
+# |```nextByte```|**Ejemplo de uso**: <br> ```byte x;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a byte value: ");``` <br>  ```x = keyboard.nextByte();``` <br> <br> **Descripción**: Devuelve una entrada como ```byte```|
+# |```nextDouble```|**Ejemplo de uso**: <br> ```double number;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a double value: ");``` <br>  ```number = keyboard.nextDouble();``` <br> <br> **Descripción**: Retorna una entrada como ```double```|
+# |```nextFloat```|**Ejemplo de uso**: <br> ```float number;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a float value: ");``` <br>  ```number = keyboard.nextFloat();``` <br> <br> **Descripción**: Retorna una entrada como ```float```|
+# |```nextInt```|**Ejemplo de uso**: <br> ```int number;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a int value: ");``` <br>  ```number = keyboard.nextInt();``` <br> <br> **Descripción**: Retorna una entrada como ```int```|
+# |```nextLine```|**Ejemplo de uso**: <br> ```String name;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter your name: ");``` <br>  ```number = keyboard.nextLine();``` <br> <br> **Descripción**: Retorna una entrada como ```String```|
+# |```nextLong```|**Ejemplo de uso**: <br> ```long number;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a long value: ");``` <br>  ```number = keyboard.nextLong();``` <br> <br> **Descripción**: Retorna una entrada como ```long```|
+# |```nextShort```|**Ejemplo de uso**: <br> ```short number;``` <br>  ```Scanner keyboard = new Scanner(System.in);``` <br>  ```System.out.print("Enter a short value: ");``` <br>  ```number = keyboard.nextShort();``` <br> <br> **Descripción**: Retorna una entrada como ```short```|
+# 
+# Para aterrizar esto, miremos un programa que ilustre como se entra datos empleando **java** y **python**.
+
+# **Ejemplo 10**: Elabore un algoritmo que lea el nuombre de una persona y que imprima el mensaje Hola seguido del nombre de la persona.
+
+# **Python**
+
+# In[5]:
+
+
+nom = input("Digite su nombre: ")
+print("Hola " + nom)
+
+
+# **Java** 
+# 
+# ```java
+# import java.util.Scanner;
+# 
+# public class ExampleIO10 {
+#     public static void main(String[] args) {
+#         String nom;
+#         System.out.print("Digite su nombre: ");
+#         Scanner teclado = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
+#         nom = teclado.nextLine();     
+#         System.out.println("Hola " + nom);
+#     }
+# }
+# ```
+
+# **Ejemplo 11**: Elabore un algoritmo que lea el nombre de una persona, la estatura (en cm) y el peso (en kg) y que muestre los datos leidos y la relacion estatura peso (IMC: Indice de masa corporal) cuya formula es:
+# 
+# $IMC=\frac{peso}{estatura^2}$
+# 
+# **Python**
+
+# In[9]:
+
+
+peso = float(input("Digite el peso (en kg): "))
+estatura = float(input("Digite la estatura (en cm): "))
+estatura /= 100
+IMC = peso/estatura**2 
+print("IMC: " + str(IMC))
+
+
+# **Java** 
+# 
+# ```java
+# import java.util.Scanner;
+# import java.lang.Math;
+# 
+# public class ExampleIO11 {
+#     public static void main(String[] args) {
+#         // Declaracion de variables y objetos
+#         double peso, estatura, IMC;
+#         Scanner keyboard = new Scanner(System.in);  
+#         
+#         // Programa
+#         System.out.print("Digite el peso (en kg): ");
+#         peso = keyboard.nextDouble();
+#         System.out.print("Digite la estatura (en cm): ");
+#         estatura = keyboard.nextDouble();
+#         estatura /= 100;
+#         IMC = peso/Math.pow(estatura, 2);     
+#         System.out.println("IMC: " + IMC);
+#     }
+# }
+# ```
+
+# **Ejemplo 12**: Elabore un algoritmo que lea los datos enteros correspondientes a los catetos de un triangulo rectangulo y que calcule en imprima el valor de la hipotenusa de dicho triangulo.
+# 
+# **Python**
+
+# In[11]:
+
+
+import math
+
+cat1 = int(input("Digite el cateto 1: "))
+cat2 = int(input("Digite el cateto 2: "))
+hip = math.sqrt(math.pow(cat1, 2) + math.pow(cat2, 2))
+print("La hipotenusa es:",hip)
+
+
+# **Java**
+# 
+# ```java
+# import java.util.Scanner;
+# import java.lang.Math;
+# 
+# public class ExampleIO12 {
+#     public static void main(String[] args) {
+#         // Declaracion de variables y objetos
+#         int cat1, cat2;
+#         double hip;
+#         Scanner entrada = new Scanner(System.in);  
+#         
+#         // Programa
+#         System.out.print("Digite el cateto 1: ");
+#         cat1 = entrada.nextInt();
+#         System.out.print("Digite el cateto 2: ");
+#         cat2 = entrada.nextInt();
+#         
+#         hip = Math.sqrt(Math.pow(cat1, 2) + Math.pow(cat2, 2));   
+#         System.out.println("La hipotenisa es: " + hip);
+#     }
+# }
+# ```
+
+# **Ejemplo 13**: Elabore un algoritmo que solicite un numero de dos digitos y que devuelva como salida el numero invertido. Por ejemplo, si el usuario ingresa 23, el programa deberá mostrar 32.
+
+# In[16]:
+
+
+num = int(input("Digite un numero entero de 2 digitos: "))
+dec = num//10
+unid = num%10
+numInv = unid*10 + dec
+print("-> Respuesta:", numInv)
+
+
+# **Java**
+# 
+# ```java
+# import java.util.Scanner;
+# import java.lang.Math;
+# 
+# public class ExampleIO13 {
+#     public static void main(String[] args) {
+#         // Declaracion de variables y objetos
+#         int dec, unid, num, numInv;
+#         Scanner key = new Scanner(System.in);  
+#         dec = num/10;
+#         unid = num%10;
+#         numInv = unid*10 + dec;
+#         // Programa
+#         System.out.print("-> Respuesta: " + numInv);
+#     }
+# }
+# ```
+
+# **Ejemplo 14**: Ejecute y analice el siguiente programa hecho en **java**:
+# 
+# ```java
+# import java.util.*;
+# 
+# public class ExampleIO14 {
+#     public static void main(String[] args) {
+#         Scanner consola = new Scanner(System.in);
+#         int pies;
+#         int pulgadas;
+#         
+#         System.out.println("Ingrese dos enteros separados por espacios.");
+#         pies = consola.nextInt();
+#         pulgadas = consola.nextInt();
+#         
+#         System.out.println("pies = " + pies);
+#         System.out.println("pulgadas = " + pulgadas);
+#     }
+# }
+# ```
+
+# **Ejemplo 15**: Ejecute y analice el siguiente programa hecho en **java**:
+# 
+# ```java
+# import java.util.*;
+# 
+# public class ExampleIO15 {
+#     public static void main(String[] args) {
+#         Scanner console = new Scanner(System.in);
+#         String nombre;
+#         String apellido;
+#         int edad;
+#         double peso;
+#         
+#         System.out.println("Ingrese apellido, nombre,"
+#                            + "edad y peso separados "
+#                            + "por espacios.");
+#         nombre = console.nextLine();
+#         apellido = console.nextLine();
+#         edad = console.nextInt();
+#         peso = console.nextDouble();
+#         
+#         System.out.println("Nombre: " + nombre + " " + apellido);
+#         System.out.println("Edad: " + edad);
+#         System.out.println("Peso: " + peso);
+#     }
+# }
+# ```
 
 # ## Referencias 
 # 
-# * https://learn.oracle.com/ols/course-list/40805
-# * https://developer.ibm.com/es/languages/java/tutorials/j-introtojava1/
-# * https://developer.ibm.com/es/languages/java/tutorials/j-perry-writing-good-java-code/
-# * https://developer.ibm.com/es/languages/java/tutorials/java-language-constructs-1/
-# * https://codelabs.developers.google.com/
-# * https://developers.google.com/classroom/quickstart/java
-# * https://developers.google.com/edu/python/introduction
-# * http://docs.oracle.com/javase/tutorial/
-# * https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html
-# * https://education.oracle.com/es/learning-explorer
+# * https://www.browxy.com/
+# * https://www.jdoodle.com/
+# * https://www.browxy.com/
 
 # In[ ]:
 
