@@ -49,8 +49,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Capitulo 2 - Introduccion a la POO en Java" href="../CH02_intro.html" />
@@ -245,32 +243,30 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#salida-en-pantalla-en-java">
-     2. Salida en pantalla en Java
+    <a class="reference internal nav-link" href="#id1">
+     2. Condicional simple.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condicional-multiple">
+     3. Condicional múltiple
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#caracteres-especiales">
-       Caracteres especiales
+      <a class="reference internal nav-link" href="#a-implementacion-con-condicionales-anidados">
+       a. Implementación con condicionales anidados
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#formateando-la-salida">
-       Formateando la salida
+      <a class="reference internal nav-link" href="#b-implementacion-mediante-la-estructura-de-seleccion-multiple-if-else-if-else">
+       b. Implementacion mediante la estructura de selección multiple (if-else if-else)
       </a>
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#entrada-en-java">
-   Entrada en Java
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uso-de-la-clase-scanner">
-     Uso de la clase Scanner
+    <a class="reference internal nav-link" href="#estructura-switch">
+     4. Estructura switch
     </a>
    </li>
   </ul>
@@ -463,7 +459,8 @@
 <ol class="simple">
 <li><p>Condicional simple.</p></li>
 <li><p>Condicional doble.</p></li>
-<li><p>Condicional multiple</p></li>
+<li><p>Condicional multiple.</p></li>
+<li><p>Estructura switch.</p></li>
 </ol>
 <div class="section" id="condicional-simple">
 <h3>1. Condicional simple.<a class="headerlink" href="#condicional-simple" title="Permalink to this headline">¶</a></h3>
@@ -478,652 +475,636 @@
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p>Python</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condicion:</span></code><br>  <code class="docutils literal notranslate"><span class="pre">#Instruciones</span> <span class="pre">verdadero</span></code><br>  <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>  <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">2</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">...</span></code>  <br><code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">N</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condicion:</span></code><br>   <code class="docutils literal notranslate"><span class="pre">#Instruciones</span> <span class="pre">verdadero</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate"><span class="pre">...</span></code>   <br><code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">N</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Java</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(condicion)</span> <span class="pre">{</span></code><br>   <code class="docutils literal notranslate"><span class="pre">//Instruciones</span> <span class="pre">verdadero</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate">&#160; <span class="pre">...</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">N</span></code><br><code class="docutils literal notranslate"><span class="pre">}</span></code></p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="salida-en-pantalla-en-java">
-<h3>2. Salida en pantalla en Java<a class="headerlink" href="#salida-en-pantalla-en-java" title="Permalink to this headline">¶</a></h3>
-<p>El dispositivo de salida estándar suele ser un monitor. En Java la salida en el dispositivo de salida estándar se efectúa empleando el objeto de salida estándar <code class="docutils literal notranslate"><span class="pre">System.out</span></code>. El objeto <code class="docutils literal notranslate"><span class="pre">System.out</span></code> tiene acceso a dos métodos, <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code>, para dar salida a una cadena en el dispositivo de salida estándar.</p>
-<p>La forma general empleada para mostrar algo en consola se muestra a continuación:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">FormatString</span><span class="p">,</span> <span class="n">ArgList</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Donde:</p>
-<ul class="simple">
-<li><p><strong>FormatString</strong>: String que contiene texto y/o espeficidadores de formato especiales.</p></li>
-<li><p><strong>ArgList</strong>: Es una lista de argumentos adicionales que seran formateados de acuerdo a los especificadores de formato listadoa en el argumento pasado como <code class="docutils literal notranslate"><span class="pre">FormatString</span></code>.</p></li>
-</ul>
-<p>Es importante aclarar sintaxis anterior tambien aplica al método <code class="docutils literal notranslate"><span class="pre">println</span></code>. La diferencia entre los metodos <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code> radica en que el último método agrega un enter al final de la cadena desplegada en la pantalla.</p>
-<p>Para comprender como es la salida en pantalla en java, realicemos una comparación con el caso de python mediante una serie de ejemplos.</p>
-<p><strong>Ejemplo 1</strong>: Dado el siguiente código python:</p>
+<p>Para comprender el uso de estructuras condicionales en python, observemos el siguiente ejemplo.</p>
+<p><strong>Ejemplo 1</strong>
+Hacer un programa que solicite el valor de un producto de tal manera que si su valor es mayor o igual a 1000000, se le hace un incremento por IVA del 19 %.</p>
+<p><strong>Código python</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adios mundo cruel&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adios mundo cruel
-</pre></div>
-</div>
-</div>
-</div>
-<p>¿Como es su implementacion en java?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IVA</span> <span class="o">=</span> <span class="mf">0.19</span>
+<span class="n">imp</span> <span class="o">=</span> <span class="mi">0</span>
 
-public class ExampleIO1 {
-    public static void main(String[] args) {
-        System.out.println(&quot;Adios mundo cruel&quot;);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO1%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Adios%20mundo%20cruel%22%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-<p><strong>Ejemplo 2</strong>: Dado el siguiente código python:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">29</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola que tal?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 + 7&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 + 7 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span><span class="p">))</span>   <span class="c1"># print(&quot;4 + 7 =&quot;,(4 + 7)) </span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola </span><span class="se">\n</span><span class="s2">que tal?&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.25
-Hola que tal?
-12
-4 + 7
-11
-A
-4 + 7 = 11
-17
-Hola 
-que tal?
-</pre></div>
-</div>
-</div>
-</div>
-<p>La implementación en java es:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+<span class="c1"># Entrada de datos</span>
+<span class="n">precio_base</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese el precio del articulo: $&quot;</span><span class="p">))</span>
 
-public class ExampleIO2 {
-    public static void main(String[] args) {
-        System.out.println(&quot;Adios mundo cruel&quot;);
-        System.out.println(29/4);
-        System.out.println(&quot;Hola que tal?&quot;);
-        System.out.println(12);
-        System.out.println(&quot;4 + 7&quot;);
-        System.out.println(4 + 7);
-        System.out.println(&#39;A&#39;);
-        System.out.println(&quot;4 + 7 = &quot; + (4 + 7));
-        System.out.println(2 + 3*5);
-        System.out.println(&quot;Hola \nque tal?&quot;);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO2%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Adios%20mundo%20cruel%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%2829/4%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20que%20tal%3F%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%2812%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%224%20%2B%207%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%284%20%2B%207%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%27A%27%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%224%20%2B%207%20%3D%20%22%20%2B%20%284%20%2B%207%29%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%282%20%2B%203%2A5%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hola%20%5Cnque%20tal%3F%22%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-<p><strong>Ejemplo 3</strong>: Dado el siguiente código python:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola que tal. &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi nombre es Bon, James Bon.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola que tal. Mi nombre es Bon, James Bon.
-</pre></div>
-</div>
-</div>
-</div>
-<p>La implementación en código java se muestra a continuación:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+<span class="c1"># Calculo del impuesto y el precio neto</span>
+<span class="k">if</span> <span class="n">precio_base</span> <span class="o">&gt;=</span> <span class="mi">1000000</span><span class="p">:</span>
+    <span class="n">imp</span> <span class="o">=</span> <span class="n">IVA</span><span class="o">*</span><span class="n">precio_base</span>
+<span class="n">precio_neto</span> <span class="o">=</span> <span class="n">precio_base</span> <span class="o">+</span> <span class="n">imp</span>
 
-public class ExampleIO3 {
-    public static void main(String[] args) {
-        System.out.print(&quot;Hola que tal. &quot;);                     // Metodo print (no hay cambio de linea)
-        System.out.println(&quot;Mi nombre es Bon, James Bon.&quot;);     // Metodo println  
-    }
-}
+<span class="c1"># Despliegue de los resultados</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;******** Colilla de pago ********&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;+ Subtotal -&gt; &quot;</span><span class="p">,</span> <span class="n">precio_base</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;+ Impuesto -&gt; &quot;</span><span class="p">,</span> <span class="n">imp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;+    Total -&gt; &quot;</span><span class="p">,</span><span class="n">precio_neto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*********************************&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO3%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.print%28%22Hola%20que%20tal.%20%22%29%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Metodo%20print%20%28no%20hay%20cambio%20de%20linea%29%0A%20%20%20%20%20%20%20%20System.out.println%28%22Mi%20nombre%20es%20Bon%2C%20James%20Bon.%22%29%3B%20%20%20%20%20//%20Metodo%20println%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese el precio del articulo: $500
+
+******** Colilla de pago ********
++ Subtotal -&gt;  500
++ Impuesto -&gt;  0
+---------------------------------
++    Total -&gt;  500
+*********************************
+</pre></div>
 </div>
-<div class="section" id="caracteres-especiales">
-<h4>Caracteres especiales<a class="headerlink" href="#caracteres-especiales" title="Permalink to this headline">¶</a></h4>
-<p>La siguiente tabla muestra algunas secuencias de escape las cuales permiten controlar la salida mostrada en pantalla.</p>
+</div>
+</div>
+<p><strong>Código java</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArticuloIVA</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Variables</span>
+        <span class="kd">final</span> <span class="kt">float</span> <span class="n">IVA</span> <span class="o">=</span> <span class="mf">0.19f</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">imp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">precioBase</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">precioNeto</span><span class="p">;</span>
+        
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
+        
+        <span class="c1">// Entrada de datos</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Ingrese el precio del articulo: &quot;</span><span class="p">);</span>
+        <span class="n">precioBase</span> <span class="o">=</span> <span class="n">in</span><span class="p">.</span><span class="na">nextFloat</span><span class="p">();</span>    
+        
+        <span class="c1">// Calculo del impuesto y el precio neto</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">precioBase</span> <span class="o">&gt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">imp</span> <span class="o">=</span> <span class="n">IVA</span><span class="o">*</span><span class="n">precioBase</span><span class="p">;</span>
+            <span class="n">precioNeto</span> <span class="o">=</span> <span class="n">preciBase</span> <span class="o">+</span> <span class="n">imp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// Despliegue de los resultados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;******** Colilla de pago ********&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+ Subtotal -&gt; &quot;</span> <span class="o">+</span> <span class="n">precioBase</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+ Impuesto -&gt; &quot;</span> <span class="o">+</span> <span class="n">imp</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;---------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;+    Total -&gt; &quot;</span> <span class="o">+</span> <span class="n">precioNeto</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*********************************&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>2. Condicional simple.<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>En este tipo de estructura condicional es la forma mas comúnmente usada. Para este caso se manejan dos alternativas de ejecución dependiendo del resultado de evaluar la condición.</p>
+<p><img alt="if-else" src="../../_images/if-else.jpg" /></p>
+<p>A continuación se muestra una comparación de la sintaxis de java con la de python:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Simbolo</p></th>
-<th class="text-align:left head"><p>Secuencia de escape</p></th>
-<th class="text-align:left head"><p>Descripción</p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Lenguaje</p></th>
+<th class="text-align:left head"><p>Sintaxis</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
-<td class="text-align:left"><p>Nueva línea</p></td>
-<td class="text-align:left"><p>El cursor se mueve al inicio de la siguiente línea</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Python</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condicion:</span></code><br>   <code class="docutils literal notranslate"><span class="pre">#Instruciones</span> <span class="pre">verdadero</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate"><span class="pre">...</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">N</span></code><br><code class="docutils literal notranslate"><span class="pre">else:</span></code><br>   <code class="docutils literal notranslate"><span class="pre">#Instruciones</span> <span class="pre">falso</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate"><span class="pre">...</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">M</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
-<td class="text-align:left"><p>Tabulador</p></td>
-<td class="text-align:left"><p>El cursor se mueve a la siguiente parada del tabulador</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\b</span></code></p></td>
-<td class="text-align:left"><p>Espacio de retroceso</p></td>
-<td class="text-align:left"><p>El cursor se mueve un espacio a la izquierda</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\r</span></code></p></td>
-<td class="text-align:left"><p>Retorno</p></td>
-<td class="text-align:left"><p>El cursor se mueve al inicio de la línea actual (no a la siguiente línea)</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\\</span></code></p></td>
-<td class="text-align:left"><p>Diagonales invertidas</p></td>
-<td class="text-align:left"><p>Se imprime una diagonal inversa</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\'</span></code></p></td>
-<td class="text-align:left"><p>Comilla simple</p></td>
-<td class="text-align:left"><p>Se imprime una comilla simple</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code></p></td>
-<td class="text-align:left"><p>Comilla doble</p></td>
-<td class="text-align:left"><p>Se imprimen comillas dobles</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Java</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(condicion)</span> <span class="pre">{</span></code><br>   <code class="docutils literal notranslate"><span class="pre">//</span> <span class="pre">Instruciones</span> <span class="pre">verdadero</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate">&#160; <span class="pre">...</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">N</span></code><br><code class="docutils literal notranslate"><span class="pre">}</span></code><br><code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">{</span></code><br>    <code class="docutils literal notranslate"><span class="pre">//Instruciones</span> <span class="pre">falso</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">1</span></code><br>   <code class="docutils literal notranslate"><span class="pre">instruccion</span> <span class="pre">2</span></code><br>    <code class="docutils literal notranslate"><span class="pre">...</span></code><br>   <code class="docutils literal notranslate">&#160; <span class="pre">instruccion</span> <span class="pre">M</span></code><br><code class="docutils literal notranslate"><span class="pre">}</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Ejemplo 4</strong>: Analice y comprenda la salida arrojada por el siguiente programa en java:</p>
+<p>Para comprender el uso de la estructura anterior, miremos el siguiente ejemplo.</p>
+<p><strong>Ejemplo 2</strong>:</p>
+<p>Hacer solicite el nombre y la edad de una persona e indique si esta es mayor o menor de edad.</p>
+<p><strong>Código python</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada de datos</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;-&gt; Digite su nombre por favor: &#39;</span><span class="p">)</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;-&gt; Digite su edad por favor: &#39;</span><span class="p">))</span>
 
-public class ExampleIO4 {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello &quot; + &quot;World&quot;);
-        System.out.println(&quot;The value is: &quot; + 5);
-        System.out.println(&quot;The value is: &quot; + value);
-        System.out.println();
-        System.out.print(&quot;These are our top sellers:\n&quot;);
-        System.out.print(&quot;\tComputer games\n\tCoffee\n &quot;);
-        System.out.println(&quot;\tAspirin&quot;);
-        System.out.println();
-        System.out.println(&quot;We can join a string to &quot; +
-                           &quot;a number like this: &quot; + 5);
-        System.out.println();
-        System.out.println(&quot;The following will be printed &quot; +
-                           &quot;in a tabbed format: &quot; +
-                           &quot;\n\tFirst = &quot; + 5 * 6 + &quot;, &quot; +
-                           &quot;\n\tSecond = &quot; + (6 + 4) + &quot;,&quot; +
-                           &quot;\n\tThird = &quot; + 16.7 + &quot;.&quot;); 
-    }
-}
+<span class="c1"># Validación de la edad</span>
+<span class="k">if</span> <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot; usted es un anciano&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot; usted es un culicagao&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO4%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Hello%20%22%20%2B%20%22World%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20value%20is%3A%20%22%20%2B%205%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20value%20is%3A%20%22%20%2B%20value%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.print%28%22These%20are%20our%20top%20sellers%3A%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.print%28%22%5CtComputer%20games%5Cn%5CtCoffee%5Cn%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22%5CtAspirin%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22We%20can%20join%20a%20string%20to%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22a%20number%20like%20this%3A%20%22%20%2B%205%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22The%20following%20will%20be%20printed%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22in%20a%20tabbed%20format%3A%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtFirst%20%3D%20%22%20%2B%205%20%2A%206%20%2B%20%22%2C%20%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtSecond%20%3D%20%22%20%2B%20%286%20%2B%204%29%20%2B%20%22%2C%22%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5Cn%5CtThird%20%3D%20%22%20%2B%2016.7%20%2B%20%22.%22%29%3B%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-</div>
-<div class="section" id="formateando-la-salida">
-<h4>Formateando la salida<a class="headerlink" href="#formateando-la-salida" title="Permalink to this headline">¶</a></h4>
-<p>Recordemos la sintaxis de uso asociada a las funciones <code class="docutils literal notranslate"><span class="pre">print</span></code> y <code class="docutils literal notranslate"><span class="pre">println</span></code></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">FormatString</span><span class="p">,</span> <span class="n">ArgList</span><span class="p">);</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; Digite su nombre por favor: kiko
+-&gt; Digite su edad por favor: 8
+kiko usted es un culicagao
 </pre></div>
 </div>
-<p>Mediante el formateo de una salida, se puede obtener un mayor control sobre lo que se quiere mostrar a la salida. Antes de entrar en detalle a hablar del tema, observe las siguiente figuras:</p>
-<p><img alt="print1" src="../../_images/print1.jpg" /></p>
-<p><img alt="print2" src="../../_images/print2.jpg" /></p>
-<p><img alt="print3" src="../../_images/print3.jpg" /></p>
-<p><img alt="print4" src="../../_images/print4.jpg" /></p>
-<p>Si observa con detenimiento, hay una porción de la cadena que contiene el signo de <strong>%</strong> seguido de unos caracteres (Cerrado en circulo en las figuras anteriores), a esta se le conoce como <strong>especificador de formato y control</strong>. Un especificador de formato para uso general, carácter y tipos numéricos tiene la siguiente sintaxis:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">%[</span><span class="n">argument_index$</span><span class="o">][</span><span class="n">flags</span><span class="o">][</span><span class="n">width</span><span class="o">][</span><span class="p">.</span><span class="na">precision</span><span class="o">]</span><span class="n">conversion</span>
+</div>
+</div>
+<p><strong>Código java</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Edad</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Variables</span>
+        <span class="n">String</span> <span class="n">nom</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">edad</span><span class="p">;</span>
+
+
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
+
+        <span class="c1">// Entrada de datos</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;-&gt; Digite su nombre por favor: &quot;</span><span class="p">);</span>
+        <span class="n">nom</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">next</span><span class="p">();</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;-&gt; Digite su edad por favor: &quot;</span><span class="p">);</span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="c1">// Validación de la edad</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span> <span class="o">+</span> <span class="s">&quot; usted es un anciano&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span> <span class="o">+</span> <span class="s">&quot; usted es un culicagao&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Sobre la sintaxis anterior tenemos:</p>
-<ul class="simple">
-<li><p>Las expresiones entre corchetes son opcionales. Es decir, pueden o no aparecer en un especificador de formato.</p></li>
-<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">argument_index</span></code></strong> es un número entero (decimal), que indica la posición del argumento en la lista de argumentos.</p></li>
-<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">flags</span></code></strong> es un conjunto de caracteres que modifica el formato de salida. El conjunto de banderas válidas depende de la conversión.</p></li>
-<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">width</span></code></strong> es un número entero (decimal), que indica el número mínimo de caracteres que se escriben en la salida.</p></li>
-<li><p>La opción <strong><code class="docutils literal notranslate"><span class="pre">precision</span></code></strong> es un número entero (decimal) que normalmente se usa para restringir el número de caracteres. El comportamiento específico depende de la conversión.</p></li>
-<li><p>La <strong><code class="docutils literal notranslate"><span class="pre">conversion</span></code></strong> requerida es de un carácter que indica cómo se debe formatear el argumento. El conjunto de conversiones válidas para un argumento dado depende del tipo de datos del argumento. La siguiente tabla muestra algunos de los caracteres empleados para conversión:</p></li>
-</ul>
+</div>
+<div class="section" id="condicional-multiple">
+<h3>3. Condicional múltiple<a class="headerlink" href="#condicional-multiple" title="Permalink to this headline">¶</a></h3>
+<p>Cuando lo que se desea es evaluar es mas de dos alternativas es necesario implementar una estructura condicional multiple. La forma de esta estructura se muestra en el siguiente diagrama de flujo.</p>
+<p><img alt="if-elif-else" src="../../_images/if-elif-else.jpg" /></p>
+<p>Para solucionar problema de selección multiple se pueden usar 2 formas:</p>
+<p>a. Estructuras de decisión anidadas (if-else) <br>
+b. Empleando la estructura de selección multiple (if-elsif-else)</p>
+<div class="section" id="a-implementacion-con-condicionales-anidados">
+<h4>a. Implementación con condicionales anidados<a class="headerlink" href="#a-implementacion-con-condicionales-anidados" title="Permalink to this headline">¶</a></h4>
+<p>Consisten en evaluar una condición dentro de una condición previamente evaluada. A continuación se muestra una comparación de la sintaxis de java con la de python:</p>
+<p><strong>Python</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condicion</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Instruciones condicion 1 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span>
+    <span class="n">instruccion</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion</span> <span class="n">C1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">condicion</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Instruciones condicion 2 verdadero</span>
+        <span class="n">instruccion</span> <span class="mi">1</span>
+        <span class="n">instruccion</span> <span class="mi">2</span>
+        <span class="o">...</span>
+        <span class="n">instruccion</span> <span class="n">C2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">condicion</span> <span class="n">N</span><span class="p">:</span>
+            <span class="c1"># Instruciones condicion N verdadero</span>
+            <span class="n">instruccion</span> <span class="mi">1</span>
+            <span class="n">instruccion</span> <span class="mi">2</span>
+            <span class="o">...</span>
+            <span class="n">instruccion</span> <span class="n">C</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Instruciones falso</span>
+            <span class="n">instruccion</span> <span class="mi">1</span>
+            <span class="n">instruccion</span> <span class="mi">2</span>
+            <span class="o">...</span>
+            <span class="n">instruccion</span> <span class="n">F</span>
+</pre></div>
+</div>
+<p><strong>Java</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Instruciones condicion 1 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="n">instruccion</span> <span class="n">C1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Instruciones condicion 2 verdadero</span>
+        <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">...</span>
+        <span class="n">instruccion</span> <span class="n">C2</span><span class="p">:</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Instruciones condicion 2 verdadero</span>
+            <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">...</span>
+            <span class="n">instruccion</span> <span class="n">CN</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Instruciones falso</span>
+            <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">...</span>
+            <span class="n">instruccion</span> <span class="n">F</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Para comprender el uso de la estructura anterior, miremos el siguiente ejemplo.</p>
+<p><strong>Ejemplo 3</strong>:</p>
+<p>Realizar un programa que permita que solicite una nota numerica dentro del rango 0 - 100 y permita la conversión a nota en letras de acuerdo a la siguiente tabla:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Caracter de conversion</p></th>
-<th class="text-align:left head"><p>Descripción</p></th>
+<tr class="row-odd"><th class="head"><p>Nota en letras</p></th>
+<th class="head"><p>Rango de notas numerico</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
-<td class="text-align:left"><p>Cadena de caracteres</p></td>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>nota numerica mayor o igual a 90</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">c</span></code></p></td>
-<td class="text-align:left"><p>Carácter sencillo</p></td>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>nota numerica mayor o igual a 80 y debajo de 90</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></td>
-<td class="text-align:left"><p>Entero en formato de decimal</p></td>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>nota numerica mayor o igual a 70 y menor que 80</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
-<td class="text-align:left"><p>Punto flotante en formato en notación científica</p></td>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>nota numerica mayor o igual a 60 y menor que 70</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
-<td class="text-align:left"><p>Punto flotante en formato en decimal</p></td>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>nota numerica menor que 60</p></td>
 </tr>
 </tbody>
 </table>
-<p>Los siguientes ejemplos permiten entender el siguificado del formateo anteriormente expuesto:</p>
+<p><strong>Nota</strong>: Para este problema se asume que el usuario no es lo suficiente estupido para no seguir las instrucciones que da el programa, por lo tanto, nunca se va a equivocar en la entrada de la nota numérica.</p>
+<p>A continuación se muestra el diagrama de flujo asociado al problema:</p>
+<p><img alt="notas_diagrama_de_flujo" src="../../_images/notas_diagrama_de_flujo.jpg" /></p>
+<p><strong>Código Python</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ingreso de la nota numerica</span>
+<span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese la nota numerica (dentro del rango [0,100]): &quot;</span><span class="p">))</span>
+
+<span class="c1"># Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">90.0</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">80.0</span><span class="p">:</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">70.0</span><span class="p">:</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">60.0</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+
+<span class="c1"># Despliegue de la nota numerica</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La nota en letra correspondiente a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; es: &quot;</span> <span class="o">+</span> <span class="n">grade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese la nota numerica (dentro del rango [0,100]): 67
+La nota en letra correspondiente a 67.0 es: D
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Código Java</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calificacion</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Variables</span>
+        <span class="kt">float</span> <span class="n">score</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">grade</span><span class="p">;</span>
+
+
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
+        
+        <span class="c1">//Ingreso de la nota numerica</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Ingrese la nota numerica (dentro del rango [0,100]): &quot;</span><span class="p">);</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextFloat</span><span class="p">();</span>
+        
+        <span class="c1">// Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">90.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">80.0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">70.0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">60.0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="p">{</span>
+                        <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;F&#39;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-implementacion-mediante-la-estructura-de-seleccion-multiple-if-else-if-else">
+<h4>b. Implementacion mediante la estructura de selección multiple (if-else if-else)<a class="headerlink" href="#b-implementacion-mediante-la-estructura-de-seleccion-multiple-if-else-if-else" title="Permalink to this headline">¶</a></h4>
+<p>Esta es la mejor forma de evaluar (siempre y cuando el problema se preste para ello), un problema que involucre mas de dos posibilidades. Para ello se emplea la instrucción <strong>if-else if-else</strong>. A continuación se compara la sintaxis de python con la de java para este caso:</p>
+<p><strong>Python</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condicion</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Instruciones condicion 1 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span>
+    <span class="n">instruccion</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion</span> <span class="n">C1</span>
+<span class="k">elif</span> <span class="n">condicion</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="c1"># Instruciones condicion 2 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span>
+    <span class="n">instruccion</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion</span> <span class="n">C2</span>
+<span class="o">...</span>
+<span class="k">elif</span> <span class="n">condicion</span> <span class="n">N</span><span class="p">:</span>
+    <span class="c1"># Instruciones condicion N verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span>
+    <span class="n">instruccion</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion</span> <span class="n">CN</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Instruciones falso</span>
+    <span class="n">instruccion</span> <span class="mi">1</span>
+    <span class="n">instruccion</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion</span> <span class="n">F</span>
+</pre></div>
+</div>
+<p><strong>Java</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Instruciones condicion 1 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="n">instruccion</span> <span class="n">C1</span><span class="p">;</span>
+<span class="p">}</span> 
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Instruciones condicion 2 verdadero</span>
+    <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="n">instruccion</span> <span class="n">C2</span><span class="p">:</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condicion</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// Instruciones condicion 2 verdadero</span>
+     <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+     <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+     <span class="p">...</span>
+     <span class="n">instruccion</span> <span class="n">CN</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+     <span class="c1">// Instruciones falso</span>
+     <span class="n">instruccion</span> <span class="mi">1</span><span class="p">;</span>
+     <span class="n">instruccion</span> <span class="mi">2</span><span class="p">;</span>
+     <span class="p">...</span>
+     <span class="n">instruccion</span> <span class="n">F</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Para comprender el uso de la estructura anterior, miremos el siguiente ejemplo.</p>
+<p><strong>Ejemplo 4</strong>:</p>
+<p>Realizar un programa que permita que solicite una nota numerica dentro del rango 0 - 100 y permita la conversión a nota en letras de acuerdo a la siguiente tabla:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nota en letras</p></th>
+<th class="head"><p>Rango de notas numerico</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>nota numerica mayor o igual a 90</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>nota numerica mayor o igual a 80 y debajo de 90</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>nota numerica mayor o igual a 70 y menor que 80</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>nota numerica mayor o igual a 60 y menor que 70</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>nota numerica menor que 60</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nota</strong>: Para este problema se asume que el usuario no es lo suficiente estupido para no seguir las instrucciones que da el programa, por lo tanto, nunca se va a equivocar en la entrada de la nota numérica.</p>
+<p>A continuación se muestra el diagrama de flujo asociado al problema:</p>
+<p><img alt="notas_diagrama_de_flujo" src="../../_images/notas_diagrama_de_flujo.jpg" /></p>
+<p><strong>Código Python</strong></p>
+<p>El código solución se muestra a continuación, pero en este caso se hace uso de la estructura <strong>if-elif-else</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ingreso de la nota numerica</span>
+<span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese la nota numerica (dentro del rango [0,100]): &quot;</span><span class="p">))</span>
+
+<span class="c1"># Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">90.0</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">80.0</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">70.0</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">60.0</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+
+<span class="c1"># Despliegue de la nota numerica</span>
+<span class="c1"># print(&quot;La nota en letra correspondiente a&quot;, score, &quot;es:&quot;, grade)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La nota en letra correspondiente a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; es: &quot;</span> <span class="o">+</span> <span class="n">grade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ingrese la nota numerica (dentro del rango [0,100]): 34
+La nota en letra correspondiente a 34.0 es: F
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Código Java</strong></p>
+<p>A continuación se muestra como se simplifica el código solución al usar la estructura <strong>if-else if-else</strong> de java:</p>
+<p><img alt="if_elsif-else" src="../../_images/if_elsif-else.jpg" /></p>
+<p>El código solución en java se muestra a continuación, pero en este caso se hace uso de la estructura if-elif-else:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calificacion</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Variables</span>
+        <span class="kt">float</span> <span class="n">score</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">grade</span><span class="p">;</span>
+
+
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
+        
+        <span class="c1">//Ingreso de la nota numerica</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Ingrese la nota numerica (dentro del rango [0,100]): &quot;</span><span class="p">);</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextFloat</span><span class="p">();</span>
+        
+        <span class="c1">// Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">90.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">80.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">70.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">60.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="sc">&#39;F&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="estructura-switch">
+<h3>4. Estructura switch<a class="headerlink" href="#estructura-switch" title="Permalink to this headline">¶</a></h3>
+<p>La sentencia switch, permite que el programa tome diferentes rutas de ejecución, de acuerdo al valor de una variable determinada conocida como <strong>selector</strong> al momento en el que se llega al inicio de la sentencia. Los tipos de variables aceptados son.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></li>
+<li><p>Clases de empaquetado (<code class="docutils literal notranslate"><span class="pre">Character</span></code>, <code class="docutils literal notranslate"><span class="pre">Integer</span></code>, etc).</p></li>
+</ul>
+<p>Esta estructura no se encuentra disponible en <strong>python</strong> de modo que la sintaxis para <strong>java</strong> será:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">variable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">opcion1</span><span class="p">:</span>
+        <span class="n">sentencia1_1</span><span class="p">;</span>
+        <span class="n">sentencia1_2</span><span class="p">;</span>
+        <span class="p">...</span>
+        <span class="n">sentencia1_N</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">opcion2</span><span class="p">:</span>
+        <span class="n">sentencia2_1</span><span class="p">;</span>
+        <span class="n">sentencia2_2</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="n">sentencia2_N</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">case</span> <span class="n">opcionN</span><span class="p">:</span>
+        <span class="n">sentenciaN_1</span><span class="p">;</span>
+        <span class="n">sentenciaN_2</span><span class="p">;</span>
+        
+        <span class="n">sentenciaN_N</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">sentenciaDefault_1</span><span class="p">;</span>
+        <span class="n">sentenciaDefault_2</span><span class="p">;</span>
+        <span class="n">sentenciaDefault_N</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Veamos un ejemplo para aclarar el uso de esta estructura.</p>
 <p><strong>Ejemplo 5</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+<p>Hacer un programa que permita solicite digitar un numero entre 1 y 7 que diga el dia de la semana equivalente.</p>
+<p><strong>Código Java</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
-public class ExampleIO5 {
-    public static void main(String[] args) {
-        double horas = 34.45;
-        double tarifa = 15.00;
-        double tolerancia = 0.01000;
-        System.out.println(&quot;Notacion decimal fija:&quot;);
-        System.out.printf(&quot;horas = %.2f, tarifa = %.2f, pago = %.2f,&quot; + 
-                          &quot; tolerancia = %.2f\n\n&quot;, horas, tarifa, horas * tarifa, tolerancia);
-        System.out.println(&quot;Notacion cientifica:&quot;);
-        System.out.printf(&quot;horas = %e, tarifa = %e, pago = %e, \n&quot; + 
-                           &quot;tolerancia = %e\n&quot;,horas, tarifa, horas * tarifa, tolerancia);
-    }
-}
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DiaSemana</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Variables</span>
+        <span class="kt">byte</span> <span class="n">dia</span><span class="p">;</span>
+
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
+
+        <span class="c1">//Ingreso de la nota numerica</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Ingrese el numero del dia: &quot;</span><span class="p">);</span>
+        
+        <span class="n">dia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextByte</span><span class="p">();</span>
+
+        <span class="c1">// Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">dia</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Lunes&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Martes&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Miercoles&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Jueves&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>                
+            <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Viernes&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>                
+            <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sabado&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>                
+            <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Domingo&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dia invalido&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO5%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20double%20horas%20%3D%2034.45%3B%0A%20%20%20%20%20%20%20%20double%20tarifa%20%3D%2015.00%3B%0A%20%20%20%20%20%20%20%20double%20tolerancia%20%3D%200.01000%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Notacion%20decimal%20fija%3A%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22horas%20%3D%20%25.2f%2C%20tarifa%20%3D%20%25.2f%2C%20pago%20%3D%20%25.2f%2C%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%20tolerancia%20%3D%20%25.2f%5Cn%5Cn%22%2C%20horas%2C%20tarifa%2C%20horas%20%2A%20tarifa%2C%20tolerancia%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Notacion%20cientifica%3A%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22horas%20%3D%20%25e%2C%20tarifa%20%3D%20%25e%2C%20pago%20%3D%20%25e%2C%20%5Cn%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22tolerancia%20%3D%20%25e%5Cn%22%2Choras%2C%20tarifa%2C%20horas%20%2A%20tarifa%2C%20tolerancia%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
 </div>
 <p><strong>Ejemplo 6</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
-
-public class ExampleIO6 {
-    public static void main(String[] args) {
-        final double PI = 3.14159265;
-        double radio = 12.67; 
-        double altura = 12.00;
-        
-        System.out.println(&quot;Dos cifras decimales: &quot;);
-        System.out.printf(&quot;radio = %.2f, &quot;
-                          + &quot;altura = %.2f, volumen = %.2f, &quot;
-                          + &quot;PI = %.2f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
-        
-        System.out.println(&quot;Tres cifras decimales: &quot;);
-        System.out.printf(&quot;radio = %.3f, &quot;
-                          + &quot;altura = %.3f, volumen = %.3f, &quot;
-                          + &quot;PI = %.3f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
-        
-        System.out.println(&quot;Cuatro cifras decimales: &quot;);
-        System.out.printf(&quot;radio = %.4f, &quot;
-                          + &quot;altura = %.4f, volumen = %.4f, &quot;
-                          + &quot;PI = %.4f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
-        
-        System.out.println(&quot;Diferentes cifras decimales: &quot;);
-        System.out.printf(&quot;radio = %.1f, &quot;
-                          + &quot;altura = %.2f, volumen = %.5f, &quot;
-                          + &quot;PI = %.4f\n\n&quot;, radio, altura,PI * radio * radio * altura, PI);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO6%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20final%20double%20PI%20%3D%203.14159265%3B%0A%20%20%20%20%20%20%20%20double%20radio%20%3D%2012.67%3B%20%0A%20%20%20%20%20%20%20%20double%20altura%20%3D%2012.00%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Dos%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.2f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.2f%2C%20volumen%20%3D%20%25.2f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.2f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Tres%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.3f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.3f%2C%20volumen%20%3D%20%25.3f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.3f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Cuatro%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.4f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.4f%2C%20volumen%20%3D%20%25.4f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.4f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Diferentes%20cifras%20decimales%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22radio%20%3D%20%25.1f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22altura%20%3D%20%25.2f%2C%20volumen%20%3D%20%25.5f%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22PI%20%3D%20%25.4f%5Cn%5Cn%22%2C%20radio%2C%20altura%2CPI%20%2A%20radio%20%2A%20radio%20%2A%20altura%2C%20PI%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-<p><strong>Ejemplo 7</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
-
-public class ExampleIO7 {
-    public static void main(String[] args) {
-        int num = 96;
-        double tasa = 15.50;
-        System.out.println(&quot;123456789012345&quot;);
-        System.out.printf(&quot;%5d \n&quot;, num); 
-        System.out.printf(&quot;%5.2f \n&quot;, tasa); 
-        System.out.printf(&quot;%5d%6.2f \n&quot;, num, tasa);
-        System.out.printf(&quot;%5d%6.2f \n&quot;, num, tasa);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO7%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%2096%3B%0A%20%20%20%20%20%20%20%20double%20tasa%20%3D%2015.50%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22123456789012345%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%20%5Cn%22%2C%20num%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255.2f%20%5Cn%22%2C%20tasa%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%256.2f%20%5Cn%22%2C%20num%2C%20tasa%29%3B%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%256.2f%20%5Cn%22%2C%20num%2C%20tasa%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-<p><strong>Ejemplo 8</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
-
-public class ExampleIO8 {
-    public static void main(String[] args) {
-        int num = 763; 
-        double x = 658.75; 
-        String str = &quot; Programa Java.&quot;;
-        System.out.println(&quot;1234567890123456789&quot; + 
-                           &quot;01234567890&quot;); 
-        System.out.printf(&quot;%5d%7.2f%15s\n&quot;, num, x, str); 
-        System.out.printf(&quot;%15s%6d%9.2f\n&quot;, str, num, x); 
-        System.out.printf(&quot;%8.2f%7d%15s\n&quot;, x, num, str); 
-        System.out.printf(&quot;num = %5d\n&quot;, num); 
-        System.out.printf(&quot;x = %10.2f\n&quot;, x); 
-        System.out.printf(&quot;str = %15s\n&quot;, str); 
-        System.out.printf(&quot;%10s%7d\n&quot;, &quot;Programa No.&quot;, 4);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO8%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%20763%3B%20%0A%20%20%20%20%20%20%20%20double%20x%20%3D%20658.75%3B%20%0A%20%20%20%20%20%20%20%20String%20str%20%3D%20%22%20Programa%20Java.%22%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%221234567890123456789%22%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2201234567890%22%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%255d%257.2f%2515s%5Cn%22%2C%20num%2C%20x%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%2515s%256d%259.2f%5Cn%22%2C%20str%2C%20num%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%258.2f%257d%2515s%5Cn%22%2C%20x%2C%20num%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22num%20%3D%20%255d%5Cn%22%2C%20num%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22x%20%3D%20%2510.2f%5Cn%22%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22str%20%3D%20%2515s%5Cn%22%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%2510s%257d%5Cn%22%2C%20%22Programa%20No.%22%2C%204%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-<p><strong>Ejemplo 9</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
-
-public class ExampleIO8 {
-    public static void main(String[] args) {
-        int num = 763; 
-        double x = 658.75; 
-        String str = &quot;Programa Java.&quot;; 
-        System.out.println(&quot;1234567890123456789&quot; + &quot;01234567890&quot;); 
-        System.out.printf(&quot;%-5d%7.2f%-15s *** \n&quot;, num, x, str); 
-        System.out.printf(&quot;%-15s%-6d%-9.2f *** \n&quot;, str, num, x); 
-        System.out.printf(&quot;%-8.2f%-7d%-15s *** \n&quot;, x, num, str); 
-        System.out.printf(&quot;num = %-5d ***\n&quot;,num); 
-        System.out.printf(&quot;x = %-10.2f ***\n&quot;, x); 
-        System.out.printf(&quot;str = %-15s ***\n&quot;, str); 
-        System.out.printf(&quot;%-10s%-7d ***\n&quot;, &quot;Programa No.&quot;, 4);
-    }
-}
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ExampleIO8%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%20num%20%3D%20763%3B%20%0A%20%20%20%20%20%20%20%20double%20x%20%3D%20658.75%3B%20%0A%20%20%20%20%20%20%20%20String%20str%20%3D%20%22Programa%20Java.%22%3B%20%0A%20%20%20%20%20%20%20%20System.out.println%28%221234567890123456789%22%20%2B%20%2201234567890%22%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-5d%257.2f%25-15s%20%2A%2A%2A%20%5Cn%22%2C%20num%2C%20x%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-15s%25-6d%25-9.2f%20%2A%2A%2A%20%5Cn%22%2C%20str%2C%20num%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-8.2f%25-7d%25-15s%20%2A%2A%2A%20%5Cn%22%2C%20x%2C%20num%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22num%20%3D%20%25-5d%20%2A%2A%2A%5Cn%22%2Cnum%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22x%20%3D%20%25-10.2f%20%2A%2A%2A%5Cn%22%2C%20x%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22str%20%3D%20%25-15s%20%2A%2A%2A%5Cn%22%2C%20str%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.printf%28%22%25-10s%25-7d%20%2A%2A%2A%5Cn%22%2C%20%22Programa%20No.%22%2C%204%29%3B%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="entrada-en-java">
-<h2>Entrada en Java<a class="headerlink" href="#entrada-en-java" title="Permalink to this headline">¶</a></h2>
-<p>Para leer datos desde el teclado se usa la clase <strong><code class="docutils literal notranslate"><span class="pre">Scanner</span></code></strong>. Esta clase se encuentre definida en <strong><code class="docutils literal notranslate"><span class="pre">java.util</span></code></strong>, es necesario importarla agregando la siguiente sentencia en el código fuente:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>La clase <code class="docutils literal notranslate"><span class="pre">Scanner</span></code> trabaja con <code class="docutils literal notranslate"><span class="pre">System.in</span></code>.</p>
-<div class="section" id="uso-de-la-clase-scanner">
-<h3>Uso de la clase Scanner<a class="headerlink" href="#uso-de-la-clase-scanner" title="Permalink to this headline">¶</a></h3>
-<p>A continuación se detallan los pasos necesarios para entrar datos por teclado mediante la clase <code class="docutils literal notranslate"><span class="pre">Scanner</span></code>:</p>
-<ol class="simple">
-<li><p>Instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Scanner</span></code>:</p></li>
-</ol>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Scanner</span> <span class="n">keyboard</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>Hacer uso de los diferentes métodos de la <code class="docutils literal notranslate"><span class="pre">Scanner</span></code> a traves del objeto creado para tal fin. Por ejemplo, si lo que se deseara es entrar los datos asociados a un nombre el código seria el siguiente:</p></li>
-</ol>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;¿Cual es su nombre?&quot;</span><span class="p">);</span>
-<span class="n">String</span> <span class="n">nombre</span><span class="p">;</span>
-<span class="n">nombre</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>La clase <code class="docutils literal notranslate"><span class="pre">Scanner</span></code> usa métodos diferentes para ingresar los datos según el tipo al que pertenecen. La siguiente tabla muestra como llevar a cabo esto:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Método</p></th>
-<th class="text-align:left head"><p>Ejemplo y descripción</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextByte</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">x;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">byte</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">keyboard.nextByte();</span></code> <br> <br> <strong>Descripción</strong>: Devuelve una entrada como <code class="docutils literal notranslate"><span class="pre">byte</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextDouble</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">number;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">double</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextDouble();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextFloat</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">number;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">float</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextFloat();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextInt</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">number;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">int</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextInt();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextLine</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">name;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextLine();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextLong</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">number;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">long</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextLong();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">nextShort</span></code></p></td>
-<td class="text-align:left"><p><strong>Ejemplo de uso</strong>: <br> <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">number;</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">Scanner</span> <span class="pre">keyboard</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Scanner(System.in);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">System.out.print(&quot;Enter</span> <span class="pre">a</span> <span class="pre">short</span> <span class="pre">value:</span> <span class="pre">&quot;);</span></code> <br>  <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">keyboard.nextShort();</span></code> <br> <br> <strong>Descripción</strong>: Retorna una entrada como <code class="docutils literal notranslate"><span class="pre">short</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>Para aterrizar esto, miremos un programa que ilustre como se entra datos empleando <strong>java</strong> y <strong>python</strong>.</p>
-<p><strong>Ejemplo 10</strong>: Elabore un algoritmo que lea el nuombre de una persona y que imprima el mensaje Hola seguido del nombre de la persona.</p>
-<p><strong>Python</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite su nombre: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digite su nombre: Ramon Valdez
-Hola Ramon Valdez
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Java</strong></p>
+<p>Hacer un programa que solicite un dia de la semana (de manera numerica) y diga si este fin de semena o semana.</p>
+<p><strong>Código Java</strong></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO10</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DiaSemana</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">nom</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Digite su nombre: &quot;</span><span class="p">);</span>
-        <span class="n">Scanner</span> <span class="n">teclado</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
-        <span class="n">nom</span> <span class="o">=</span> <span class="n">teclado</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>     
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Ejemplo 11</strong>: Elabore un algoritmo que lea el nombre de una persona, la estatura (en cm) y el peso (en kg) y que muestre los datos leidos y la relacion estatura peso (IMC: Indice de masa corporal) cuya formula es:</p>
-<p><span class="math notranslate nohighlight">\(IMC=\frac{peso}{estatura^2}\)</span></p>
-<p><strong>Python</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">peso</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite el peso (en kg): &quot;</span><span class="p">))</span>
-<span class="n">estatura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite la estatura (en cm): &quot;</span><span class="p">))</span>
-<span class="n">estatura</span> <span class="o">/=</span> <span class="mi">100</span>
-<span class="n">IMC</span> <span class="o">=</span> <span class="n">peso</span><span class="o">/</span><span class="n">estatura</span><span class="o">**</span><span class="mi">2</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IMC: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">IMC</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digite el peso (en kg): 74
-Digite la estatura (en kg): 172
-IMC: 25.013520822065985
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Java</strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
+        <span class="c1">// Variables</span>
+        <span class="kt">byte</span> <span class="n">dia</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO11</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Declaracion de variables y objetos</span>
-        <span class="kt">double</span> <span class="n">peso</span><span class="p">,</span> <span class="n">estatura</span><span class="p">,</span> <span class="n">IMC</span><span class="p">;</span>
-        <span class="n">Scanner</span> <span class="n">keyboard</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  
-        
-        <span class="c1">// Programa</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Digite el peso (en kg): &quot;</span><span class="p">);</span>
-        <span class="n">peso</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Digite la estatura (en cm): &quot;</span><span class="p">);</span>
-        <span class="n">estatura</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
-        <span class="n">estatura</span> <span class="o">/=</span> <span class="mi">100</span><span class="p">;</span>
-        <span class="n">IMC</span> <span class="o">=</span> <span class="n">peso</span><span class="o">/</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">estatura</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>     
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;IMC: &quot;</span> <span class="o">+</span> <span class="n">IMC</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Ejemplo 12</strong>: Elabore un algoritmo que lea los datos enteros correspondientes a los catetos de un triangulo rectangulo y que calcule en imprima el valor de la hipotenusa de dicho triangulo.</p>
-<p><strong>Python</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+        <span class="c1">// Objeto tipo Scanner</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Declaracion de un objeto (llamado teclado) de la clase Scanner</span>
 
-<span class="n">cat1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite el cateto 1: &quot;</span><span class="p">))</span>
-<span class="n">cat2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite el cateto 2: &quot;</span><span class="p">))</span>
-<span class="n">hip</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">cat2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La hipotenusa es:&quot;</span><span class="p">,</span><span class="n">hip</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digite el cateto 1: 3
-Digite el cateto 2: 4
-La hipotenusa es: 5.0
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Java</strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
+        <span class="c1">//Ingreso de la nota numerica</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Ingrese el numero del dia: &quot;</span><span class="p">);</span>
+        
+        <span class="n">dia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextByte</span><span class="p">();</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO12</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Declaracion de variables y objetos</span>
-        <span class="kt">int</span> <span class="n">cat1</span><span class="p">,</span> <span class="n">cat2</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">hip</span><span class="p">;</span>
-        <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  
-        
-        <span class="c1">// Programa</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Digite el cateto 1: &quot;</span><span class="p">);</span>
-        <span class="n">cat1</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Digite el cateto 2: &quot;</span><span class="p">);</span>
-        <span class="n">cat2</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        
-        <span class="n">hip</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">cat2</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>   
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La hipotenisa es: &quot;</span> <span class="o">+</span> <span class="n">hip</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Ejemplo 13</strong>: Elabore un algoritmo que solicite un numero de dos digitos y que devuelva como salida el numero invertido. Por ejemplo, si el usuario ingresa 23, el programa deberá mostrar 32.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite un numero entero de 2 digitos: &quot;</span><span class="p">))</span>
-<span class="n">dec</span> <span class="o">=</span> <span class="n">num</span><span class="o">//</span><span class="mi">10</span>
-<span class="n">unid</span> <span class="o">=</span> <span class="n">num</span><span class="o">%</span><span class="k">10</span>
-<span class="n">numInv</span> <span class="o">=</span> <span class="n">unid</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">dec</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&gt; Respuesta:&quot;</span><span class="p">,</span> <span class="n">numInv</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digite un numero entero de 2 digitos: 32
--&gt; Respuesta:  23
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Java</strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO13</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Declaracion de variables y objetos</span>
-        <span class="kt">int</span> <span class="n">dec</span><span class="p">,</span> <span class="n">unid</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">numInv</span><span class="p">;</span>
-        <span class="n">Scanner</span> <span class="n">key</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  
-        <span class="n">dec</span> <span class="o">=</span> <span class="n">num</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
-        <span class="n">unid</span> <span class="o">=</span> <span class="n">num</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span>
-        <span class="n">numInv</span> <span class="o">=</span> <span class="n">unid</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">dec</span><span class="p">;</span>
-        <span class="c1">// Programa</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;-&gt; Respuesta: &quot;</span> <span class="o">+</span> <span class="n">numInv</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Ejemplo 14</strong>: Ejecute y analice el siguiente programa hecho en <strong>java</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO14</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Scanner</span> <span class="n">consola</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="n">pies</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">pulgadas</span><span class="p">;</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ingrese dos enteros separados por espacios.&quot;</span><span class="p">);</span>
-        <span class="n">pies</span> <span class="o">=</span> <span class="n">consola</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        <span class="n">pulgadas</span> <span class="o">=</span> <span class="n">consola</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pies = &quot;</span> <span class="o">+</span> <span class="n">pies</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pulgadas = &quot;</span> <span class="o">+</span> <span class="n">pulgadas</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Ejemplo 15</strong>: Ejecute y analice el siguiente programa hecho en <strong>java</strong>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleIO15</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Scanner</span> <span class="n">console</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-        <span class="n">String</span> <span class="n">nombre</span><span class="p">;</span>
-        <span class="n">String</span> <span class="n">apellido</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">edad</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">peso</span><span class="p">;</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ingrese apellido, nombre,&quot;</span>
-                           <span class="o">+</span> <span class="s">&quot;edad y peso separados &quot;</span>
-                           <span class="o">+</span> <span class="s">&quot;por espacios.&quot;</span><span class="p">);</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="n">console</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-        <span class="n">apellido</span> <span class="o">=</span> <span class="n">console</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-        <span class="n">edad</span> <span class="o">=</span> <span class="n">console</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        <span class="n">peso</span> <span class="o">=</span> <span class="n">console</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Edad: &quot;</span> <span class="o">+</span> <span class="n">edad</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Peso: &quot;</span> <span class="o">+</span> <span class="n">peso</span><span class="p">);</span>
+        <span class="c1">// Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">dia</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>               
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>                
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>                
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>                
+            <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dia de la semana&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>                
+            <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dia del fin de semana&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dia invalido&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1133,9 +1114,7 @@ La hipotenusa es: 5.0
 <div class="section" id="referencias">
 <h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.browxy.com/">https://www.browxy.com/</a></p></li>
-<li><p><a class="reference external" href="https://www.jdoodle.com/">https://www.jdoodle.com/</a></p></li>
-<li><p><a class="reference external" href="https://www.browxy.com/">https://www.browxy.com/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/LuisaRestrepo/MisionTIC2022-Ciclo2/blob/master/Presentaciones/Semana%201%20-%202.%20Variables%2C%20Cadenas%2C%20Estructuras%2C%20Arreglos.pdf">https://github.com/LuisaRestrepo/MisionTIC2022-Ciclo2/blob/master/Presentaciones/Semana 1 - 2. Variables, Cadenas, Estructuras, Arreglos.pdf</a></p></li>
 </ul>
 </div>
 </div>
