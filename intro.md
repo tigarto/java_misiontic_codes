@@ -1,16 +1,19 @@
-# Welcome to your Jupyter Book
+# Bienvenido al Jupyter Book de Java
 
-This is a small sample book to give you a feel for how book content is
-structured.
+En este libro vas a encontrar material para iniciar tu camino con el lenguaje Java.
 
 :::{note}
-Here is a note!
+¡Exitos en tu proceso!
 :::
 
-And here is a code block:
+Este es el código para el programa "Hola mundo" en Java:
 
 ```
-e = mc^2
+public class Main{
+ public static void main(String[] args){
+   System.out.println("Hola mundo");
+ }
+}
 ```
 
-Check out the content pages bundled with this sample book to see more.
+Ahora puedes iniciar con la exploración del lenguaje
