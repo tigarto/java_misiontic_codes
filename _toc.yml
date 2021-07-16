@@ -9,4 +9,5 @@ chapters:
   sections:
   - file: "content/notebooks/esqueleto.ipynb"
   - file: "content/notebooks/io_basica.ipynb"
+  - file: "content/notebooks/estructura_condicional"
 - file: content/CH02_intro
