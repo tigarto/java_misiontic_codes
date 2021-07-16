@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import os
@@ -23,7 +23,7 @@ def ejecutar(nombre_clase):
     execute(nombre_clase)
 
 
-# In[2]:
+# In[ ]:
 
 
 run("java -version")
@@ -69,13 +69,13 @@ print(str(seconds) + " segundos equivale a 8 minutos " + str(minutes)
 
 # **Solución en Java**
 
-# In[5]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('writefile', 'DisplayTime.java ', 'import java.util.Scanner;\n\npublic class DisplayTime {\npublic static void main(String[] args) {\n    Scanner input = new Scanner(System.in);\n\n    System.out.print("Enter an integer for seconds: ");\n    int seconds = input.nextInt();\n    int minutes = seconds/60; \n    int remainingSeconds = seconds%60; \n    System.out.println(seconds + " seconds is " + minutes +\n                       " minutes and " + remainingSeconds + " seconds");\n    }\n}')
 
 
-# In[6]:
+# In[ ]:
 
 
 compile("DisplayTime")
@@ -176,52 +176,24 @@ print("*********************************")
 
 
 # **Código java**
-# 
-# ```java
-# import java.util.Scanner;
-# 
-# public class ArticuloIVA {
-#     public static void main(String[] args) {
-#         // Variables
-#         final float IVA = 0.19f;
-#         float imp = 0;
-#         float precioBase;
-#         float precioNeto;
-#         
-#         // Objeto tipo Scanner
-#         Scanner in = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-#         
-#         // Entrada de datos
-#         System.out.print("Ingrese el precio del articulo: ");
-#         precioBase = in.nextFloat();    
-#         
-#         // Calculo del impuesto y el precio neto
-#         if (precioBase >= 1000000) {
-#             imp = IVA*precioBase;
-#             precioNeto = preciBase + imp;
-#         }
-#         // Despliegue de los resultados
-#         System.out.println();
-#         System.out.println("******** Colilla de pago ********");
-#         System.out.println("+ Subtotal -> " + precioBase);
-#         System.out.println("+ Impuesto -> " + imp);
-#         System.out.println("---------------------------------");
-#         System.out.println("+    Total -> " + precioNeto);
-#         System.out.println("*********************************");
-#     }
-# }
-# ```
 
 # In[ ]:
 
 
-get_ipython().run_cell_magic('writefile', 'ArticuloIVA.java ', 'import java.util.Scanner;\n\npublic class ArticuloIVA {\n    public static void main(String[] args) {\n        // Variables\n        final float IVA = 0.19f;\n        float imp = 0;\n        float precioBase;\n        float precioNeto;\n\n        // Objeto tipo Scanner\n        Scanner in = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        // Entrada de datos\n        System.out.print("Ingrese el precio del articulo: ");\n        precioBase = in.nextFloat();    \n\n        // Calculo del impuesto y el precio neto\n        if (precioBase >= 1000000) {\n            imp = IVA*precioBase;\n            precioNeto = preciBase + imp;\n        }\n        // Despliegue de los resultados\n        System.out.println();\n        System.out.println("******** Colilla de pago ********");\n        System.out.println("+ Subtotal -> " + precioBase);\n        System.out.println("+ Impuesto -> " + imp);\n        System.out.println("---------------------------------");\n        System.out.println("+    Total -> " + precioNeto);\n        System.out.println("*********************************");\n    }\n}')
+get_ipython().run_cell_magic('writefile', 'DisplayTime.java ', 'import java.util.Scanner;\n\npublic class ArticuloIVA {\n    public static void main(String[] args) {\n        // Variables\n        final float IVA = 0.19f;\n        float imp = 0;\n        float precioBase;\n        float precioNeto;\n\n        // Objeto tipo Scanner\n        Scanner in = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        // Entrada de datos\n        System.out.print("Ingrese el precio del articulo: ");\n        precioBase = in.nextFloat();    \n\n        // Calculo del impuesto y el precio neto\n        if (precioBase >= 1000000) {\n            imp = IVA*precioBase;\n            precioNeto = preciBase + imp;\n        }\n        // Despliegue de los resultados\n        System.out.println();\n        System.out.println("******** Colilla de pago ********");\n        System.out.println("+ Subtotal -> " + precioBase);\n        System.out.println("+ Impuesto -> " + imp);\n        System.out.println("---------------------------------");\n        System.out.println("+    Total -> " + precioNeto);\n        System.out.println("*********************************");\n    }\n}')
 
 
 # In[ ]:
 
 
-run('java -version')
+compile("ArticuloIVA")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("ArticuloIVA")
 
 
 # ### 2. Condicional simple.
@@ -260,37 +232,25 @@ else:
 
 
 # **Código java**
-# 
-# ```java
-# import java.util.Scanner;
-# 
-# public class Edad {
-#     public static void main(String[] args) {
-#         // Variables
-#         String nom;
-#         int edad;
-# 
-# 
-#         // Objeto tipo Scanner
-#         Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-# 
-#         // Entrada de datos
-#         System.out.print("-> Digite su nombre por favor: ");
-#         nom = input.next(); 
-#         System.out.print("-> Digite su edad por favor: ");
-#         edad = input.nextInt();
-#         
-#         System.out.println();
-#         // Validación de la edad
-#         if (edad >= 18) {
-#             System.out.println(nom + " usted es un anciano");
-#         }
-#         else {
-#             System.out.println(nom + " usted es un culicagao");
-#         }
-#     }
-# }
-# ```
+
+# In[ ]:
+
+
+get_ipython().run_cell_magic('writefile', 'DisplayTime.java ', 'import java.util.Scanner;\n\npublic class Edad {\n    public static void main(String[] args) {\n        // Variables\n        String nom;\n        int edad;\n\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        // Entrada de datos\n        System.out.print("-> Digite su nombre por favor: ");\n        nom = input.next(); \n        System.out.print("-> Digite su edad por favor: ");\n        edad = input.nextInt();\n        \n        System.out.println();\n        // Validación de la edad\n        if (edad >= 18) {\n            System.out.println(nom + " usted es un anciano");\n        }\n        else {\n            System.out.println(nom + " usted es un culicagao");\n        }\n    }\n}')
+
+
+# In[ ]:
+
+
+compile("Edad")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("Edad")
+
 
 # ### 3. Condicional múltiple
 # Cuando lo que se desea es evaluar es mas de dos alternativas es necesario implementar una estructura condicional multiple. La forma de esta estructura se muestra en el siguiente diagrama de flujo.
@@ -422,54 +382,24 @@ print("La nota en letra correspondiente a " + str(score) + " es: " + grade)
 
 
 # **Código Java**
-# 
-# ```java
-# import java.util.Scanner;
-# 
-# public class Calificacion {
-#     public static void main(String[] args) {
-#         // Variables
-#         float score;
-#         char grade;
-# 
-# 
-#         // Objeto tipo Scanner
-#         Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-#         
-#         //Ingreso de la nota numerica
-#         System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");
-#         score = input.nextFloat();
-#         
-#         // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla
-#         if (score >= 90.0) {
-#             grade = 'A';
-#         }
-#         else {
-#             if (score >= 80.0) {
-#                 grade = 'B';
-#             }
-#             else {
-#                 if (score >= 70.0) {
-#                     grade = 'C';
-#                 }
-#                 else {
-#                     if (score >= 60.0) {
-#                         grade = 'D';
-#                     }
-#                     else {
-#                         grade = 'F';
-#                     }
-#                 }
-#             }
-#         }
-#     }
-# }
-# ```
 
 # In[ ]:
 
 
-get_ipython().run_cell_magic('writefile', 'ExampleIO10.java', 'import java.util.Scanner;\n\npublic class Calificacion {\n    public static void main(String[] args) {\n        // Variables\n        float score;\n        char grade;\n\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        //Ingreso de la nota numerica\n        System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");\n        score = input.nextFloat();\n\n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        if (score >= 90.0) {\n            grade = \'A\';\n        }\n        else {\n            if (score >= 80.0) {\n                grade = \'B\';\n            }\n            else {\n                if (score >= 70.0) {\n                    grade = \'C\';\n                }\n                else {\n                    if (score >= 60.0) {\n                        grade = \'D\';\n                    }\n                    else {\n                        grade = \'F\';\n                    }\n                }\n            }\n        }\n    }\n}')
+get_ipython().run_cell_magic('writefile', 'Calificacion1.java', 'import java.util.Scanner;\n\npublic class Calificacion1 {\n    public static void main(String[] args) {\n        // Variables\n        float score;\n        char grade;\n\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        //Ingreso de la nota numerica\n        System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");\n        score = input.nextFloat();\n\n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        if (score >= 90.0) {\n            grade = \'A\';\n        }\n        else {\n            if (score >= 80.0) {\n                grade = \'B\';\n            }\n            else {\n                if (score >= 70.0) {\n                    grade = \'C\';\n                }\n                else {\n                    if (score >= 60.0) {\n                        grade = \'D\';\n                    }\n                    else {\n                        grade = \'F\';\n                    }\n                }\n            }\n        }\n    }\n}')
+
+
+# In[ ]:
+
+
+compile("Calificacion1")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("Calificacion1")
 
 
 # #### b. Implementacion mediante la estructura de selección multiple (if-else if-else)
@@ -596,42 +526,24 @@ print("La nota en letra correspondiente a " + str(score) + " es: " + grade)
 # El código solución en java se muestra a continuación, pero en este caso se hace uso de la estructura if-elif-else:
 # 
 
-# ```java
-# import java.util.Scanner;
-# 
-# public class Calificacion {
-#     public static void main(String[] args) {
-#         // Variables
-#         float score;
-#         char grade;
-# 
-# 
-#         // Objeto tipo Scanner
-#         Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-#         
-#         //Ingreso de la nota numerica
-#         System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");
-#         score = input.nextFloat();
-#         
-#         // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla
-#         if (score >= 90.0) {
-#             grade = 'A';
-#         }
-#         else if (score >= 80.0) {
-#             grade = 'B';
-#         }
-#         else if (score >= 70.0) {
-#             grade = 'C';
-#         }
-#         else if (score >= 60.0) {
-#             grade = 'D';
-#         }
-#         else {
-#             grade = 'F';
-#         }
-#     }
-# }
-# ```
+# In[ ]:
+
+
+get_ipython().run_cell_magic('writefile', 'Calificacion2.java', 'import java.util.Scanner;\n\npublic class Calificacion2 {\n    public static void main(String[] args) {\n        // Variables\n        float score;\n        char grade;\n\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n        \n        //Ingreso de la nota numerica\n        System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");\n        score = input.nextFloat();\n        \n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        if (score >= 90.0) {\n            grade = \'A\';\n        }\n        else if (score >= 80.0) {\n            grade = \'B\';\n        }\n        else if (score >= 70.0) {\n            grade = \'C\';\n        }\n        else if (score >= 60.0) {\n            grade = \'D\';\n        }\n        else {\n            grade = \'F\';\n        }\n    }\n}')
+
+
+# In[ ]:
+
+
+compile("Calificacion2")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("Calificacion2")
+
 
 # ### 4. Estructura switch
 # 
@@ -678,94 +590,51 @@ print("La nota en letra correspondiente a " + str(score) + " es: " + grade)
 # Hacer un programa que permita solicite digitar un numero entre 1 y 7 que diga el dia de la semana equivalente.
 # 
 # **Código Java**
-# 
-# ```java
-# import java.util.Scanner;
-# 
-# public class DiaSemana {
-#     public static void main(String[] args) {
-#         // Variables
-#         byte dia;
-# 
-#         // Objeto tipo Scanner
-#         Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-# 
-#         //Ingreso de la nota numerica
-#         System.out.print("Ingrese el numero del dia: ");
-#         
-#         dia = input.nextByte();
-# 
-#         // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla
-#         switch (dia) {
-#             case 1:
-#                 System.out.println("Lunes");
-#                 break;
-#             case 2:
-#                 System.out.println("Martes");
-#                 break;
-#             case 3:
-#                 System.out.println("Miercoles");
-#                 break;
-#             case 4:
-#                 System.out.println("Jueves");
-#                 break;                
-#             case 5:
-#                 System.out.println("Viernes");
-#                 break;                
-#             case 6:
-#                 System.out.println("Sabado");
-#                 break;                
-#             case 7:
-#                 System.out.println("Domingo");
-#                 break;
-#             default:
-#                 System.out.println("Dia invalido");
-#         }
-#     }
-# }
-# ```
+
+# In[ ]:
+
+
+get_ipython().run_cell_magic('writefile', 'DiaSemana.java', 'import java.util.Scanner;\n\npublic class DiaSemana {\n    public static void main(String[] args) {\n        // Variables\n        byte dia;\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        //Ingreso de la nota numerica\n        System.out.print("Ingrese el numero del dia: ");\n        \n        dia = input.nextByte();\n\n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        switch (dia) {\n            case 1:\n                System.out.println("Lunes");\n                break;\n            case 2:\n                System.out.println("Martes");\n                break;\n            case 3:\n                System.out.println("Miercoles");\n                break;\n            case 4:\n                System.out.println("Jueves");\n                break;                \n            case 5:\n                System.out.println("Viernes");\n                break;                \n            case 6:\n                System.out.println("Sabado");\n                break;                \n            case 7:\n                System.out.println("Domingo");\n                break;\n            default:\n                System.out.println("Dia invalido");\n        }\n    }\n}')
+
+
+# In[ ]:
+
+
+compile("DiaSemana")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("DiaSemana")
+
 
 # **Ejemplo 6**:
 # 
 # Hacer un programa que solicite un dia de la semana (de manera numerica) y diga si este fin de semena o semana.
 # 
 # **Código Java**
-# 
-# ```java
-# import java.util.Scanner;
-# 
-# public class DiaSemana {
-#     public static void main(String[] args) {
-#         // Variables
-#         byte dia;
-# 
-#         // Objeto tipo Scanner
-#         Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner
-# 
-#         //Ingreso de la nota numerica
-#         System.out.print("Ingrese el numero del dia: ");
-#         
-#         dia = input.nextByte();
-# 
-#         // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla
-#         switch (dia) {
-#             case 1:               
-#             case 2:                
-#             case 3:                
-#             case 4:                
-#             case 5:
-#                 System.out.println("Dia de la semana");
-#                 break;                
-#             case 6:
-#             case 7:
-#                 System.out.println("Dia del fin de semana");
-#                 break;
-#             default:
-#                 System.out.println("Dia invalido");
-#         }
-#     }
-# }
-# ```
+
+# In[ ]:
+
+
+get_ipython().run_cell_magic('writefile', 'FinDeSemana.java', 'import java.util.Scanner;\n\npublic class FinDeSemana {\n    public static void main(String[] args) {\n        // Variables\n        byte dia;\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        //Ingreso de la nota numerica\n        System.out.print("Ingrese el numero del dia: ");\n        \n        dia = input.nextByte();\n\n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        switch (dia) {\n            case 1:               \n            case 2:                \n            case 3:                \n            case 4:                \n            case 5:\n                System.out.println("Dia de la semana");\n                break;                \n            case 6:\n            case 7:\n                System.out.println("Dia del fin de semana");\n                break;\n            default:\n                System.out.println("Dia invalido");\n        }\n    }\n}')
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+compile("FinDeSemana")
+
+
+# In[ ]:
+
+
+# Solo ejecute esta celda si lo hace desde el colab
+execute("FinDeSemana")
+
 
 # ## Referencias 
 # 
