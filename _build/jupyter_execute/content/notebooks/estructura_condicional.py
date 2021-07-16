@@ -1,6 +1,53 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[51]:
+
+
+import platform
+import os
+
+platform = platform.platform()
+if "windows" in platform.lower():    
+    # print("Windows")
+    run("java -version")
+elif "linux" in platform.lower():
+    # Update and upgrade the system before installing anything else.
+    os.system('apt-get update > /dev/null')
+    os.system('apt-get upgrade > /dev/null')
+    # Install the Java JDK.
+    os.system('apt-get install default-jdk > /dev/null')
+
+    # Check the Java version to see if everything is working well.
+    run("java -version")
+else:
+    run("java -version")
+
+
+# In[ ]:
+
+
+import os
+# Run and print a shell command.
+def run(cmd):
+    print('>> {}'.format(cmd))
+    get_ipython().system("{cmd}  # This is magic to run 'cmd' in the shell.")
+    print('')
+
+def compile(nombre_clase):
+    run('javac {}.java'.format(nombre_clase))
+    #javaFile = nombre_clase + ".java"
+    #os.system("javac " + javaFile)
+
+def execute(nombre_clase):    
+    # os.system("java " + nombre_clase)
+    run('java {}'.format(nombre_clase))
+    
+def ejecutar(nombre_clase):
+    compile(nombre_clase)
+    execute(nombre_clase)
+
+
 # # Estructuras de selección en java
 
 # ## Recordando el tema anterior
@@ -57,6 +104,20 @@ print(str(seconds) + " segundos equivale a 8 minutos " + str(minutes)
 #     }
 # }
 # ```
+
+# In[42]:
+
+
+get_ipython().run_cell_magic('writefile', 'DisplayTime.java ', 'import java.util.Scanner;\n\npublic class DisplayTime {\npublic static void main(String[] args) {\n    Scanner input = new Scanner(System.in);\n\n    System.out.print("Enter an integer for seconds: ");\n    int seconds = input.nextInt();\n    int minutes = seconds/60; \n    int remainingSeconds = seconds%60; \n    System.out.println(seconds + " seconds is " + minutes +\n                       " minutes and " + remainingSeconds + " seconds");\n    }\n}')
+
+
+# In[ ]:
+
+
+#run("java -version")
+compile("DisplayTime")
+execute("DisplayTime")
+
 
 # ## Introducción
 # 
@@ -181,6 +242,18 @@ print("*********************************")
 #     }
 # }
 # ```
+
+# In[25]:
+
+
+get_ipython().run_cell_magic('writefile', 'ArticuloIVA.java ', 'import java.util.Scanner;\n\npublic class ArticuloIVA {\n    public static void main(String[] args) {\n        // Variables\n        final float IVA = 0.19f;\n        float imp = 0;\n        float precioBase;\n        float precioNeto;\n\n        // Objeto tipo Scanner\n        Scanner in = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        // Entrada de datos\n        System.out.print("Ingrese el precio del articulo: ");\n        precioBase = in.nextFloat();    \n\n        // Calculo del impuesto y el precio neto\n        if (precioBase >= 1000000) {\n            imp = IVA*precioBase;\n            precioNeto = preciBase + imp;\n        }\n        // Despliegue de los resultados\n        System.out.println();\n        System.out.println("******** Colilla de pago ********");\n        System.out.println("+ Subtotal -> " + precioBase);\n        System.out.println("+ Impuesto -> " + imp);\n        System.out.println("---------------------------------");\n        System.out.println("+    Total -> " + precioNeto);\n        System.out.println("*********************************");\n    }\n}')
+
+
+# In[28]:
+
+
+run('java -version')
+
 
 # ### 2. Condicional simple.
 # 
@@ -423,6 +496,12 @@ print("La nota en letra correspondiente a " + str(score) + " es: " + grade)
 #     }
 # }
 # ```
+
+# In[22]:
+
+
+get_ipython().run_cell_magic('writefile', 'ExampleIO10.java', 'import java.util.Scanner;\n\npublic class Calificacion {\n    public static void main(String[] args) {\n        // Variables\n        float score;\n        char grade;\n\n\n        // Objeto tipo Scanner\n        Scanner input = new Scanner(System.in);  // Declaracion de un objeto (llamado teclado) de la clase Scanner\n\n        //Ingreso de la nota numerica\n        System.out.print("Ingrese la nota numerica (dentro del rango [0,100]): ");\n        score = input.nextFloat();\n\n        // Validación de la nota numerica y obtencion de la nota en letras dependiendo la tabla\n        if (score >= 90.0) {\n            grade = \'A\';\n        }\n        else {\n            if (score >= 80.0) {\n                grade = \'B\';\n            }\n            else {\n                if (score >= 70.0) {\n                    grade = \'C\';\n                }\n                else {\n                    if (score >= 60.0) {\n                        grade = \'D\';\n                    }\n                    else {\n                        grade = \'F\';\n                    }\n                }\n            }\n        }\n    }\n}')
+
 
 # #### b. Implementacion mediante la estructura de selección multiple (if-else if-else)
 # 

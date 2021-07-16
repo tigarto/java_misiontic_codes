@@ -287,7 +287,66 @@
         
               <div>
                 
-  <div class="section" id="estructuras-de-seleccion-en-java">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">()</span>
+<span class="k">if</span> <span class="s2">&quot;windows&quot;</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>    
+    <span class="c1"># print(&quot;Windows&quot;)</span>
+    <span class="n">run</span><span class="p">(</span><span class="s2">&quot;java -version&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">&quot;linux&quot;</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+    <span class="c1"># Update and upgrade the system before installing anything else.</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;apt-get update &gt; /dev/null&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;apt-get upgrade &gt; /dev/null&#39;</span><span class="p">)</span>
+    <span class="c1"># Install the Java JDK.</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;apt-get install default-jdk &gt; /dev/null&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Check the Java version to see if everything is working well.</span>
+    <span class="n">run</span><span class="p">(</span><span class="s2">&quot;java -version&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">(</span><span class="s2">&quot;java -version&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; java -version
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>java version &quot;16.0.1&quot; 2021-04-20
+Java(TM) SE Runtime Environment (build 16.0.1+9-24)
+Java HotSpot(TM) 64-Bit Server VM (build 16.0.1+9-24, mixed mode, sharing)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># Run and print a shell command.</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="o">!{</span>cmd<span class="o">}</span>  # This is magic to run <span class="s1">&#39;cmd&#39;</span> <span class="k">in</span> the shell.
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac </span><span class="si">{}</span><span class="s1">.java&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+    <span class="c1">#javaFile = nombre_clase + &quot;.java&quot;</span>
+    <span class="c1">#os.system(&quot;javac &quot; + javaFile)</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>    
+    <span class="c1"># os.system(&quot;java &quot; + nombre_clase)</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;java </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+    
+<span class="k">def</span> <span class="nf">ejecutar</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="nb">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+    <span class="n">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="estructuras-de-seleccion-en-java">
 <h1>Estructuras de selección en java<a class="headerlink" href="#estructuras-de-seleccion-en-java" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="recordando-el-tema-anterior">
 <h2>Recordando el tema anterior<a class="headerlink" href="#recordando-el-tema-anterior" title="Permalink to this headline">¶</a></h2>
@@ -365,6 +424,46 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> DisplayTime.java 
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">DisplayTime</span> <span class="p">{</span>
+<span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Scanner</span> <span class="nb">input</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Enter an integer for seconds: &quot;</span><span class="p">);</span>
+    <span class="nb">int</span> <span class="n">seconds</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">nextInt</span><span class="p">();</span>
+    <span class="nb">int</span> <span class="n">minutes</span> <span class="o">=</span> <span class="n">seconds</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span> 
+    <span class="nb">int</span> <span class="n">remainingSeconds</span> <span class="o">=</span> <span class="n">seconds</span><span class="o">%</span><span class="mi">60</span><span class="p">;</span> 
+    <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">seconds</span> <span class="o">+</span> <span class="s2">&quot; seconds is &quot;</span> <span class="o">+</span> <span class="n">minutes</span> <span class="o">+</span>
+                       <span class="s2">&quot; minutes and &quot;</span> <span class="o">+</span> <span class="n">remainingSeconds</span> <span class="o">+</span> <span class="s2">&quot; seconds&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting DisplayTime.java
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#run(&quot;java -version&quot;)</span>
+<span class="nb">compile</span><span class="p">(</span><span class="s2">&quot;DisplayTime&quot;</span><span class="p">)</span>
+<span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DisplayTime&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; java DisplayTime
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="introduccion">
@@ -557,6 +656,67 @@ Hacer un programa que solicite el valor de un producto de tal manera que si su v
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ArticuloIVA.java 
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ArticuloIVA</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Variables</span>
+        <span class="n">final</span> <span class="nb">float</span> <span class="n">IVA</span> <span class="o">=</span> <span class="mf">0.19</span><span class="n">f</span><span class="p">;</span>
+        <span class="nb">float</span> <span class="n">imp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nb">float</span> <span class="n">precioBase</span><span class="p">;</span>
+        <span class="nb">float</span> <span class="n">precioNeto</span><span class="p">;</span>
+
+        <span class="o">//</span> <span class="n">Objeto</span> <span class="n">tipo</span> <span class="n">Scanner</span>
+        <span class="n">Scanner</span> <span class="ow">in</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Declaracion</span> <span class="n">de</span> <span class="n">un</span> <span class="n">objeto</span> <span class="p">(</span><span class="n">llamado</span> <span class="n">teclado</span><span class="p">)</span> <span class="n">de</span> <span class="n">la</span> <span class="n">clase</span> <span class="n">Scanner</span>
+
+        <span class="o">//</span> <span class="n">Entrada</span> <span class="n">de</span> <span class="n">datos</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Ingrese el precio del articulo: &quot;</span><span class="p">);</span>
+        <span class="n">precioBase</span> <span class="o">=</span> <span class="ow">in</span><span class="o">.</span><span class="n">nextFloat</span><span class="p">();</span>    
+
+        <span class="o">//</span> <span class="n">Calculo</span> <span class="k">del</span> <span class="n">impuesto</span> <span class="n">y</span> <span class="n">el</span> <span class="n">precio</span> <span class="n">neto</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">precioBase</span> <span class="o">&gt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">imp</span> <span class="o">=</span> <span class="n">IVA</span><span class="o">*</span><span class="n">precioBase</span><span class="p">;</span>
+            <span class="n">precioNeto</span> <span class="o">=</span> <span class="n">preciBase</span> <span class="o">+</span> <span class="n">imp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="n">Despliegue</span> <span class="n">de</span> <span class="n">los</span> <span class="n">resultados</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;******** Colilla de pago ********&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;+ Subtotal -&gt; &quot;</span> <span class="o">+</span> <span class="n">precioBase</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;+ Impuesto -&gt; &quot;</span> <span class="o">+</span> <span class="n">imp</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;---------------------------------&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;+    Total -&gt; &quot;</span> <span class="o">+</span> <span class="n">precioNeto</span><span class="p">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;*********************************&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ArticuloIVA.java
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;java -version&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; java -version
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>java version &quot;16.0.1&quot; 2021-04-20
+Java(TM) SE Runtime Environment (build 16.0.1+9-24)
+Java HotSpot(TM) 64-Bit Server VM (build 16.0.1+9-24, mixed mode, sharing)
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -816,6 +976,58 @@ La nota en letra correspondiente a 67.0 es: D
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ExampleIO10.java
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Calificacion</span> <span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Variables</span>
+        <span class="nb">float</span> <span class="n">score</span><span class="p">;</span>
+        <span class="n">char</span> <span class="n">grade</span><span class="p">;</span>
+
+
+        <span class="o">//</span> <span class="n">Objeto</span> <span class="n">tipo</span> <span class="n">Scanner</span>
+        <span class="n">Scanner</span> <span class="nb">input</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="o">.</span><span class="ow">in</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Declaracion</span> <span class="n">de</span> <span class="n">un</span> <span class="n">objeto</span> <span class="p">(</span><span class="n">llamado</span> <span class="n">teclado</span><span class="p">)</span> <span class="n">de</span> <span class="n">la</span> <span class="n">clase</span> <span class="n">Scanner</span>
+
+        <span class="o">//</span><span class="n">Ingreso</span> <span class="n">de</span> <span class="n">la</span> <span class="n">nota</span> <span class="n">numerica</span>
+        <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Ingrese la nota numerica (dentro del rango [0,100]): &quot;</span><span class="p">);</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">nextFloat</span><span class="p">();</span>
+
+        <span class="o">//</span> <span class="n">Validación</span> <span class="n">de</span> <span class="n">la</span> <span class="n">nota</span> <span class="n">numerica</span> <span class="n">y</span> <span class="n">obtencion</span> <span class="n">de</span> <span class="n">la</span> <span class="n">nota</span> <span class="n">en</span> <span class="n">letras</span> <span class="n">dependiendo</span> <span class="n">la</span> <span class="n">tabla</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">90.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">80.0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">70.0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">60.0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="p">{</span>
+                        <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ExampleIO10.java
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="b-implementacion-mediante-la-estructura-de-seleccion-multiple-if-else-if-else">
