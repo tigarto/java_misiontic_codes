@@ -11,4 +11,8 @@ chapters:
   - file: "content/notebooks/io_basica.ipynb"
   - file: "content/notebooks/estructura_condicional.ipynb"
   - file: "content/notebooks/ciclos.ipynb"
+  - file: "content/notebooks/funciones.ipynb"
+  - file: "content/notebooks/arreglos.ipynb"
+  - file: "content/notebooks/matrices.ipynb"
+
 - file: content/CH02_intro
