@@ -1,11 +1,45 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 get_ipython().system('pip3 install tutormagic')
 get_ipython().run_line_magic('load_ext', 'tutormagic')
+
+
+# In[ ]:
+
+
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+# In[ ]:
+
+
+# Run and print a shell command.
+def run(cmd):
+    print('>> {}'.format(cmd))
+    get_ipython().system("{cmd}  # This is magic to run 'cmd' in the shell.")
+    print('')
+
+def compile(nombre_clase):
+    run('javac {}.java'.format(nombre_clase))
+
+def execute(nombre_clase):
+    run('java {}'.format(nombre_clase))
+
+def ejecutar(nombre_clase):
+    compile(nombre_clase)
+    execute(nombre_clase)
+
+
+# In[ ]:
+
+
+# Check the Java version to see if everything is working well.
+run("javac -version")
 
 
 # # Funciones en java #
@@ -66,10 +100,10 @@ get_ipython().run_line_magic('load_ext', 'tutormagic')
 # 
 # **Solucion**: A continuación se muestra el programa completo y listo para ejecutarse, observe bien la parte asociada a la definición de la función y a la invocación de esta.
 
-# In[3]:
+# In[ ]:
 
 
-get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Math { \n    \n    /* Definicion de la funcion square */\n    public static int square( int i ) { \n        return i*i; \n    } \n    \n    public static void main( String[] args ) { \n        for( int i=1; i<=10; i++ ) { \n            System.out.println( "i=" + i + ", i*i=" + square( i ) /*invocacion de la funcion*/ ); \n        } \n    } \n} ')
+get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Math { \n    \n    /* Definicion de la funcion square */\n    public static int square( int i ) { \n        return i*i; \n    } \n    \n    public static void main( String[] args ) { \n        for( int i=1; i<=10; i++ ) { \n            System.out.println( "i=" + i + ", i*i = " + square( i ) /*invocacion de la funcion*/ ); \n        } \n    } \n} ')
 
 
 # ## Funciones que no retornan ##
@@ -142,7 +176,7 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Math { \n   
 # 
 # **Solución**: A continuación se muestra la solución del programa anterior:
 
-# In[4]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Math2 { \n    \n    public static int square( int n ) { \n        return n*n; \n    } \n    public static int cube( int n ) { \n        return n*n*n; \n    } \n \n    public static int toThePower( int n, int power ) { \n        int result=n; \n        for( int i=0; i<power; i++ ) { \n            result *= n; \n        } \n        return result; \n    } \n\n    public static int factorial( int n ) { \n        int result = n; \n        for( int i=n-1; i>0; i-- ) { \n            result *= i; \n        } \n        return result; \n    } \n     \n    public static void showNumber( String operation, int n ) { \n        System.out.println( "The result of the " + operation + " is " + n );  \n    } \n    \n    public static void main( String[] args ) { \n        int a = 5;\n        showNumber( "Square", square( a ) ); \n        showNumber( "Cube", cube( a ) ); \n        showNumber( "To The Power", toThePower( a, 4 ) ); \n        showNumber( "Factorial", factorial( a ) ); \n    } \n} ')

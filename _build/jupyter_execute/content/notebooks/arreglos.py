@@ -1,27 +1,56 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[ ]:
 
 
 get_ipython().system('pip install tutormagic')
-
-
-# In[6]:
-
-
 get_ipython().run_line_magic('load_ext', 'tutormagic')
 
 
-# ## Arreglos ##
+# In[ ]:
 
-# ### Definición ###
+
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+# In[ ]:
+
+
+# Run and print a shell command.
+def run(cmd):
+    print('>> {}'.format(cmd))
+    get_ipython().system("{cmd}  # This is magic to run 'cmd' in the shell.")
+    print('')
+
+def compile(nombre_clase):
+    run('javac {}.java'.format(nombre_clase))
+
+def execute(nombre_clase):
+    run('java {}'.format(nombre_clase))
+
+def ejecutar(nombre_clase):
+    compile(nombre_clase)
+    execute(nombre_clase)
+
+
+# In[ ]:
+
+
+# Check the Java version to see if everything is working well.
+run("javac -version")
+
+
+# # Arreglos #
+
+# ## Definición ##
 # 
 # Un arreglo es una secuencia de datos del mismo tipo llamados elementos los cuales pueden ser accedidos medinte un subindice.
 
 # ### Declaración  y creación de un arreglo ###
 # 
-# #### Declaración ####
+# ### Declaración ###
 # 
 # Un array se declara de modo similar a otros tipos de datos; sin embargo, se debe indicar al compilador que es un arreglo y esto se hace con corchetes. La declaración se puede hacer de dos formas:
 # 1. **Colocando los corchetes al principio**:
@@ -65,7 +94,7 @@ get_ipython().run_line_magic('load_ext', 'tutormagic')
 # ```
 # 
 # 
-# #### Creación ####
+# ### Creación ###
 # 
 # Java considera que un arreglo es una referencia a un objeto por lo tanto para que realmente cree un arreglo, es necesario usar el operador ```new``` junto altipo de los elementos del arreglo y su número.
 # 
@@ -73,7 +102,7 @@ get_ipython().run_line_magic('load_ext', 'tutormagic')
 # tipo nombreArreglo [] = new tipo[numeroDeElementos];
 # ```
 # 
-# #### En resumen #### 
+# ### En resumen ###
 # 
 # Tal y como se mostró anteriormente, la definición y creación de un arreglo involucra dos pasos tal y como se muestra en el siguiente fragmento de codigo:
 # 
@@ -92,7 +121,7 @@ get_ipython().run_line_magic('load_ext', 'tutormagic')
 
 # **Ejemplo**: A continuación se muestran varias formas de inicializar un arreglo.
 
-# In[9]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExample1 {\n    public static void main(String[] args) {\n        // Forma 1\n        int a[] = new int [10];\n        // Forma 2\n        final int N = 20;\n        float [] vector;\n        vector = new float[N];\n\n    }\n}')
@@ -113,13 +142,13 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExampl
 # 
 # 
 
-# In[10]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExample2 {\n    public static void main(String[] args) {\n        // Tamaño del array constante \n        final int ARRAY_SIZE = 6;\n        int[] numbers = new int[ARRAY_SIZE];\n        \n        // Tamaño del array a partir de una variable\n        int tam = 10;\n        float [] vector = new float[tam];\n    }\n}')
 
 
-# ### Acceso a un arreglo ###
+# ## Acceso a un arreglo ##
 # 
 # Son empleados para acceder a un arreglo especificando la posición a la cual se desea acceder. Un array es accedido por medio:
 # 1. La referencia el nombre.
@@ -139,13 +168,13 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExampl
 
 # **Ejemplo**: Simule y comprenda el siguiente fragmento de código.
 
-# In[14]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExamples3 {\n    public static void main(String[] args) {\n        float s;\n        int [] mes = new int[6];\n        float salarios[];\n        salarios = new float[13];\n        mes[4] = 2;\n        s = salarios[mes[4]*3];\n    }\n}')
 
 
-# ### Procesamiento del contenido de un arreglo###
+# ## Procesamiento del contenido de un arreglo ##
 # El procesamiento de los elementos de un array (lectura o escritura) se hace de a uno a la vez. Asi por ejemplo, si se tiene un arreglo de 5 elementos, será necesario ingresar 5 los elementos al array uno por uno. Esto mismo aplica para mostrar el contenido de un array. A continuación se muestran 3 escenarios basicos en donde se hace esto:
 # 
 # **Escenario 1**: Cuando se entran elementos a una array:
@@ -212,7 +241,7 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExampl
 # }     
 # ```
 
-# ### Inicialización de un arreglo ###
+# ## Inicialización de un arreglo ##
 # 
 # Java permite inicializar los elementos de un arreglo cuando este es creado. Para esto lo que se hace es crear el arreglo y pasarle un serie de valores separados por coma y entre llaves conocida como **lista de inicialización**. A continuación se muestran algunos ejemplos:
 # 
@@ -258,13 +287,13 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExampl
 # System.out.print(v.length);    // Muestra en pantalla 15 (numero de elementos del array v)
 # ```
 
-# In[24]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExample2 {\n    public static void main(String[] args) {\n        ArraysExample2 example = new ArraysExample2();  // Por que se uso ???\n        double [] v = new double[4];\n        double rSum = 0;\n        for (int i = 0; i < v.length; i++) {\n            v[i] = i;\n            System.out.print(v[i] + " ");\n        }\n        System.out.println();\n        rSum = example.suma(v);  // Por que se uso ???\n        System.out.println("Resultado suma: " + rSum);\n    }\n    \n    double suma (double[] w) {\n      double s = 0.0;\n      for (int i = 0; i < w.length; i++)\n        s += w[i];\n      return s;\n    }\n}')
 
 
-# ### Verificación del índice de un arreglo ###
+# ## Verificación del índice de un arreglo ##
 # En el siguiente fragmento de código se muestra proteger un vector de un error por indice fuera de rango
 # 
 # ```java
@@ -318,7 +347,7 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class ArraysExampl
 
 # Observe el siguiente fragmendo de codigo:
 
-# In[27]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample2 {\n    public static void main(String[] args) {\n        double [] r, w;\n        r = new double[11];\n        w = new double[15];\n        for (int j = 0; j < r.length; j++) {\n            r[j] = (double) 2*j-1;\n        }\n        // asignación del arreglo r a w\n        w = r;\n        r[3] = 4;\n        w[4] = -6;\n    }\n}')
@@ -326,13 +355,13 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample2
 
 # Ahora, observe el siguiente codigo. ¿En que se diferencia respecto al anterior?
 
-# In[28]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample1 {\n    public static void main(String[] args) {\n        double [] r, w;\n        r = new double[11];\n        w = new double[11];\n        for (int j = 0; j < r.length; j++) {\n            r[j] = (double) 2*j-1;\n        }\n        // asignación del arreglo r a w\n        for (int j = 0; j < r.length; j++) {\n            w[j] = r[j];\n        }\n        r[3] = 4;\n        w[4] = -6;\n    }\n}')
 
 
-# ### Metodo arraycopy ###
+# ## Metodo arraycopy ##
 # 
 # **Sintaxis**:
 # 
@@ -347,7 +376,7 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample1
 # * **inicioDestino**: es la posición del arreglo destino donde empieza la copia.
 # * **numElementos**: número de elementos del arreglo origen que se van a copiar.
 
-# In[29]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample3 {\n    public static void main(String[] args) {\n        double [] r, w;\n        r = new double[11];\n        w = new double[11];\n        for (int j = 0; j < r.length; j++) {\n            r[j] = (double) 2*j-1;\n        }\n        // asignación del arreglo r a w\n        System.arraycopy (r, 0, w, 0, r.length);\n        r[3] = 4;\n        w[4] = -6;\n    }\n}')
@@ -400,7 +429,7 @@ get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class CopyExample3
 
 # ### Bucle for each para recorrido de arreglos y colecciones ###
 
-# In[32]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('tutor', '-l java -k', '\npublic class Bucle {\n    public static void main(String[] args) {\n        int sumA = 0, sumB = 0;\n        int [] a = {1,2,3};\n        int [] b = {4,5,6};\n        \n        // Forma tradicional\n        for (int i = 0; i < a.length; i++) {\n            System.out.print(a[i] + " ");\n            sumA += a[i];\n        }\n        System.out.print("\\nsumA = " + sumA + "\\n\\n");\n        // Forma for each\n        for (int num:b) {\n            System.out.print(num + " ");\n            sumB += num;\n        }\n        System.out.print("\\nsumB = " + sumB + "\\n");\n    }\n}')
