@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrices &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Capitulo 2 - Introduccion a la POO en Java" href="../CH02_intro.html" />
+    <link rel="prev" title="Arreglos" href="arreglos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/matrices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/matrices.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaracion">
+   Declaración
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inicializacion-de-arreglos-multidimensionales">
+   Inicialización de arreglos multidimensionales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arreglos-irregulares-o-triangulares">
+   Arreglos irregulares o triangulares
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-a-los-elementos-de-arreglos-bidimensionales">
+   Acceso a los elementos de arreglos bidimensionales
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#insercion-de-elementos">
+     Inserción de elementos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extraccion-de-elementos">
+     Extracción de elementos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceso-a-los-elementos-de-la-matrix">
+     Acceso a los elementos de la matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forma-1">
+     Forma 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forma-2">
+     Forma 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-10-3">
+     ejercicio 10.3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilizacion-de-arreglos-como-parametros">
+   Utilización de arreglos como parámetros
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-10-4">
+     ejercicio 10.4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#precauciones">
+   Precauciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-10-5">
+     ejercicio 10.5
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run and print a shell command.</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="o">!{</span>cmd<span class="o">}</span>  # This is magic to run <span class="s1">&#39;cmd&#39;</span> <span class="k">in</span> the shell.
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac </span><span class="si">{}</span><span class="s1">.java&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;java </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">ejecutar</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="nb">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+    <span class="n">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the Java version to see if everything is working well.</span>
+<span class="n">run</span><span class="p">(</span><span class="s2">&quot;javac -version&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matrices">
+<h1>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="declaracion">
+<h2>Declaración<a class="headerlink" href="#declaracion" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class MatrixExample1 {
+    public static void main(String[] args) {
+        
+        char pantalla[][] = pantalla = new char[4][3];
+        
+        int puestos[][];
+        puestos = new int[5][2];
+        
+        final int N = 4;
+        double [][]matriz;
+        matriz = new double[N][N];
+
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inicializacion-de-arreglos-multidimensionales">
+<h2>Inicialización de arreglos multidimensionales<a class="headerlink" href="#inicializacion-de-arreglos-multidimensionales" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class MatrixExample2 {
+    public static void main(String[] args) {
+        
+        int tabla1_1[][] = { {51, 52, 53},{54, 55, 56} };
+        
+        int tabla1_2[][]= { {51, 52, 53},
+                            {54, 55, 56} };
+        
+        int tabla2[][] = {
+                           {1, 2, 3, 4},
+                           {5, 6, 7, 8},
+                           {9, 10, 11, 12}
+                         };
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arreglos-irregulares-o-triangulares">
+<h2>Arreglos irregulares o triangulares<a class="headerlink" href="#arreglos-irregulares-o-triangulares" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ArraysExample2 {
+    public static void main(String[] args) {
+        // Forma 1
+        double [][] numForma1 = new double[2][3];
+        
+        // Forma 2
+        double [][] numForma2;
+        numForma2 = new double[2][];
+        numForma2[0] = new double [3];
+        numForma2[1] = new double [3];
+        
+        // Matrix irregular
+        double [][] numIrreg;
+        numIrreg = new double[3][];
+        numIrreg[0] = new double [3];
+        numIrreg[1] = new double [2];
+        numIrreg[2] = new double [1];
+    }  
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="acceso-a-los-elementos-de-arreglos-bidimensionales">
+<h2>Acceso a los elementos de arreglos bidimensionales<a class="headerlink" href="#acceso-a-los-elementos-de-arreglos-bidimensionales" title="Permalink to this headline">¶</a></h2>
+<p>El formato general para asignación directa de valores a los elementos es:</p>
+<div class="section" id="insercion-de-elementos">
+<h3>Inserción de elementos<a class="headerlink" href="#insercion-de-elementos" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">nombreArreglo</span><span class="o">[</span><span class="n">indiceFila</span><span class="o">][</span><span class="n">indiceCcolumna</span><span class="o">]</span> <span class="o">=</span> <span class="n">valorElemento</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extraccion-de-elementos">
+<h3>Extracción de elementos<a class="headerlink" href="#extraccion-de-elementos" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="n">nombreArreglo</span><span class="o">[</span><span class="n">indiceFila</span><span class="o">][</span><span class="n">indiceCcolumna</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="acceso-a-los-elementos-de-la-matrix">
+<h3>Acceso a los elementos de la matrix<a class="headerlink" href="#acceso-a-los-elementos-de-la-matrix" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="forma-1">
+<h3>Forma 1<a class="headerlink" href="#forma-1" title="Permalink to this headline">¶</a></h3>
+<p>Con dos bucles anidados se accede a todos los elementos de una matriz; su sintaxis es:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">fila</span><span class="p">,</span> <span class="n">col</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">fila</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">fila</span> <span class="o">&lt;</span> <span class="n">numFilas</span><span class="p">;</span> <span class="o">++</span><span class="n">fila</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">numCol</span><span class="p">;</span> <span class="o">++</span><span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Procesar</span> <span class="n">elemento</span> <span class="n">Matriz</span><span class="o">[</span><span class="n">fila</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="forma-2">
+<h3>Forma 2<a class="headerlink" href="#forma-2" title="Permalink to this headline">¶</a></h3>
+<p>El número de filas y de columnas se puede obtener con el atributo length; en este caso, la sintaxis para acceder a los elementos es:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">tipo</span><span class="o">&gt;</span> <span class="n">Matriz</span><span class="o">[][]</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="n">especificación</span> <span class="n">de</span> <span class="n">filas</span> <span class="n">y</span> <span class="n">columnas</span> <span class="n">con</span> <span class="n">operador</span> <span class="k">new</span><span class="o">&gt;</span>
+<span class="nf">for</span> <span class="p">(</span><span class="n">fila</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">fila</span> <span class="o">&lt;</span> <span class="n">Matriz</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">fila</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">Matriz</span><span class="o">[</span><span class="n">fila</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Procesar</span> <span class="n">elemento</span> <span class="n">Matriz</span><span class="o">[</span><span class="n">fila</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>         
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-10-3">
+<h3>ejercicio 10.3<a class="headerlink" href="#ejercicio-10-3" title="Permalink to this headline">¶</a></h3>
+<p>Codificar un programa para dar entrada y posterior visualización de un arreglo bidimensional.
+El método leer() da entrada a los elementos de la matriz que se pasa como argumento, y el método visualizar() muestra la tabla en la pantalla.</p>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Tabla</span> <span class="p">{</span> 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="o">[][]=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">leer</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="n">visualizar</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">leer</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">[][]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Entrada de datos de la matriz&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fila: &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">visualizar</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">[][]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n\t Matriz leída\n&quot;</span><span class="p">);</span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utilizacion-de-arreglos-como-parametros">
+<h2>Utilización de arreglos como parámetros<a class="headerlink" href="#utilizacion-de-arreglos-como-parametros" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Funcion</span>
+<span class="kt">void</span> <span class="nf">SumaDeMats</span><span class="p">(</span><span class="kt">double</span> <span class="n">m1</span><span class="o">[][]</span><span class="p">,</span> <span class="kt">double</span> <span class="n">m2</span><span class="o">[][]</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Codigo ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Invocación</span>
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">mat1</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">N</span><span class="o">][</span><span class="n">N</span><span class="o">]</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">mat2</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">N</span><span class="o">][</span><span class="n">N</span><span class="o">]</span><span class="p">;</span>
+<span class="n">SumaDeMats</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">mat2</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="ejercicio-10-4">
+<h3>ejercicio 10.4<a class="headerlink" href="#ejercicio-10-4" title="Permalink to this headline">¶</a></h3>
+<p>Haga un programa que lea un array e imprima el producto de sus elementos.</p>
+<p><strong>Solución</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ProductoMat</span> <span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="kt">double</span> <span class="n">v</span><span class="o">[]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Número de elementos: &quot;</span><span class="p">);</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">leerArreglo</span> <span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El producto de los elementos = &quot;</span> <span class="o">+</span> <span class="n">producto</span><span class="p">(</span><span class="n">v</span><span class="p">));</span>
+    <span class="p">}</span>
+    
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">leerArreglo</span> <span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduzca &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span> <span class="o">+</span> <span class="s">&quot; datos.&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">a</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">static</span> <span class="kt">double</span> <span class="nf">producto</span><span class="p">(</span><span class="kt">double</span> <span class="n">w</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">pd</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">w</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">w</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">pd</span> <span class="o">*=</span> <span class="n">w</span><span class="o">[</span><span class="n">n</span><span class="o">--]</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="precauciones">
+<h2>Precauciones<a class="headerlink" href="#precauciones" title="Permalink to this headline">¶</a></h2>
+<p>Un método conoce cuántos elementos tiene el arreglo pasado como argumento pero
+puede ocurrir que no todos los elementos sean significativos; si esto ocurre, hay que pasar un segundo argumento que indique el número real de elementos.</p>
+<div class="section" id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">¶</a></h3>
+<p>El método sumaDeEnteros() suma los valores de los n elementos de un arreglo y devuelve el resultado.</p>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Metodo</span>
+<span class="kt">int</span> <span class="nf">sumaDeEnteros</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="n">arregloEnteros</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="p">)</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">arregloEnteros</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>    
+<span class="c1">// Invocacion</span>
+<span class="kt">int</span> <span class="n">lista</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">33</span><span class="o">]</span><span class="p">;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">sumaDeEnteros</span> <span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejercicio-10-5">
+<h3>ejercicio 10.5<a class="headerlink" href="#ejercicio-10-5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Solución</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">SumaMax</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">NUM</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">items</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">NUM</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">(</span><span class="n">items</span><span class="p">);</span> <span class="c1">// devuelve el número de elementos</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nSuma de los elementos: &quot;</span> <span class="o">+</span>
+                <span class="n">sumaEnteros</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nValor máximo: &quot;</span> <span class="o">+</span> <span class="n">maximo</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">static</span> <span class="kt">int</span> <span class="nf">entrada</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduzca un máximo de &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">.</span><span class="na">length</span> <span class="o">+</span> <span class="s">&quot;datos, terminar con -1&quot;</span><span class="p">);</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">)</span>
+                <span class="n">w</span><span class="o">[</span><span class="n">k</span><span class="o">++]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">while</span> <span class="p">((</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">.</span><span class="na">length</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+        <span class="k">return</span> <span class="n">k</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sumaEnteros</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">w</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">static</span> <span class="kt">int</span> <span class="nf">maximo</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mx</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">mx</span> <span class="o">=</span> <span class="n">w</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">mx</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="o">[</span><span class="n">i</span><span class="o">]&gt;</span><span class="n">mx</span> <span class="o">?</span> <span class="n">w</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">:</span> <span class="n">mx</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">mx</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="arreglos.html" title="previous page">Arreglos</a>
+    <a class='right-next' id="next-link" href="../CH02_intro.html" title="next page">Capitulo 2 - Introduccion a la POO en Java</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

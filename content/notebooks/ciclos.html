@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Capitulo 2 - Introduccion a la POO en Java" href="../CH02_intro.html" />
+    <link rel="next" title="Funciones en java" href="funciones.html" />
     <link rel="prev" title="Estructuras de selección en java" href="estructura_condicional.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -117,9 +117,22 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     <strong>
-      Estructuras repetitivas
-     </strong>
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
     </a>
    </li>
   </ul>
@@ -231,54 +244,123 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#contextualizacion">
-   <strong>
-    Contextualización
-   </strong>
+   Contextualización
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definicion">
-   <strong>
-    Definición
-   </strong>
+   Definición
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estrategias-de-diseno-con-loops-para-primiparos">
-   <strong>
-    Estrategias de diseño con Loops para primiparos
-   </strong>
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ciclo-while">
+     Ciclo while
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sobre-la-condicion-de-control">
+     Sobre la condición de control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preguntas-importantes-al-trabajar-problemas-con-ciclos">
+     Preguntas importantes al trabajar problemas con ciclos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estrategias-de-diseno-con-loops-para-primiparos">
+     Estrategias de diseño con Loops para primiparos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sobre-el-numero-de-iteraciones-de-los-ciclos">
+     Sobre el numero de iteraciones de los ciclos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplos-de-ciclos-while">
+     Ejemplos de ciclos while
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclos-definidos">
-   <strong>
-    Ciclos definidos
-   </strong>
+   Ciclos definidos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contadores-y-acumuladores">
+   Contadores y acumuladores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contadores">
+     Contadores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acumuladores">
+     Acumuladores
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclos-indefinidos-o-condicionales">
-   <strong>
-    Ciclos indefinidos o condicionales
-   </strong>
+   Ciclos indefinidos o condicionales**
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ciclos-interactivos">
-     <strong>
-      Ciclos interactivos
-     </strong>
+     Ciclos interactivos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ciclos-con-centinelas">
-     <strong>
-      Ciclos con centinelas
-     </strong>
+     Ciclos con centinelas
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ciclo-for">
+   Ciclo for
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplos-de-implementacion-de-ciclos-for">
+     Ejemplos de implementación de ciclos for
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-break-y-continue">
+   Instrucciones break y continue
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instruccion-break">
+     Instrucción break
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instruccion-continue">
+     Instrucción continue
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temas-faltantes-falta">
+   Temas faltantes Falta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
  </li>
 </ul>
 
@@ -293,14 +375,14 @@
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">metakernel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">metakernel</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metakernel</span> <span class="kn">import</span> <span class="n">register_ipython_magics</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metakernel</span> <span class="kn">import</span> <span class="n">register_ipython_magics</span>
 <span class="n">register_ipython_magics</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -308,28 +390,28 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Run and print a shell command.
-def run(cmd):
-  print(&#39;&gt;&gt; {}&#39;.format(cmd))
-  !{cmd}  # This is magic to run &#39;cmd&#39; in the shell.
-  print(&#39;&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run and print a shell command.</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+  <span class="o">!{</span>cmd<span class="o">}</span>  # This is magic to run <span class="s1">&#39;cmd&#39;</span> <span class="k">in</span> the shell.
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
-def compile(nombre_clase):
-  run(&#39;javac {}.java&#39;.format(nombre_clase))
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+  <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac </span><span class="si">{}</span><span class="s1">.java&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
 
-def execute(nombre_clase):
-  run(&#39;java {}&#39;.format(nombre_clase))
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+  <span class="n">run</span><span class="p">(</span><span class="s1">&#39;java </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
 
-def ejecutar(nombre_clase):
-  compile(nombre_clase)
-  execute(nombre_clase)
+<span class="k">def</span> <span class="nf">ejecutar</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+  <span class="nb">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+  <span class="n">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejecutar esto solo si lo está usando online o en linux</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejecutar esto solo si lo está usando online o en linux</span>
 <span class="c1"># Update and upgrade the system before installing anything else.</span>
 <span class="n">run</span><span class="p">(</span><span class="s1">&#39;apt-get update &gt; /dev/null&#39;</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="s1">&#39;apt-get upgrade &gt; /dev/null&#39;</span><span class="p">)</span>
@@ -342,37 +424,31 @@ def ejecutar(nombre_clase):
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the Java version to see if everything is working well.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the Java version to see if everything is working well.</span>
 <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac -version&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac -version
-javac 11.0.11
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="estructuras-repetitivas">
-<h1><strong>Estructuras repetitivas</strong><a class="headerlink" href="#estructuras-repetitivas" title="Permalink to this headline">¶</a></h1>
+<h1>Estructuras repetitivas<a class="headerlink" href="#estructuras-repetitivas" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="contextualizacion">
-<h2><strong>Contextualización</strong><a class="headerlink" href="#contextualizacion" title="Permalink to this headline">¶</a></h2>
+<h2>Contextualización<a class="headerlink" href="#contextualizacion" title="Permalink to this headline">¶</a></h2>
 <p>Suponga que le solucitan un programa que obtenga la suma de los primeros 10 numeros y que imprima su resultado. La solución para este caso será:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">tutor</span>
-<span class="c1"># código en python</span>
-<span class="n">CANTIDAD_NUMEROS</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">9</span>   <span class="c1"># sum = 45</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La suma de los primeros &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">CANTIDAD_NUMEROS</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; numeros es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span>
+# código en python
+CANTIDAD_NUMEROS = 10
+sum = 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9   # sum = 45
+print(&quot;La suma de los primeros &quot; + str(CANTIDAD_NUMEROS) + &quot; numeros es: &quot; + str(sum))
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ejemplo1</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ejemplo1.java
 <span class="o">/*</span>
 <span class="n">Código</span> <span class="n">en</span> <span class="n">java</span>
 <span class="o">*/</span>
@@ -386,23 +462,10 @@ javac 11.0.11
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ejemplo1.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ejemplo1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ejemplo1.java
-
-&gt;&gt; java Ejemplo1
-La suma de los primeros 10 numeros es: 45
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ejemplo1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -416,7 +479,7 @@ La suma de los primeros 10 numeros es: 45
 <p>De la solución anterior, vemos que la implementación anterior no es practica y por lo tanto no es viable. Sin embargo, afortunamente existe una forma de tratar problemas como este y es mediante las <strong>estructuras repetitivas</strong> las cuales trataremos a continuación.</p>
 </div>
 <div class="section" id="definicion">
-<h2><strong>Definición</strong><a class="headerlink" href="#definicion" title="Permalink to this headline">¶</a></h2>
+<h2>Definición<a class="headerlink" href="#definicion" title="Permalink to this headline">¶</a></h2>
 <p>Una <strong>estructura repetitiva</strong> o <strong>ciclo</strong> es una estructura que permite solucionar problemas que requieran que se repitan un concunto de instrucciones un determinado numero de veces. El diagrama de flujo tipico de un ciclo se muestra a continuación:</p>
 <p><img alt="" src="../../_images/ciclo.jpg" /></p>
 <p>Como se puede observar en la figura anterior, un <strong>ciclo</strong> esta compuesto de dos partes principales:</p>
@@ -430,30 +493,33 @@ La suma de los primeros 10 numeros es: 45
 <li><p>El ciclo do-while</p></li>
 <li><p>El ciclo for.</p></li>
 </ol>
-<p>##<strong>Ciclo while</strong>##</p>
+<div class="section" id="ciclo-while">
+<h3>Ciclo while<a class="headerlink" href="#ciclo-while" title="Permalink to this headline">¶</a></h3>
 <p>Este ciclo tiene la siguiente sintaxis:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sintaxis en python</span>
 <span class="k">while</span> <span class="p">(</span><span class="n">condicion</span><span class="p">):</span>
-  <span class="c1">#  Cuerpo del ciclo</span>
-  <span class="n">instruccion_1</span>
-  <span class="n">instruccion_2</span>
-  <span class="o">...</span>
-  <span class="n">instruccion_N</span>
+    <span class="c1">#  Cuerpo del ciclo</span>
+    <span class="n">instruccion_1</span>
+    <span class="n">instruccion_2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion_N</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>// sintaxis en java
-while (condicion){
-  #  Cuerpo del ciclo
-  instruccion_1
-  instruccion_2
-  ...
-  instruccion_N
-}
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// sintaxis en java</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">condicion</span><span class="p">){</span>
+    <span class="c1">// Cuerpo del ciclo</span>
+    <span class="n">instruccion_1</span><span class="p">;</span>
+    <span class="n">instruccion_2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="n">instruccion_N</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Como todo ciclo, inicialmente lo primero que se hace es evaluar la <strong>condición</strong> para determinar si se ingresa (condición verdadera) o no al ciclo (condición falsa).</p>
-<p>##<strong>Sobre la condición de control</strong>##
-Como se dijo previamente, el resultado obtenido al evaluar la condición determina si se ingresa al ciclo o no. El objetivo es que el ciclo solo se repita un numero determinado de veces de modo que debe haber un momento en que esta condición <strong>debe hacerse falsa</strong> para que el programa se salga del ciclo sino, lo que se trenda será un <strong>ciclo infinito</strong>.</p>
+</div>
+<div class="section" id="sobre-la-condicion-de-control">
+<h3>Sobre la condición de control<a class="headerlink" href="#sobre-la-condicion-de-control" title="Permalink to this headline">¶</a></h3>
+<p>Como se dijo previamente, el resultado obtenido al evaluar la condición determina si se ingresa al ciclo o no. El objetivo es que el ciclo solo se repita un numero determinado de veces de modo que debe haber un momento en que esta condición <strong>debe hacerse falsa</strong> para que el programa se salga del ciclo sino, lo que se trenda será un <strong>ciclo infinito</strong>.</p>
 <p>Para hacer que una condición se haga falsa se emplea una variable especial conocida como <strong>variable de control del ciclo</strong>. Esta variable es la que se evalua en la condición con el fin de determinar si se ingresa o no al ciclo por lo tanto se debe modificar dentro del cuerpo para evitar la condicion de ciclo infinito. Para entender esto, analicemos nuevamente el ejemplo de sumar los mil primeros numeros empleando el ciclo.</p>
 <p><strong>Ejemplo</strong>: Hacer un programa que sume los 1000 primeros numeros y los muestre en pantalla.</p>
 <p><strong>Analisis del problema</strong>:</p>
@@ -489,7 +555,7 @@ Como se dijo previamente, el resultado obtenido al evaluar la condición determi
 <p><strong>Codigo python</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%tutor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%tutor</span>
 <span class="c1"># Constantes</span>
 <span class="n">CANTIDAD_NUMEROS</span> <span class="o">=</span> <span class="mi">1000</span>
 
@@ -507,16 +573,11 @@ Como se dijo previamente, el resultado obtenido al evaluar la condición determi
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La suma de los primeros 1000 numeros es: 499500
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Código Java</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">CicloWhile</span><span class="o">.</span><span class="n">java</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> CicloWhile.java 
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">CicloWhile</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
@@ -539,30 +600,19 @@ Como se dijo previamente, el resultado obtenido al evaluar la condición determi
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting CicloWhile.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloWhile&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac CicloWhile.java
-
-&gt;&gt; java CicloWhile
-La suma de los primeros 1000 numeros es: 499500
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloWhile&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Como se puede notar, ahora si es posible implementar el algoritmo solución gracias a esta nueva estructura.</p>
-<p>##<strong>Preguntas importantes al trabajar problemas con ciclos</strong>##
-Al trabajar problemas que impliquen el uso de ciclos debe hacerse las siguientes preguntas para plantear la solución del problema.</p>
+</div>
+<div class="section" id="preguntas-importantes-al-trabajar-problemas-con-ciclos">
+<h3>Preguntas importantes al trabajar problemas con ciclos<a class="headerlink" href="#preguntas-importantes-al-trabajar-problemas-con-ciclos" title="Permalink to this headline">¶</a></h3>
+<p>Al trabajar problemas que impliquen el uso de ciclos debe hacerse las siguientes preguntas para plantear la solución del problema.</p>
 <ol class="simple">
 <li><p>¿Dentro del problema hay cosas que se deben repetir?</p></li>
 <li><p>¿Que cosas se deben repetir?</p></li>
@@ -573,7 +623,7 @@ Al trabajar problemas que impliquen el uso de ciclos debe hacerse las siguientes
 <p>En resumen, un problema que implique el manejo de ciclos se reduce a determinar cual será la condición y que instrucciones se repetiran (iran dentro del cuerpo). Un vez se tiene identificado, ya se podrá proceder a codificar.</p>
 </div>
 <div class="section" id="estrategias-de-diseno-con-loops-para-primiparos">
-<h2><strong>Estrategias de diseño con Loops para primiparos</strong><a class="headerlink" href="#estrategias-de-diseno-con-loops-para-primiparos" title="Permalink to this headline">¶</a></h2>
+<h3>Estrategias de diseño con Loops para primiparos<a class="headerlink" href="#estrategias-de-diseno-con-loops-para-primiparos" title="Permalink to this headline">¶</a></h3>
 <p>Cuando escriba ciclos tenga en cuenta las siguientes estrategias:</p>
 <ol class="simple">
 <li><p>Identifique las instrucciones (<strong>Statements</strong>) que necesita que se repitan.</p></li>
@@ -595,19 +645,23 @@ controlar el loop (<strong>Aditional statements for controlling the loop</strong
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>##<strong>Sobre el numero de iteraciones de los ciclos</strong>##
-Se puede dar el caso en que se conozcan o no el numero de iteraciones que correra un ciclo. En tal caso podemos definir dos grandes clasificaciones para los problemas que impliquen el uso de ciclos:</p>
+</div>
+<div class="section" id="sobre-el-numero-de-iteraciones-de-los-ciclos">
+<h3>Sobre el numero de iteraciones de los ciclos<a class="headerlink" href="#sobre-el-numero-de-iteraciones-de-los-ciclos" title="Permalink to this headline">¶</a></h3>
+<p>Se puede dar el caso en que se conozcan o no el numero de iteraciones que correra un ciclo. En tal caso podemos definir dos grandes clasificaciones para los problemas que impliquen el uso de ciclos:</p>
 <ol class="simple">
 <li><p>Problemas donde se conocen el numero de iteraciones.</p></li>
 <li><p>Problemas donde no se conocen el numero de iteraciones.</p></li>
 </ol>
 <p>En breve nos volveremos a referir un poco a estos.</p>
-<p>##<strong>Ejemplos de ciclos while</strong>##</p>
+</div>
+<div class="section" id="ejemplos-de-ciclos-while">
+<h3>Ejemplos de ciclos while<a class="headerlink" href="#ejemplos-de-ciclos-while" title="Permalink to this headline">¶</a></h3>
 <p>Los siguientes fragmentos de código permiten entender como funciona el ciclo while en java.</p>
 <p><strong>Codigo 1</strong>: Hacer un programa que muestre en pantalla los numeros del 0 al 9.¿Cuantas iteraciones hay?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo1</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo1.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo1</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">a</span><span class="p">){</span>
       <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -621,33 +675,10 @@ Se puede dar el caso en que se conozcan o no el numero de iteraciones que correr
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ciclo1.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo1.java
-
-&gt;&gt; java Ciclo1
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-Terminó el ciclo
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -655,7 +686,7 @@ Terminó el ciclo
 <p><strong>Codigo 2</strong>: Hacer un programa que muestre en pantalla los numeros del 1 al 5. ¿Cuantas iteraciones hay?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo2</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo2.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo2</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">a</span><span class="p">){</span>
       <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -669,28 +700,10 @@ Terminó el ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo2.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo2.java
-
-&gt;&gt; java Ciclo2
-1
-2
-3
-4
-5
-Fuera del ciclo
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -698,7 +711,7 @@ Fuera del ciclo
 <p><strong>Codigo 3</strong>: Hacer un programa que muestre los numeros entre 20 y 30 incluidos estos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo3</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo3.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo3</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
       <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="o">//</span> <span class="n">Variable</span> <span class="n">de</span> <span class="n">control</span>
@@ -712,33 +725,10 @@ Fuera del ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo3.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo3.java
-
-&gt;&gt; java Ciclo3
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +736,7 @@ Fuera del ciclo
 <p><strong>Codigo 4</strong>: ¿Cuantas iteraciones hay?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo4</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo4.java
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo4</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">ar</span><span class="p">){</span>
@@ -765,23 +755,10 @@ Fuera del ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ciclo4.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo4&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo4.java
-
-&gt;&gt; java Ciclo4
--1-2-3+4+5+6+7+8+9+10+11
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo4&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -789,7 +766,7 @@ Fuera del ciclo
 <p><strong>Codigo 5</strong>: Hacer un programa que imprima los primeros N numeros indicando si estos son pares o impares.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo5</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo5.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo5</span><span class="p">{</span>
@@ -812,44 +789,10 @@ Fuera del ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo5.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo5.java
-
-&gt;&gt; java Ciclo5
-Digite la cantidad de numeros: 21
-1 es impar
-2 es par
-3 es impar
-4 es par
-5 es impar
-6 es par
-7 es impar
-8 es par
-9 es impar
-10 es par
-11 es impar
-12 es par
-13 es impar
-14 es par
-15 es impar
-16 es par
-17 es impar
-18 es par
-19 es impar
-20 es par
-21 es impar
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -857,7 +800,7 @@ Digite la cantidad de numeros: 21
 <p><strong>Codigo 6</strong>: Hacer un programa que solicite 2 numeros e imprima la cantidad de numeros impares entre estos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo6</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo6.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -883,16 +826,11 @@ Digite la cantidad de numeros: 21
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo6.java
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Codigo 7</strong>: ¿Cuantas iteraciones hay?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo7</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo7.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo7</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -913,41 +851,18 @@ Digite la cantidad de numeros: 21
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ciclo7.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo7&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo7&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo7.java
-
-&gt;&gt; java Ciclo7
-Vamos en 1
-Vamos en 3
-Vamos en 5
-Vamos en 8
-Vamos en 11
-Vamos en 15
-Vamos en 16
-Vamos en 17
-Vamos en 18
-Vamos en 19
-Vamos en 20
-Valor final de i: 21
-</pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="ciclos-definidos">
-<h2><strong>Ciclos definidos</strong><a class="headerlink" href="#ciclos-definidos" title="Permalink to this headline">¶</a></h2>
+<h2>Ciclos definidos<a class="headerlink" href="#ciclos-definidos" title="Permalink to this headline">¶</a></h2>
 <p>Para en este caso, el numero de iteraciones es conocido. Vamos a ver los siguientes ejemplos para aterrizar el concepto.</p>
 <p><strong>Ejemplo</strong>: Hacer un programa que encuentre e imprime la suma de los N primeros numeros.</p>
 <p><strong>Analisis del problema</strong>:</p>
@@ -979,7 +894,7 @@ Valor final de i: 21
 <p><strong>Codigo java</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">SumaNumeros</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> SumaNumeros.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -1003,38 +918,29 @@ Valor final de i: 21
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting SumaNumeros.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;SumaNumeros&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac SumaNumeros.java
-
-&gt;&gt; java SumaNumeros
-Ingrese el numero de datos a sumar: 5
-La suma de los 5 numeros da: 10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;SumaNumeros&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>##<strong>Contadores y acumuladores</strong>
-Cuando se usan ciclos se manejan dos tipos de variables conocidas como el contador y el acumulador. Veamos que son y para que sirven cada uno de estos tipos de variables.</p>
-<p>###<strong>Contadores</strong>
-Como su nombre lo dice, un contador cuenta el número de ocurrencias de un evento dentro de un ciclo. El contador es una variable que se incrementa (contador ascendente) o disminuye en un valor constante (contador descendente), y tiene la siguiente forma:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="n">CONSTANTE</span>
+</div>
+<div class="section" id="contadores-y-acumuladores">
+<h2>Contadores y acumuladores<a class="headerlink" href="#contadores-y-acumuladores" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se usan ciclos se manejan dos tipos de variables conocidas como el contador y el acumulador. Veamos que son y para que sirven cada uno de estos tipos de variables.</p>
+<div class="section" id="contadores">
+<h3>Contadores<a class="headerlink" href="#contadores" title="Permalink to this headline">¶</a></h3>
+<p>Como su nombre lo dice, un contador cuenta el número de ocurrencias de un evento dentro de un ciclo. El contador es una variable que se incrementa (contador ascendente) o disminuye en un valor constante (contador descendente), y tiene la siguiente forma:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="n">CONSTANTE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>###<strong>Acumuladores</strong>
-Un acumulador o totalizador Es una variable cuya finalidad es almacenar cantidades variables resultantes de procesos sucesivos. La diferencia con el contador radica en que el incremento o disminución de cada suma es variable en lugar de constante; de este modo la forma general de un acumulador es:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">acumulador</span> <span class="o">=</span> <span class="n">acumuador</span> <span class="o">+</span> <span class="n">variable</span>
+</div>
+<div class="section" id="acumuladores">
+<h3>Acumuladores<a class="headerlink" href="#acumuladores" title="Permalink to this headline">¶</a></h3>
+<p>Un acumulador o totalizador Es una variable cuya finalidad es almacenar cantidades variables resultantes de procesos sucesivos. La diferencia con el contador radica en que el incremento o disminución de cada suma es variable en lugar de constante; de este modo la forma general de un acumulador es:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">acumulador</span> <span class="o">=</span> <span class="n">acumuador</span> <span class="o">+</span> <span class="n">variable</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>Nota importante</strong>: Tanto los contadores como los acumuladores <strong>deben inicializarse a un valor conocido</strong> antes de ser usados. El caso mas comun suele ser la inicialización a 0.</p>
@@ -1083,7 +989,7 @@ Un acumulador o totalizador Es una variable cuya finalidad es almacenar cantidad
 <p><strong>Codigo java</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">BarMoe</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> BarMoe.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -1131,61 +1037,10 @@ Un acumulador o totalizador Es una variable cuya finalidad es almacenar cantidad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting BarMoe.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;BarMoe&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac BarMoe.java
-
-&gt;&gt; java BarMoe
-+++ Bienvenido al bar de Moe +++
-Por favor digite el sexo
--&gt; 1. Mujer
--&gt; 2. Hombre
-1
-Bienvenida
-
-+++ Bienvenido al bar de Moe +++
-Por favor digite el sexo
--&gt; 1. Mujer
--&gt; 2. Hombre
-1
-Bienvenida
-
-+++ Bienvenido al bar de Moe +++
-Por favor digite el sexo
--&gt; 1. Mujer
--&gt; 2. Hombre
-2
-Bienvenido
-
-+++ Bienvenido al bar de Moe +++
-Por favor digite el sexo
--&gt; 1. Mujer
--&gt; 2. Hombre
-1
-Bienvenida
-
-+++ Bienvenido al bar de Moe +++
-Por favor digite el sexo
--&gt; 1. Mujer
--&gt; 2. Hombre
-2
-Bienvenido
-
-+++ Resumen noche de inaguracion +++
--&gt; Total mujeres: 3
--&gt; Total hombres: 2
--&gt; Total entradas: $215000
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;BarMoe&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1246,7 +1101,7 @@ Bienvenido
 <p><strong>Codigo java</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Estudiantes</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Estudiantes.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -1315,44 +1170,28 @@ Bienvenido
       <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;******************************************************&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Estudiantes.java
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Estudiantes&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Estudiantes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Estudiantes.java
-
-&gt;&gt; java Estudiantes
-Ingrese la cantidad de estudiantes: 3
-Ingrese el nombre del estudiante: 
-* Nota 1: 
-</pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="ciclos-indefinidos-o-condicionales">
-<h2><strong>Ciclos indefinidos o condicionales</strong><a class="headerlink" href="#ciclos-indefinidos-o-condicionales" title="Permalink to this headline">¶</a></h2>
+<h2>Ciclos indefinidos o condicionales**<a class="headerlink" href="#ciclos-indefinidos-o-condicionales" title="Permalink to this headline">¶</a></h2>
 <p>En los problemas de este tipo, no se conocen el numero de iteraciones que se llevaran a cabo. Para este caso se manejan 2 tipos.</p>
 <ol class="simple">
 <li><p>Ciclos interactivos</p></li>
 <li><p>Ciclos con centinela.</p></li>
 </ol>
 <div class="section" id="ciclos-interactivos">
-<h3><strong>Ciclos interactivos</strong><a class="headerlink" href="#ciclos-interactivos" title="Permalink to this headline">¶</a></h3>
+<h3>Ciclos interactivos<a class="headerlink" href="#ciclos-interactivos" title="Permalink to this headline">¶</a></h3>
 <p>Los ciclos interactivos permiten a un usuario decidir si realizar o no la interacion de un ciclo haciendo uso de variables que se entran por teclado.</p>
 <p><strong>Ejemplo</strong>: Hacer un programa que solicite cualquier cantidad de numeros y despliege su promedio.</p>
 <p><strong>Analisis del problema</strong>:</p>
@@ -1390,7 +1229,7 @@ Ingrese el nombre del estudiante:
 <p><strong>Codigo java</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">PromedioNumeros</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> PromedioNumeros.java
 
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
@@ -1429,39 +1268,17 @@ Ingrese el nombre del estudiante:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting PromedioNumeros.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;PromedioNumeros&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac PromedioNumeros.java
-
-&gt;&gt; java PromedioNumeros
-Desea ingresar un dato (y/n): y
-y
-Digite el numero &gt;&gt; 3
-Desea ingresar un dato (y/n): y
-Digite el numero &gt;&gt; 5
-Desea ingresar un dato (y/n): y
-Digite el numero &gt;&gt; 4
-Desea ingresar un dato (y/n): n
-
-El promedio de los numeros ingresados es:4.0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;PromedioNumeros&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="ciclos-con-centinelas">
-<h3><strong>Ciclos con centinelas</strong><a class="headerlink" href="#ciclos-con-centinelas" title="Permalink to this headline">¶</a></h3>
+<h3>Ciclos con centinelas<a class="headerlink" href="#ciclos-con-centinelas" title="Permalink to this headline">¶</a></h3>
 <p>Un ciclo con centinela se caracteriza por que la iteración se da hasta que el dato que esta siendo empleado en la condición de comparación alcanza un valor que indica el fin del ciclo.</p>
 <p>Este valor especial es conocido como <strong>centinela</strong>. El centinela debe ser distinguible del dato ya que este no es procesado como parte de los datos.</p>
 <p>Veamos el mismo ejemplo anterior pero usando la variable un valor negativo para <strong>num</strong> como centinela.</p>
@@ -1501,7 +1318,7 @@ El promedio de los numeros ingresados es:4.0
 <p><strong>Codigo java</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Centinela</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Centinela.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -1534,59 +1351,45 @@ El promedio de los numeros ingresados es:4.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Centinela.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Centinela&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Centinela.java
-
-&gt;&gt; java Centinela
-Digite el numero (para salir, ingrese un numero negativo) &gt;&gt; 5
-Digite el numero (para salir, ingrese un numero negativo) &gt;&gt; 6
-Digite el numero (para salir, ingrese un numero negativo) &gt;&gt; 7
-Digite el numero (para salir, ingrese un numero negativo) &gt;&gt; -2
-
-El promedio de los numeros ingresados es:6.0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Centinela&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Como se puede ver en el ejemplo anterior, el uso de un centinela facilita la implementación de un ciclo interactivo ya que no hay que estar ingresando continuamente si se desea o no seguir ingresando numeros todo el tiempo pues esto, es una molestia.</p>
-<p>##<strong>Ciclo for</strong>##</p>
+</div>
+</div>
+<div class="section" id="ciclo-for">
+<h2>Ciclo for<a class="headerlink" href="#ciclo-for" title="Permalink to this headline">¶</a></h2>
 <p>El ciclo <strong>for</strong> nos permite iterar a traves e una secuencia de valores. Este ciclo tiene la siguiente sintaxis:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">secuencia</span><span class="p">:</span>
-  <span class="c1">#  Cuerpo del ciclo</span>
-  <span class="n">instruccion_1</span>
-  <span class="n">instruccion_2</span>
-  <span class="o">...</span>
-  <span class="n">instruccion_N</span>
+    <span class="c1">#  Cuerpo del ciclo</span>
+    <span class="n">instruccion_1</span>
+    <span class="n">instruccion_2</span>
+    <span class="o">...</span>
+    <span class="n">instruccion_N</span>
 </pre></div>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">INICIALIZA</span> <span class="n">VARIABLE</span><span class="p">;</span> <span class="n">CONDICION</span> <span class="n">DE</span> <span class="n">PARADA</span><span class="p">;</span> <span class="n">INCREMENTO</span><span class="p">){</span>
-  <span class="c1">//  Cuerpo del ciclo</span>
-  <span class="n">instruccion_1</span>
-  <span class="n">instruccion_2</span>
-  <span class="p">...</span>
-  <span class="n">instruccion_N</span>
+    <span class="c1">//  Cuerpo del ciclo</span>
+    <span class="n">instruccion_1</span><span class="p">;</span>
+    <span class="n">instruccion_2</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="n">instruccion_N</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>####<strong>Ejemplos de implementación de ciclos for</strong>
-A continuación se reimplementaran algunos ejemplos ,que se realizaron previamente empleando ciclos <strong>while</strong>, empleando ciclos <strong>for</strong></p>
+<div class="section" id="ejemplos-de-implementacion-de-ciclos-for">
+<h3>Ejemplos de implementación de ciclos for<a class="headerlink" href="#ejemplos-de-implementacion-de-ciclos-for" title="Permalink to this headline">¶</a></h3>
+<p>A continuación se reimplementaran algunos ejemplos ,que se realizaron previamente empleando ciclos <strong>while</strong>, empleando ciclos <strong>for</strong></p>
 <p><strong>Codigo 1</strong>: Hacer un programa que muestre en pantalla los numeros del 0 al 9.</p>
 <p>La solución mediante <strong>while</strong> fue la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo1</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo1.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo1</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">a</span><span class="p">){</span>
       <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -1600,33 +1403,10 @@ A continuación se reimplementaran algunos ejemplos ,que se realizaron previamen
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo1.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo1.java
-
-&gt;&gt; java Ciclo1
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-Terminó el ciclo
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1634,7 +1414,7 @@ Terminó el ciclo
 <p>La solución equivalente empleando <strong>for</strong> se muestra a continuación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo1For</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo1For.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo1For</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">a</span><span class="p">){</span>
       <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
@@ -1646,33 +1426,10 @@ Terminó el ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ciclo1For.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1For&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo1For.java
-
-&gt;&gt; java Ciclo1For
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-Terminó el ciclo
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo1For&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1681,7 +1438,7 @@ Terminó el ciclo
 <p>La solución mediante <strong>while</strong> fue la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo3</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo3.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo3</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
       <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="o">//</span> <span class="n">Variable</span> <span class="n">de</span> <span class="n">control</span>
@@ -1695,33 +1452,10 @@ Terminó el ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo3.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo3.java
-
-&gt;&gt; java Ciclo3
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1729,7 +1463,7 @@ Terminó el ciclo
 <p>La solución equivalente empleando <strong>for</strong> se muestra a continuación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo3For</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo3For.java
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo3For</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
       <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
@@ -1740,33 +1474,10 @@ Terminó el ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo3For.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3For&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo3For.java
-
-&gt;&gt; java Ciclo3For
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo3For&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1775,7 +1486,7 @@ Terminó el ciclo
 <p>La solución mediante <strong>while</strong> fue la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo5</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo5.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo5</span><span class="p">{</span>
@@ -1798,26 +1509,10 @@ Terminó el ciclo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Ciclo5.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo5.java
-
-&gt;&gt; java Ciclo5
-Digite la cantidad de numeros: 3
-1 es impar
-2 es par
-3 es impar
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1825,7 +1520,7 @@ Digite la cantidad de numeros: 3
 <p>La solución equivalente empleando <strong>for</strong> se muestra a continuación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">Ciclo5For</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Ciclo5For.java
 
 <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 <span class="n">public</span> <span class="k">class</span> <span class="nc">Ciclo5For</span><span class="p">{</span>
@@ -1846,36 +1541,24 @@ Digite la cantidad de numeros: 3
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing Ciclo5For.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5For&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac Ciclo5For.java
-
-&gt;&gt; java Ciclo5For
-Digite la cantidad de numeros: 3
-1 es impar
-2 es par
-3 es impar
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;Ciclo5For&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>###<strong>Instrucciones break y continue</strong></p>
-<p>####<strong>Instrucción break</strong></p>
+</div>
+</div>
+<div class="section" id="instrucciones-break-y-continue">
+<h2>Instrucciones break y continue<a class="headerlink" href="#instrucciones-break-y-continue" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="instruccion-break">
+<h3>Instrucción break<a class="headerlink" href="#instruccion-break" title="Permalink to this headline">¶</a></h3>
 <p>Esta instrucción es usada para romper un ciclo. Para comprender su funcionamiento observe el siguiente ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">CicloBreak</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> CicloBreak.java
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">CicloBreak</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
@@ -1891,37 +1574,22 @@ Digite la cantidad de numeros: 3
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting CicloBreak.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloBreak&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac CicloBreak.java
-
-&gt;&gt; java CicloBreak
-0
-1
-2
-3
-Hasta acá llegamos: 4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloBreak&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>####<strong>Instrucción continue</strong></p>
+</div>
+<div class="section" id="instruccion-continue">
+<h3>Instrucción continue<a class="headerlink" href="#instruccion-continue" title="Permalink to this headline">¶</a></h3>
 <p>Cuando se ejecuta la instrucción <strong>continue</strong> un ciclo salta al inicio evitando que se ejecute el codigo que se encuentra despues de esta. A diferencia de la instrucción <strong>break</strong> el ciclo no se rompe y por lo tanto el programa permanece en este hasta que, la condicion de control se hace falsa.</p>
 <p>Para comprender su funcionamiento observe el siguiente ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">CicloContinue</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> CicloContinue.java
 
 <span class="n">public</span> <span class="k">class</span> <span class="nc">CicloContinue</span><span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
@@ -1936,77 +1604,36 @@ Hasta acá llegamos: 4
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing CicloContinue.java
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloContinue&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; javac CicloContinue.java
-
-&gt;&gt; java CicloContinue
-0
-1
-2
-3
-7
-8
-9
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ejecutar</span><span class="p">(</span><span class="s1">&#39;CicloContinue&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>###<strong>Ciclos infinitos</strong></p>
-<p><strong>Falta</strong></p>
-<p>Ciclos anidados</p>
-<p>Post test loops</p>
-<p>We seed the loop condition so we’re guaranteed to execute the loop once.</p>
-<p>Problemas de repaso.</p>
-<hr class="docutils" />
-<p><strong>Referencias</strong>:</p>
+</div>
+</div>
+<div class="section" id="temas-faltantes-falta">
+<h2>Temas faltantes Falta<a class="headerlink" href="#temas-faltantes-falta" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://realpython.com/">https://realpython.com/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/python-while-loop/">https://realpython.com/python-while-loop/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/python-for-loop/">https://realpython.com/python-for-loop/</a></p></li>
-<li><p><a class="reference external" href="https://github.com/rajathkmp/Python-Lectures">https://github.com/rajathkmp/Python-Lectures</a></p></li>
-<li><p><a class="reference external" href="https://facundoq.github.io/courses/aa2018/res/02_python.html">https://facundoq.github.io/courses/aa2018/res/02_python.html</a></p></li>
-<li><p><a class="reference external" href="https://www.stavros.io/tutorials/python/">https://www.stavros.io/tutorials/python/</a></p></li>
-<li><p><a class="reference external" href="https://github.com/mGalarnyk/Python_Tutorials">https://github.com/mGalarnyk/Python_Tutorials</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Avik-Jain/100-Days-Of-ML-Code">https://github.com/Avik-Jain/100-Days-Of-ML-Code</a></p></li>
-<li><p><a class="reference external" href="https://github.com/chiphuyen/stanford-tensorflow-tutorials">https://github.com/chiphuyen/stanford-tensorflow-tutorials</a></p></li>
-<li><p><a class="reference external" href="https://github.com/tuvtran/project-based-learning">https://github.com/tuvtran/project-based-learning</a></p></li>
-<li><p><a class="reference external" href="https://github.com/mGalarnyk/Python_Tutorials">https://github.com/mGalarnyk/Python_Tutorials</a></p></li>
-<li><p><a class="reference external" href="https://github.com/hussien89aa/PythonTutorial">https://github.com/hussien89aa/PythonTutorial</a></p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/hmok/Tutorials/blob/master/beginnersPythonCheatSheet.ipynb">https://colab.research.google.com/github/hmok/Tutorials/blob/master/beginnersPythonCheatSheet.ipynb</a></p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb">https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb</a></p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb">https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb</a></p></li>
-<li><p><a class="reference external" href="https://jupyter.brynmawr.edu/services/public/dblank/Examples/Tutor%20Magic%20in%20IPython.ipynb">https://jupyter.brynmawr.edu/services/public/dblank/Examples/Tutor Magic in IPython.ipynb</a></p></li>
-<li><p><a class="reference external" href="https://github.com/kikocorreoso/tutormagic">https://github.com/kikocorreoso/tutormagic</a></p></li>
-<li><p><a class="reference external" href="https://rramosp.github.io/ai4eng.v1/intro.html">https://rramosp.github.io/ai4eng.v1/intro.html</a></p></li>
-<li><p><a class="reference external" href="https://www.mclibre.org/consultar/python/lecciones/python-entrada-teclado.html">https://www.mclibre.org/consultar/python/lecciones/python-entrada-teclado.html</a></p></li>
-<li><p><a class="reference external" href="https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-in-python/">https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-in-python/</a></p></li>
-<li><p><a class="reference external" href="https://www.python-course.eu/python3_course.php">https://www.python-course.eu/python3_course.php</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/courses/stacks-queues-ideal-data-structure/">https://realpython.com/courses/stacks-queues-ideal-data-structure/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/pysimplegui-python/">https://realpython.com/pysimplegui-python/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/lessons/simplify-gui-pysimplegui-overview/">https://realpython.com/lessons/simplify-gui-pysimplegui-overview/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/courses/creating-pyqt-layouts-gui-applications/">https://realpython.com/courses/creating-pyqt-layouts-gui-applications/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/python-first-steps/">https://realpython.com/python-first-steps/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/python-pyqt-qthread/">https://realpython.com/python-pyqt-qthread/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/intermediate-python-project-ideas/">https://realpython.com/intermediate-python-project-ideas/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/arduino-python/">https://realpython.com/arduino-python/</a></p></li>
-<li><p><a class="reference external" href="https://websitesetup.org/python-cheat-sheet/">https://websitesetup.org/python-cheat-sheet/</a></p></li>
-<li><p><a class="reference external" href="https://www.mclibre.org/">https://www.mclibre.org/</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/best-python-books/">https://realpython.com/best-python-books/</a></p></li>
-<li><p><a class="reference external" href="https://websitesetup.org/python-cheat-sheet/">https://websitesetup.org/python-cheat-sheet/</a></p></li>
+<li><p>Ciclo do-while.</p></li>
+<li><p>Ciclos infinitos</p></li>
+<li><p>Ciclos anidados.</p></li>
+<li><p>Problemas de repaso.</p></li>
 </ul>
 </div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/">https://docs.oracle.com/javase/tutorial/</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_while_loop.asp">https://www.w3schools.com/java/java_while_loop.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_for_loop.asp">https://www.w3schools.com/java/java_for_loop.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_break.asp">https://www.w3schools.com/java/java_break.asp</a></p></li>
+<li><p><a class="reference external" href="https://dcodingames.com/category/para-estudiantes/estructuras-de-control-de-flujo/">https://dcodingames.com/category/para-estudiantes/estructuras-de-control-de-flujo/</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -2036,7 +1663,7 @@ Hasta acá llegamos: 4
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="estructura_condicional.html" title="previous page">Estructuras de selección en java</a>
-    <a class='right-next' id="next-link" href="../CH02_intro.html" title="next page">Capitulo 2 - Introduccion a la POO en Java</a>
+    <a class='right-next' id="next-link" href="funciones.html" title="next page">Funciones en java</a>
 
         </div>
         
