@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodos y variables estaticas &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/objetos3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/objetos3.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-conceptual-tomado-del-libro-de-deitel-deitel">
+   Ejemplo conceptual tomado del libro de Deitel &amp; Deitel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recoleccion-de-basura-y-medodo-finalice">
+   Recoleccion de basura y medodo finalice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Ejemplo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobre-los-metodos-estaticos">
+   Sobre los métodos estaticos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run and print a shell command.</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="o">!{</span>cmd<span class="o">}</span>  # This is magic to run <span class="s1">&#39;cmd&#39;</span> <span class="k">in</span> the shell.
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac </span><span class="si">{}</span><span class="s1">.java&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;java </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">ejecutar</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="nb">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+    <span class="n">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the Java version to see if everything is working well.</span>
+<span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac -version&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="metodos-y-variables-estaticas">
+<h1>Metodos y variables estaticas<a class="headerlink" href="#metodos-y-variables-estaticas" title="Permalink to this headline">¶</a></h1>
+<p><strong>En construcción…</strong></p>
+<p>Tal y como se vio en los ejemplos anteriores cada objeto tiene su propia copia de todas las variables de instancia de la clase. Por ejemplo, para la clase Punto, cada objeto tipo Punto que se instanció a partir de esta clase tiene sus propias coordenadas (variables miembro).</p>
+<p>Existen casos en los que deben compartirse solamente una copia de cierta variable entre todos los objetos de una clase; en estos campos se utiliza un <strong>campo static</strong> (conocido tambien como <strong>variable de clase</strong>). Una variable <strong>static</strong> representa información en toda la clase (todos los objetos de la clase comparten la misma pieza de datos). La declaración de una variable static comienza con la palabra clave static.</p>
+<p>Declaracion…</p>
+<p>A continuación se muestra la sintaxis para acceder a variables tipo static</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">class</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">variable</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="ejemplo-conceptual-tomado-del-libro-de-deitel-deitel">
+<h2>Ejemplo conceptual tomado del libro de Deitel &amp; Deitel<a class="headerlink" href="#ejemplo-conceptual-tomado-del-libro-de-deitel-deitel" title="Permalink to this headline">¶</a></h2>
+<p>Veamos un ejemplo con datos <strong>static</strong>. Suponga que tenemos un videojuego con <strong>Marcianos</strong> y otras criaturas
+espaciales. Cada <strong>Marciano</strong> tiende a ser valiente y deseoso de atacar a otras criaturas espaciales cuando sabe que hay al menos otros cuatro <strong>Marcianos</strong> presentes. Si están presentes menos de cinco <strong>Marcianos</strong>, cada <strong>Marciano</strong> se vuelve cobarde. Por lo tanto, cada uno de ellos necesita saber el valor de <strong>cuentaMarcianos</strong>. Podríamos dotar a la clase <strong>Marciano</strong> con la variable cuentaMarcianos como variable de instancia. Si hacemos esto, entonces cada <strong>Marciano</strong> tendrá una copia separada de la variable de instancia, y cada vez que creemos un nuevo <strong>Marciano</strong>, tendremos que actualizar la variable de instancia <strong>cuentaMarcianos</strong> en todos los objetos <strong>Marciano</strong>. Las copias redundantes desperdician espacio y tiempo en actualizar cada una de las copias de la variable, además de ser un proceso propenso a errores. En vez de ello, declaramos a <strong>cuentaMarcianos</strong> como <strong>static</strong>, lo cual convierte a <strong>cuentaMarcianos</strong> en datos disponibles en toda la clase. Cada objeto <strong>Marciano</strong> puede ver la <strong>cuentaMarcianos</strong> como si fuera una variable de instancia de la clase <strong>Marciano</strong>, pero sólo se mantiene una copia de la variable static <strong>cuentaMarcianos</strong>. Esto nos ahorra espacio. Ahorramos tiempo al hacer que el constructor de <strong>Marciano</strong> incremente a la variable <strong>static cuentaMarcianos</strong>; como sólo hay una copia, no tenemos que incrementar cada una de las copias de <strong>cuentaMarcianos</strong> para cada uno de los objetos <strong>Marciano</strong>.</p>
+</div>
+<div class="section" id="recoleccion-de-basura-y-medodo-finalice">
+<h2>Recoleccion de basura y medodo finalice<a class="headerlink" href="#recoleccion-de-basura-y-medodo-finalice" title="Permalink to this headline">¶</a></h2>
+<p>El método <strong>finalize()</strong> es un método especial que llama el <strong>recolector de basura</strong> (<strong>garbage collector</strong>) para realizar las tareas de preparación para la terminación sobre un objeto, justo antes de que el recolector de basura reclame la memoria de ese objeto. Las principales caracteristicas dle metodo <strong>finalize()</strong> son las siguientes:</p>
+<ul class="simple">
+<li><p>No devuelve valor, es de tipo void.</p></li>
+<li><p>No tiene argumentos.</p></li>
+<li><p>No puede sobrecargarse.</p></li>
+<li><p>Su definición es opcional.</p></li>
+</ul>
+<p>Un problema con el método finalize es que no se garantiza que el recolector de basura se ejecute en un tiempo especifi cado. De hecho, tal vez el recolector de basura nunca se ejecute antes de que termine un programa. Por ende, no queda claro si (o cuándo) se hará la llamada al método finalize. Por esta razón, la mayoría de los programadores deben evitar el uso del método <strong>finalize</strong>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Empleado.java</span>
+<span class="c1">// Variable static que se utiliza para mantener una cuenta del</span>
+<span class="c1">// número de objetos Empleado en la memoria.</span>
+
+<span class="kd">class</span> <span class="nc">Empleado</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">primerNombre</span><span class="p">;</span>  
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">apellidoPaterno</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">cuenta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// número de objetos en memoria</span>
+    
+    <span class="c1">// inicializa empleado, suma 1 a la variable static cuenta e</span>
+    <span class="c1">// imprime objeto String que indica que se llamó al constructor</span>
+    <span class="kd">public</span> <span class="nf">Empleado</span><span class="p">(</span> <span class="n">String</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">String</span> <span class="n">apellido</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">primerNombre</span> <span class="o">=</span> <span class="n">nombre</span><span class="p">;</span>
+        <span class="n">apellidoPaterno</span> <span class="o">=</span> <span class="n">apellido</span><span class="p">;</span>
+        <span class="n">cuenta</span><span class="o">++</span><span class="p">;</span> <span class="c1">// incrementa la variable static cuenta de empleados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;Constructor de Empleado: %s %s; cuenta = %d\n&quot;</span><span class="p">,</span>
+                          <span class="n">primerNombre</span><span class="p">,</span> <span class="n">apellidoPaterno</span><span class="p">,</span> <span class="n">cuenta</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="c1">// fin de constructor de Empleado</span>
+
+    <span class="c1">// resta 1 a la variable static cuenta cuando el recolector</span>
+    <span class="c1">// de basura llama a finalize para borrar el objeto;</span>
+    <span class="c1">// confirma que se llamó a finalize</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">cuenta</span><span class="o">--</span><span class="p">;</span> <span class="c1">// decrementa la variable static cuenta de empleados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;Finalizador de Empleado: %s %s; cuenta = %d\n&quot;</span><span class="p">,</span>
+                          <span class="n">primerNombre</span><span class="p">,</span> <span class="n">apellidoPaterno</span><span class="p">,</span> <span class="n">cuenta</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="c1">// fin del método finalize</span>
+    
+    <span class="c1">// obtiene el primer nombre </span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">obtenerPrimerNombre</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">primerNombre</span><span class="p">;</span>
+    <span class="p">}</span> <span class="c1">// fin del método obtenerPrimerNombre</span>
+    
+    <span class="c1">// obtiene el apellido paterno</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">obtenerApellidoPaterno</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">apellidoPaterno</span><span class="p">;</span>
+    <span class="p">}</span> <span class="c1">// fin del método obtenerApellidoPaterno</span>
+    
+    <span class="c1">// método static para obtener el valor de la variable static cuenta</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">obtenerCuenta</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">cuenta</span><span class="p">;</span>
+    <span class="p">}</span> <span class="c1">// fin del método obtenerCuenta</span>
+<span class="p">}</span> <span class="c1">// fin de la clase Empleado</span>
+
+
+<span class="c1">// PruebaEmpleado.java</span>
+<span class="c1">// Demostración de miembros static.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PruebaEmpleado</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// muestra que la cuenta es 0 antes de crear Empleados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;Empleados antes de instanciar: %d\n&quot;</span><span class="p">,</span>
+                          <span class="n">Empleado</span><span class="p">.</span><span class="na">obtenerCuenta</span><span class="p">()</span> <span class="p">);</span>
+        <span class="c1">// crea dos Empleados; la cuenta debe ser 2</span>
+        <span class="n">Empleado</span> <span class="n">e1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Empleado</span><span class="p">(</span> <span class="s">&quot;Susan&quot;</span><span class="p">,</span> <span class="s">&quot;Baker&quot;</span> <span class="p">);</span>
+        <span class="n">Empleado</span> <span class="n">e2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Empleado</span><span class="p">(</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="s">&quot;Blue&quot;</span> <span class="p">);</span>
+        
+        <span class="c1">// muestra que la cuenta es 2 después de crear dos Empleados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="s">&quot;\nEmpleados despues de instanciar: &quot;</span> <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;mediante e1.obtenerCuenta(): %d\n&quot;</span><span class="p">,</span> <span class="n">e1</span><span class="p">.</span><span class="na">obtenerCuenta</span><span class="p">()</span> <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;mediante e2.obtenerCuenta(): %d\n&quot;</span><span class="p">,</span> <span class="n">e2</span><span class="p">.</span><span class="na">obtenerCuenta</span><span class="p">()</span> <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;mediante Empleado.obtenerCuenta(): %d\n&quot;</span><span class="p">,</span>
+                          <span class="n">Empleado</span><span class="p">.</span><span class="na">obtenerCuenta</span><span class="p">()</span> <span class="p">);</span>
+        
+        <span class="c1">// obtiene los nombres de los Empleados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;\nEmpleado 1: %s %s\nEmpleado 2: %s %s\n\n&quot;</span><span class="p">,</span>
+                          <span class="n">e1</span><span class="p">.</span><span class="na">obtenerPrimerNombre</span><span class="p">(),</span> <span class="n">e1</span><span class="p">.</span><span class="na">obtenerApellidoPaterno</span><span class="p">(),</span>
+                          <span class="n">e2</span><span class="p">.</span><span class="na">obtenerPrimerNombre</span><span class="p">(),</span> <span class="n">e2</span><span class="p">.</span><span class="na">obtenerApellidoPaterno</span><span class="p">()</span> <span class="p">);</span>
+        
+        <span class="c1">// en este ejemplo, sólo hay una referencia a cada Empleado,</span>
+        <span class="c1">// por lo que las siguientes dos instrucciones hacen que la JVM</span>
+        <span class="c1">// marque a cada objeto Empleado para la recolección de basura</span>
+        
+        <span class="n">e1</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">e2</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">gc</span><span class="p">();</span> <span class="c1">// pide que la recolección de basura se realice ahora</span>
+        
+        <span class="c1">// muestra la cuenta de Empleados después de llamar al recolector de basura;</span>
+        <span class="c1">// la cuenta a mostrar puede ser 0, 1 o 2 dependiendo de si el recolector de</span>
+        <span class="c1">// basura se ejecuta de inmediato, y del número de objetos Empleado recolectados</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span> <span class="s">&quot;\nEmpleados despues de System.gc(): %d\n&quot;</span><span class="p">,</span>
+                          <span class="n">Empleado</span><span class="p">.</span><span class="na">obtenerCuenta</span><span class="p">()</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="c1">// fin de main</span>
+<span class="p">}</span> <span class="c1">// fin de la clase PruebaEmpleado</span>
+</pre></div>
+</div>
+<p>El codigo anterior se puede ejecutar dando click en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemploEmpleado">enlace</a></p>
+<div class="section" id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">¶</a></h3>
+<p>El siguiente programa crea 3 instancias de la clase <strong>Countable</strong> (<strong>object1</strong>, <strong>object2</strong> and <strong>object3</strong>). Notese que aunque hay 3 instancias de la clase, solo hay un copia del campo <strong>static</strong> (lamado <strong>instanceCount</strong>) tal y como se muestra en la siguiente fígura:</p>
+<p><img alt="countable" src="../../_images/static_countable.jpg" /></p>
+<p>El código java asociado se encuentra a continuación (este tambien se puede simular en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/staticDemo">enlace</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+/**
+   This class demonstrates a static field.
+*/
+
+class Countable
+{
+   private static int instanceCount = 0;
+
+   /**
+      The constructor increments the static
+      field instanceCount. This keeps track
+      of the number of instances of this
+      class that are created.
+   */
+
+   public Countable()
+   {
+      instanceCount++;
+   }
+
+   /**
+      The getInstanceCount method returns
+      the number of instances of this class
+      that have been created.
+      @return The value in the instanceCount field.
+   */
+
+   public int getInstanceCount()
+   {
+      return instanceCount;
+   }
+}
+
+/**
+   This program demonstrates the Countable class.
+*/
+
+public class StaticDemo
+{
+   public static void main(String[] args)
+   {
+      int objectCount;
+
+      // Create three instances of the 
+      // Countable class.
+      Countable object1 = new Countable();
+      Countable object2 = new Countable();
+      Countable object3 = new Countable();
+
+      // Get the number of instances from
+      // the class&#39;s static field.
+      objectCount = object1.getInstanceCount();
+      System.out.println(objectCount + 
+                    &quot; instances of the class &quot; +
+                    &quot;were created.&quot;);
+  }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Ejemplo<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Dada una clase se quieren conocer en todo momento los objetos activos en la aplicación. Se declara la clase <strong>Ejemplo</strong> con un constructor por defecto y otro con un argumento; ambos incrementan la variable static <strong>cuenta</strong>, en uno; de esa manera cada nuevo objeto queda contabilizado. También se declara el método <strong>finalize()</strong>, de tal forma que al activarse cuenta disminuye en uno. El método <strong>main()</strong> crea objetos de la clase Ejemplo y visualiza la variable que contabiliza el número de sus objetos (<a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/exampleStatic">enlace</a> de compilación online).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+class Ejemplo {
+    private int datos;
+    static int cuenta = 0;
+    
+    public Ejemplo() {
+        datos = 0;
+        cuenta++; // nuevo objeto
+    }
+    
+    public Ejemplo(int g) {
+        datos = g;
+        cuenta++; // nuevo objeto
+    }
+
+    //
+    public void finalize() {
+        System.out.println(&quot;Fin de objeto Ejemplo&quot;);
+        cuenta--;
+    }
+}
+
+public class ProbarEjemplo {
+    public static void main(String[] ar) {
+        Ejemplo d1, d2;
+        System.out.println(&quot;Objetos Ejemplo: &quot; + Ejemplo.cuenta);
+        d1 = new Ejemplo();
+        d2 = new Ejemplo(11);
+        System.out.println(&quot;Objetos Ejemplo: &quot; + Ejemplo.cuenta);
+        d2 = d1;
+        System.gc();
+        System.out.println(&quot;Objetos Ejemplo: &quot; + Ejemplo.cuenta);
+        d2 = d1 = null;
+        System.gc();
+        System.out.println(&quot;Objetos Ejemplo: &quot; + Ejemplo.cuenta);
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sobre-los-metodos-estaticos">
+<h2>Sobre los métodos estaticos<a class="headerlink" href="#sobre-los-metodos-estaticos" title="Permalink to this headline">¶</a></h2>
+<p>Cuando una clase contiene con un método estatico, no es necesario crear una instancia de la clase para que este pueda ser ejecutado. Esto se muestra en el siguiente código fuente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+/**
+   This class demonstrates static methods.
+*/
+
+class Metric
+{
+   /**
+      The milesToKilometers method converts a
+      distance in miles to kilometers.
+      @param m The distance in miles.
+      @return The distance in kilometers.
+   */
+
+   public static double milesToKilometers(double m)
+   {
+      return m * 1.609;
+   }
+
+   /**
+      The kilometersToMiles method converts
+      a distance in kilometers to miles.
+      @param k The distance in kilometers.
+      @return The distance in miles.
+   */
+   
+   public static double kilometersToMiles(double k)
+   {
+      return k / 1.609;
+   }
+}
+
+/**
+   This program demonstrates the Metric class.
+*/
+
+public class MetricDemo
+{
+   public static void main(String[] args)
+   {
+      String input; // To hold input
+      double miles; // A distance in miles
+      double kilos; // A distance in kilometers
+      
+      
+      miles = 1000;
+
+      // Convert the distance to kilometers.
+      kilos = Metric.milesToKilometers(miles);
+      System.out.printf(&quot;%,.2f miles equals %,.2f kilometers.\n&quot;,miles, kilos);
+
+      kilos = 2500;
+
+      // Convert the distance to kilometers.
+      miles = Metric.kilometersToMiles(kilos);
+      System.out.printf(&quot;%,.2f kilometers equals %,.2f miles.\n&quot;,kilos, miles);
+      
+      System.exit(0);
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>El codigo en IDE online <a class="reference external" href="https://en.wikipedia.org/wiki/Repl.it">repl.it</a> se puede ejecutar en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/metricDemo">enlace</a>.</p>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.guru99.com/java-static-variable-methods.html">https://www.guru99.com/java-static-variable-methods.html</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/difference-between-static-and-non-static-variables-in-java/">https://www.geeksforgeeks.org/difference-between-static-and-non-static-variables-in-java/</a></p></li>
+<li><p><a class="reference external" href="https://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html">https://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html</a></p></li>
+<li><p><a class="reference external" href="https://www.cis.upenn.edu/~matuszek/General/JavaSyntax/static.html">https://www.cis.upenn.edu/~matuszek/General/JavaSyntax/static.html</a></p></li>
+<li><p><a class="reference external" href="https://www.educative.io/edpresso/how-to-use-static-keyword-in-java">https://www.educative.io/edpresso/how-to-use-static-keyword-in-java</a></p></li>
+<li><p><a class="reference external" href="http://www.mfbarcell.es/docencia_uned/fund_inf_ing/">http://www.mfbarcell.es/docencia_uned/fund_inf_ing/</a></p></li>
+<li><p><a class="reference external" href="http://www.deitel.com/">http://www.deitel.com/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pdeitel">https://github.com/pdeitel</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

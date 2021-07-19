@@ -1,0 +1,1493 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clases y objetos &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/objetos1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/objetos1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temario">
+   Temario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaracion-de-una-clase">
+   Declaración de una clase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creacion-de-un-objeto">
+   Creación de un objeto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formato-para-definir-una-referencia">
+     Formato para definir una referencia
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formato-crear-un-objeto">
+     Formato crear un objeto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagramas-uml">
+   Diagramas UML
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#especificadores-de-acceso">
+   Especificadores de acceso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#private">
+     Private
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#public">
+     Public
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metodos-de-una-clase">
+   Métodos de una clase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-de-clases">
+   Implementación  de clases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metodos-setter-y-getter">
+   Metodos setter y getter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mejorando-la-representacion-uml">
+   Mejorando la representación UML
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructores">
+   Constructores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-no-inicializadas">
+   Variables no inicializadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructor-por-defecto">
+   Constructor por defecto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-de-repaso">
+   Ejemplos de repaso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clase-cellphone">
+     1. Clase CellPhone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clase-bankaccount">
+     2. Clase BankAccount
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run and print a shell command.</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="o">!{</span>cmd<span class="o">}</span>  # This is magic to run <span class="s1">&#39;cmd&#39;</span> <span class="k">in</span> the shell.
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac </span><span class="si">{}</span><span class="s1">.java&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;java </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">ejecutar</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">):</span>
+    <span class="nb">compile</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+    <span class="n">execute</span><span class="p">(</span><span class="n">nombre_clase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the Java version to see if everything is working well.</span>
+<span class="n">run</span><span class="p">(</span><span class="s1">&#39;javac -version&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clases-y-objetos">
+<h1>Clases y objetos<a class="headerlink" href="#clases-y-objetos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="temario">
+<h2>Temario<a class="headerlink" href="#temario" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>¿Que son los objetos?</p></li>
+<li><p>¿Que son las clases?</p></li>
+</ol>
+</div>
+<div class="section" id="declaracion-de-una-clase">
+<h2>Declaración de una clase<a class="headerlink" href="#declaracion-de-una-clase" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
+  <span class="n">Lista_de_miembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Donde</strong>:</p>
+<ul class="simple">
+<li><p><strong>NombreClase</strong>: es definido por el usuario e identifica a la clase; puede incluir letras, números y subrayados como cualquier identificador válido.</p></li>
+<li><p><strong>Lista_de_miembros</strong> son métodos y datos miembros de la clase.</p></li>
+</ul>
+<p>La forma general cuando se codifica una clase es la siguiente:</p>
+<p><img alt="clase_code" src="../../_images/formato_general_clase.jpg" /></p>
+<p>A continuación se muestra un ejemplo donde se emplea este formato.</p>
+<p><strong>Ejemplo 1</strong></p>
+<p>Definición de una clase llamada Punto que contiene coordenadas x-y de un punto en un plano.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Punto</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// coordenada x</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// coordenada y</span>
+ 
+    <span class="kd">public</span> <span class="nf">Punto</span><span class="p">(</span><span class="kt">int</span> <span class="n">x_</span><span class="p">,</span><span class="kt">int</span> <span class="n">y_</span><span class="p">)</span> <span class="c1">// constructor</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x_</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y_</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="nf">Punto</span><span class="p">()</span> <span class="c1">// constructor sin argumentos</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">LeerX</span><span class="p">()</span> <span class="c1">// devuelve el valor de x</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">LeerY</span><span class="p">()</span> <span class="c1">// devuelve el valor de y</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kt">void</span> <span class="nf">fijarX</span><span class="p">(</span><span class="kt">int</span> <span class="n">valorX</span><span class="p">)</span> <span class="c1">// establece el valor de x</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">valorX</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">fijarY</span><span class="p">(</span><span class="kt">int</span> <span class="n">valorY</span><span class="p">)</span> <span class="c1">// establece el valor de y</span>
+    <span class="p">{</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">valorY</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creacion-de-un-objeto">
+<h2>Creación de un objeto<a class="headerlink" href="#creacion-de-un-objeto" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="formato-para-definir-una-referencia">
+<h3>Formato para definir una referencia<a class="headerlink" href="#formato-para-definir-una-referencia" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">NombreClase</span> <span class="n">varReferencia</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="formato-crear-un-objeto">
+<h3>Formato crear un objeto<a class="headerlink" href="#formato-crear-un-objeto" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">varReferencia</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NombreClase</span><span class="p">(</span><span class="n">argmntos_constructor</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Ejemplo 2</strong></p>
+<ol class="simple">
+<li><p>Declarar un objeto tipo punto cuyas coordenadas sean (2,3):</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Por partes</strong></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">Punto</span> <span class="n">p1</span><span class="p">;</span>             <span class="c1">// Definiendo la referencia</span>
+  <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Punto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">// Creando el objeto</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Todo en uno</strong>:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">Punto</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Punto</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">// Definiendo la referencia y creando el objeto en una sola instrucción</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Declarar un objeto tipo punto cuyas coordenadas sean (0,0):</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Forma 1</strong>:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">Punto</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Punto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Forma 2</strong>:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="n">Punto</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Punto</span><span class="p">();</span>  
+</pre></div>
+</div>
+<p><strong>Ejemplo 3</strong></p>
+<p>Hacer un programa que declare tres puntos A(3,-3), B(0,0) y C(2,5)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class Punto {
+    private int x; // coordenada x
+    private int y; // coordenada y
+ 
+    public Punto(int x_,int y_) // constructor
+    {
+        x = x_;
+        y = y_;
+    }
+    
+    public Punto() // constructor sin argumentos
+    {
+        x = y = 0;
+    }
+
+    public int LeerX() // devuelve el valor de x
+    {
+        return x;
+    }
+    
+    public int LeerY() // devuelve el valor de y
+    {
+        return y;
+    }
+    
+    void fijarX(int valorX) // establece el valor de x
+    {
+        x = valorX;
+    }
+
+    void fijarY(int valorY) // establece el valor de y
+    {
+        y = valorY;
+    }
+    
+    public static void main(String[] args) {
+        
+        Punto A = new Punto(3,-3);
+        Punto B = new Punto();
+        Punto C = new Punto(2,3);
+
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplopunto">enlace</a> se puede correr el programa anterior online (<strong>Nota</strong>: Se hicieron unas cuantas modificaciones).</p>
+</div>
+</div>
+<div class="section" id="diagramas-uml">
+<h2>Diagramas UML<a class="headerlink" href="#diagramas-uml" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se diseña una clase, a menudo es útil dibujar un diagrama UML (Unified Modeling Language). Este diagrama proporsiona una manera estandar de representar graficamente sistemas orientados a objetos. El diagrama UML de una clase consiste en una caja rectangular que se divide en 3 secciones:</p>
+<ol class="simple">
+<li><p><strong>Sección superior</strong>: contiene el nombre de la clase.</p></li>
+<li><p><strong>Sección central</strong>: contiene los atributos de la clase.</p></li>
+<li><p><strong>Sección inferior</strong>: contiene los métodos de la clase.</p></li>
+</ol>
+<p>La siguiente figura detalla esto:</p>
+<p><img alt="UML_class_diagram" src="../../_images/UML_clase.jpg" /></p>
+<p><strong>Ejemplo 4</strong></p>
+<p>Dibuje el diagrama UML de una clase asociada a un rectangulo. Posterior a esto proceda a codificar en java dicha clase. Recuerde la forma general de codificar una clase:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AccessSpecifier</span> <span class="kd">class</span> <span class="nc">Name</span> <span class="p">{</span>
+  <span class="n">Members</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El diagrama UML asociado a esta clase se muestra a continuación:</p>
+<p><img alt="UML_1_rectangulo" src="../../_images/UML_rectangulo.jpg" /></p>
+<p>Siguiendo el diagrama anterior el codigo java de la clase se muestra a continuación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+class Rectangle
+{
+   private double length;
+   private double width;
+
+   /**
+      The setLength method stores a value in the
+      length field.
+      @param len The value to store in length.
+   */
+
+   public void setLength(double len)
+   {
+      length = len;
+   }
+
+   /**
+      The setWidth method stores a value in the
+      width field.
+      @param w The value to store in width.
+   */
+
+   public void setWidth(double w)
+   {
+      width = w;
+   }
+
+   /**
+      The getLength method returns a Rectangle
+      object&#39;s length.
+      @return The value in the length field.
+   */
+
+   public double getLength()
+   {
+      return length;
+   }
+
+   /**
+      The getWidth method returns a Rectangle
+      object&#39;s width.
+      @return The value in the width field.
+   */
+   
+   public double getWidth()
+   {
+      return width;
+   }
+
+   /**
+      The getArea method returns a Rectangle
+      object&#39;s area.
+      @return The product of length times width.
+   */
+
+   public double getArea()
+   {
+      return length * width;
+   }
+}
+
+/**
+   This program demonstrates the Rectangle class&#39;s
+   setLength, setWidth, getLength, getWidth, and
+   getArea methods.
+*/
+
+public class RectangleDemo
+{
+   public static void main(String[] args)
+   {
+      // Create a Rectangle object.
+      Rectangle box = new Rectangle();
+
+      // Set length to 10.0 and width to 20.0.
+      box.setLength(10.0);
+      box.setWidth(20.0);
+
+      // Display the length.
+      System.out.println(&quot;The box&#39;s length is &quot; +
+                         box.getLength());
+
+      // Display the width.
+      System.out.println(&quot;The box&#39;s width is &quot; +
+                         box.getWidth());
+
+      // Display the area.
+      System.out.println(&quot;The box&#39;s area is &quot; +
+                         box.getArea());
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/Rectangle">enlace</a> se muestra el codigo para la ejecución online.</p>
+</div>
+<div class="section" id="especificadores-de-acceso">
+<h2>Especificadores de acceso<a class="headerlink" href="#especificadores-de-acceso" title="Permalink to this headline">¶</a></h2>
+<p>Para controlar el acceso a los miembros de la clase se utilizan tres diferentes especificadores de acceso: public, protected y private. La siguiente figura muestra un caso de uso de un especificador de acceso:</p>
+<p><img alt="especificador_acceso" src="../../_images/espeficicador_acceso.jpg" /></p>
+<p>Cada miembro está precedido del especificador de acceso que le corresponde y puede ser:</p>
+<ul class="simple">
+<li><p>private</p></li>
+<li><p>public</p></li>
+<li><p>protected (este sera analizado luego).</p></li>
+</ul>
+<p>Veamos los 2 primeros casos:</p>
+<div class="section" id="private">
+<h3>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h3>
+<p>Cuando el especificador de acceso privado se aplica a un miembro de la clase, no se puede acceder al miembro desde código fuera de la clase. El miembro sólo pueden ser accedidos por métodos que son miembros de la misma clase. Definir un atributo como privado hace que un dato sea protegido de accidental corrupción.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">declaración</span> <span class="n">miembro</span> <span class="n">privado</span><span class="p">;</span> <span class="c1">// miembros privados</span>
+    <span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="public">
+<h3>Public<a class="headerlink" href="#public" title="Permalink to this headline">¶</a></h3>
+<p>Cuando un miembro de la clase tiene como especificador de acceso public, dicho miembro puede ser accedido por cualquier código interior o exterior a la clase.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">declaración</span> <span class="n">miembro</span> <span class="n">privado</span><span class="p">;</span> <span class="c1">// miembros publicos</span>
+    <span class="p">...</span>
+</pre></div>
+</div>
+<p><strong>Ejemplo 5</strong></p>
+<p>En el siguiente ejemplo se muestran las clases Foto y Marco con miembros declarados con distinta visibilidad; ambas forman parte del paquete soporte.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">soporte</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">Foto</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nt</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">char</span> <span class="n">opd</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">q</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Foto</span><span class="p">(</span><span class="n">String</span> <span class="n">r</span><span class="p">)</span> <span class="c1">// constructor</span>
+    <span class="p">{</span>
+        <span class="n">nt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">opd</span> <span class="o">=</span> <span class="sc">&#39;S&#39;</span><span class="p">;</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">mtd</span><span class="p">(){...}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Marco</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">t</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">Marco</span><span class="p">()</span> <span class="p">{...}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">poner</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">foto</span> <span class="n">u</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Foto</span><span class="p">(</span><span class="s">&quot;Paloma&quot;</span><span class="p">);</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="na">mtd</span><span class="p">();</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="s">&quot;**&quot;</span> <span class="o">+</span> <span class="n">u</span><span class="p">.</span><span class="na">q</span> <span class="o">+</span> <span class="s">&quot;**&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Aunque las especificaciones públicas, privadas y protegidas pueden aparecer en cualquier orden, en Java los programadores suelen seguir una de las siguientes reglas en el
+diseño:</p>
+<ol class="simple">
+<li><p>Poner los miembros privados primero debido a que contiene los atributos o datos.</p></li>
+<li><p>Poner los miembros públicos primero debido a que los métodos y los constructores son la interfaz del usuario de la clase.</p></li>
+</ol>
+<p>La labor más importante de los especificadores de acceso es implementar la ocultación de la información; este principio indica que toda la interacción con un objeto se debe restringir al uso de una interfaz bien definida que permita que los detalles de implementación de los objetos sean ignorados, asi:</p>
+<ul class="simple">
+<li><p>Los datos y métodos públicos forman la interfaz externa del objeto.</p></li>
+<li><p>Los elementos privados son los aspectos internos que no necesitan ser accesibles para su uso.</p></li>
+<li><p>Los elementos de una clase sin especificador y los protected tienen las mismas propiedades que los públicos respecto a las clases del paquete.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="metodos-de-una-clase">
+<h2>Métodos de una clase<a class="headerlink" href="#metodos-de-una-clase" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Los métodos en Java siempre son miembros de clases</p></li>
+<li><p>No hay métodos o funciones fuera de ellas</p></li>
+<li><p>Su implementación se incluye dentro del cuerpo de la clase</p></li>
+</ul>
+<p><strong>Ejemplo 6</strong></p>
+<p>Definir una clase <code class="docutils literal notranslate"><span class="pre">DiaAnyo</span></code> que contenga los atributos mes y día, los métodos <code class="docutils literal notranslate"><span class="pre">igual()</span></code> y <code class="docutils literal notranslate"><span class="pre">visualizar()</span></code>. Que el mes se registre como un valor entero: 1, Enero; 2, Febrero y así sucesivamente; el día del mes debe registrarse en la variable entera día. Escribir un programa que compruebe si una fecha es su cumpleaños. El método <code class="docutils literal notranslate"><span class="pre">main()</span></code> de la clase principal, <code class="docutils literal notranslate"><span class="pre">Cumple</span></code>, crea un objeto <code class="docutils literal notranslate"><span class="pre">DiaAnyo</span></code> y llama al
+método <code class="docutils literal notranslate"><span class="pre">igual()</span></code> para determinar si la fecha del objeto coincide con la fecha de su cumpleaños, que se ha leído del dispositivo de entrada.</p>
+<p><strong>Solución</strong>: A continuación se muestra el archivo asociado a la clase <code class="docutils literal notranslate"><span class="pre">DiaAnyo</span></code> (<span class="xref myst">DiaAnyo.java</span>)</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">DiaAnyo</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">mes</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">dia</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">DiaAnyo</span><span class="p">(</span><span class="kt">int</span> <span class="n">d</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dia</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="n">mes</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">igual</span><span class="p">(</span><span class="n">DiaAnyo</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">dia</span> <span class="o">==</span> <span class="n">d</span><span class="p">.</span><span class="na">dia</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">mes</span> <span class="o">==</span> <span class="n">d</span><span class="p">.</span><span class="na">mes</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visualizar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;mes = &quot;</span> <span class="o">+</span> <span class="n">mes</span> <span class="o">+</span> <span class="s">&quot; , dia = &quot;</span> <span class="o">+</span> <span class="n">dia</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A continuación, se muestra la clase (<span class="xref myst">Main.java</span>) que contiene el método principal:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// clase principal, con método main</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cumple</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">ar</span><span class="p">)</span><span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DiaAnyo</span> <span class="n">hoy</span><span class="p">;</span>
+        <span class="n">DiaAnyo</span> <span class="n">cumpleanyos</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduzca fecha de hoy, dia: &quot;</span><span class="p">);</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduzca el número de mes: &quot;</span><span class="p">);</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">hoy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DiaAnyo</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduzca su fecha de nacimiento, dia: &quot;</span><span class="p">);</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduzca el número de mes: &quot;</span><span class="p">);</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="n">cumpleanyos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DiaAnyo</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span> <span class="s">&quot; La fecha de hoy es &quot;</span><span class="p">);</span>
+        <span class="n">hoy</span><span class="p">.</span><span class="na">visualizar</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span> <span class="s">&quot; Su fecha de nacimiento es &quot;</span><span class="p">);</span>
+        <span class="n">cumpleanyos</span><span class="p">.</span><span class="na">visualizar</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hoy</span><span class="p">.</span><span class="na">igual</span><span class="p">(</span><span class="n">cumpleanyos</span><span class="p">))</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="s">&quot;¡Feliz cumpleaños ! &quot;</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="s">&quot;¡Feliz dia ! &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El programa anterior completo se puede compilar online en el siguiente <a class="reference external" href="https://repl.it/repls/DirtyVioletMicrocode">enlace</a>.</p>
+</div>
+<div class="section" id="implementacion-de-clases">
+<h2>Implementación  de clases<a class="headerlink" href="#implementacion-de-clases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>El código fuente de la definición de una clase con todos sus métodos y variables instancia se almacenan en archivos de texto con extensión <strong>.java</strong> y con el nombre de la clase.</p></li>
+<li><p>La implementación de cada clase normalmente se sitúa en un archivo independiente y éstas pueden proceder de diferentes fuentes:</p>
+<ul>
+<li><p>Declarar e implementar las propias; el código fuente siempre estará disponible y pueden organizarse por paquetes.</p></li>
+<li><p>Utilizar clases escritas por otras personas o compradas; en este caso, se puede disponer del código fuente o estar limitado a utilizar el bytecode de la implementación. Será necesario disponer del paquete donde se encuentran.</p></li>
+<li><p>Utilizar las de los diversos archivos o packages que acompañan el software de desarrollo Java.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="metodos-setter-y-getter">
+<h2>Metodos setter y getter<a class="headerlink" href="#metodos-setter-y-getter" title="Permalink to this headline">¶</a></h2>
+<p>Como es común hacer que todos los atributos de una clase sean privados la manipulación de estos se suele hacer a traves de métodos publicos. Dentro de estos metodos podemos definir dos tipos:</p>
+<ul class="simple">
+<li><p><strong>Metodos accesores (getter)</strong>: Método que obtiene el atributo de un objeto sin realizar ninguna modificación sobre este. En la clase Rectangle anteriormente vista, los metodos getLength y getWidth son accesores.</p></li>
+<li><p><strong>Metodos muttator (setter)</strong>: Método que permite modificar el valor de un atributo. En la Rectangle ya vista, los métodos setLength y setWidth son mutatores.</p></li>
+</ul>
+</div>
+<div class="section" id="mejorando-la-representacion-uml">
+<h2>Mejorando la representación UML<a class="headerlink" href="#mejorando-la-representacion-uml" title="Permalink to this headline">¶</a></h2>
+<p>En el diagrama UML se puede indicar que miembros (atributos y metodos) serán considerados como publicos y como privados de la siguiente manera:</p>
+<ul class="simple">
+<li><p><strong>Privados</strong>: Se antepone un signo - en el miembro.</p></li>
+<li><p><strong>Publicos</strong>: Se antepone un signo + en el miembro.</p></li>
+</ul>
+<p>La siguiente figura muestra el caso para la clase asociada al rectangulo (cuyo codigo se implemento anteriormente):</p>
+<p><img alt="diagrama_UML_2" src="../../_images/UML_rectangulo2.jpg" /></p>
+<p>Incluso a veces para dar aún mas información de los miembros se suele emplear el tipo de dato empleado en los atributos, parametros de los metodos y tipo de dato devueltos por estos tal y como se muestra en la siguiente figura:</p>
+<p><img alt="diagrama_UML_3" src="../../_images/UML_rectangulo3.jpg" /></p>
+</div>
+<div class="section" id="constructores">
+<h2>Constructores<a class="headerlink" href="#constructores" title="Permalink to this headline">¶</a></h2>
+<p>Un constructor es un método que es llamado automaticamente cuando un objeto es creado. Este normalmente realiza operaciones de inicialización asignando valores iniciales a los atributos. Un constructor tiene el mismo nombre de la clase. En lo que respecta al diagrama UML el constructor tambien puede ser referenciado; para el siguiente caso se retorna de nuevo al ejemplo de la clase rectangulo:</p>
+<p><img alt="diagrama_UML_2" src="../../_images/UML_rectangulo4.jpg" /></p>
+<p><strong>Ejemplo 7</strong></p>
+<p>Codifique en java la clase Rectangle definida en el diagrama UML anteriormente mostrado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k 
+class Rectangle
+{
+   private double length;
+   private double width;
+
+   /**
+      Constructor
+      @param len The length of the rectangle.
+      @param w The width of the rectangle.
+   */
+
+   public Rectangle(double len, double w)
+   {
+      length = len;
+      width = w;
+   }
+
+   /**
+      The setLength method stores a value in the
+      length field.
+      @param len The value to store in length.
+   */
+
+   public void setLength(double len)
+   {
+      length = len;
+   }
+
+   /**
+      The setWidth method stores a value in the
+      width field.
+      @param w The value to store in width.
+   */
+
+   public void setWidth(double w)
+   {
+      width = w;
+   }
+
+   /**
+      The getLength method returns a Rectangle
+      object&#39;s length.
+      @return The value in the length field.
+   */
+
+   public double getLength()
+   {
+      return length;
+   }
+
+   /**
+      The getWidth method returns a Rectangle
+      object&#39;s width.
+      @return The value in the width field.
+   */
+   
+   public double getWidth()
+   {
+      return width;
+   }
+
+   /**
+      The getArea method returns a Rectangle
+      object&#39;s area.
+      @return The product of length times width.
+   */
+
+   public double getArea()
+   {
+      return length * width;
+   }
+}
+
+
+
+/**
+   This program demonstrates the Rectangle class&#39;s
+   constructor.
+*/
+
+public class ConstructorDemo
+{
+   public static void main(String[] args)
+   {
+      // Create a Rectangle object, passing 5.0 and
+      // 15.0 as arguments to the constructor.
+      Rectangle box = new Rectangle(5.0, 15.0);
+
+      // Display the length.
+      System.out.println(&quot;The box&#39;s length is &quot; +
+                         box.getLength());
+
+      // Display the width.
+      System.out.println(&quot;The box&#39;s width is &quot; +
+                         box.getWidth());
+
+      // Display the area.
+      System.out.println(&quot;The box&#39;s area is &quot; +
+                         box.getArea());
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplorectangulo2">enlace</a> para poder ejecutar la aplicación online.</p>
+</div>
+<div class="section" id="variables-no-inicializadas">
+<h2>Variables no inicializadas<a class="headerlink" href="#variables-no-inicializadas" title="Permalink to this headline">¶</a></h2>
+<p>Las variables asociadas a objetos pueden ser declaradas sin ser inicializadas, por ejemplo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangle</span> <span class="n">box</span><span class="p">;</span>  <span class="c1">// Aqui no se crea un objeto tipo Rectangle</span>
+</pre></div>
+</div>
+<p>Una vez declarada la variables, esta <strong>debe ser referenciada a un objeto</strong> antes de que pueda ser usada, de otra manera, ocurrira un error de  compilación. A continuación se muestra la inicialización despues de la declaración:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">);</span> <span class="c1">// box ahora referencia un objeto tipo Rectangle con length 7.0 y width 14.0</span>
+</pre></div>
+</div>
+<p>En los ejemplos vistos anteriormente, las anteriores dos instrucciones se han realizado como una sola (cuyo resultado es el mismo), así:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangle</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">);</span> <span class="c1">// box ahora referencia un objeto tipo Rectangle con length 7.0 y width 14.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constructor-por-defecto">
+<h2>Constructor por defecto<a class="headerlink" href="#constructor-por-defecto" title="Permalink to this headline">¶</a></h2>
+<p>Es un constructor que no tiene parámetros. Este al ser invocado, permite inicializar los miembros de una clase con valores predeterminados. Cuando no existen otros constructores, java crea automaticamente un constructor por defecto si este no existe.</p>
+<p><strong>Apunte importante</strong>:</p>
+<ol class="simple">
+<li><p>Suponga que se tiene el siguiente fragmento de codigo:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+
+  
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLength</span><span class="p">(</span><span class="kt">double</span> <span class="n">len</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+   <span class="p">}</span>
+   
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En el caso anterior no se definió ningun constructor, por lo tanto java crea un constructor automaticamente inicializando todos los objetos numericos a 0 y los objetos booleanos a false. De moto que si se instancia un objeto:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">RectangleTest</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">Rectangle</span> <span class="n">rect1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+   <span class="p">}</span>
+   
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los miembros <strong>length</strong> y <strong>width</strong> del objeto <strong>rect1</strong>, serán inicializados a 0.0.</p>
+<ol class="simple">
+<li><p>Suponga ahora que se define un constructor al implementar la clase tal y como se muestra a continuación:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span> <span class="n">len</span><span class="p">,</span> <span class="kt">double</span> <span class="n">w</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+      <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
+   <span class="p">}</span>
+    
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLength</span><span class="p">(</span><span class="kt">double</span> <span class="n">len</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+   <span class="p">}</span>
+    
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Como ya se creo un constructor en la clase anterior; en este caso, java ya no proporsiona el constructor por defecto de modo que si tratamos de instanciar la clase anterior tal y como se muestra en el siguiente fragmento de código:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">RectangleTest</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">Rectangle</span> <span class="n">rect1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span> <span class="c1">// / Error! Must now pass arguments.</span>
+   <span class="p">}</span>
+   
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>De este modo si queremos tener un constructor que no acepte argumentos (conocido como <strong>constructori sin argumentos</strong>) debemos agregar ademas este construtor a los ya existentes. De este modo la version del codigo de la clase Rectangle quedaría así:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+    
+   <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+      <span class="n">width</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span> <span class="n">len</span><span class="p">,</span> <span class="kt">double</span> <span class="n">w</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+      <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
+   <span class="p">}</span>
+    
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLength</span><span class="p">(</span><span class="kt">double</span> <span class="n">len</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">length</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+   <span class="p">}</span>
+    
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ahora si es posible ya usar si es posible usar el constructor sin argumentos pues este, ya esta especificado en la clase:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">RectangleTest</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// Now we have written our own no-arg constructor </span>
+      <span class="n">Rectangle</span> <span class="n">rect1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span> <span class="c1">// Calls the no-arg constructor</span>
+   <span class="p">}</span>
+   
+   <span class="c1">// Mas codigo...</span>
+   
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplos-de-repaso">
+<h2>Ejemplos de repaso<a class="headerlink" href="#ejemplos-de-repaso" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clase-cellphone">
+<h3>1. Clase CellPhone<a class="headerlink" href="#clase-cellphone" title="Permalink to this headline">¶</a></h3>
+<p>Wireless Solutions, Inc, es una compañia que vende telefonos celulares y servicio de inalambrico. Usted es un programados del departamento de TI (Tecnologias de la información) de la compañia y a su equipo, se le encargo un  diseño para administrar todos los telefonos celulares disponibles en el inventario. Usted tiene que diseñar una clase que represente el telefono celular. Los datos que se deberian definir como campos en la clase son:</p>
+<ul class="simple">
+<li><p>El nombre del fabricante del celular (<strong>manufact</strong>).</p></li>
+<li><p>El modelo del celular (<strong>model</strong>).</p></li>
+<li><p>El retail price del celular <strong>retailPrice</strong></p></li>
+</ul>
+<p>La clase tambien tendra los siguientes métodos:</p>
+<ul class="simple">
+<li><p>Un constructor que acepta los argumentos para el fabricante, el numero de modelo y retail price.</p></li>
+<li><p>Un metodo <strong>setManufact</strong> que acepta un argumento para el fabricante. Este metodo permitira cambiar el valor de campo <strong>manufact</strong> despues de que el objeto ha sido creado, en caso de ser necesario.</p></li>
+<li><p>Un metodo <strong>setModel</strong> que acepta un argumento para el model. Este metodo permitira cambiar el valor de campo <strong>model</strong> despues de que el objeto ha sido creado, en caso de ser necesario.</p></li>
+<li><p>Un metodo <strong>setRetailPrice</strong> que acepta un argumento para el retail price. Este metodo permitira cambiar el valor de campo <strong>retailPrice</strong> despues de que el objeto ha sido creado, en caso de ser necesario.</p></li>
+<li><p>Un metodo <strong>getManufact</strong> que retorna el fabricante del telefono.</p></li>
+<li><p>Un metodo <strong>getModel</strong> que retorna el modelo del telefono.</p></li>
+<li><p>Un metodo <strong>getRetailPrice</strong> que retorna el retail price del telefono.</p></li>
+</ul>
+<p><strong>Solución</strong>: a continuación se muestra el diagrama UML asociado al celular:</p>
+<p><img alt="UML_cell" src="../../_images/UML_celular.jpg" /></p>
+<p>El codigo con las respectivas clases que definen y testean el celular se muestra a continuación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k 
+/**
+   The CellPhone class holds data about a cell phone.
+*/
+
+class CellPhone
+{
+   // Fields
+   private String manufact;    // Manufacturer
+   private String model;       // Model
+   private double retailPrice; // Retail price
+   
+   /**
+      Constructor
+      @param man The phone&#39;s manufacturer.
+      @param mod The phone&#39;s model number.
+      @param price The phone&#39;s retail price.
+   */
+   
+   public CellPhone(String man, String mod, double price)
+   {
+      manufact = man;
+      model = mod;
+      retailPrice = price;
+   }
+   
+   /**
+      The setManufact method sets the phone&#39;s
+      manufacturer name.
+      @param man The phone&#39;s manufacturer.
+   */
+   
+   public void setManufact(String man)
+   {
+      manufact = man;
+   }
+
+   /**
+      The setModel method sets the phone&#39;s
+      model number.
+      @param mod The phone&#39;s model number.
+   */
+   
+   public void setMod(String mod)
+   {
+      model = mod;
+   }
+   
+   /**
+      The setRetailPrice method sets the phone&#39;s
+      retail price.
+      @param price The phone&#39;s retail price.
+   */
+   
+   public void setRetailPrice(double price)
+   {
+      retailPrice = price;
+   }
+
+   /**
+      getManufact method
+      @return The name of the phone&#39;s manufacturer.
+   */
+   
+   public String getManufact()
+   {
+      return manufact;
+   }
+   
+   /**
+      getModel method
+      @return The phone&#39;s model number.
+   */
+   
+   public String getModel()
+   {
+      return model;
+   }
+   
+   /**
+      getretailPrice method
+      @return The phone&#39;s retail price.
+   */
+   
+   public double getRetailPrice()
+   {
+      return retailPrice;
+   }
+}
+
+/**
+   This program runs a simple test
+   of the CellPhone class.
+*/
+
+public class CellPhoneTest
+{
+   public static void main(String[] args)
+   {
+      String testMan;   // To hold a manufacturer
+      String testMod;   // To hold a model number
+      double testPrice; // To hold a price
+      
+      
+      // Create an instance of the CellPhone class,
+      CellPhone phone = new CellPhone(&quot;Acme electronics&quot;, &quot;M1000&quot;, 199.99);
+
+      // Get the data from the phone and display it.
+      System.out.println();
+      System.out.println(&quot;Here is the data that you provided:&quot;);
+      System.out.println(&quot;Manufacturer: &quot; + phone.getManufact());
+      System.out.println(&quot;Model number: &quot; + phone.getModel());
+      System.out.println(&quot;Retail price: &quot; + phone.getRetailPrice());
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>El condigo anterior se puede ejecutar online en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplocelular">enlace</a></p>
+</div>
+<div class="section" id="clase-bankaccount">
+<h3>2. Clase BankAccount<a class="headerlink" href="#clase-bankaccount" title="Permalink to this headline">¶</a></h3>
+<p>A continuación se define la clase <strong>BankAccount</strong>. Los objetos que se crean a partir de esta clase, permiten simular cuentas bancarias que permiten: definir un saldo inicial (start balance), hacer depositos (deposits), hacer retiros (withdrawals) y obtener el saldo actual (current balance). A contnuación, se muestra el diagrama UML de la clase <strong>BankAccount</strong> para simular cuentas bancarias.</p>
+<p><img alt="uml_bankacount" src="../../_images/UML_cuenta_bancaria.jpg" /></p>
+<p>A continuación se muestra el codigo solución:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+/**
+   The BankAccount class simulates a bank account.
+*/
+
+class BankAccount
+{
+   private double balance;      // Account balance
+
+   /**
+      This constructor sets the starting balance
+      at 0.0.
+   */
+
+   public BankAccount()
+   {
+      balance = 0.0;
+   }
+   
+   /**
+      This constructor sets the starting balance
+      to the value passed as an argument.
+      @param startBalance The starting balance.
+   */
+
+   public BankAccount(double startBalance)
+   {
+      balance = startBalance;
+   }
+
+   /**
+      This constructor sets the starting balance
+      to the value in the String argument.
+      @param str The starting balance, as a String.
+   */
+
+   public BankAccount(String str)
+   {
+      balance = Double.parseDouble(str);
+   }
+
+   /**
+      The deposit method makes a deposit into
+      the account.
+      @param amount The amount to add to the
+                    balance field.
+   */
+
+   public void deposit(double amount)
+   {
+      balance += amount;
+   }
+
+   /**
+      The deposit method makes a deposit into
+      the account.
+      @param str The amount to add to the
+                 balance field, as a String.
+   */
+
+   public void deposit(String str)
+   {
+      balance += Double.parseDouble(str);
+   }
+
+   /**
+      The withdraw method withdraws an amount
+      from the account.
+      @param amount The amount to subtract from
+                    the balance field.
+   */
+
+   public void withdraw(double amount)
+   {
+      balance -= amount;
+   }
+
+   /**
+      The withdraw method withdraws an amount
+      from the account.
+      @param str The amount to subtract from
+                 the balance field, as a String.
+   */
+
+   public void withdraw(String str)
+   {
+      balance -= Double.parseDouble(str);
+   }
+
+   /**
+      The setBalance method sets the account balance.
+      @param b The value to store in the balance field.
+   */
+
+   public void setBalance(double b)
+   {
+      balance = b;
+   }
+
+   /**
+      The setBalance method sets the account balance.
+      @param str The value, as a String, to store in
+                 the balance field.
+   */
+
+   public void setBalance(String str)
+   {
+      balance = Double.parseDouble(str);
+   }
+   
+   /**
+      The getBalance method returns the
+      account balance.
+      @return The value in the balance field.
+   */
+
+   public double getBalance()
+   {
+      return balance;
+   }
+}
+
+public class AccountTest
+{
+   public static void main(String[] args)
+   {
+      String input;    // To hold user input
+      input = &quot;500.0&quot;;
+      // Get the starting balance.
+      System.out.println(&quot;What is your account&#39;s starting balance? &quot; + input);
+      
+      BankAccount account = new BankAccount(input);
+      input = &quot;1000.0&quot;;
+      System.out.println(&quot;How much were you paid this month? &quot; + input);
+
+      // Deposit the user&#39;s pay into the account.
+      account.deposit(input);
+
+      // Display the new balance.
+      System.out.printf(&quot;Your pay has been deposited.\n&quot; +
+                       &quot;Your current balance is $%,.2f&quot;,
+                       account.getBalance());
+
+      // Withdraw some cash from the account.
+      input = &quot;900.0&quot;;
+      System.out.println(&quot;How much would you like to withdraw? &quot;);
+      account.withdraw(input);
+
+      // Display the new balance
+      System.out.printf(&quot;Now your balance is $%,.2f&quot;,
+                       account.getBalance());
+                     
+      System.exit(0);
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplocuentaBancaria">enlace</a> se puede ejecutar el código anterior online.</p>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/concepts/index.html">https://docs.oracle.com/javase/tutorial/java/concepts/index.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/javaOO/index.html">https://docs.oracle.com/javase/tutorial/java/javaOO/index.html</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_classes.asp">https://www.w3schools.com/java/java_classes.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_class_attributes.asp">https://www.w3schools.com/java/java_class_attributes.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_class_methods.asp">https://www.w3schools.com/java/java_class_methods.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/java/java_constructors.asp">https://www.w3schools.com/java/java_constructors.asp</a></p></li>
+<li><p><a class="reference external" href="https://www.programiz.com/java-programming/class-objects">https://www.programiz.com/java-programming/class-objects</a></p></li>
+<li><p><a class="reference external" href="https://www.guru99.com/java-oops-class-objects.html">https://www.guru99.com/java-oops-class-objects.html</a></p></li>
+<li><p><a class="reference external" href="https://www.bogotobogo.com/Java/tutorials/on_java.php">https://www.bogotobogo.com/Java/tutorials/on_java.php</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/classes-objects-java/">https://www.geeksforgeeks.org/classes-objects-java/</a></p></li>
+<li><p><a class="reference external" href="https://www3.ntu.edu.sg/home/ehchua/programming/java/J3a_OOPBasics.html">https://www3.ntu.edu.sg/home/ehchua/programming/java/J3a_OOPBasics.html</a></p></li>
+<li><p><a class="reference external" href="http://tutorials.jenkov.com/java/classes.html">http://tutorials.jenkov.com/java/classes.html</a></p></li>
+<li><p><a class="reference external" href="https://beginnersbook.com/java-tutorial-for-beginners-with-examples/">https://beginnersbook.com/java-tutorial-for-beginners-with-examples/</a></p></li>
+<li><p><a class="reference external" href="https://www.edureka.co/blog/java-tutorial/">https://www.edureka.co/blog/java-tutorial/</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialspoint.com/java/java_object_classes.htm">https://www.tutorialspoint.com/java/java_object_classes.htm</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
