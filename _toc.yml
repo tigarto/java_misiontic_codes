@@ -17,3 +17,6 @@ chapters:
 
 - file: content/CH02_intro
   - file: "content/notebooks/objetos1.ipynb"
+  - file: "content/notebooks/objetos2.ipynb"
+  - file: "content/notebooks/objetos3.ipynb"
+  - file: "content/notebooks/objetos4.ipynb"
