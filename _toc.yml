@@ -14,7 +14,6 @@ chapters:
   - file: "content/notebooks/funciones.ipynb"
   - file: "content/notebooks/arreglos.ipynb"
   - file: "content/notebooks/matrices.ipynb"
-
 - file: content/CH02_intro
   - file: "content/notebooks/objetos1.ipynb"
   - file: "content/notebooks/objetos2.ipynb"
