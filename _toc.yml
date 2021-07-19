@@ -16,3 +16,4 @@ chapters:
   - file: "content/notebooks/matrices.ipynb"
 
 - file: content/CH02_intro
+  - file: "content/notebooks/objetos1.ipynb"
