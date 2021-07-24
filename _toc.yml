@@ -14,6 +14,7 @@ chapters:
   - file: "content/notebooks/funciones.ipynb"
   - file: "content/notebooks/arreglos.ipynb"
   - file: "content/notebooks/matrices.ipynb"
+  - file: "content/notebooks/ArrayList.ipynb"
 
 - file: "content/CH02_intro"
   sections:
