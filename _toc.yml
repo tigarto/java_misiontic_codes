@@ -15,14 +15,12 @@ chapters:
   - file: "content/notebooks/arreglos.ipynb"
   - file: "content/notebooks/matrices.ipynb"
   - file: "content/notebooks/ArrayList.ipynb"
-
 - file: "content/CH02_intro"
   sections:
   - file: "content/notebooks/objetos1.ipynb"
   - file: "content/notebooks/objetos2.ipynb"
   - file: "content/notebooks/objetos3.ipynb"
   - file: "content/notebooks/objetos4.ipynb"
-
- - file: "content/CH03_intro"
-   sections: 
-   - file: "content/notebooks/herencia1.ipynb"
+- file: "content/CH03_intro"
+  sections:
+  - file: "content/notebooks/herencia1.ipynb"
