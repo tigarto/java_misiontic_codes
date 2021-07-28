@@ -1,0 +1,1453 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herencia &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Capitulo 3 - Herencia y polimorfismo" href="../CH03_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList.html">
+     ArrayList
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos1.html">
+     Clases y objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos2.html">
+     Array de objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos3.html">
+     Metodos y variables estaticas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos4.html">
+     Mas sobre objetos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH03_intro.html">
+   Capitulo 3 - Herencia y polimorfismo
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Herencia
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/herencia1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/herencia1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importancia">
+   Importancia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobre-la-herencia">
+   Sobre la herencia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clases-base-y-clases-derivadas">
+     Clases base y clases derivadas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jerarquia-de-clases">
+     Jerarquia de clases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-en-java-de-las-relaciones-de-herencia">
+   Implementación en java de las relaciones de herencia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo">
+     Ejemplo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reglas-a-cerca-de-las-superclases-y-las-subclases">
+     Reglas a cerca de las superclases y las subclases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#herencia-multiples-y-simple">
+     Herencia multiples y simple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aspectos-importantes-relacionados-con-la-herencia">
+   Aspectos importantes relacionados con la herencia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-de-metodos-de-una-superclase-en-una-subclase">
+     Uso de métodos de una superclase en una subclase
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-1-tomado-de-starting-out-java-with-early-objects">
+       Ejemplo 1 (Tomado de Starting Out Java with Early Objects)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#palabra-clave-super">
+     Palabra clave super
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#miembros-protegidos-de-una-clase">
+     Miembros protegidos de una clase
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-2-usando-protected-tomado-de-starting-out-java-with-early-objects">
+       Ejemplo 2 - Usando protected (Tomado de Starting Out Java with Early Objects)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceso-protegido-contra-acceso-en-el-paquete">
+     Acceso protegido contra acceso en el paquete
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resumen-acceso">
+     Resumen acceso
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementando-clases-no-derivables-con-el-atributo-final">
+     Implementando clases no derivables con el atributo final
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cadenas-y-jerarquas-de-herencia">
+     Cadenas y jerarquas de herencia
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cadena-de-herencia">
+       Cadena de herencia
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-3-cadena-de-herencia-tomado-de-starting-out-java-with-early-objects">
+       Ejemplo 3 - Cadena de herencia  (Tomado de Starting Out Java with Early Objects)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jerarquia-de-herencia">
+       Jerarquia de herencia
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clase-object">
+     Clase Object
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in /home/tigarto/miniconda3/lib/python3.7/site-packages (0.3.0)
+Requirement already satisfied: notebook&gt;=3.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from tutormagic) (6.0.1)
+Requirement already satisfied: tornado&gt;=5.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (6.0.3)
+Requirement already satisfied: pyzmq&gt;=17 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (18.1.1)
+Requirement already satisfied: nbformat in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Requirement already satisfied: jinja2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (2.10.3)
+Requirement already satisfied: ipykernel in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: nbconvert in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.6.1)
+Requirement already satisfied: Send2Trash in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: prometheus-client in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: terminado&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.8.3)
+Requirement already satisfied: traitlets&gt;=4.2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.3.3)
+Requirement already satisfied: jupyter-client&gt;=5.3.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.3.3)
+Requirement already satisfied: ipython-genutils in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.6.1)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.2.0)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jinja2-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.1.1)
+Requirement already satisfied: ipython&gt;=5.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (7.11.1)
+Requirement already satisfied: pygments in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.5.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.4.2)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.3)
+Requirement already satisfied: testpath in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.4.4)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.4)
+Requirement already satisfied: bleach in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.1.0)
+Requirement already satisfied: defusedxml in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: decorator in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.4.1)
+Requirement already satisfied: six in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.12.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jupyter-client&gt;=5.3.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.8.1)
+Requirement already satisfied: setuptools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (45.2.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (19.3.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.6)
+Requirement already satisfied: importlib-metadata; python_version &lt; &quot;3.8&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.3.0)
+Requirement already satisfied: pexpect; sys_platform != &quot;win32&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.7.0)
+Requirement already satisfied: pickleshare in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.0.2)
+Requirement already satisfied: jedi&gt;=0.10 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.2)
+Requirement already satisfied: backcall in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.0)
+Requirement already satisfied: webencodings in /home/tigarto/miniconda3/lib/python3.7/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.1)
+Requirement already satisfied: zipp&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from pexpect; sys_platform != &quot;win32&quot;-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: wcwidth in /home/tigarto/miniconda3/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.8)
+Requirement already satisfied: parso&gt;=0.5.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.2)
+Requirement already satisfied: more-itertools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from zipp&gt;=0.5-&gt;importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (8.0.2)
+The tutormagic extension is already loaded. To reload it, use:
+  %reload_ext tutormagic
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="herencia">
+<h1>Herencia<a class="headerlink" href="#herencia" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="importancia">
+<h2>Importancia<a class="headerlink" href="#importancia" title="Permalink to this headline">¶</a></h2>
+<p>La herencia es útil porque:</p>
+<ol class="simple">
+<li><p>Permite crear jerarquías de clases relacionadas</p></li>
+<li><p>Reduce la cantidad de código redundante en componentes de clases.</p></li>
+<li><p>Permite el reuso de software lo cual, además de evitar la redundancia, facilita la comprensión y mantenimiento del sistema el sistema.</p></li>
+</ol>
+</div>
+<div class="section" id="sobre-la-herencia">
+<h2>Sobre la herencia<a class="headerlink" href="#sobre-la-herencia" title="Permalink to this headline">¶</a></h2>
+<p>La <strong>herencia</strong> es la propiedad que permite definir <strong>nuevas clases</strong> usando como base <strong>clases ya existentes</strong>. Cuando se establece una relación de herencia se esta diciendo que se esta creando una relación <strong>es un</strong>.</p>
+<div class="section" id="clases-base-y-clases-derivadas">
+<h3>Clases base y clases derivadas<a class="headerlink" href="#clases-base-y-clases-derivadas" title="Permalink to this headline">¶</a></h3>
+<p>Dentro de la herencia se manejan dos conceptos importantes para definir la relacion entre clases; estos son:</p>
+<ol class="simple">
+<li><p><strong>Clase base</strong>: Conocida tambien como clase padre o superclase. Es la clase a partir dela cual se crean las clases derivadas.</p></li>
+<li><p><strong>Clase derivada</strong>: Clase nueva creada a partir de una existente. Esta tambien se conoce como subclase se denomina <strong>subclase</strong>. Mediante la relación de herencia es posible que la subclase herede caracteristicas de la clase base (tributos y métodos); ademas, la subclase puede agregar nuevas caracteristicas propias o incluso sobreescribir caracteristicas heredadas de la  clase base.</p></li>
+</ol>
+<p>La siguiente figura aterriza un poco los conceptos anteriores:</p>
+<p><img alt="herencia" src="../../_images/herencia1.jpg" /></p>
+</div>
+<div class="section" id="jerarquia-de-clases">
+<h3>Jerarquia de clases<a class="headerlink" href="#jerarquia-de-clases" title="Permalink to this headline">¶</a></h3>
+<p>Tal y como se muestra en la siguiente figura, la herencia se puede considerar similar a una estructura de un árbol o jerárquica, donde una superclase se muestra con sus subclases.</p>
+<p><img alt="jerarquia_figs" src="../../_images/jerarquia_figs.jpg" /></p>
+<p>De la figura anterior tenemos que, las siguientes conclusiones:</p>
+<ol class="simple">
+<li><p>La clase Figura es la clase base para las clases Circulo y Rectangulo, o dicho de otra manera, las clases Circulo y Rectangulo son clases derivadas (subclases o clases hijas) de la clase Figura.</p></li>
+<li><p>La clase Cuadrado es una clase derivada de la clase Rectangulo, o tambien, dicho de otra manera, la clase Rectangulo es la clase padre  de la clase cuadrado.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="implementacion-en-java-de-las-relaciones-de-herencia">
+<h2>Implementación en java de las relaciones de herencia<a class="headerlink" href="#implementacion-en-java-de-las-relaciones-de-herencia" title="Permalink to this headline">¶</a></h2>
+<p>La sintaxis general para derivar una subclase de una clase base ya existente es:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClaseDerivada</span> <span class="kd">extends</span> <span class="n">ClaseBase</span> <span class="p">{</span>
+  <span class="n">listaMiembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">¶</a></h3>
+<p>Retornemos a la figura anterior:</p>
+<p><img alt="jerarquia_figs" src="../../_images/jerarquia_figs.jpg" /></p>
+<p>A continuación se muestra la forma como se definen las relaciones de herencia para cada una de las clases en java teniendo en cuenta el diagrama anterior:</p>
+<p><strong>Clase Figura</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Figura</span> <span class="p">{</span>
+  <span class="n">listaDeMiembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase Circulo</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circulo</span> <span class="kd">extends</span> <span class="n">Figura</span><span class="p">{</span>
+  <span class="n">listaDeMiembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase Rectangulo</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="kd">extends</span> <span class="n">Figura</span><span class="p">{</span>
+  <span class="n">listaDeMiembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase Cuadrado</strong></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cuadrado</span> <span class="kd">extends</span> <span class="n">Rectangulo</span> <span class="p">{</span>
+  <span class="n">listaDeMiembros</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reglas-a-cerca-de-las-superclases-y-las-subclases">
+<h3>Reglas a cerca de las superclases y las subclases<a class="headerlink" href="#reglas-a-cerca-de-las-superclases-y-las-subclases" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Los miembros <strong>private</strong> de la superclase son <strong>privados</strong> para la superclase; por lo tanto, los
+miembros de la(s) subclase(s) no pueden accederlos directamente. En otras palabras, cuando se escriben las definiciones de los métodos de la subclase, no se pueden acceder directamente los miembros privados de la superclase.</p></li>
+<li><p>La subclase puede acceder directamente a los miembros <strong>publicos</strong> de la superclase.</p></li>
+<li><p>La subclase puede incluir miembros de datos y/o de métodos adicionales.</p></li>
+<li><p>La subclase puede sobreescribir, es decir, redefinir, los métodos <strong>publicos</strong> de la superclase. En la subclase se puede tener un método con el mismo nombre, número y tipos de parámetros como un método en la superclase.</p></li>
+<li><p>Todos los atributos y metodos (a menos que se sobrescriban) de la superclase también lo son de la subclase. De manera similar, los métodos de la superclase (a menos que se anulen) también lo son de la subclase.</p></li>
+</ol>
+</div>
+<div class="section" id="herencia-multiples-y-simple">
+<h3>Herencia multiples y simple<a class="headerlink" href="#herencia-multiples-y-simple" title="Permalink to this headline">¶</a></h3>
+<p>Cada subclase, a su vez, puede convertirse en una superclase para una subclase futura (Como se ve en el caso de la clase Rectangulo mostrada en la figura anterior).</p>
+<p>En lo que respecta a la herencia, esta puede ser <strong>simple</strong> o <strong>multiple</strong>:</p>
+<ol class="simple">
+<li><p><strong>Herencia simple</strong>: La subclase se deriva de una sola superclase.</p></li>
+<li><p><strong>Herencia multiple</strong>: La subclase se deriva de mas de una superclase.</p></li>
+</ol>
+<p>En lo que respecta a Java, solo soporta sólo la herencia simple.</p>
+</div>
+</div>
+<div class="section" id="aspectos-importantes-relacionados-con-la-herencia">
+<h2>Aspectos importantes relacionados con la herencia<a class="headerlink" href="#aspectos-importantes-relacionados-con-la-herencia" title="Permalink to this headline">¶</a></h2>
+<p>Para este ejemplo supongase que se da el siguiente codigo java en el cual se establece la relación entre dos clases. La clase base llamada <strong>Rectangulo</strong> y la clase derivada llamada <strong>Caja</strong>:</p>
+<p><img alt="herencia3" src="../../_images/herencia3.jpg" /></p>
+<p>La implementación en java de esta relación de herencia muestra a continuación:</p>
+<p><strong>Clase Rectangulo</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="p">{</span>
+    <span class="c1">// Codigo clase Caja</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase Cada</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Caja</span> <span class="kd">extends</span> <span class="n">Rectangulo</span> <span class="p">{</span>
+    <span class="c1">// Codigo clase Caja</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A continuación de muestra el diagrama UML asociado a la clase <strong>Rectangulo</strong>:</p>
+<p><img alt="rectangulo_uml" src="../../_images/rectangulo_uml.jpg" /></p>
+<p>El código completo asociado al diagrama anterior se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="p">{</span> 
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">longitud</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">ancho</span><span class="p">;</span>
+  
+  <span class="kd">public</span> <span class="nf">Rectangulo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ancho</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="nf">Rectangulo</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setDimension</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDimension</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">longitud</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="n">longitud</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">ancho</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="n">ancho</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getLongitud</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">longitud</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAncho</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">ancho</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">longitud</span> <span class="o">*</span> <span class="n">ancho</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">perimetro</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">longitud</span> <span class="o">+</span> <span class="n">ancho</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s">&quot;Longitud = &quot;</span> <span class="o">+</span> <span class="n">longitud</span> <span class="o">+</span> <span class="s">&quot;; Ancho = &quot;</span> <span class="o">+</span> <span class="n">ancho</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Por otro lado el diagrama UML asociado a la clase <strong>Caja</strong> se muestra a continuación:</p>
+<p><img alt="caja_uml" src="../../_images/caja_uml.jpg" /></p>
+<p>El código completo asociado al diagrama anterior se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Caja</span> <span class="kd">extends</span> <span class="n">Rectangulo</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">altura</span><span class="p">;</span> 
+  
+  <span class="kd">public</span> <span class="nf">Caja</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">();</span>
+    <span class="n">altura</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="nf">Caja</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="n">altura</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDimension</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">.</span><span class="na">setDimension</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">h</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">altura</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="n">altura</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAltura</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">altura</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">getLongitud</span><span class="p">()</span> <span class="o">*</span> <span class="n">getAncho</span><span class="p">()</span> <span class="o">+</span> 
+          <span class="n">getLongitud</span><span class="p">()</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">+</span> 
+          <span class="n">getAncho</span><span class="p">()</span> <span class="o">*</span> <span class="n">altura</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">volumen</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">area</span><span class="p">()</span><span class="o">*</span><span class="n">altura</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;; Height = &quot;</span> <span class="o">+</span> <span class="n">altura</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="uso-de-metodos-de-una-superclase-en-una-subclase">
+<h3>Uso de métodos de una superclase en una subclase<a class="headerlink" href="#uso-de-metodos-de-una-superclase-en-una-subclase" title="Permalink to this headline">¶</a></h3>
+<p>En la relación entre una clase y una subclase se establecen las siguientes relaciones entre los metodos de la superclase y la subclase:</p>
+<ol class="simple">
+<li><p><strong>Herencia de los metodos</strong>: Al establecerse la relación de herencia, la clase derivada no solo hereda los atributos de la clase base sino tambien sus metodos. Esto hace posible que la clase derivada pueda hacer uso de los metodos de la clase base ademas de sus propios metodos. Veamos:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangulo</span> <span class="n">rectangulo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangulo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">Caja</span> <span class="n">caja1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Caja</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">longitudRectangulo1</span> <span class="o">=</span> <span class="n">rectangulo1</span><span class="p">.</span><span class="na">getLongitud</span><span class="p">();</span>
+<span class="n">caja1</span><span class="p">.</span><span class="na">setDimension</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="mf">3.4</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">longitudCaja1</span> <span class="o">=</span> <span class="n">caja1</span><span class="p">.</span><span class="na">getLongitud</span><span class="p">();</span> <span class="c1">// La clase derivada esta haciendo uso del metodo</span>
+                                            <span class="c1">// getLongitud() heredado de la clase padre</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><strong>Sobreescritura de los métodos</strong>: Esto tambien es conocido como <strong>redefinición</strong>. Este caso se da cuando la clase derivada define metodos con la misma firma (cabecera) ya que emplea el mismo nombre y parametros del metodo definido en la clase base.</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Clase base */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="p">{</span> 
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">longitud</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">ancho</span><span class="p">;</span>
+    
+    <span class="c1">//...</span>
+  
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">longitud</span> <span class="o">*</span> <span class="n">ancho</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+
+<span class="cm">/* Clase derivada */</span>
+<span class="kd">class</span> <span class="nc">Caja</span> <span class="kd">extends</span> <span class="n">Rectangulo</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">altura</span><span class="p">;</span> 
+    
+    <span class="c1">// Metodo sobreescrito</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">getLongitud</span><span class="p">()</span> <span class="o">*</span> <span class="n">getAncho</span><span class="p">()</span> <span class="o">+</span> 
+                    <span class="n">getLongitud</span><span class="p">()</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">+</span> 
+                    <span class="n">getAncho</span><span class="p">()</span> <span class="o">*</span> <span class="n">altura</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><strong>Sobrecarga de los métodos</strong>: Se da cuando un metodo de la clase derivada tiene el mismo nombre de la clase derivada pero los parametros son diferentes.</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Clase base */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="p">{</span> 
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">longitud</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">ancho</span><span class="p">;</span>
+    
+    <span class="c1">//...</span>
+  
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDimension</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">longitud</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">longitud</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">ancho</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">ancho</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+
+<span class="cm">/* Clase derivada */</span>
+<span class="kd">class</span> <span class="nc">Caja</span> <span class="kd">extends</span> <span class="n">Rectangulo</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">altura</span><span class="p">;</span> 
+    
+    <span class="c1">// Metodo sobrecargado</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDimension</span><span class="p">(</span><span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">setDimension</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">h</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">altura</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">altura</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>La siguiente figura aclara mejor la diferencia entre sobrecargar y sobreescribir:</p>
+<p><img alt="sobrecargar_vs_sobreescribir" src="content/notebooks/sobrecargar_vs_sobreescribir.jpg" /></p>
+<p>A continuación se muestra el codigo anterior completo para simular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+public class MetodosSubClaseSuperClase {
+  public static void main(String[] args) {
+    Rectangulo miRectangulo1 = new Rectangulo(); 
+    Rectangulo miRectangulo2 = new Rectangulo(8, 6); 
+    Caja miCaja1 = new Caja(); 
+    Caja miCaja2 = new Caja(10, 7, 3); 
+    System.out.println(&quot;miRectangulo1: &quot;
+                       + miRectangulo1); 
+    System.out.println(&quot;Area de miRectangulo1: &quot;
+                       + miRectangulo1.area()); 
+    System.out.println(&quot;miRectangulo2: &quot;
+                       + miRectangulo2); 
+    System.out.println(&quot;Area de miRectangulo2: &quot;
+                       + miRectangulo2.area()); 
+    System.out.println(&quot;miCaja1: &quot; + miCaja1); 
+    System.out.println(&quot;Area superficial de miCaja1: &quot;
+                       + miCaja1.area());
+    System.out.println(&quot;Linea 15: Volumen de miCaja1: &quot;
+                       + miCaja1.volumen());
+    System.out.println(&quot;miCaja2: &quot; + miCaja2);
+    System.out.println(&quot;Area superficial de miCaja2: &quot;
+                       + miCaja2.area());
+    System.out.println(&quot;Volumen de miCaja2: &quot;
+                       + miCaja2.volumen()); 
+  }
+}
+
+class Rectangulo { 
+  private double longitud;
+  private double ancho;
+  
+  public Rectangulo() {
+    longitud = 0;
+    ancho = 0;
+  }
+  public Rectangulo(double l, double a) {
+    setDimension(l, a);
+  }
+  
+  public void setDimension(double l, double a)  {
+    if (l &gt;= 0)
+      longitud = l;
+    else
+      longitud = 0;
+    if (a &gt;= 0)
+      ancho = a;
+    else
+      ancho = 0;
+  }
+  
+  public double getLongitud() {
+    return longitud;
+  }
+  
+  public double getAncho() {
+    return ancho;
+  }
+  
+  public double area() {
+    return longitud * ancho;
+  }
+
+  public double perimetro() {
+    return 2 * (longitud + ancho);
+  }
+
+  public String toString() {
+    return (&quot;Longitud = &quot; + longitud + &quot;; Ancho = &quot; + ancho);
+  }
+}
+
+class Caja extends Rectangulo {
+  private double altura; 
+  
+  public Caja() {
+    super();
+    altura = 0;
+  }
+  
+  public Caja(double l, double a, double h) {
+    super(l, a);
+    altura = h;
+  }
+  
+  public void setDimension(double l, double a, double h) {
+    super.setDimension(l, a);
+    if (h &gt;= 0) {
+      altura = h;
+    }
+    else {
+      altura = 0;
+    }
+  }
+  
+  public double getAltura() {
+    return altura;
+  }
+  
+  public double area() {
+    return 2 * (getLongitud() * getAncho() + 
+          getLongitud() * altura + 
+          getAncho() * altura);
+  }
+  
+  public double volumen() {
+    return super.area()*altura;
+  }
+  
+  public String toString() {
+    return super.toString() + &quot;; Altura = &quot; + altura;
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=public%20class%20MetodosSubClaseSuperClase%20%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Rectangulo%20miRectangulo1%20%3D%20new%20Rectangulo%28%29%3B%20%0A%20%20%20%20Rectangulo%20miRectangulo2%20%3D%20new%20Rectangulo%288%2C%206%29%3B%20%0A%20%20%20%20Caja%20miCaja1%20%3D%20new%20Caja%28%29%3B%20%0A%20%20%20%20Caja%20miCaja2%20%3D%20new%20Caja%2810%2C%207%2C%203%29%3B%20%0A%20%20%20%20System.out.println%28%22miRectangulo1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo1%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20de%20miRectangulo1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo1.area%28%29%29%3B%20%0A%20%20%20%20System.out.println%28%22miRectangulo2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo2%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20de%20miRectangulo2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo2.area%28%29%29%3B%20%0A%20%20%20%20System.out.println%28%22miCaja1%3A%20%22%20%2B%20miCaja1%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20superficial%20de%20miCaja1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja1.area%28%29%29%3B%0A%20%20%20%20System.out.println%28%22Linea%2015%3A%20Volumen%20de%20miCaja1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja1.volumen%28%29%29%3B%0A%20%20%20%20System.out.println%28%22miCaja2%3A%20%22%20%2B%20miCaja2%29%3B%0A%20%20%20%20System.out.println%28%22Area%20superficial%20de%20miCaja2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja2.area%28%29%29%3B%0A%20%20%20%20System.out.println%28%22Volumen%20de%20miCaja2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja2.volumen%28%29%29%3B%20%0A%20%20%7D%0A%7D%0A%0Aclass%20Rectangulo%20%7B%20%0A%20%20private%20double%20longitud%3B%0A%20%20private%20double%20ancho%3B%0A%20%20%0A%20%20public%20Rectangulo%28%29%20%7B%0A%20%20%20%20longitud%20%3D%200%3B%0A%20%20%20%20ancho%20%3D%200%3B%0A%20%20%7D%0A%20%20public%20Rectangulo%28double%20l%2C%20double%20a%29%20%7B%0A%20%20%20%20setDimension%28l%2C%20a%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20void%20setDimension%28double%20l%2C%20double%20a%29%20%20%7B%0A%20%20%20%20if%20%28l%20%3E%3D%200%29%0A%20%20%20%20%20%20longitud%20%3D%20l%3B%0A%20%20%20%20else%0A%20%20%20%20%20%20longitud%20%3D%200%3B%0A%20%20%20%20if%20%28a%20%3E%3D%200%29%0A%20%20%20%20%20%20ancho%20%3D%20a%3B%0A%20%20%20%20else%0A%20%20%20%20%20%20ancho%20%3D%200%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getLongitud%28%29%20%7B%0A%20%20%20%20return%20longitud%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getAncho%28%29%20%7B%0A%20%20%20%20return%20ancho%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20area%28%29%20%7B%0A%20%20%20%20return%20longitud%20%2A%20ancho%3B%0A%20%20%7D%0A%0A%20%20public%20double%20perimetro%28%29%20%7B%0A%20%20%20%20return%202%20%2A%20%28longitud%20%2B%20ancho%29%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28%22Longitud%20%3D%20%22%20%2B%20longitud%20%2B%20%22%3B%20Ancho%20%3D%20%22%20%2B%20ancho%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Caja%20extends%20Rectangulo%20%7B%0A%20%20private%20double%20altura%3B%20%0A%20%20%0A%20%20public%20Caja%28%29%20%7B%0A%20%20%20%20super%28%29%3B%0A%20%20%20%20altura%20%3D%200%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20Caja%28double%20l%2C%20double%20a%2C%20double%20h%29%20%7B%0A%20%20%20%20super%28l%2C%20a%29%3B%0A%20%20%20%20altura%20%3D%20h%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20void%20setDimension%28double%20l%2C%20double%20a%2C%20double%20h%29%20%7B%0A%20%20%20%20super.setDimension%28l%2C%20a%29%3B%0A%20%20%20%20if%20%28h%20%3E%3D%200%29%20%7B%0A%20%20%20%20%20%20altura%20%3D%20h%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20altura%20%3D%200%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getAltura%28%29%20%7B%0A%20%20%20%20return%20altura%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20area%28%29%20%7B%0A%20%20%20%20return%202%20%2A%20%28getLongitud%28%29%20%2A%20getAncho%28%29%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20getLongitud%28%29%20%2A%20altura%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20getAncho%28%29%20%2A%20altura%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20volumen%28%29%20%7B%0A%20%20%20%20return%20super.area%28%29%2Aaltura%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20super.toString%28%29%20%2B%20%22%3B%20Altura%20%3D%20%22%20%2B%20altura%3B%0A%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplo1">enlace</a> se muestra el código online para su ejecución.</p>
+<div class="section" id="ejemplo-1-tomado-de-starting-out-java-with-early-objects">
+<h4>Ejemplo 1 (Tomado de Starting Out Java with Early Objects)<a class="headerlink" href="#ejemplo-1-tomado-de-starting-out-java-with-early-objects" title="Permalink to this headline">¶</a></h4>
+<p>Muchos profesores asignan actividades con notas a sus estudiantes. Una actividad con nota (graded activity) puede tener un puntaje numerico tal como 70, 85 o 90 entre otros y una nota en letra tal como A, B, C, D or F. La siguiente figura muestra el diagrama UML de la clase <strong>GradedActivity</strong> la cual se diseñada para mantener el puntaje numerico de una actividad con nota. Esta presenta los siguientes metodos:</p>
+<ul class="simple">
+<li><p><strong>setScore</strong>: Asigna la nota numerica de la actividad con nota.</p></li>
+<li><p><strong>getScore</strong>: Retorna la nota numerica de la actividad con nota.</p></li>
+<li><p><strong>getGrade</strong>: Retorna el equivalente en letra de la nota numerica.</p></li>
+</ul>
+<p><img alt="graded_activity_uml" src="../../_images/graded_activity_uml.jpg" /></p>
+<p>El codigo asociado a la clase anterior se muestra a continuación:</p>
+<p><strong>Archivo</strong>: GradedActivity.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   A class that holds a grade for a graded activity.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GradedActivity</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">score</span><span class="p">;</span>  <span class="c1">// Numeric score</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The setScore method sets the score field.</span>
+<span class="cm">      @param s The value to store in score.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setScore</span><span class="p">(</span><span class="kt">double</span> <span class="n">s</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getScore method returns the score.</span>
+<span class="cm">      @return The value stored in the score field.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getScore</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getGrade method returns a letter grade</span>
+<span class="cm">      determined from the score field.</span>
+<span class="cm">      @return The letter grade.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">char</span> <span class="nf">getGrade</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="kt">char</span> <span class="n">letterGrade</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>
+      <span class="k">else</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;F&#39;</span><span class="p">;</span>
+       
+      <span class="k">return</span> <span class="n">letterGrade</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El código anterior se puede probar online siguiendo el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/GradedActivity">enlace</a>.</p>
+<p>Tal y como se mostro anteriormente, una actividad con nota (representada por la clase <strong>GradedActivity</strong>) representa las caracteristicas de una actividad con nota. Sin embargo, pueden existir muchos tipos de actividades con notas tales como quizes, parciales, finales, informas de laboratorio y ensayos entre otras. Debido a que los puntajes numericos para cada una de estas actividades puede ser diferente se pueden modelar esto mediante la creación de una subclase; para este caso en especifico el diagrama UML mostrado a continuación, crea la subclase <strong>FinalExam</strong> la cual hereda de <strong>GradedActivity</strong>:</p>
+<p><img alt="graded_activity_herencia" src="../../_images/graded_activity_herencia.jpg" /></p>
+<p>A continuación se muestra el código asociado a la clase <strong>FinalExam</strong>:</p>
+<p><strong>Archivo</strong>: FinalExam.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   This class determines the grade for a final exam.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinalExam</span> <span class="kd">extends</span> <span class="n">GradedActivity</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">numQuestions</span><span class="p">;</span>  <span class="c1">// Number of questions</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">pointsEach</span><span class="p">;</span> <span class="c1">// Points for each question</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">numMissed</span><span class="p">;</span>     <span class="c1">// Questions missed</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The constructor sets the number of questions on the</span>
+<span class="cm">      exam and the number of questions missed.</span>
+<span class="cm">      @param questions The number of questions.</span>
+<span class="cm">      @param missed The number of questions missed.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="nf">FinalExam</span><span class="p">(</span><span class="kt">int</span> <span class="n">questions</span><span class="p">,</span> <span class="kt">int</span> <span class="n">missed</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">numericScore</span><span class="p">;</span>  <span class="c1">// To hold a numeric score</span>
+
+      <span class="c1">// Set the numQuestions and numMissed fields.</span>
+      <span class="n">numQuestions</span> <span class="o">=</span> <span class="n">questions</span><span class="p">;</span>
+      <span class="n">numMissed</span> <span class="o">=</span> <span class="n">missed</span><span class="p">;</span>
+
+      <span class="c1">// Calculate the points for each question and</span>
+      <span class="c1">// the numeric score for this exam.</span>
+      <span class="n">pointsEach</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="n">questions</span><span class="p">;</span>
+      <span class="n">numericScore</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">missed</span> <span class="o">*</span> <span class="n">pointsEach</span><span class="p">);</span>
+
+      <span class="c1">// Call the inherited setScore method to</span>
+      <span class="c1">// set the numeric score.</span>
+      <span class="n">setScore</span><span class="p">(</span><span class="n">numericScore</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getPointsEach method returns the number of</span>
+<span class="cm">      points each question is worth.</span>
+<span class="cm">      @return The value in the pointsEach field.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPointsEach</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">pointsEach</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getNumMissed method returns the number of </span>
+<span class="cm">      questions missed.</span>
+<span class="cm">      @return The value in the numMissed field.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNumMissed</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">numMissed</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Pregunta</strong>: Teniendo en cuenta el codigo anterior ¿Cuantos atibutos y metodos tiene la clase <code class="docutils literal notranslate"><span class="pre">FinalExam</span></code>?, ¿Cuales con propios y cuales son heredados?</p>
+<p>El codigo anterior, se puede mostrar a continuación accediendo al siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/FinalExam">enlace</a></p>
+</div>
+</div>
+<div class="section" id="palabra-clave-super">
+<h3>Palabra clave super<a class="headerlink" href="#palabra-clave-super" title="Permalink to this headline">¶</a></h3>
+<p>Recordemos que los métodos en las clases derivadas con la misma firma, es decir, igual nombre, tipo de retorno y número y tipo de argumentos que los de la base, anulan o reemplazan (sobreescriben) al método de la base. Pese a esto, es posible invocar le método ocultado desde la clase derivada mediante el uso de la palabra <code class="docutils literal notranslate"><span class="pre">super</span></code> seguida del nombre del método tal y como se muestra a continuación:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="o">.</span><span class="n">nombreMetodo</span><span class="p">(</span><span class="n">parametros</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A continuación se muestra el uso de esta palabra clave en la clase derivada (<strong>caja</strong>) anteriormente mostrada; estos escenarios serán en en constructor y en un metodo de los que alli se implementan:</p>
+<ul class="simple">
+<li><p><strong>En el constructor</strong></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Caja</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">();</span>
+    <span class="n">altura</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>En el método para calular el volumen</strong></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">volumen</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">area</span><span class="p">()</span><span class="o">*</span><span class="n">altura</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="miembros-protegidos-de-una-clase">
+<h3>Miembros protegidos de una clase<a class="headerlink" href="#miembros-protegidos-de-una-clase" title="Permalink to this headline">¶</a></h3>
+<p>Los miembros de una clase se clasifican en tres categorías:</p>
+<ul class="simple">
+<li><p>publicos (<code class="docutils literal notranslate"><span class="pre">public</span></code>)</p></li>
+<li><p>privados (<code class="docutils literal notranslate"><span class="pre">private</span></code>)</p></li>
+<li><p>protegidos (<code class="docutils literal notranslate"><span class="pre">protected</span></code>)</p></li>
+</ul>
+<p>Como ya se vió antes, un miembro publico de una clase pueden ser accedidos desde cualquier otra clase externa a la clase en que se definió dicho miembro. Por otro lado, cuando se define un miembro como privado, este solo puede ser accedido desde la misma clase en que se definió.</p>
+<p>A veces es util que una subclase pueda acceder a un miembro de la clae base y es en este caso donde se hace fundamental la declaración en la clase base de dicho miembro como un miembro <strong>protegido</strong> (<code class="docutils literal notranslate"><span class="pre">protected</span></code>).
+Cuando se usa la palabra clave <code class="docutils literal notranslate"><span class="pre">protected</span></code> en la declaración de un miembro de la clase base, cualquier clase derivada puede acceder a dicho miembro.</p>
+<p>En resumen, si un miembro de una superclase necesita accederse directamente (sólo) por una
+subclase, ese miembro se declara utilizando el modificador <code class="docutils literal notranslate"><span class="pre">protected</span></code>.</p>
+<p>El siguiente ejemplo aclara lo anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+
+public class ProgMiembroProt {
+    public static void main(String[] args) {
+        BClass bObject = new BClass(); 
+        DClass dObject = new DClass(); 
+        System.out.println(&quot;Linea 3: &quot; + bObject); 
+        System.out.println(&quot;Línea 4: *** &quot;
+                           + &quot;Objeto subclase ***&quot;); 
+        dObject.setData(&#39;&amp;&#39;, 2.5, 7); //Linea 5
+        System.out.println(&quot;Linea 6: &quot; + dObject); 
+    }
+}
+
+class BClass {
+    protected char bCh;
+    private double bX;
+    
+    //Constructor predeterminado
+    public BClass() {
+        bCh = &#39;*&#39;;
+        bX = 0.0;
+    }
+    
+    //Constructor con parametros
+    public BClass(char ch, double u) {
+        bCh = ch;
+        bX = u;
+    }
+    
+    public void setDatos(double u) {
+        bX = u;
+    }
+    
+    public void setDatos(char ch, double u) {
+        bCh = ch;
+        bX = u;
+    }
+    
+    public String toString() {
+        return (&quot;Superclase: bCh = &quot; + bCh + &quot;, bX = &quot;
+                + bX + &#39;\n&#39;);
+    }
+}
+
+class DClass extends BClass {
+    private int dA;
+    public DClass() {
+        super();
+        dA = 0;
+    }
+    
+    public DClass(char ch, double v, int a) {
+        super(ch, v);
+        dA = a;
+    }
+    
+    public void setDatos(char ch, double v, int a) {
+        super.setDatos(v);
+        bCh = ch; // inicializa bCh utilizando la instruccion
+                  // de asignacion
+        dA = a;
+    }
+    
+    public String toString() {
+        return (super.toString() + &quot;SubClase dA = &quot; + dA + &#39;\n&#39;);        
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=%0Apublic%20class%20ProgMiembroProt%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20BClass%20bObject%20%3D%20new%20BClass%28%29%3B%20%0A%20%20%20%20%20%20%20%20DClass%20dObject%20%3D%20new%20DClass%28%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22Linea%203%3A%20%22%20%2B%20bObject%29%3B%20%0A%20%20%20%20%20%20%20%20System.out.println%28%22L%C3%ADnea%204%3A%20%2A%2A%2A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20%22Objeto%20subclase%20%2A%2A%2A%22%29%3B%20%0A%20%20%20%20%20%20%20%20dObject.setData%28%27%26%27%2C%202.5%2C%207%29%3B%20//Linea%205%0A%20%20%20%20%20%20%20%20System.out.println%28%22Linea%206%3A%20%22%20%2B%20dObject%29%3B%20%0A%20%20%20%20%7D%0A%7D%0A%0Aclass%20BClass%20%7B%0A%20%20%20%20protected%20char%20bCh%3B%0A%20%20%20%20private%20double%20bX%3B%0A%20%20%20%20%0A%20%20%20%20//Constructor%20predeterminado%0A%20%20%20%20public%20BClass%28%29%20%7B%0A%20%20%20%20%20%20%20%20bCh%20%3D%20%27%2A%27%3B%0A%20%20%20%20%20%20%20%20bX%20%3D%200.0%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20//Constructor%20con%20parametros%0A%20%20%20%20public%20BClass%28char%20ch%2C%20double%20u%29%20%7B%0A%20%20%20%20%20%20%20%20bCh%20%3D%20ch%3B%0A%20%20%20%20%20%20%20%20bX%20%3D%20u%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20void%20setDatos%28double%20u%29%20%7B%0A%20%20%20%20%20%20%20%20bX%20%3D%20u%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20void%20setDatos%28char%20ch%2C%20double%20u%29%20%7B%0A%20%20%20%20%20%20%20%20bCh%20%3D%20ch%3B%0A%20%20%20%20%20%20%20%20bX%20%3D%20u%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20%20%20%20%20return%20%28%22Superclase%3A%20bCh%20%3D%20%22%20%2B%20bCh%20%2B%20%22%2C%20bX%20%3D%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20bX%20%2B%20%27%5Cn%27%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aclass%20DClass%20extends%20BClass%20%7B%0A%20%20%20%20private%20int%20dA%3B%0A%20%20%20%20public%20DClass%28%29%20%7B%0A%20%20%20%20%20%20%20%20super%28%29%3B%0A%20%20%20%20%20%20%20%20dA%20%3D%200%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20DClass%28char%20ch%2C%20double%20v%2C%20int%20a%29%20%7B%0A%20%20%20%20%20%20%20%20super%28ch%2C%20v%29%3B%0A%20%20%20%20%20%20%20%20dA%20%3D%20a%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20void%20setDatos%28char%20ch%2C%20double%20v%2C%20int%20a%29%20%7B%0A%20%20%20%20%20%20%20%20super.setDatos%28v%29%3B%0A%20%20%20%20%20%20%20%20bCh%20%3D%20ch%3B%20//%20inicializa%20bCh%20utilizando%20la%20instruccion%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20de%20asignacion%0A%20%20%20%20%20%20%20%20dA%20%3D%20a%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20%20%20%20%20return%20%28super.toString%28%29%20%2B%20%22SubClase%20dA%20%3D%20%22%20%2B%20dA%20%2B%20%27%5Cn%27%29%3B%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p><strong>Nota importante</strong>: Cuando se escriben las definiciones de los métodos de la clase DClass, la variable de instancia protegida bCh se puede acceder directamente. Sin embargo, los objetos DClass no pueden acceder de manera directa a bCh. Es decir, la siguiente instrucción es ilegal (de hecho, es un error de sintaxis):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">dObject</span><span class="p">.</span><span class="na">bCh</span> <span class="o">=</span> <span class="sc">&#39;&amp;&#39;</span><span class="p">,</span> <span class="c1">//Ilegal</span>
+</pre></div>
+</div>
+<div class="section" id="ejemplo-2-usando-protected-tomado-de-starting-out-java-with-early-objects">
+<h4>Ejemplo 2 - Usando protected (Tomado de Starting Out Java with Early Objects)<a class="headerlink" href="#ejemplo-2-usando-protected-tomado-de-starting-out-java-with-early-objects" title="Permalink to this headline">¶</a></h4>
+<p>El código mostrado a continuación es el mismo del <strong>ejemplo 1 del libro Starting Out Java with Early Objects</strong>. Aqui, se creo la clase <strong>GradedActivity2</strong> la cual es la clase **<strong>GradedActivity</strong> solo que, en el caso, se define el miembro <strong>score</strong> no como <strong>privado</strong> sino como <strong>protected</strong>.</p>
+<p><strong>Archivo</strong>: GradedActivity2.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   A class that holds a grade for a graded activity.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GradedActivity2</span>
+<span class="p">{</span>
+   <span class="kd">protected</span> <span class="kt">double</span> <span class="n">score</span><span class="p">;</span>  <span class="c1">// Numeric score</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The setScore method sets the score field.</span>
+<span class="cm">      @param s The value to store in score.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setScore</span><span class="p">(</span><span class="kt">double</span> <span class="n">s</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getScore method returns the score.</span>
+<span class="cm">      @return The value stored in the score field.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getScore</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getGrade method returns a letter grade</span>
+<span class="cm">      determined from the score field.</span>
+<span class="cm">      @return The letter grade.</span>
+<span class="cm">   */</span>
+   <span class="kd">public</span> <span class="kt">char</span> <span class="nf">getGrade</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="kt">char</span> <span class="n">letterGrade</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">)</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>
+      <span class="k">else</span>
+         <span class="n">letterGrade</span> <span class="o">=</span> <span class="sc">&#39;F&#39;</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="n">letterGrade</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El diagrama UML asociado al codigo anterior se muestra a continuación:</p>
+<p><img alt="graded_activity_protected" src="../../_images/graded_activity_protected.jpg" /></p>
+<p>Notese de la figura anterior que cuando un miembro es declarado como <strong>protected</strong> se emplea el simbolo numeral (<strong>#</strong>) el diagrama UML para indicar esto. Lo anterior se muestra con el atributo <strong>score</strong>.</p>
+<p>En resumen, en el diagrama UML se usan los siguientes simbolos para representar el nivel de acceso de los atributos:</p>
+<ul class="simple">
+<li><p><strong>+</strong>: Publico</p></li>
+<li><p><strong>-</strong>: Privado</p></li>
+<li><p><strong>#</strong>: Protegido</p></li>
+</ul>
+<p>Por otro lado, se encuentra la subclase <strong>FinalExam2</strong> la cual hereda de la clase <strong>GradedActivity2</strong></p>
+<p><strong>Archivo</strong>: FinalExam2.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   This class determines the grade for a final exam.</span>
+<span class="cm">   The numeric score is rounded up to the next whole</span>
+<span class="cm">   number if its fractional part is .5 or greater.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinalExam2</span> <span class="kd">extends</span> <span class="n">GradedActivity2</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">numQuestions</span><span class="p">;</span>  <span class="c1">// Number of questions</span>
+   <span class="kd">private</span> <span class="kt">double</span> <span class="n">pointsEach</span><span class="p">;</span> <span class="c1">// Points for each question</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">numMissed</span><span class="p">;</span>     <span class="c1">// Number of questions missed</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The constructor sets the number of questions on the</span>
+<span class="cm">      exam and the number of questions missed.</span>
+<span class="cm">      @param questions The number of questions.</span>
+<span class="cm">      @param missed The number of questions missed.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="nf">FinalExam2</span><span class="p">(</span><span class="kt">int</span> <span class="n">questions</span><span class="p">,</span> <span class="kt">int</span> <span class="n">missed</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">numericScore</span><span class="p">;</span>  <span class="c1">// To hold a numeric score</span>
+
+      <span class="c1">// Set the numQuestions and numMissed fields.</span>
+      <span class="n">numQuestions</span> <span class="o">=</span> <span class="n">questions</span><span class="p">;</span>
+      <span class="n">numMissed</span> <span class="o">=</span> <span class="n">missed</span><span class="p">;</span>
+
+      <span class="c1">// Calculate the points for each question and</span>
+      <span class="c1">// the numeric score for this exam.</span>
+      <span class="n">pointsEach</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="n">questions</span><span class="p">;</span>
+      <span class="n">numericScore</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">missed</span> <span class="o">*</span> <span class="n">pointsEach</span><span class="p">);</span>
+
+      <span class="c1">// Call the inherited setScore method to</span>
+      <span class="c1">// set the numeric score.</span>
+      <span class="n">setScore</span><span class="p">(</span><span class="n">numericScore</span><span class="p">);</span>
+      
+      <span class="c1">// Adjust the score.</span>
+      <span class="n">adjustScore</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getPointsEach method returns the number of</span>
+<span class="cm">      points each question is worth.</span>
+<span class="cm">      @return The value in the pointsEach field.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPointsEach</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">pointsEach</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getNumMissed method returns the number of </span>
+<span class="cm">      questions missed.</span>
+<span class="cm">      @return The value in the numMissed field.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNumMissed</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">numMissed</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The adjustScore method adjusts a numeric score.</span>
+<span class="cm">      If score is within 0.5 points of the next whole</span>
+<span class="cm">      number, it rounds the score up.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">private</span> <span class="kt">void</span> <span class="nf">adjustScore</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">fraction</span><span class="p">;</span>
+
+      <span class="c1">// Get the fractional part of the score.</span>
+      <span class="n">fraction</span> <span class="o">=</span> <span class="n">score</span> <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">score</span><span class="p">;</span>
+
+      <span class="c1">// If the fractional part is .5 or greater,</span>
+      <span class="c1">// round the score up to the next whole number.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fraction</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">)</span>
+         <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">fraction</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Las dos clases anteriomente creadas se pueden probar en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/GradedActivity2">enlace</a></p>
+</div>
+</div>
+<div class="section" id="acceso-protegido-contra-acceso-en-el-paquete">
+<h3>Acceso protegido contra acceso en el paquete<a class="headerlink" href="#acceso-protegido-contra-acceso-en-el-paquete" title="Permalink to this headline">¶</a></h3>
+<p>Un <strong>paquete</strong> es una colección de clases tal y como se muestra en la siguiente figura:</p>
+<p><img alt="paquete" src="../../_images/paquete.jpg" /></p>
+<p>Para utilizar las clases, los métodos y los identificadores existentes, se debe indicar al programa qué paquete contiene la información apropiada. La instrucción import ayuda a hacer esto. La sintaxis general para importar el contenido de un paquete en un programa en Java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nombrePaquete.*</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Teniendo en cuenta lo anterior, si se quieren importar todas las clases del paquete <code class="docutils literal notranslate"><span class="pre">java.util</span></code> entonces, según lo anterior, la instrucción a realizar es la siguiente:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Existe tambien el caso en el cual se puede importar una sola clase. Por ejemplo, veamos el caso con la clase <code class="docutils literal notranslate"><span class="pre">Scanner</span></code> perteneciente al paquete <code class="docutils literal notranslate"><span class="pre">java.util</span></code>. Si deseamos importar solo esta clase, la instrucción import tendrá la siguiente forma:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Cuando un miembro de una clase se declara sin ninguno de los modificadores <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">private</span></code> o <code class="docutils literal notranslate"><span class="pre">protected</span></code>, entonces el sistema Java otorga a ese miembro el acceso predeterminado por el <strong>paquete</strong>; es decir, dicho miembro se puede acceder directamente en cualquier clase contenida en ese paquete. Por ejemplo, en el siguiente fragmento de código, todos los miembros de la clase <code class="docutils literal notranslate"><span class="pre">Rectangulo</span></code>, tendrian acceso predeterminado por <strong>paquete</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangulo</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">longitud</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">ancho</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Rectangulo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">longitud</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">ancho</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kt">double</span> <span class="nf">area</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">longitud</span> <span class="o">*</span> <span class="n">ancho</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El acceso por <strong>paquete</strong> tiene una referencia muy sutil con el <strong>acceso protegido</strong> tal y como se explica a continuación:</p>
+<ul class="simple">
+<li><p>Si un miembro de una clase tiene acceso en el paquete, ese miembro se puede acceder directamente en cualquier clase contenida en ese paquete, pero no en cualquier clase fuera ese paquete.</p></li>
+<li><p>Si un miembro de una clase está protegido, ese miembro se puede acceder directamente en cualquier subclase incluso si esta última está contenida en un paquete diferente.</p></li>
+</ul>
+</div>
+<div class="section" id="resumen-acceso">
+<h3>Resumen acceso<a class="headerlink" href="#resumen-acceso" title="Permalink to this headline">¶</a></h3>
+<p>Las siguientes tablas resumen el acceso a variable y métodos segun la visibilidad:</p>
+<p><img alt="resumen_acceso" src="../../_images/resumen_acceso.jpg" /></p>
+</div>
+<div class="section" id="implementando-clases-no-derivables-con-el-atributo-final">
+<h3>Implementando clases no derivables con el atributo final<a class="headerlink" href="#implementando-clases-no-derivables-con-el-atributo-final" title="Permalink to this headline">¶</a></h3>
+<p>En el contexto de herencia, la palabra reservada final aplicada a una clase se emplea para impedir que la clase sea derivable; de modo que, cuando se requiere que una clase no pueda extenderse, se declara con el modificador <code class="docutils literal notranslate"><span class="pre">final</span></code> tal y como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">modificador</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">NombreClase</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Si la declaración anterior es empleada, todo intento de definir una subclase a partir de la superclase definida como final generará un error de compilación.</p>
+<p><strong>Ejemplo</strong>: Definir la clase VideoConsola de tal manera que esta herede de la clase Consola y que no permita crear subclases de ella en otras estructuras.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">VideoConsola</span> <span class="kd">extends</span> <span class="n">Consola</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cadenas-y-jerarquas-de-herencia">
+<h3>Cadenas y jerarquas de herencia<a class="headerlink" href="#cadenas-y-jerarquas-de-herencia" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cadena-de-herencia">
+<h4>Cadena de herencia<a class="headerlink" href="#cadena-de-herencia" title="Permalink to this headline">¶</a></h4>
+<p>Una super clase tambien puede heredar de otra clase y asi sucecivamente, estableciendo una cadena con varias capas. La siguiente figura muestra una cadena de herencia tipica:</p>
+<p><img alt="cadena_herencia" src="../../_images/cadena_herencia.jpg" /></p>
+<p>Tal y como se muestra en la figura anterior, la clase C hereda los miembros de la clase B incluyendo aquellos heredados (por la clase B) de la clase A.</p>
+</div>
+<div class="section" id="ejemplo-3-cadena-de-herencia-tomado-de-starting-out-java-with-early-objects">
+<h4>Ejemplo 3 - Cadena de herencia  (Tomado de Starting Out Java with Early Objects)<a class="headerlink" href="#ejemplo-3-cadena-de-herencia-tomado-de-starting-out-java-with-early-objects" title="Permalink to this headline">¶</a></h4>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/passFail">enlace</a> se muestra el codigo asociado a la siguiente cadena de herencia:</p>
+<p><img alt="grade_chain" src="../../_images/grade_chain.jpg" /></p>
+</div>
+<div class="section" id="jerarquia-de-herencia">
+<h4>Jerarquia de herencia<a class="headerlink" href="#jerarquia-de-herencia" title="Permalink to this headline">¶</a></h4>
+<p>Consiste en un grafico en forma de arbol que describe las relaciones de herencia entre las clases de manera grafica. Las clases mas generales van hacia arriba y las mas especializadas van hacia abajo.</p>
+<p>La siguiente grafica muestra una jerarquia de herencia tipica:</p>
+<p><img alt="jerarquia1" src="../../_images/jerarquia1.jpg" /></p>
+<p>Para contextualizar mas aún se muestran otros ejemplos con jerarquias:</p>
+<p><img alt="jerarquias" src="../../_images/jerarquias.jpg" /></p>
+</div>
+</div>
+<div class="section" id="clase-object">
+<h3>Clase Object<a class="headerlink" href="#clase-object" title="Permalink to this headline">¶</a></h3>
+<p>Todas las clases en Java heredan, ya sea en forma directa o indirecta de la clase <code class="docutils literal notranslate"><span class="pre">Object</span></code> (paquete <code class="docutils literal notranslate"><span class="pre">java.lang</span></code>) de modo que, la clase Object directa o indirectamente se convierte en la superclase de cada clase en Java. Utilizando el mecanismo de herencia, cada miembro público de la clase Object se puede sobreescribir (anular) y/o invocar por cada objeto de cualquier tipo. La siguiente lista muestra algunos de los constructores y métodos de la clase <code class="docutils literal notranslate"><span class="pre">Object</span></code></p>
+<ul class="simple">
+<li><p><strong>public Object()</strong>: Constructor.</p></li>
+<li><p><strong>public String toString()</strong>: Metodo para retornar una cadena para describir el objeto.</p></li>
+<li><p><strong>public boolean equals(Object obj)</strong>: Metodo para determinar si dos objetos son iguales. Retorna verdadero si el objeto que invoca al método y el objeto especificado por el parámetro objeto se refieren al mismo espacio de memoria; de lo contrario retorna falso.</p></li>
+<li><p><strong>protected Object clone()</strong> Metodo para retornar una referencia a una copia del objeto que invoca este método</p></li>
+<li><p><strong>protected void finalize()</strong> El cuerpo de este método se invoca cuando el objeto sale de alcance.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../CH03_intro.html" title="previous page">Capitulo 3 - Herencia y polimorfismo</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
