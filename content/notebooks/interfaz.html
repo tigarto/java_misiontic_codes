@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interfaces &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Métodos y clases abstractas" href="abstracta.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList.html">
+     ArrayList
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos1.html">
+     Clases y objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos2.html">
+     Array de objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos3.html">
+     Metodos y variables estaticas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos4.html">
+     Mas sobre objetos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH03_intro.html">
+   Capitulo 3 - Herencia y polimorfismo
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="herencia1.html">
+     Herencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="polimorfismo.html">
+     Recordando herencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="abstracta.html">
+     Métodos y clases abstractas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Interfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/interfaz.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/interfaz.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobre-las-interfaces">
+   Sobre las interfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-de-interfaces-en-java">
+   Implementación de interfaces en java
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-1">
+     Ejemplo 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-2">
+     Ejemplo 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algunos-aspectos-a-tener-en-cuenta-sobre-el-uso-de-interfaces">
+     Algunos aspectos a tener en cuenta sobre el uso de interfaces
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-3">
+       Ejemplo 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polimorfismo-e-interfaces">
+     Polimorfismo e interfaces
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-4">
+       Ejemplo 4
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="interfaces">
+<h1>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sobre-las-interfaces">
+<h2>Sobre las interfaces<a class="headerlink" href="#sobre-las-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>Una <strong>interfaz</strong> es un tipo de clase que contiene sólo <strong>constantes</strong> y <strong>métodos abstractos</strong>.</p>
+<p>De manera similar a lo que sucedia en las clases abstractas, cuando una clase implementa una interfaz, la clase debe sobreescribir los metodos que son descritos por la interfaz.</p>
+</div>
+<div class="section" id="implementacion-de-interfaces-en-java">
+<h2>Implementación de interfaces en java<a class="headerlink" href="#implementacion-de-interfaces-en-java" title="Permalink to this headline">¶</a></h2>
+<p>Java usa la siguiente sintaxis para definir una interfaz:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">modifier</span> <span class="kd">interface</span> <span class="nc">InterfaceName</span> <span class="p">{</span>
+    <span class="cm">/** Constant declarations */</span>
+    
+    <span class="cm">/** Abstract method signatures */</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En la instrucción anterior, solo se define la interfaz con sus metodos y constantes abstractas dejando a la clase que implementa la interferfaz el trabajo de definir lo que hacen dichos metodos abstractos. Para que una clase pueda implementar los metodos de una o varias interfaces se emplea la siguiente sintaxis:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">modifier</span> <span class="kd">class</span> <span class="nc">className</span> <span class="kd">implements</span> <span class="n">InterfaceName1</span><span class="p">,</span> <span class="n">InterfaceName2</span><span class="p">,...</span> <span class="p">{</span>
+    <span class="cm">/** Class code */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>La relación entre la clase y la interfaz es conocida como <strong>herencia por interfaz</strong>. Ya que la <strong>herencia por interfaz</strong> y la <strong>herencia por clase</strong> son practicamente las mismas, es común referirse a ambos tipos de herencia como <strong>herencia</strong>.</p>
+<p>Cuando una clase implementa una interfaz, esta acordando implementar todos lo métodos que son espeficicados por la interfaz. Por esto se suele decir que una intefaz es como un <strong>contrato</strong>, de modo que cuando una clase implementa una interfaz esta debe cumplir a este contrato.</p>
+<div class="section" id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">¶</a></h3>
+<p>Suponga que se define la interfaz edible (comestible) en el siguiente en el archivo <span class="xref myst">Edible.java</span> cuyo contenido es el siguiente:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Edible</span> <span class="p">{</span>
+	<span class="cm">/** Describe how to eat */</span>
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">howToEat</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El fin de esta interfaz es especificar si un objeto es comestible. Asi, por ejemplo si una clase es comestible deberá implementar esta interfaz. Para el caso, supongase que se tienen varios animales y vegetales implementados como clases tal y como se muestra en la siguiente clase (<span class="xref myst">TestEdible.java</span>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestEdible</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">Object</span><span class="o">[]</span> <span class="n">objects</span> <span class="o">=</span> <span class="p">{</span> <span class="k">new</span> <span class="n">Tiger</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Chicken</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Apple</span><span class="p">()</span> <span class="p">};</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">objects</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="k">instanceof</span> <span class="n">Edible</span><span class="p">)</span>
+				<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(((</span><span class="n">Edible</span><span class="p">)</span> <span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">).</span><span class="na">howToEat</span><span class="p">());</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="k">instanceof</span> <span class="n">Animal</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(((</span><span class="n">Animal</span><span class="p">)</span> <span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">).</span><span class="na">sound</span><span class="p">());</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+	<span class="cm">/** Return animal sound */</span>
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">sound</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Chicken</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Edible</span> <span class="p">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">howToEat</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&quot;Chicken: Fry it&quot;</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">sound</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&quot;Chicken: cock-a-doodle-doo&quot;</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Tiger</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">sound</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&quot;Tiger: RROOAARR&quot;</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Fruit</span> <span class="kd">implements</span> <span class="n">Edible</span> <span class="p">{</span>
+<span class="c1">// Data fields, constructors, and methods omitted here</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Apple</span> <span class="kd">extends</span> <span class="n">Fruit</span> <span class="p">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">howToEat</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&quot;Apple: Make apple cider&quot;</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Orange</span> <span class="kd">extends</span> <span class="n">Fruit</span> <span class="p">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">howToEat</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&quot;Orange: Make orange juice&quot;</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Si se observa el código anterior, se podrá notar que las clases <strong>Chicken</strong> y <strong>Fruit</strong> implementan la interfaz comestible ya que cada uno de estos objetos son comestibles. De este modo, al implementar dicha interfaz, lo que hacen dichos objetos es definir lo que hace el metodo abstracto <strong>howToEat()</strong> dado en la interfaz; mas especificamente, decir como se come. A continuación se muestra la salida del programa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tiger</span><span class="p">:</span> <span class="n">RROOAARR</span>
+<span class="n">Chicken</span><span class="p">:</span> <span class="n">Fry</span> <span class="n">it</span>
+<span class="n">Chicken</span><span class="p">:</span> <span class="n">cock</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">doodle</span><span class="o">-</span><span class="n">doo</span>
+<span class="n">Apple</span><span class="p">:</span> <span class="n">Make</span> <span class="n">apple</span> <span class="n">cider</span>
+</pre></div>
+</div>
+<p>En la siguiente figura se muestra la relación entre las clases y la interfaz definidas en la aplicación anterior. Observe con detenimiento como se define una interfaz y su relación con las clases que implementan su metodos en UML:</p>
+<p><img alt="uml_ejemplo_interfaz" src="../../_images/uml_ejemplo_interfaz.jpg" /></p>
+</div>
+<div class="section" id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">¶</a></h3>
+<p>Analice y comprenda el siguiente programa compuesto por los archivos:</p>
+<ul class="simple">
+<li><p><strong>Archivo</strong>: <span class="xref myst">Displayable.java</span></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Displayable</span> <span class="p">{</span>
+	<span class="kt">void</span> <span class="nf">display</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Archivo</strong>: <span class="xref myst">Person.java</span></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">implements</span> <span class="n">Displayable</span> <span class="p">{</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+	<span class="c1">// Constructor</span>
+	<span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// display method</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;My name is &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Archivo</strong>: <span class="xref myst">InterfaceDemo.java</span></p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * This program demonstrates a class that implements the Displayable interface.</span>
+<span class="cm"> */</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InterfaceDemo</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// Create an instance of the Person class.</span>
+		<span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Antonio&quot;</span><span class="p">);</span>
+
+		<span class="c1">// Call the object&#39;s display method.</span>
+		<span class="n">p</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>La salida en pantalla del programa será la siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Antonio</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="algunos-aspectos-a-tener-en-cuenta-sobre-el-uso-de-interfaces">
+<h3>Algunos aspectos a tener en cuenta sobre el uso de interfaces<a class="headerlink" href="#algunos-aspectos-a-tener-en-cuenta-sobre-el-uso-de-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>Una interfaz es tratada como una clase especial en java. A continuación se resaltan algunos aspectos claves relacionados con las interfaces</p>
+<ol class="simple">
+<li><p>Cada interfaz es compilada como un archivo bytecode separado, justo como una clase.</p></li>
+<li><p>Una interfaz se puede usar mas o menos de la misma forma que una clase abstracta. Para explicar esto, supongase que se tiene la siguiente interfaz definida:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Empleado</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">sueldo</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">departamento</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tal y como sucede con las clases abstractas, es valido declarar referencias a una interfaz tal y como se muestra el siguiente fragmento de código:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Empleado</span> <span class="n">empleadoNuevo</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Sin embargo, la creación de un objeto de la interfaz es ilegal:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">empleadoNuevo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Empleado</span><span class="p">();</span> <span class="c1">//ilegal</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Una vez creada una referencia a una interfaz, es posble que esta sea usada para hacer referencia a objetos de las clases que implementan dichas interfaces tal y como se muestra en el siguiente código:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Declaracion de la interfaz empleado</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Empleado</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">sueldo</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">departamento</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la clase EmpleadoTiempoCompleto que implementa la interfaz Empleado</span>
+<span class="kd">class</span> <span class="nc">EmpleadoTiempoCompleto</span> <span class="kd">implements</span> <span class="n">Empleado</span> <span class="p">{</span>
+    <span class="c1">//code</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la clase EmpleadoTiempoParcial que implementa la interfaz Empleado</span>
+<span class="kd">class</span> <span class="nc">EmpleadoTiempoParcial</span> <span class="kd">implements</span> <span class="n">Empleado</span> <span class="p">{</span>
+    <span class="c1">//code</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la referencia empleadoNuevo1 a la interfaz Empleado </span>
+<span class="n">Empleado</span> <span class="n">empleadoNuevo1</span><span class="p">;</span> 
+<span class="c1">// Creacion de un objeto de la clase EmpleadoTiempoCompleto</span>
+<span class="n">empleadoNuevo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmpleadoTiempoCompleto</span><span class="p">();</span>
+<span class="c1">// Invocacion del metodo sueldo del empleado tiempo completo</span>
+<span class="kt">double</span> <span class="n">salario1</span> <span class="o">=</span> <span class="n">empleadoNuevo1</span><span class="p">.</span><span class="na">sueldo</span><span class="p">();</span>
+
+<span class="c1">// Declaracion de la referencia empleadoNuevo1 a la interfaz Empleado</span>
+<span class="n">Empleado</span> <span class="n">empleadoNuevo2</span><span class="p">;</span>
+<span class="c1">// Creacion de un objeto de la clase EmpleadoTiempoParcial</span>
+<span class="n">empleadoNuevo2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmpleadoTiempoParcial</span><span class="p">();</span> 
+<span class="c1">// Invocacion del metodo sueldo del empleado tiempo parcial</span>
+<span class="kt">double</span> <span class="n">salario2</span> <span class="o">=</span> <span class="n">empleadoNuevo2</span><span class="p">.</span><span class="na">sueldo</span><span class="p">();</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Si una clase ademas de implementar metodos de una interfaz; posee metodos propios. El acceso, desde referencias de la intefaz, a metodos diferentes a los implementados en la clase para la interfaz generará errores:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Declaracion de la interfaz empleado</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Empleado</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">sueldo</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">departamento</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la clase EmpleadoTiempoCompleto que implementa la interfaz Empleado</span>
+<span class="kd">class</span> <span class="nc">EmpleadoTiempoCompleto</span> <span class="kd">implements</span> <span class="n">Empleado</span> <span class="p">{</span>
+    <span class="c1">//code</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actualizarSalario</span><span class="p">(</span><span class="kt">double</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la clase EmpleadoTiempoParcial que implementa la interfaz Empleado</span>
+<span class="kd">class</span> <span class="nc">EmpleadoTiempoParcial</span> <span class="kd">implements</span> <span class="n">Empleado</span> <span class="p">{</span>
+    <span class="c1">//code</span>
+<span class="p">}</span>
+
+<span class="c1">// Declaracion de la referencia empleadoNuevo a la interfaz Empleado </span>
+<span class="n">Empleado</span> <span class="n">empleadoNuevo</span><span class="p">;</span> 
+<span class="c1">// Creacion de un objeto de la clase EmpleadoTiempoCompleto</span>
+<span class="n">empleadoNuevo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmpleadoTiempoCompleto</span><span class="p">();</span>
+<span class="c1">// Invocacion del metodo actualizarSalario propio de la clase empleado</span>
+<span class="n">empleadoNuevo</span><span class="p">.</span><span class="na">actualizarSalario</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span> <span class="c1">// ERROR de complilacion</span>
+</pre></div>
+</div>
+<p>Para evitar este error, se puede hacer uso del operador casting al objeto en el que se define el método para evitar este error tal y como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="n">EmpleadoTiempoCompleto</span><span class="p">)</span><span class="n">empleadoNuevo</span><span class="p">).</span><span class="na">actualizarSalario</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span> 
+</pre></div>
+</div>
+<div class="section" id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">¶</a></h4>
+<p>Se tiene el siguiente diagrama UML:</p>
+<p><img alt="uml_ejemplo_interfaz2" src="../../_images/uml_ejemplo_interfaz2.jpg" /></p>
+<p>El cuyas clases estan implementadas en los siguientes archivos:</p>
+<ol class="simple">
+<li><p><strong>Interface Relatable</strong>: <span class="xref myst">Relatable.java</span></p></li>
+<li><p><strong>Clase GradedActivity</strong>: <span class="xref myst">GradedActivity.java</span></p></li>
+<li><p><strong>Clase FinalExam3</strong>: <span class="xref myst">FinalExam3.java</span></p></li>
+</ol>
+<p>Finalmente, se tiene una clase para test, la cual es <span class="xref myst">RelatableExams.java</span>. La estructura del proyecto en eclipse se muestra a continuación:</p>
+<p><img alt="ejemplo3" src="../../_images/ejemplo3.jpg" /></p>
+<p>Despues de ejecutar el programa la salida es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Exam</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">80.0</span>
+<span class="n">Exam</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">70.0</span>
+<span class="n">The</span> <span class="n">Exam</span> <span class="mi">1</span> <span class="n">score</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">highest</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Analice y comprenda el programa.</p>
+</div>
+</div>
+<div class="section" id="polimorfismo-e-interfaces">
+<h3>Polimorfismo e interfaces<a class="headerlink" href="#polimorfismo-e-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>Como se vió anteriormente, java permite crear referencias a interfaces. Una refencia es una variable que puede hacer referencia a cualquier objeto que implemente una interfas, <strong>regardless</strong> de su tipo de clase.</p>
+<div class="section" id="ejemplo-4">
+<h4>Ejemplo 4<a class="headerlink" href="#ejemplo-4" title="Permalink to this headline">¶</a></h4>
+<p>A continuación se muestra el siguiente ejemplo en el cual se muestra lo anteriormente descrito:</p>
+<p>El cuyas clases estan implementadas en los siguientes archivos:</p>
+<ol class="simple">
+<li><p><strong>Interface RetailItem</strong>: <span class="xref myst">RetailItem.java</span></p></li>
+<li><p><strong>Clase CompactDisc</strong>: <span class="xref myst">CompactDisc.java</span></p></li>
+<li><p><strong>Clase FinalExam3</strong>: <span class="xref myst">DvdMovie.java</span></p></li>
+</ol>
+<p>Finalmente, se tiene una clase para test, la cual es <span class="xref myst">PolymorphicInterfaceDemo.java</span>, notese el uso de las referencias. La estructura del proyecto en eclipse se muestra a continuación:</p>
+<p><img alt="ejemplo4" src="../../_images/ejemplo4.jpg" /></p>
+<p>Despues de ejecutar el programa la salida es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Item #1: Greatest Hits
+Price: $18.95
+Item #2: Wheels of Fury
+Price: $12.95
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="abstracta.html" title="previous page">Métodos y clases abstractas</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
