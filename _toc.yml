@@ -24,3 +24,4 @@ chapters:
 - file: "content/CH03_intro"
   sections:
   - file: "content/notebooks/herencia1.ipynb"
+  - file: "content/notebooks/polimorfismo.ipynb"
