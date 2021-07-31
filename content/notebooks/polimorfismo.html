@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recordando herencia &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Herencia" href="herencia1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList.html">
+     ArrayList
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos1.html">
+     Clases y objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos2.html">
+     Array de objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos3.html">
+     Metodos y variables estaticas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos4.html">
+     Mas sobre objetos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH03_intro.html">
+   Capitulo 3 - Herencia y polimorfismo
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="herencia1.html">
+     Herencia
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Recordando herencia
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/polimorfismo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/polimorfismo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Recordando herencia
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polimorfismo">
+   Polimorfismo
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sobre-el-polimorfismo">
+     Sobre el polimorfismo
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-1-tomado-de-deitel-deitel">
+       Ejemplo 1 - Tomado de Deitel &amp; Deitel
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vinculacion-o-ligadura">
+       Vinculación o ligadura
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#vinculacion-estatica">
+         Vinculación estática
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#vinculacion-tardia">
+         Vinculación tardía
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-2">
+         Ejemplo 2
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo-3">
+         Ejemplo 3
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pendiente">
+       Pendiente
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in /home/tigarto/miniconda3/lib/python3.7/site-packages (0.3.0)
+Requirement already satisfied: notebook&gt;=3.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from tutormagic) (6.0.1)
+Requirement already satisfied: ipython-genutils in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: nbconvert in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.6.1)
+Requirement already satisfied: pyzmq&gt;=17 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (18.1.1)
+Requirement already satisfied: terminado&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.8.3)
+Requirement already satisfied: tornado&gt;=5.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (6.0.3)
+Requirement already satisfied: nbformat in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Requirement already satisfied: prometheus-client in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: ipykernel in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.6.1)
+Requirement already satisfied: traitlets&gt;=4.2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.3.3)
+Requirement already satisfied: jupyter-client&gt;=5.3.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.3.3)
+Requirement already satisfied: Send2Trash in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: jinja2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (2.10.3)
+Requirement already satisfied: bleach in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.1.0)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.3)
+Requirement already satisfied: defusedxml in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.4)
+Requirement already satisfied: pygments in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.5.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.4.2)
+Requirement already satisfied: testpath in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.4.4)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.2.0)
+Requirement already satisfied: ipython&gt;=5.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (7.11.1)
+Requirement already satisfied: six in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.12.0)
+Requirement already satisfied: decorator in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.4.1)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jupyter-client&gt;=5.3.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.8.1)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jinja2-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.1.1)
+Requirement already satisfied: webencodings in /home/tigarto/miniconda3/lib/python3.7/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.1)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (19.3.0)
+Requirement already satisfied: setuptools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (45.2.0)
+Requirement already satisfied: importlib-metadata; python_version &lt; &quot;3.8&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.3.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.6)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.0.2)
+Requirement already satisfied: pickleshare in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: jedi&gt;=0.10 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.2)
+Requirement already satisfied: backcall in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.0)
+Requirement already satisfied: pexpect; sys_platform != &quot;win32&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.7.0)
+Requirement already satisfied: zipp&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: wcwidth in /home/tigarto/miniconda3/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.8)
+Requirement already satisfied: parso&gt;=0.5.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.2)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from pexpect; sys_platform != &quot;win32&quot;-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: more-itertools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from zipp&gt;=0.5-&gt;importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (8.0.2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="recordando-herencia">
+<h1>Recordando herencia<a class="headerlink" href="#recordando-herencia" title="Permalink to this headline">¶</a></h1>
+<p>A continuación se muestra la implementación de dos clases; una para modelar una persona y otra para hacerlo con un empleado de tiempo parcial.</p>
+<p><strong>Diagrama UML y codigo de la clase que modela la persona</strong>:</p>
+<ul class="simple">
+<li><p><strong>Diagrama UML</strong></p></li>
+</ul>
+<p><img alt="person_uml" src="../../_images/person_uml.jpg" /></p>
+<ul class="simple">
+<li><p><strong>Código</strong>: Person.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">nombre1</span><span class="p">;</span> 
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">apellido1</span><span class="p">;</span> 
+  
+  <span class="kd">public</span> <span class="nf">Person</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">nombre1</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="n">apellido1</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">String</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">String</span> <span class="n">apellido</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setNombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">nombre1</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNombre</span><span class="p">(</span><span class="n">String</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">String</span> <span class="n">apellido</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">nombre1</span> <span class="o">=</span> <span class="n">nombre</span><span class="p">;</span>
+    <span class="n">apellido1</span> <span class="o">=</span> <span class="n">apellido</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNombre</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">nombre1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getApellido</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">apellido1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Diagrama UML y codigo de la clase que modela el empleado tiempo parcial</strong>:</p>
+<ul class="simple">
+<li><p><strong>Diagrama UML</strong></p></li>
+</ul>
+<p><img alt="empleado_tiempo_parcial_uml" src="../../_images/empleado_tiempo_parcial_uml.jpg" /></p>
+<ul class="simple">
+<li><p><strong>Código</strong>: EmpTiempoParcial.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmpTiempoParcial</span> <span class="kd">extends</span> <span class="n">Person</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">salario</span><span class="p">;</span> 
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">horasTrabajadas</span><span class="p">;</span> 
+  
+  <span class="kd">public</span> <span class="nf">EmpTiempoParcial</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">();</span>
+    <span class="n">salario</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">horasTrabajadas</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="nf">EmpTiempoParcial</span><span class="p">(</span><span class="n">String</span> <span class="n">nombre</span><span class="p">,</span> 
+                          <span class="n">String</span> <span class="n">apellido</span><span class="p">,</span>
+                          <span class="kt">double</span> <span class="n">remuneracion</span><span class="p">,</span> 
+                          <span class="kt">double</span> <span class="n">horas</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">);</span>
+    <span class="n">salario</span> <span class="o">=</span> <span class="n">remuneracion</span><span class="p">;</span>
+    <span class="n">horasTrabajadas</span> <span class="o">=</span> <span class="n">horas</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; el sueldo es: $&quot;</span> <span class="o">+</span> <span class="n">calculatePago</span><span class="p">());</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculatePago</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">salario</span> <span class="o">*</span> <span class="n">horasTrabajadas</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNombreRemuneracionHoras</span><span class="p">(</span><span class="n">String</span> <span class="n">nombre</span><span class="p">,</span>
+                                         <span class="n">String</span> <span class="n">apellido</span><span class="p">,</span>
+                                         <span class="kt">double</span> <span class="n">remuneracion</span><span class="p">,</span> 
+                                         <span class="kt">double</span> <span class="n">horas</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setNombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">);</span>
+    <span class="n">salario</span> <span class="o">=</span> <span class="n">remuneracion</span><span class="p">;</span>
+    <span class="n">horasTrabajadas</span> <span class="o">=</span> <span class="n">horas</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSalario</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">salario</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getHorasTrabajadas</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">horasTrabajadas</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El programa principal en el que se prueban las clases anteriores se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Prueba</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Person</span> <span class="n">persona1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">();</span>
+    <span class="n">Person</span> <span class="n">persona2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s">&quot;Picapiedra&quot;</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;persona1: &quot;</span> <span class="o">+</span> <span class="n">persona1</span><span class="p">);</span> 
+    <span class="n">persona1</span><span class="p">.</span><span class="na">setNombre</span><span class="p">(</span><span class="s">&quot;Pablo&quot;</span><span class="p">,</span> <span class="s">&quot;Marmol&quot;</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;persona1: &quot;</span> <span class="o">+</span> <span class="n">persona1</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;persona2: &quot;</span> <span class="o">+</span> <span class="n">persona2</span><span class="p">);</span> 
+    <span class="n">persona2</span><span class="p">.</span><span class="na">setNombre</span><span class="p">(</span><span class="s">&quot;Cometin&quot;</span><span class="p">,</span> <span class="s">&quot;Sonico&quot;</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;persona2: &quot;</span> <span class="o">+</span> <span class="n">persona2</span><span class="p">);</span> 
+    <span class="n">EmpTiempoParcial</span> <span class="n">empleado1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmpTiempoParcial</span><span class="p">(</span><span class="s">&quot;Super&quot;</span><span class="p">,</span><span class="s">&quot;Sonico&quot;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">160</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;empleado1: &quot;</span> <span class="o">+</span> <span class="n">empleado1</span><span class="p">);</span> 
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>La simulación se encuentra en el siguiente <a class="reference external" href="http://www.pythontutor.com/java.html#code=public%20class%20Prueba%20%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Person%20persona1%20%3D%20new%20Person%28%29%3B%0A%20%20%20%20Person%20persona2%20%3D%20new%20Person%28%22Pedro%22,%20%22Picapiedra%22%29%3B%20%0A%20%20%20%20System.out.println%28%22persona1%3A%20%22%20%2B%20persona1%29%3B%20%0A%20%20%20%20persona1.setNombre%28%22Pablo%22,%20%22Marmol%22%29%3B%20%0A%20%20%20%20System.out.println%28%22persona1%3A%20%22%20%2B%20persona1%29%3B%20%0A%20%20%20%20System.out.println%28%22persona2%3A%20%22%20%2B%20persona2%29%3B%20%0A%20%20%20%20persona2.setNombre%28%22Cometin%22,%20%22Sonico%22%29%3B%20%0A%20%20%20%20System.out.println%28%22persona2%3A%20%22%20%2B%20persona2%29%3B%20%0A%20%20%20%20EmpTiempoParcial%20empleado1%20%3D%20new%20EmpTiempoParcial%28%22Super%22,%22Sonico%22,1000,160%29%3B%0A%20%20%20%20System.out.println%28%22empleado1%3A%20%22%20%2B%20empleado1%29%3B%20%0A%20%20%7D%0A%7D%0A%0Aclass%20EmpTiempoParcial%20extends%20Person%20%7B%0A%20%20private%20double%20salario%3B%20%0A%20%20private%20double%20horasTrabajadas%3B%20%0A%20%20%0A%20%20public%20EmpTiempoParcial%28%29%20%7B%0A%20%20%20%20super%28%29%3B%0A%20%20%20%20salario%20%3D%200%3B%0A%20%20%20%20horasTrabajadas%20%3D%200%3B%0A%20%20%7D%0A%0A%20%20public%20EmpTiempoParcial%28String%20nombre,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20String%20apellido,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20remuneracion,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20horas%29%20%7B%0A%20%20%20%20super%28nombre,%20apellido%29%3B%0A%20%20%20%20salario%20%3D%20remuneracion%3B%0A%20%20%20%20horasTrabajadas%20%3D%20horas%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28super.toString%28%29%20%2B%20%22%20el%20sueldo%20es%3A%20%24%22%20%2B%20calculatePago%28%29%29%3B%0A%20%20%7D%0A%0A%20%20public%20double%20calculatePago%28%29%20%7B%0A%20%20%20%20return%20%28salario%20*%20horasTrabajadas%29%3B%0A%20%20%7D%0A%0A%20%20public%20void%20setNombreRemuneracionHoras%28String%20nombre,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20String%20apellido,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20remuneracion,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20horas%29%20%7B%0A%20%20%20%20setNombre%28nombre,%20apellido%29%3B%0A%20%20%20%20salario%20%3D%20remuneracion%3B%0A%20%20%20%20horasTrabajadas%20%3D%20horas%3B%0A%20%20%7D%0A%0A%20%20public%20double%20getSalario%28%29%20%7B%0A%20%20%20%20return%20salario%3B%0A%20%20%7D%0A%0A%20%20public%20double%20getHorasTrabajadas%28%29%20%7B%0A%20%20%20%20return%20horasTrabajadas%3B%0A%20%20%7D%0A%7D%0A%0A%0Aclass%20Person%20%7B%0A%20%20private%20String%20nombre1%3B%20%0A%20%20private%20String%20apellido1%3B%20%0A%20%20%0A%20%20public%20Person%28%29%20%7B%0A%20%20%20%20nombre1%20%3D%20%22%22%3B%0A%20%20%20%20apellido1%20%3D%20%22%22%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20Person%28String%20nombre,%20String%20apellido%29%20%7B%0A%20%20%20%20setNombre%28nombre,%20apellido%29%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28nombre1%20%2B%20%22%20%22%20%2B%20apellido1%29%3B%0A%20%20%7D%0A%0A%20%20public%20void%20setNombre%28String%20nombre,%20String%20apellido%29%20%7B%0A%20%20%20%20nombre1%20%3D%20nombre%3B%0A%20%20%20%20apellido1%20%3D%20apellido%3B%0A%20%20%7D%0A%0A%20%20public%20String%20getNombre%28%29%20%7B%0A%20%20%20%20return%20nombre1%3B%0A%20%20%7D%0A%0A%20%20public%20String%20getApellido%28%29%20%7B%0A%20%20%20%20return%20apellido1%3B%0A%20%20%7D%0A%7D%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=java&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">enlace</a> siendo el siguiente el resultado:</p>
+<p><img alt="ejemplo_person" src="../../_images/ejemplo_person.jpg" /></p>
+</div>
+<div class="section" id="polimorfismo">
+<h1>Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sobre-el-polimorfismo">
+<h2>Sobre el polimorfismo<a class="headerlink" href="#sobre-el-polimorfismo" title="Permalink to this headline">¶</a></h2>
+<p>El término <strong>polimorfismo</strong> significa asociar conceptos múltiples con el mismo nombre de un método. El polimorfismo es útil por que permite programar en <strong>forma general</strong>, en vez de hacerlo en <strong>forma específica</strong>. Para esto, Java permite que un objeto de una subclase se trate como uno de su superclase lo cual implica que, una variable de referencia de un tipo superclase puede apuntar a un objeto de su subclase. En resumen, gracias al polimorfismo es posible que una variable de referencia de una superclase pueda hacer referncia a objetos de una subclase.</p>
+<div class="section" id="ejemplo-1-tomado-de-deitel-deitel">
+<h3>Ejemplo 1 - Tomado de Deitel &amp; Deitel<a class="headerlink" href="#ejemplo-1-tomado-de-deitel-deitel" title="Permalink to this headline">¶</a></h3>
+<p>Suponga que se crea un programa que simula el movimiento de varios tipos de animales para un estudio biológico. Las clases <strong>Pez</strong>, <strong>Rana</strong> y <strong>Ave</strong>, las cuales extienden la clase <strong>Animal</strong> representan los tres tipos de animales bajo investigación. A continuación se muestran los codigos correspondientes a cada una de las clases en las cuales se implementa el método mover:</p>
+<p><strong>Clase</strong>: Animal.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span><span class="p">{</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento animal&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase</strong>: Pez.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pez</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento pez&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase</strong>: Rana.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rana</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento rana&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Clase</strong>: Ave.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ave</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento ave&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Teniendo en cuenta que una variable de referencia de un tipo superclase puede apuntar a un objeto de su subclase, en el siguiente programa de test, se crea un array de objetos tipo <strong>Animal</strong> para luego asocias cada elemento del array previamente creado a cada una de los objetos asociados a las subclases:</p>
+<p><strong>Clase</strong>: Main.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Animal</span> <span class="n">animales</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">animales</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pez</span><span class="p">();</span>
+    <span class="n">animales</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rana</span><span class="p">();</span>
+    <span class="n">animales</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ave</span><span class="p">();</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="p">:</span> <span class="n">animales</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">animal</span><span class="p">.</span><span class="na">mover</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Luego, cuando se ejecuta la aplicación se tendrá la siguiente salida (este codigo puede ser simulado en el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/animales">enlace</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Movimiento</span> <span class="n">pez</span>
+<span class="n">Movimiento</span> <span class="n">rana</span>
+<span class="n">Movimiento</span> <span class="n">ave</span>
+</pre></div>
+</div>
+<p>Tal y como se muestra en la salida anterior, se puede ver que cada objeto invoca el metodo mover, sin embargo, lo que se llama es el metodo mover propio de la clase especifica que esta siendo referenciada. Confiar en que cada objeto sepa cómo <strong>hacer lo correcto</strong> (es decir, lo que sea apropiado para ese tipo de objeto) en respuesta a la llamada al mismo método es el concepto clave del polimorfismo.</p>
+<p>El siguiente fragmento de código simula lo anteriormente mostrado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+public class Main {    
+  public static void main(String[] args) {
+    Animal animales[] = new Animal[4];
+    animales[0] = new Animal();
+    animales[1] = new Pez();
+    animales[2] = new Rana();
+    animales[3] = new Ave();
+    for(Animal animal: animales) {
+      animal.mover();
+    }
+  }
+}
+
+class Animal{
+  public void mover() {
+    System.out.println(&quot;Movimiento animal&quot;);
+  }
+}
+
+class Pez extends Animal{
+  public void mover() {
+    System.out.println(&quot;Movimiento pez&quot;);
+  }
+}
+
+class Rana extends Animal{
+  public void mover() {
+    System.out.println(&quot;Movimiento rana&quot;);
+  }
+}
+
+class Ave extends Animal{
+
+  public void mover() {
+    System.out.println(&quot;Movimiento ave&quot;);
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=public%20class%20Main%20%7B%20%20%20%20%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Animal%20animales%5B%5D%20%3D%20new%20Animal%5B4%5D%3B%0A%20%20%20%20animales%5B0%5D%20%3D%20new%20Animal%28%29%3B%0A%20%20%20%20animales%5B1%5D%20%3D%20new%20Pez%28%29%3B%0A%20%20%20%20animales%5B2%5D%20%3D%20new%20Rana%28%29%3B%0A%20%20%20%20animales%5B3%5D%20%3D%20new%20Ave%28%29%3B%0A%20%20%20%20for%28Animal%20animal%3A%20animales%29%20%7B%0A%20%20%20%20%20%20animal.mover%28%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Aclass%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20animal%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Pez%20extends%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20pez%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Rana%20extends%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20rana%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Ave%20extends%20Animal%7B%0A%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20ave%22%29%3B%0A%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+<p>Con el polimorfismo se pueden diseñar e implementar sistemas que puedan extenderse con facilidad; pueden
+agregarse nuevas clases con sólo modificar un poco (o nada) las porciones generales de la aplicación, siempre y
+cuando las nuevas clases sean parte de la jerarquía de herencia que la aplicación procesa en forma genérica.</p>
+<p>Las únicas partes de un programa que deben alterarse para dar cabida a las nuevas clases son las que requieren un
+conocimiento directo de las nuevas clases que el programador agregará a la jerarquía. Por ejemplo, si extiende
+la clase <strong>Animal</strong> (definida con anterioridad) para crear la clase <strong>Tortuga</strong>, se necesitará escribir sólo la clase Tortuga y la parte de la simulación que crea una instancia de un objeto Tortuga. Las porciones de la simulación que procesan a cada Animal en forma genérica pueden permanecer iguales. A continuación se muestra la clase Tortuga:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rana</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento tortuga&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/animales2">enlace</a> se puede llevar a cabo la ejecución online de la aplicación actualizada con la clase <strong>Tortuga</strong>. Por otro lado en el <a class="reference external" href="http://www.pythontutor.com/java.html#code=public%20class%20Main%20%7B%20%20%20%20%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Animal%20animales%5B%5D%20%3D%20new%20Animal%5B5%5D%3B%0A%20%20%20%20animales%5B0%5D%20%3D%20new%20Animal%28%29%3B%0A%20%20%20%20animales%5B1%5D%20%3D%20new%20Pez%28%29%3B%0A%20%20%20%20animales%5B2%5D%20%3D%20new%20Rana%28%29%3B%0A%20%20%20%20animales%5B3%5D%20%3D%20new%20Ave%28%29%3B%0A%20%20%20%20animales%5B4%5D%20%3D%20new%20Tortuga%28%29%3B%0A%20%20%20%20for%28Animal%20animal%3A%20animales%29%20%7B%0A%20%20%20%20%20%20animal.mover%28%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Aclass%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20animal%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Pez%20extends%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20pez%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Rana%20extends%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20rana%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Ave%20extends%20Animal%7B%0A%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20ave%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Tortuga%20extends%20Animal%7B%0A%20%20public%20void%20mover%28%29%20%7B%0A%20%20%20%20System.out.println%28%22Movimiento%20tortuga%22%29%3B%0A%20%20%7D%0A%7D&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=java&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">enlace simulación</a> se puede correr paso a paso la aplicación.</p>
+</div>
+<div class="section" id="vinculacion-o-ligadura">
+<h3>Vinculación o ligadura<a class="headerlink" href="#vinculacion-o-ligadura" title="Permalink to this headline">¶</a></h3>
+<p>El término <strong>vinculación</strong> (o ligadura) generalmente representa una conexión entre una entidad y sus propiedades. En otras palabras, consiste en el proceso de asociar un atributo o una variable a un nombre. En una jerarquía de clase varios métodos pueden tener el mismo nombre y la misma lista de parámetros formales. Retomando el ejemplo de los animales recordemos el metodo <code class="docutils literal notranslate"><span class="pre">mover</span></code> de la clase:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span><span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento animal&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ave</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mover</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Movimiento ave&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Además, una variable de referencia de una clase puede referirse a un objeto de su propia clase o bien a uno de su subclase. El siguiente fragmento de codigo muestra esto:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Animal</span> <span class="n">refAnimal</span><span class="p">;</span>
+<span class="n">Animal</span> <span class="n">animal1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">();</span>
+<span class="n">Animal</span> <span class="n">ave1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ave</span><span class="p">();</span>
+
+<span class="n">refAnimal</span> <span class="o">=</span> <span class="n">animal1</span><span class="p">;</span> <span class="c1">// Referencia de la clase Animal refiriendose a un objeto de la clase animal</span>
+                     <span class="c1">// (su propia clase)</span>
+<span class="n">refAnimal</span><span class="p">.</span><span class="na">mover</span><span class="p">();</span>
+<span class="n">refAnimal</span> <span class="o">=</span> <span class="n">ave1</span><span class="p">;</span> <span class="c1">// Referencia de la clase Animal refiriendose a un objeto de la clase Ave</span>
+                     <span class="c1">// (subclase)</span>
+<span class="n">refAnimal</span><span class="p">.</span><span class="na">mover</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Ahora, si se ejecutará el fragmendo de código anteriormente mostrado, el resultado de la salida sería:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Movimiento</span> <span class="n">animal</span>
+<span class="n">Movimiento</span> <span class="n">ave</span>
+</pre></div>
+</div>
+<p>Lo anterior se debe, tal y como se mencionó antes, a que la vinculación asocia una definición de un método con su invocación, es decir, determina cuál definición de un método se ejecuta.</p>
+<div class="section" id="vinculacion-estatica">
+<h4>Vinculación estática<a class="headerlink" href="#vinculacion-estatica" title="Permalink to this headline">¶</a></h4>
+<p>Este tipo de vinculación se realiza durante el tiempo de compilación.</p>
+<p>primera se produce durante la
+compilación del programa,</p>
+</div>
+<div class="section" id="vinculacion-tardia">
+<h4>Vinculación tardía<a class="headerlink" href="#vinculacion-tardia" title="Permalink to this headline">¶</a></h4>
+<p>La <strong>vinculación tardía</strong>, <strong>dinámica</strong> o <strong>en tiempo de ejecución</strong> es aquella en la cual la vinculación se da en tiempo de ejecución. Aunque esto ya se mostro en el ejemplo de los animales, se mostrará en otro ejemplo mas adelante para reforzar su comprensión.</p>
+</div>
+<div class="section" id="ejemplo-2">
+<h4>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">¶</a></h4>
+<p>El siguiente fragmento de código, hace uso de las clases <strong>Person</strong> y <strong>EmpTiempoParcial</strong> aprovechando el polimorfismo:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Person</span> <span class="n">persona</span><span class="p">,</span> <span class="n">personaRef</span><span class="p">;</span>
+    <span class="n">EmpTiempoParcial</span> <span class="n">empleado</span><span class="p">,</span> <span class="n">empleadoRef</span><span class="p">;</span> 
+    <span class="n">persona</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s">&quot;Picapiedra&quot;</span><span class="p">);</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;personaRef: &quot;</span> <span class="o">+</span> <span class="n">persona</span><span class="p">);</span>  
+    <span class="n">empleado</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EmpTiempoParcial</span><span class="p">(</span><span class="s">&quot;Super&quot;</span><span class="p">,</span> <span class="s">&quot;Sonico&quot;</span><span class="p">,</span> <span class="mf">12.50</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
+    <span class="n">personaRef</span> <span class="o">=</span> <span class="n">empleado</span><span class="p">;</span> 
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;personaRef: &quot;</span> <span class="o">+</span> <span class="n">personaRef</span><span class="p">);</span> 
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Para ejecutar el código siga el siguiente: <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/empleado">enlace</a>, para simular el código, siga este otro <a class="reference external" href="http://www.pythontutor.com/java.html#code=public%20class%20Prueba%20%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Person%20persona,%20personaRef%3B%0A%20%20%20%20EmpTiempoParcial%20empleado,%20empleadoRef%3B%20%0A%20%20%20%20persona%20%3D%20new%20Person%28%22Pedro%22,%20%22Picapiedra%22%29%3B%20%0A%20%20%20%20System.out.println%28%22personaRef%3A%20%22%20%2B%20persona%29%3B%20%20%0A%20%20%20%20empleado%20%3D%20new%20EmpTiempoParcial%28%22Super%22,%20%22Sonico%22,%2012.50,%2045%29%3B%0A%20%20%20%20personaRef%20%3D%20empleado%3B%20%0A%20%20%20%20System.out.println%28%22personaRef%3A%20%22%20%2B%20personaRef%29%3B%20%0A%20%20%7D%0A%7D%0A%0Aclass%20EmpTiempoParcial%20extends%20Person%20%7B%0A%20%20private%20double%20salario%3B%20%0A%20%20private%20double%20horasTrabajadas%3B%20%0A%20%20%0A%20%20public%20EmpTiempoParcial%28%29%20%7B%0A%20%20%20%20super%28%29%3B%0A%20%20%20%20salario%20%3D%200%3B%0A%20%20%20%20horasTrabajadas%20%3D%200%3B%0A%20%20%7D%0A%0A%20%20public%20EmpTiempoParcial%28String%20nombre,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20String%20apellido,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20remuneracion,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20horas%29%20%7B%0A%20%20%20%20super%28nombre,%20apellido%29%3B%0A%20%20%20%20salario%20%3D%20remuneracion%3B%0A%20%20%20%20horasTrabajadas%20%3D%20horas%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28super.toString%28%29%20%2B%20%22%20el%20sueldo%20es%3A%20%24%22%20%2B%20calculatePago%28%29%29%3B%0A%20%20%7D%0A%0A%20%20public%20double%20calculatePago%28%29%20%7B%0A%20%20%20%20return%20%28salario%20*%20horasTrabajadas%29%3B%0A%20%20%7D%0A%0A%20%20public%20void%20setNombreRemuneracionHoras%28String%20nombre,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20String%20apellido,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20remuneracion,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20double%20horas%29%20%7B%0A%20%20%20%20setNombre%28nombre,%20apellido%29%3B%0A%20%20%20%20salario%20%3D%20remuneracion%3B%0A%20%20%20%20horasTrabajadas%20%3D%20horas%3B%0A%20%20%7D%0A%0A%20%20public%20double%20getSalario%28%29%20%7B%0A%20%20%20%20return%20salario%3B%0A%20%20%7D%0A%0A%20%20public%20double%20getHorasTrabajadas%28%29%20%7B%0A%20%20%20%20return%20horasTrabajadas%3B%0A%20%20%7D%0A%7D%0A%0A%0Aclass%20Person%20%7B%0A%20%20private%20String%20nombre1%3B%20%0A%20%20private%20String%20apellido1%3B%20%0A%20%20%0A%20%20public%20Person%28%29%20%7B%0A%20%20%20%20nombre1%20%3D%20%22%22%3B%0A%20%20%20%20apellido1%20%3D%20%22%22%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20Person%28String%20nombre,%20String%20apellido%29%20%7B%0A%20%20%20%20setNombre%28nombre,%20apellido%29%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28nombre1%20%2B%20%22%20%22%20%2B%20apellido1%29%3B%0A%20%20%7D%0A%0A%20%20public%20void%20setNombre%28String%20nombre,%20String%20apellido%29%20%7B%0A%20%20%20%20nombre1%20%3D%20nombre%3B%0A%20%20%20%20apellido1%20%3D%20apellido%3B%0A%20%20%7D%0A%0A%20%20public%20String%20getNombre%28%29%20%7B%0A%20%20%20%20return%20nombre1%3B%0A%20%20%7D%0A%0A%20%20public%20String%20getApellido%28%29%20%7B%0A%20%20%20%20return%20apellido1%3B%0A%20%20%7D%0A%7D%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=java&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">enlace</a>. El esquema resultante de la simulación se muestra a continuación:</p>
+<p><img alt="ejemplo_polimorfismo" src="../../_images/ejemplo_polimorfismo.jpg" /></p>
+</div>
+<div class="section" id="ejemplo-3">
+<h4>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Permalink to this headline">¶</a></h4>
+<p>Ilustración del polimorfismo usando clases asociadas a figuras geométricas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+public class MetodosSubClaseSuperClase {
+  public static void main(String[] args) {
+    Rectangulo miRectangulo1 = new Rectangulo(); 
+    Rectangulo miRectangulo2 = new Rectangulo(8, 6); 
+    Caja miCaja1 = new Caja(); 
+    Caja miCaja2 = new Caja(10, 7, 3); 
+    System.out.println(&quot;miRectangulo1: &quot;
+                       + miRectangulo1); 
+    System.out.println(&quot;Area de miRectangulo1: &quot;
+                       + miRectangulo1.area()); 
+    System.out.println(&quot;miRectangulo2: &quot;
+                       + miRectangulo2); 
+    System.out.println(&quot;Area de miRectangulo2: &quot;
+                       + miRectangulo2.area()); 
+    System.out.println(&quot;miCaja1: &quot; + miCaja1); 
+    System.out.println(&quot;Area superficial de miCaja1: &quot;
+                       + miCaja1.area());
+    System.out.println(&quot;Linea 15: Volumen de miCaja1: &quot;
+                       + miCaja1.volumen());
+    System.out.println(&quot;miCaja2: &quot; + miCaja2);
+    System.out.println(&quot;Area superficial de miCaja2: &quot;
+                       + miCaja2.area());
+    System.out.println(&quot;Volumen de miCaja2: &quot;
+                       + miCaja2.volumen()); 
+  }
+}
+
+class Rectangulo { 
+  private double longitud;
+  private double ancho;
+  
+  public Rectangulo() {
+    longitud = 0;
+    ancho = 0;
+  }
+  public Rectangulo(double l, double a) {
+    setDimension(l, a);
+  }
+  
+  public void setDimension(double l, double a)  {
+    if (l &gt;= 0)
+      longitud = l;
+    else
+      longitud = 0;
+    if (a &gt;= 0)
+      ancho = a;
+    else
+      ancho = 0;
+  }
+  
+  public double getLongitud() {
+    return longitud;
+  }
+  
+  public double getAncho() {
+    return ancho;
+  }
+  
+  public double area() {
+    return longitud * ancho;
+  }
+
+  public double perimetro() {
+    return 2 * (longitud + ancho);
+  }
+
+  public String toString() {
+    return (&quot;Longitud = &quot; + longitud + &quot;; Ancho = &quot; + ancho);
+  }
+}
+
+class Caja extends Rectangulo {
+  private double altura; 
+  
+  public Caja() {
+    super();
+    altura = 0;
+  }
+  
+  public Caja(double l, double a, double h) {
+    super(l, a);
+    altura = h;
+  }
+  
+  public void setDimension(double l, double a, double h) {
+    super.setDimension(l, a);
+    if (h &gt;= 0) {
+      altura = h;
+    }
+    else {
+      altura = 0;
+    }
+  }
+  
+  public double getAltura() {
+    return altura;
+  }
+  
+  public double area() {
+    return 2 * (getLongitud() * getAncho() + 
+          getLongitud() * altura + 
+          getAncho() * altura);
+  }
+  
+  public double volumen() {
+    return super.area()*altura;
+  }
+  
+  public String toString() {
+    return super.toString() + &quot;; Altura = &quot; + altura;
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=public%20class%20MetodosSubClaseSuperClase%20%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Rectangulo%20miRectangulo1%20%3D%20new%20Rectangulo%28%29%3B%20%0A%20%20%20%20Rectangulo%20miRectangulo2%20%3D%20new%20Rectangulo%288%2C%206%29%3B%20%0A%20%20%20%20Caja%20miCaja1%20%3D%20new%20Caja%28%29%3B%20%0A%20%20%20%20Caja%20miCaja2%20%3D%20new%20Caja%2810%2C%207%2C%203%29%3B%20%0A%20%20%20%20System.out.println%28%22miRectangulo1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo1%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20de%20miRectangulo1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo1.area%28%29%29%3B%20%0A%20%20%20%20System.out.println%28%22miRectangulo2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo2%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20de%20miRectangulo2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miRectangulo2.area%28%29%29%3B%20%0A%20%20%20%20System.out.println%28%22miCaja1%3A%20%22%20%2B%20miCaja1%29%3B%20%0A%20%20%20%20System.out.println%28%22Area%20superficial%20de%20miCaja1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja1.area%28%29%29%3B%0A%20%20%20%20System.out.println%28%22Linea%2015%3A%20Volumen%20de%20miCaja1%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja1.volumen%28%29%29%3B%0A%20%20%20%20System.out.println%28%22miCaja2%3A%20%22%20%2B%20miCaja2%29%3B%0A%20%20%20%20System.out.println%28%22Area%20superficial%20de%20miCaja2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja2.area%28%29%29%3B%0A%20%20%20%20System.out.println%28%22Volumen%20de%20miCaja2%3A%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2B%20miCaja2.volumen%28%29%29%3B%20%0A%20%20%7D%0A%7D%0A%0Aclass%20Rectangulo%20%7B%20%0A%20%20private%20double%20longitud%3B%0A%20%20private%20double%20ancho%3B%0A%20%20%0A%20%20public%20Rectangulo%28%29%20%7B%0A%20%20%20%20longitud%20%3D%200%3B%0A%20%20%20%20ancho%20%3D%200%3B%0A%20%20%7D%0A%20%20public%20Rectangulo%28double%20l%2C%20double%20a%29%20%7B%0A%20%20%20%20setDimension%28l%2C%20a%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20void%20setDimension%28double%20l%2C%20double%20a%29%20%20%7B%0A%20%20%20%20if%20%28l%20%3E%3D%200%29%0A%20%20%20%20%20%20longitud%20%3D%20l%3B%0A%20%20%20%20else%0A%20%20%20%20%20%20longitud%20%3D%200%3B%0A%20%20%20%20if%20%28a%20%3E%3D%200%29%0A%20%20%20%20%20%20ancho%20%3D%20a%3B%0A%20%20%20%20else%0A%20%20%20%20%20%20ancho%20%3D%200%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getLongitud%28%29%20%7B%0A%20%20%20%20return%20longitud%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getAncho%28%29%20%7B%0A%20%20%20%20return%20ancho%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20area%28%29%20%7B%0A%20%20%20%20return%20longitud%20%2A%20ancho%3B%0A%20%20%7D%0A%0A%20%20public%20double%20perimetro%28%29%20%7B%0A%20%20%20%20return%202%20%2A%20%28longitud%20%2B%20ancho%29%3B%0A%20%20%7D%0A%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20%28%22Longitud%20%3D%20%22%20%2B%20longitud%20%2B%20%22%3B%20Ancho%20%3D%20%22%20%2B%20ancho%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Caja%20extends%20Rectangulo%20%7B%0A%20%20private%20double%20altura%3B%20%0A%20%20%0A%20%20public%20Caja%28%29%20%7B%0A%20%20%20%20super%28%29%3B%0A%20%20%20%20altura%20%3D%200%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20Caja%28double%20l%2C%20double%20a%2C%20double%20h%29%20%7B%0A%20%20%20%20super%28l%2C%20a%29%3B%0A%20%20%20%20altura%20%3D%20h%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20void%20setDimension%28double%20l%2C%20double%20a%2C%20double%20h%29%20%7B%0A%20%20%20%20super.setDimension%28l%2C%20a%29%3B%0A%20%20%20%20if%20%28h%20%3E%3D%200%29%20%7B%0A%20%20%20%20%20%20altura%20%3D%20h%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20altura%20%3D%200%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20getAltura%28%29%20%7B%0A%20%20%20%20return%20altura%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20area%28%29%20%7B%0A%20%20%20%20return%202%20%2A%20%28getLongitud%28%29%20%2A%20getAncho%28%29%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20getLongitud%28%29%20%2A%20altura%20%2B%20%0A%20%20%20%20%20%20%20%20%20%20getAncho%28%29%20%2A%20altura%29%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20double%20volumen%28%29%20%7B%0A%20%20%20%20return%20super.area%28%29%2Aaltura%3B%0A%20%20%7D%0A%20%20%0A%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20super.toString%28%29%20%2B%20%22%3B%20Altura%20%3D%20%22%20%2B%20altura%3B%0A%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="pendiente">
+<h3>Pendiente<a class="headerlink" href="#pendiente" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>operador instanceof</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="herencia1.html" title="previous page">Herencia</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
