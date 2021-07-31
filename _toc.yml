@@ -26,3 +26,4 @@ chapters:
   - file: "content/notebooks/herencia1.ipynb"
   - file: "content/notebooks/polimorfismo.ipynb"
   - file: "content/notebooks/abstracta.ipynb"
+  - file: "content/notebooks/interfaz.ipynb"
