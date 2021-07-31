@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos y clases abstractas &#8212; Ejemplos Java</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Recordando herencia" href="polimorfismo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos Java</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH01_intro.html">
+   Capitulo 1 - Introduccion a Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="esqueleto.html">
+     Estructura de un programa en Java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="io_basica.html">
+     Entrada y salida en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura_condicional.html">
+     Estructuras de selección en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ciclos.html">
+     Estructuras repetitivas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="funciones.html">
+     Funciones en java
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arreglos.html">
+     Arreglos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayList.html">
+     ArrayList
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CH02_intro.html">
+   Capitulo 2 - Introduccion a la POO en Java
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos1.html">
+     Clases y objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos2.html">
+     Array de objetos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos3.html">
+     Metodos y variables estaticas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="objetos4.html">
+     Mas sobre objetos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../CH03_intro.html">
+   Capitulo 3 - Herencia y polimorfismo
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="herencia1.html">
+     Herencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="polimorfismo.html">
+     Recordando herencia
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Métodos y clases abstractas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/abstracta.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tigarto/java_misiontic_codes"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tigarto/java_misiontic_codes/blob/master/content/notebooks/abstracta.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recordando-herencia-y-polimorfismos">
+   Recordando herencia y polimorfismos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clases-y-metodos-abstractos">
+   Clases y métodos abstractos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metodo-abstracto">
+     Metodo abstracto
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clase-abstracta">
+     Clase abstracta
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aspectos-claves-sobre-la-clases-y-metodos-abstractos">
+     Aspectos claves sobre la clases y métodos abstractos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clases-y-metodos-abstractos-en-uml">
+     Clases y métodos abstractos en UML
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplos">
+     Ejemplos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-1">
+       Ejemplo 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-2">
+       Ejemplo 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplo-3-incompleto">
+       Ejemplo 3 (incompleto)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install tutormagic
+<span class="o">%</span><span class="k">load_ext</span> tutormagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tutormagic in /home/tigarto/miniconda3/lib/python3.7/site-packages (0.3.0)
+Requirement already satisfied: notebook&gt;=3.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from tutormagic) (6.0.1)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.6.1)
+Requirement already satisfied: ipython-genutils in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.2.0)
+Requirement already satisfied: nbconvert in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.6.1)
+Requirement already satisfied: Send2Trash in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (1.5.0)
+Requirement already satisfied: prometheus-client in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.7.1)
+Requirement already satisfied: jupyter-client&gt;=5.3.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.3.3)
+Requirement already satisfied: pyzmq&gt;=17 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (18.1.1)
+Requirement already satisfied: traitlets&gt;=4.2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.3.3)
+Requirement already satisfied: terminado&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (0.8.3)
+Requirement already satisfied: jinja2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (2.10.3)
+Requirement already satisfied: tornado&gt;=5.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (6.0.3)
+Requirement already satisfied: ipykernel in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (5.1.3)
+Requirement already satisfied: nbformat in /home/tigarto/miniconda3/lib/python3.7/site-packages (from notebook&gt;=3.0-&gt;tutormagic) (4.4.0)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.8.4)
+Requirement already satisfied: defusedxml in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: bleach in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.1.0)
+Requirement already satisfied: pygments in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.5.2)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.3)
+Requirement already satisfied: testpath in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.4.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.4.2)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jupyter-client&gt;=5.3.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (2.8.1)
+Requirement already satisfied: decorator in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.4.1)
+Requirement already satisfied: six in /home/tigarto/miniconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.12.0)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jinja2-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.1.1)
+Requirement already satisfied: ipython&gt;=5.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (7.11.1)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.2.0)
+Requirement already satisfied: webencodings in /home/tigarto/miniconda3/lib/python3.7/site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.1)
+Requirement already satisfied: setuptools&gt;=18.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (45.2.0)
+Requirement already satisfied: pickleshare in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.7.5)
+Requirement already satisfied: jedi&gt;=0.10 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.2)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (3.0.2)
+Requirement already satisfied: backcall in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.0)
+Requirement already satisfied: pexpect; sys_platform != &quot;win32&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (4.7.0)
+Requirement already satisfied: importlib-metadata; python_version &lt; &quot;3.8&quot; in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (1.3.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.15.6)
+Requirement already satisfied: attrs&gt;=17.4.0 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (19.3.0)
+Requirement already satisfied: parso&gt;=0.5.2 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.5.2)
+Requirement already satisfied: wcwidth in /home/tigarto/miniconda3/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.1.8)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from pexpect; sys_platform != &quot;win32&quot;-&gt;ipython&gt;=5.0.0-&gt;ipykernel-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: zipp&gt;=0.5 in /home/tigarto/miniconda3/lib/python3.7/site-packages (from importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (0.6.0)
+Requirement already satisfied: more-itertools in /home/tigarto/miniconda3/lib/python3.7/site-packages (from zipp&gt;=0.5-&gt;importlib-metadata; python_version &lt; &quot;3.8&quot;-&gt;jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat-&gt;notebook&gt;=3.0-&gt;tutormagic) (8.0.2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="metodos-y-clases-abstractas">
+<h1>Métodos y clases abstractas<a class="headerlink" href="#metodos-y-clases-abstractas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recordando-herencia-y-polimorfismos">
+<h2>Recordando herencia y polimorfismos<a class="headerlink" href="#recordando-herencia-y-polimorfismos" title="Permalink to this headline">¶</a></h2>
+<p>El las clases anteriores se vieron los conceptos de <strong>herencia</strong> y <strong>polimorfismo</strong> y su importancia para permitir el reuso de código (en el caso reuso de atributos y métodos de una clase existente cuando se crea una nueva). Veamos el siguiente ejemplo de polimorfismo tomado de <a class="reference external" href="https://www.w3schools.com/java/java_polymorphism.asp">w3schools.com</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">tutor</span> -l java -k
+public class MyMainClass {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+
+class Animal {
+  public void animalSound() {
+    System.out.println(&quot;The animal makes a sound&quot;);
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println(&quot;The pig says: wee wee&quot;);
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println(&quot;The dog says: bow wow&quot;);
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="text-center"><strong><a style="box-sizing: border-box; padding: 0 5px; border: 1px solid #CFCFCF;" target="_" href=http://pythontutor.com/iframe-embed.html#code=public%20class%20MyMainClass%20%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20Animal%20myAnimal%20%3D%20new%20Animal%28%29%3B%20%20//%20Create%20a%20Animal%20object%0A%20%20%20%20Animal%20myPig%20%3D%20new%20Pig%28%29%3B%20%20//%20Create%20a%20Pig%20object%0A%20%20%20%20Animal%20myDog%20%3D%20new%20Dog%28%29%3B%20%20//%20Create%20a%20Dog%20object%0A%20%20%20%20myAnimal.animalSound%28%29%3B%0A%20%20%20%20myPig.animalSound%28%29%3B%0A%20%20%20%20myDog.animalSound%28%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Animal%20%7B%0A%20%20public%20void%20animalSound%28%29%20%7B%0A%20%20%20%20System.out.println%28%22The%20animal%20makes%20a%20sound%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Pig%20extends%20Animal%20%7B%0A%20%20public%20void%20animalSound%28%29%20%7B%0A%20%20%20%20System.out.println%28%22The%20pig%20says%3A%20wee%20wee%22%29%3B%0A%20%20%7D%0A%7D%0A%0Aclass%20Dog%20extends%20Animal%20%7B%0A%20%20public%20void%20animalSound%28%29%20%7B%0A%20%20%20%20System.out.println%28%22The%20dog%20says%3A%20bow%20wow%22%29%3B%0A%20%20%7D%0A%7D%0A&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&curInstr=0&&verticalStack=false&py=java&rawInputLstJSON=%5B%5D&codeDivWidth=50%25&codeDivHeight=100%25>Python Tutor</a></strong></div></div></div>
+</div>
+</div>
+<div class="section" id="clases-y-metodos-abstractos">
+<h2>Clases y métodos abstractos<a class="headerlink" href="#clases-y-metodos-abstractos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="metodo-abstracto">
+<h3>Metodo abstracto<a class="headerlink" href="#metodo-abstracto" title="Permalink to this headline">¶</a></h3>
+<p>Un <strong>método abstracto</strong> es un método que aparece en una superclase, pero que espera ser sobreescrito en una subclase. Este tipo de metodo sólo tiene el encabezado sin cuerpo. El encabezado de un método abstracto contiene la palabra reservada <code class="docutils literal notranslate"><span class="pre">abstract</span></code> y termina con un punto y coma. Tal y como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">especificadorDeAcceso</span> <span class="kd">abstract</span> <span class="n">tipoDeRetorno</span> <span class="nf">nombreMetodo</span><span class="p">(</span><span class="n">listaDeParametros</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Algunos ejemplos se muestran a continuación de la declaración de un método abstracto se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="kd">abstract</span> <span class="nf">print</span><span class="p">();</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">object</span> <span class="nf">larger</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">);</span>
+<span class="kt">void</span> <span class="kd">abstract</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">insertItem</span><span class="p">);</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">setValue</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clase-abstracta">
+<h3>Clase abstracta<a class="headerlink" href="#clase-abstracta" title="Permalink to this headline">¶</a></h3>
+<p>Es una clase que pese a no ser instanciable permite que otras clases puedan heredar de esta. Para declarar una clase abstracta, se usa la palabra reservada <code class="docutils literal notranslate"><span class="pre">abstract</span></code> en su encabezado tal y como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">NombreClase</span>
+</pre></div>
+</div>
+<p><strong>Ejemplo</strong> : A continuación se muestra un ejemplo donde se ilustra lo anterior:</p>
+<p><img alt="clases_tarifa" src="../../_images/clases_tarifa.jpg" /></p>
+<p>A continuación se muestra el fragmento de código de cada una de las clases mostradas anteriormente:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Tarifa</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">fecha</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">tasas</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">calculoCoste</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Turista</span> <span class="kd">extends</span> <span class="n">Tarifa</span> <span class="p">{</span>
+    <span class="c1">// Codigo </span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Preferente</span> <span class="kd">extends</span> <span class="n">Tarifa</span> <span class="p">{</span>
+    <span class="c1">// Codigo </span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GlanClase</span> <span class="kd">extends</span> <span class="n">Tarifa</span> <span class="p">{</span>
+    <span class="c1">// Codigo </span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aspectos-claves-sobre-la-clases-y-metodos-abstractos">
+<h3>Aspectos claves sobre la clases y métodos abstractos<a class="headerlink" href="#aspectos-claves-sobre-la-clases-y-metodos-abstractos" title="Permalink to this headline">¶</a></h3>
+<p>A continuación se muestran algunos aspectos importantes a tener en cuenta al usar clases y metodos abstractos:</p>
+<ol class="simple">
+<li><p>Una clase abstracta puede contener variables de instancias, constructores, finalizador y métodos no abstractos:</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">EjemploClaseAbstracta</span> <span class="p">{</span>    
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">();</span>
+    
+    <span class="kd">public</span> <span class="nf">EjemploClaseAbstracta</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setX</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Una clase abstracta puede contener un(os) método(s) abstracto(s):</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GeometricObject</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getColor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">color</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">String</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Si una clase contiene un método abstracto, entonces la clase se debe declarar abstracta.</p></li>
+<li><p>No se puede convertir en instancia un objeto de una clase abstracta. Sólo se puede declarar una variable de referencia de un tipo de clase abstracta.</p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GeometricObject</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">();</span>    
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Si por ejemplo se intentara instanciar la clase abstracta tal como se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GeometricObject</span> <span class="n">figura1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GeometricObject</span><span class="p">();</span> <span class="c1">// ERROR: no se puede instanciar de clase</span>
+                                                 <span class="c1">//        abstracta</span>
+</pre></div>
+</div>
+<p>Por otro lado, si se puede definir una referencia si es algo valido:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GeometricObject</span> <span class="n">figura1</span><span class="p">;</span> <span class="c1">// Notese que no se instancio un objeto del tipo de la clase abstracta</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Se puede convertir en instancia un objeto de una subclase de una clase abstracta, pero sólo si la subclase da las definiciones de todos los métodos abstractos de la superclase.</p></li>
+</ol>
+<p>Para explicar esto, supongase que se crea una subclase llamada <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> de la clase abstracta <code class="docutils literal notranslate"><span class="pre">GeometricObject</span> </code> definiendo los metodos <code class="docutils literal notranslate"><span class="pre">getArea</span></code> y <code class="docutils literal notranslate"><span class="pre">getPerimeter</span></code>; el fragmento de código se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">GeometricObject</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+    
+    <span class="p">...</span>
+        
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">;</span>
+    <span class="p">}</span>
+        
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">width</span><span class="p">);</span>
+    <span class="p">}</span>
+        
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Como la clase <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> ya define todos los métodos abstractos de la clase padre, puede ser instaciada, de este modo, teniendo en cuenta lo aprendido en <strong>poliformismo</strong>, podemos definir una referencia a una clase base que apunte a un objeto de una subclase, asi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GeometricObject</span> <span class="n">figura1</span><span class="p">;</span>
+<span class="n">figura1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clases-y-metodos-abstractos-en-uml">
+<h3>Clases y métodos abstractos en UML<a class="headerlink" href="#clases-y-metodos-abstractos-en-uml" title="Permalink to this headline">¶</a></h3>
+<p>Las clases abstractas en UML son dibujadas como clases normales, excepto que el nombre de la clase y los nomrbes de los medodos abstractos son mostrados en letra <em><strong>italica</strong></em>. La siguiente figura muestra un ejemplo:</p>
+<p><img alt="student_uml_abstract" src="../../_images/student_uml_abstract.jpg" /></p>
+</div>
+<div class="section" id="ejemplos">
+<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ejemplo-1">
+<h4>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this headline">¶</a></h4>
+<p>Dado el siguiente diagrama UML asociado a la clase <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</p>
+<p><img alt="student_uml_abstract" src="../../_images/student_uml_abstract.jpg" /></p>
+<ol class="simple">
+<li><p>Realizar su codificacación:</p></li>
+</ol>
+<p><strong>Clase</strong>: Student.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   The Student class is an abstract class that holds</span>
+<span class="cm">   general data about a student. Classes representing</span>
+<span class="cm">   specific types of students should inherit from</span>
+<span class="cm">   this class.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Student</span>
+<span class="p">{</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>       <span class="c1">// Student name</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">idNumber</span><span class="p">;</span>   <span class="c1">// Student ID</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">yearAdmitted</span><span class="p">;</span>  <span class="c1">// Year admitted</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The Constructor sets the student&#39;s name,</span>
+<span class="cm">      ID number, and year admitted.</span>
+<span class="cm">      @param n The student&#39;s name.</span>
+<span class="cm">      @param id The student&#39;s ID number.</span>
+<span class="cm">      @param year The year the student was admitted.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="nf">Student</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="n">String</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+      <span class="n">idNumber</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+      <span class="n">yearAdmitted</span> <span class="o">=</span> <span class="n">year</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The toString method returns a String containing</span>
+<span class="cm">      the student&#39;s data.</span>
+<span class="cm">      @return A reference to a String.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="n">String</span> <span class="n">str</span><span class="p">;</span>
+
+      <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Name: &quot;</span> <span class="o">+</span> <span class="n">name</span>
+         <span class="o">+</span> <span class="s">&quot;\nID Number: &quot;</span> <span class="o">+</span> <span class="n">idNumber</span>
+         <span class="o">+</span> <span class="s">&quot;\nYear Admitted: &quot;</span> <span class="o">+</span> <span class="n">yearAdmitted</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">str</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getRemainingHours method is abstract.</span>
+<span class="cm">      It must be overridden in a subclass.</span>
+<span class="cm">      @return The hours remaining for the student.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">int</span> <span class="nf">getRemainingHours</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Sobreescribir el método abstracto definido en la clase anterior.</p></li>
+</ol>
+<p><strong>Clase</strong>: CompSciStuden.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   This class holds data for a computer science student.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompSciStudent</span> <span class="kd">extends</span> <span class="n">Student</span>
+<span class="p">{</span>
+   <span class="c1">// Required hours</span>
+   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MATH_HOURS</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>   <span class="c1">// Math hours</span>
+   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">CS_HOURS</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>     <span class="c1">// Comp sci hours</span>
+   <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">GEN_ED_HOURS</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span> <span class="c1">// Gen ed hours</span>
+
+   <span class="c1">// Hours taken</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">mathHours</span><span class="p">;</span>  <span class="c1">// Math hours taken</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">csHours</span><span class="p">;</span>    <span class="c1">// Comp sci hours taken</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">genEdHours</span><span class="p">;</span> <span class="c1">// General ed hours taken</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The Constructor sets the student&#39;s name, </span>
+<span class="cm">      ID number, and the year admitted.</span>
+<span class="cm">      @param n The student&#39;s name.</span>
+<span class="cm">      @param id The student&#39;s ID number.</span>
+<span class="cm">      @param year The year the student was admitted.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="nf">CompSciStudent</span><span class="p">(</span><span class="n">String</span> <span class="n">n</span><span class="p">,</span> <span class="n">String</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kd">super</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The setMathHours method sets the number of </span>
+<span class="cm">      math hours taken.</span>
+<span class="cm">      @param math The math hours taken.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMathHours</span><span class="p">(</span><span class="kt">int</span> <span class="n">math</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">mathHours</span> <span class="o">=</span> <span class="n">math</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The setCsHours method sets the number of </span>
+<span class="cm">      computer science hours taken.</span>
+<span class="cm">      @param cs The computer science hours taken.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCsHours</span><span class="p">(</span><span class="kt">int</span> <span class="n">cs</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">csHours</span> <span class="o">=</span> <span class="n">cs</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The setGenEdHours method sets the number of </span>
+<span class="cm">      general ed hours taken.</span>
+<span class="cm">      @param genEd The general ed hours taken.</span>
+<span class="cm">   */</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGenEdHours</span><span class="p">(</span><span class="kt">int</span> <span class="n">genEd</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">genEdHours</span> <span class="o">=</span> <span class="n">genEd</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The getRemainingHours method returns the</span>
+<span class="cm">      the number of hours remaining to be taken.</span>
+<span class="cm">      @return The hours remaining for the student.</span>
+<span class="cm">   */</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRemainingHours</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">reqHours</span><span class="p">,</span>        <span class="c1">// Total required hours</span>
+          <span class="n">remainingHours</span><span class="p">;</span>  <span class="c1">// Remaining hours</span>
+
+      <span class="c1">// Calculate the required hours.</span>
+      <span class="n">reqHours</span> <span class="o">=</span> <span class="n">MATH_HOURS</span> <span class="o">+</span> <span class="n">CS_HOURS</span> <span class="o">+</span> <span class="n">GEN_ED_HOURS</span><span class="p">;</span>
+      
+      <span class="c1">// Calculate the remaining hours.</span>
+      <span class="n">remainingHours</span> <span class="o">=</span> <span class="n">reqHours</span> <span class="o">-</span> <span class="p">(</span><span class="n">mathHours</span> <span class="o">+</span> <span class="n">csHours</span>
+                         <span class="o">+</span> <span class="n">genEdHours</span><span class="p">);</span>
+                         
+      <span class="k">return</span> <span class="n">remainingHours</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="cm">/**</span>
+<span class="cm">      The toString method returns a string containing</span>
+<span class="cm">      the student&#39;s data.</span>
+<span class="cm">      @return A reference to a String.</span>
+<span class="cm">   */</span>
+   
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="n">String</span> <span class="n">str</span><span class="p">;</span>
+
+      <span class="n">str</span> <span class="o">=</span> <span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span>
+         <span class="s">&quot;\nMajor: Computer Science&quot;</span> <span class="o">+</span>
+         <span class="s">&quot;\nMath Hours Taken: &quot;</span> <span class="o">+</span> <span class="n">mathHours</span> <span class="o">+</span>
+         <span class="s">&quot;\nComputer Science Hours Taken: &quot;</span> <span class="o">+</span> <span class="n">csHours</span> <span class="o">+</span>
+         <span class="s">&quot;\nGeneral Ed Hours Taken: &quot;</span> <span class="o">+</span> <span class="n">genEdHours</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="n">str</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Finalmente, realizar una prueba donde se evidencie el resultado de las clases anteriormente planteadas:</p></li>
+</ol>
+<p><strong>Clase</strong>: CompSciStuden.java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">   This program demonstrates the CompSciStudent class.</span>
+<span class="cm">*/</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompSciStudentDemo</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// Create a CompSciStudent object.</span>
+      <span class="n">CompSciStudent</span> <span class="n">csStudent</span> <span class="o">=</span> 
+             <span class="k">new</span> <span class="n">CompSciStudent</span><span class="p">(</span><span class="s">&quot;Jennifer Haynes&quot;</span><span class="p">,</span>
+                                <span class="s">&quot;167W98337&quot;</span><span class="p">,</span> <span class="mi">2015</span><span class="p">);</span>
+
+      <span class="c1">// Store values for math, CS, and gen ed hours.</span>
+      <span class="n">csStudent</span><span class="p">.</span><span class="na">setMathHours</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+      <span class="n">csStudent</span><span class="p">.</span><span class="na">setCsHours</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+      <span class="n">csStudent</span><span class="p">.</span><span class="na">setGenEdHours</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+
+      <span class="c1">// Display the student&#39;s data.</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">csStudent</span><span class="p">);</span>
+
+      <span class="c1">// Display the number of remaining hours.</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hours remaining: &quot;</span> <span class="o">+</span>
+                   <span class="n">csStudent</span><span class="p">.</span><span class="na">getRemainingHours</span><span class="p">());</span>       
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El resultado en pantalla, para un caso de test, se muestra a continuación:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="p">:</span> <span class="n">Jennifer</span> <span class="n">Haynes</span>
+<span class="n">ID</span> <span class="n">Number</span><span class="p">:</span> <span class="mi">167</span><span class="n">W98337</span>
+<span class="n">Year</span> <span class="n">Admitted</span><span class="p">:</span> <span class="mi">2011</span>
+<span class="n">Major</span><span class="p">:</span> <span class="n">Computer</span> <span class="n">Science</span>
+<span class="n">Math</span> <span class="n">Hours</span> <span class="n">Taken</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">Computer</span> <span class="n">Science</span> <span class="n">Hours</span> <span class="n">Taken</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">General</span> <span class="n">Ed</span> <span class="n">Hours</span> <span class="n">Taken</span><span class="p">:</span> <span class="mi">40</span>
+<span class="n">Hours</span> <span class="n">remaining</span><span class="p">:</span> <span class="mi">48</span>
+</pre></div>
+</div>
+<p>En el siguiente <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemploestudiante">enlace</a> se puede ejecutar el código anteriormente mostrado.</p>
+</div>
+<div class="section" id="ejemplo-2">
+<h4>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this headline">¶</a></h4>
+<p>A continuación se van a implementar las diferentes clases asociadas al siguiente diagrama UML:</p>
+<p><img alt="figure_example" src="../../_images/figure_example.jpg" /></p>
+<p>A continuación se muestra el codigo correspondiente en cada caso:</p>
+<ul class="simple">
+<li><p><strong>Clase</strong>: GeometricObject.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GeometricObject</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Date</span> <span class="n">dateCreated</span><span class="p">;</span>
+    
+    <span class="cm">/** Construct a default geometric object */</span>
+    <span class="kd">protected</span> <span class="nf">GeometricObject</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">dateCreated</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Date</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Construct a geometric object with color and filled value */</span>
+    <span class="kd">protected</span> <span class="nf">GeometricObject</span><span class="p">(</span><span class="n">String</span> <span class="n">color</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">filled</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dateCreated</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Date</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">filled</span> <span class="o">=</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return color */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getColor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">color</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Set a new color */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setColor</span><span class="p">(</span><span class="n">String</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return filled. Since filled is boolean,</span>
+<span class="cm">    * the get method is named isFilled */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFilled</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Set a new filled */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFilled</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">filled</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">filled</span> <span class="o">=</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Get dateCreated */</span>
+    <span class="kd">public</span> <span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Date</span> <span class="nf">getDateCreated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">dateCreated</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;created on &quot;</span> <span class="o">+</span> <span class="n">dateCreated</span> <span class="o">+</span> <span class="s">&quot;\ncolor: &quot;</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="s">&quot; and filled: &quot;</span> <span class="o">+</span> <span class="n">filled</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Abstract method getArea */</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">();</span>
+    
+    <span class="cm">/** Abstract method getPerimeter */</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">();</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Clase</strong>: Circle.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">extends</span> <span class="n">GeometricObject</span> <span class="p">{</span> 
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">,</span> <span class="n">String</span> <span class="n">color</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">filled</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span>
+        <span class="n">setColor</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+        <span class="n">setFilled</span><span class="p">(</span><span class="n">filled</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return radius */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadius</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Set a new radius */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRadius</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return area */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return diameter */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getDiameter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return perimeter */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Print the circle info */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printCircle</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The circle is created &quot;</span> <span class="o">+</span> <span class="n">getDateCreated</span><span class="p">()</span> <span class="o">+</span>
+                           <span class="s">&quot; and the radius is &quot;</span> <span class="o">+</span> <span class="n">radius</span><span class="p">);</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Clase</strong>: Rectangle.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">GeometricObject</span><span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">height</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span> <span class="n">width</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span> <span class="n">width</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span><span class="p">,</span> <span class="n">String</span> <span class="n">color</span><span class="p">,</span> <span class="kt">boolean</span> <span class="n">filled</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+        <span class="n">setColor</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+        <span class="n">setFilled</span><span class="p">(</span><span class="n">filled</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Return width */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getWidth</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">width</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Set a new width */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setWidth</span><span class="p">(</span><span class="kt">double</span> <span class="n">width</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return height */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getHeight</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Set a new height */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHeight</span><span class="p">(</span><span class="kt">double</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Return area */</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/** Return perimeter */</span>
+        <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">height</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Clase</strong>: TestGeometricObject.java</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestGeometricObject</span> <span class="p">{</span>
+    <span class="cm">/** Main method */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Create two geometric objects</span>
+        <span class="n">GeometricObject</span> <span class="n">geoObject1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+        <span class="n">GeometricObject</span> <span class="n">geoObject2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The two objects have the same area? &quot;</span> <span class="o">+</span> <span class="n">equalArea</span><span class="p">(</span><span class="n">geoObject1</span><span class="p">,</span> <span class="n">geoObject2</span><span class="p">));</span>
+        
+        <span class="c1">// Display circle</span>
+        <span class="n">displayGeometricObject</span><span class="p">(</span><span class="n">geoObject1</span><span class="p">);</span>
+        
+        <span class="c1">// Display rectangle</span>
+        <span class="n">displayGeometricObject</span><span class="p">(</span><span class="n">geoObject2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** A method for comparing the areas of two geometric objects */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">equalArea</span><span class="p">(</span><span class="n">GeometricObject</span> <span class="n">object1</span><span class="p">,</span> <span class="n">GeometricObject</span> <span class="n">object2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">object1</span><span class="p">.</span><span class="na">getArea</span><span class="p">()</span> <span class="o">==</span> <span class="n">object2</span><span class="p">.</span><span class="na">getArea</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** A method for displaying a geometric object */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">displayGeometricObject</span><span class="p">(</span><span class="n">GeometricObject</span> <span class="n">object</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The area is &quot;</span> <span class="o">+</span> <span class="n">object</span><span class="p">.</span><span class="na">getArea</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The perimeter is &quot;</span> <span class="o">+</span> <span class="n">object</span><span class="p">.</span><span class="na">getPerimeter</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El resultado tras correr el programa anteriormente mencionado se muestra a continuación:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">two</span> <span class="n">objects</span> <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">area</span><span class="o">?</span> <span class="kc">false</span>
+
+<span class="n">The</span> <span class="n">area</span> <span class="n">is</span> <span class="mf">78.53981633974483</span>
+<span class="n">The</span> <span class="n">perimeter</span> <span class="n">is</span> <span class="mf">31.41592653589793</span>
+
+<span class="n">The</span> <span class="n">area</span> <span class="n">is</span> <span class="mf">15.0</span>
+<span class="n">The</span> <span class="n">perimeter</span> <span class="n">is</span> <span class="mf">16.0</span>
+</pre></div>
+</div>
+<p>El enlace para correr el codigo anteriormente mostrado se encuentra a continuación: <a class="reference external" href="https://repl.it/&#64;HENRYALBERTOALB/ejemplofiguras">enlace</a>.</p>
+</div>
+<div class="section" id="ejemplo-3-incompleto">
+<h4>Ejemplo 3 (incompleto)<a class="headerlink" href="#ejemplo-3-incompleto" title="Permalink to this headline">¶</a></h4>
+<p>Los bancos ofrecen varios tipos de cuentas, como de ahorros, cheques, certificados de depósito y mercado de valores, para atraer clientes así como para cumplir con sus necesidades específicas. En este ejemplo, se ilustra cómo utilizar las clases abstractas y el polimorfismo para procesar diferentes tipos de cuentas bancarias. Dos de las cuentas bancarias más comunes son las de ahorros y cheques. Cada una de estas tiene varias opciones. Por ejemplo, es posible tener una cuenta de ahorros que no requiera de un saldo mínimo, pero tiene un tasa de interés más baja. De manera similar, se puede tener una cuenta de cheques que limita el número de cheques a emitir cada mes. Otro tipo de cuenta que se utiliza para ahorrar dinero a largo plazo es un certificado de depósito (CD). Para ilustrar cómo se diseñan las clases abstractas y cómo funciona el polimorfismo, se supone que el banco ofrece tres tipos de cuentas: ahorros, cheques y certificados de depósito, como se describen a continuación.</p>
+<ul class="simple">
+<li><p><strong>Cuentas de ahorros</strong>: suponga que el banco ofrece dos tipos de cuentas de ahorros: una que no requiere de un saldo mínimo y tiene un tasa de interés más baja y otra que requiere de un saldo mínimo y que tiene una tasa de interés más alta.</p></li>
+<li><p><strong>Cuentas de cheques</strong>: suponga que el banco ofrece tres tipos de cuentas de cheques: una con un cargo mensual por el servicio, un número limitado de emisión de cheques mensual, sin saldo mínimo y sin pago de interés; otra sin cargo mensual por el servicio, requiere de un saldo mínimo, permite emitir un número ilimitado de cheques al mes, paga un interés más bajo, y una tercera sin cargo mensual por el servicio, requiere de un saldo mínimo más alto, tiene un tasa de interés más alta y permite emitir un número ilimitado de cheques al mes.</p></li>
+<li><p><strong>Certificado de depósito (CD)</strong>: en una cuenta de este tipo, el dinero se deja durante cierto tiempo y estas cuentas obtienen tasas de interés más altas que las de ahorros o de cheques. Suponga que compró un CD durante seis meses. Entonces se dice que el CD madurará en seis. Además, la penalidad por un retiro antes de los seis meses es muy alta.</p></li>
+</ul>
+<p>A continuación se muestra la jerarquia de las cuentas bancarias asociada al problema:</p>
+<p><img alt="jerarquia_cuentas" src="../../_images/jerarquia_cuentas.jpg" /></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="polimorfismo.html" title="previous page">Recordando herencia</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
